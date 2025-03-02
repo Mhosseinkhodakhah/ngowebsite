@@ -21,5 +21,12 @@
   },
   "HomePage": {
     "title": "سلام دنیا"
+  },
+  "footer": {
+    "Get Updates": "دریافت آخرین اخبار",
+    "Enter your email": "ایمیل خود را وارد کنید",
+    "Submit": "تایید",
+    "All rights of this site are reserved": "کلیه حقوق این سایت محفوظ میباشد",
+    "Copyright": "کپی رایت"
   }
 }

@@ -7,8 +7,9 @@ import clsx from "clsx";
 import { siteConfig } from "@/config/site";
 import { fontSans, vazir } from "@/config/fonts";
 import { routing } from "@/i18n/routing";
-import { Navbar } from "@/components/common/navbar";
 import { Providers } from "@/app/providers";
+import { Navbar } from "@/components/common/navbar";
+import Footer from "@/components/footer";
 
 import "@/styles/globals.css";
 
@@ -60,10 +61,9 @@ export default async function LocaleLayout({
       >
         <NextIntlClientProvider messages={messages}>
           <Providers themeProps={{ attribute: "class", defaultTheme: "light" }}>
-            <div className="relative flex flex-col h-screen">
-              <Navbar />
-              <main className="mx-auto flex-grow">{children}</main>
-            </div>
+            <Navbar />
+            <main className="mx-auto flex-grow">{children}</main>
+            <Footer />
           </Providers>
         </NextIntlClientProvider>
       </body>

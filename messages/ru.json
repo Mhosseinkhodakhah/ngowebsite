@@ -21,5 +21,12 @@
   },
   "HomePage": {
     "title": "HHHHH"
+  },
+  "footer": {
+    "Get Updates": "Получайте обновления",
+    "Enter your email": "Введите адрес электронной почты",
+    "Submit": "Представлять на рассмотрение",
+    "All rights of this site are reserved": "Все права этого сайта защищены",
+    "Copyright": "Авторское право"
   }
 }

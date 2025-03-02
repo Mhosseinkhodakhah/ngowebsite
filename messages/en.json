@@ -21,5 +21,12 @@
   },
   "HomePage": {
     "title": "Hello world!"
+  },
+  "footer": {
+    "Get Updates": "Get Updates",
+    "Enter your email": "Enter your email",
+    "Submit": "Submit",
+    "All rights of this site are reserved": "All rights of this site are reserved",
+    "Copyright": "Copyright"
   }
 }
