@@ -19,8 +19,10 @@
     "Completed Projects": "پروژه های تکمیل شده",
     "Collaboration Opportunities": "فرصت های همکاری"
   },
-  "HomePage": {
-    "title": "سلام دنیا"
+  "homePage": {
+    "title": "سلام دنیا",
+    "Read More": "مطالعه جزئیات",
+    "More About Us": "مطالعه درباره ما"
   },
   "footer": {
     "Get Updates": "دریافت آخرین اخبار",

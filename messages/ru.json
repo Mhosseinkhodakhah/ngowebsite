@@ -19,8 +19,10 @@
     "Completed Projects": "Завершенные проекты",
     "Collaboration Opportunities": "Возможности сотрудничества"
   },
-  "HomePage": {
-    "title": "HHHHH"
+  "homePage": {
+    "title": "HHHHH",
+    "Read More": "Читать далее",
+    "More About Us": "Подробнее о нас"
   },
   "footer": {
     "Get Updates": "Получайте обновления",

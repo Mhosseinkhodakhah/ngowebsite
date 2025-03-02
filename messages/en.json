@@ -19,8 +19,10 @@
     "Completed Projects": "Completed Projects",
     "Collaboration Opportunities": "Collaboration Opportunities"
   },
-  "HomePage": {
-    "title": "Hello world!"
+  "homePage": {
+    "title": "Hello world!",
+    "Read More": "Read More",
+    "More About Us": "More About Us"
   },
   "footer": {
     "Get Updates": "Get Updates",
