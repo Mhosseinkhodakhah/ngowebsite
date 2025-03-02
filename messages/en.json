@@ -1,0 +1,25 @@
+{
+  "navbar": {
+    "Home": "Home",
+    "About Us": "About Us",
+    "NGO": "NGO",
+    "Education": "Education",
+    "Events": "Events",
+    "Projects": "Projects",
+    "Data Archive": "Data Archive",
+    "En": "English",
+    "Fa": "Persian",
+    "Ru": "Russian",
+    "Login": "Login",
+    "Contact Us": "Contact Us",
+    "NGOs Registration": "NGOs Registration",
+    "Statistics": "Statistics",
+    "Good Practice": "Good Practice",
+    "Onegoing Projects": "Onegoing Projects",
+    "Completed Projects": "Completed Projects",
+    "Collaboration Opportunities": "Collaboration Opportunities"
+  },
+  "HomePage": {
+    "title": "Hello world!"
+  }
+}

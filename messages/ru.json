@@ -1,0 +1,25 @@
+{
+  "navbar": {
+    "Home": "Дом",
+    "About Us": "нас",
+    "NGO": "НПО",
+    "Education": "Образование",
+    "Events": "События",
+    "Projects": "Проекты",
+    "Data Archive": "Архив данных",
+    "En": "английский",
+    "Fa": "фарси",
+    "Ru": "Русский",
+    "Login": "Авторизоваться",
+    "Contact Us": "Связаться с нами",
+    "NGOs Registration": "Регистрация НПО",
+    "Statistics": "Статистика",
+    "Good Practice": "Совместные инициативы",
+    "Onegoing Projects": "Текущие проекты",
+    "Completed Projects": "Завершенные проекты",
+    "Collaboration Opportunities": "Возможности сотрудничества"
+  },
+  "HomePage": {
+    "title": "HHHHH"
+  }
+}

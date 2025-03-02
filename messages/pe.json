@@ -1,0 +1,25 @@
+{
+  "navbar": {
+    "Home": "خانه",
+    "About Us": "درباره ما",
+    "NGO": "سمن",
+    "Education": "آموزش",
+    "Events": "رویدادها",
+    "Projects": "پروژها",
+    "Data Archive": "آرشیو",
+    "En": "انگلیسی",
+    "Fa": "فارسی",
+    "Ru": "روسی",
+    "Login": "ورود",
+    "Contact Us": "ارتباط با ما",
+    "NGOs Registration": "ثبت نام سمن ها",
+    "Statistics": "آمار",
+    "Good Practice": "ابتکارات مشترک",
+    "Onegoing Projects": "پروژه های فعال",
+    "Completed Projects": "پروژه های تکمیل شده",
+    "Collaboration Opportunities": "فرصت های همکاری"
+  },
+  "HomePage": {
+    "title": "سلام دنیا"
+  }
+}

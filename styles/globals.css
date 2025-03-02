@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primay: 207, 73%, 48%;
+  --secondary: 205, 16%, 27%;
+  --dark: 212, 15%, 22%;
+  --gray: 0, 0%, 95%;
+}
