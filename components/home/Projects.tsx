@@ -9,7 +9,7 @@ function Projects() {
         assumenda tenetur perspiciatis sapiente cumque omnis perferendis magni
         dolore numquam!
       </p>
-      <div className="mt-10 grid grid-rows-1 md:grid-rows-2 grid-cols-1 md:grid-cols-2 gap-2 mx-20">
+      <div className="mt-10 grid grid-rows-2  grid-cols-2  gap-2 mx-20 w-full md:w-auto">
         <ProjectCard />
         <ProjectCard />
         <ProjectCard />

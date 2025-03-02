@@ -2,23 +2,30 @@ import { Button } from "@heroui/button";
 import Image from "next/image";
 
 function ProjectCard() {
+  const discription: string = `Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae
+          unde quisquam esse tenetur eveniet magni, amet asperiores maxime
+          labore temporibus!`;
+
   return (
-    <div className="border border-slate-400 dark:border-secondary rounded-md flex flex-col md:flex-row gap-2 relative">
+    <div className="border border-slate-400 dark:border-secondary rounded-md flex flex-col md:flex-row gap-2 relative ">
       <Image
         alt="Project 1"
-        className="object-fill w-1/3 h-full"
+        className="object-fill w-full md:w-1/3 h-full"
         height={100}
         src="https://unsplash.it/g/640/425"
         width={100}
       />
-      <div className="py-6">
-        <h4 className="text-bold p-2">Project 1</h4>
-        <p className="text-sm font-light p-2 line-clamp-3">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae
-          unde quisquam esse tenetur eveniet magni, amet asperiores maxime
-          labore temporibus!
+      <div className="py-6 px-2">
+        <h4 className="text-bold p-2 text-wrap">Project 1</h4>
+        <p className="text-sm font-light p-2  overflow-hidden text-wrap">
+          {discription.slice(1, 100)}...
         </p>
-        <Button className="text-gray" color="primary" variant="shadow">
+        <Button
+          className="text-gray w-full md:w-2/3"
+          color="primary"
+          size="sm"
+          variant="shadow"
+        >
           Read More
         </Button>
       </div>
