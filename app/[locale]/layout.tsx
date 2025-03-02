@@ -7,10 +7,10 @@ import clsx from "clsx";
 import { siteConfig } from "@/config/site";
 import { fontSans, vazir } from "@/config/fonts";
 import { routing } from "@/i18n/routing";
+import { Navbar } from "@/components/common/navbar";
 import { Providers } from "@/app/providers";
 
 import "@/styles/globals.css";
-import { Navbar } from "@/components/common/navbar";
 
 export const metadata: Metadata = {
   title: {
@@ -62,9 +62,7 @@ export default async function LocaleLayout({
           <Providers themeProps={{ attribute: "class", defaultTheme: "light" }}>
             <div className="relative flex flex-col h-screen">
               <Navbar />
-              <main className="container mx-auto max-w-7xl pt-16 px-6 flex-grow">
-                {children}
-              </main>
+              <main className="mx-auto flex-grow">{children}</main>
             </div>
           </Providers>
         </NextIntlClientProvider>

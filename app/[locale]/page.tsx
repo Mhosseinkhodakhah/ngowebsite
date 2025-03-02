@@ -1,13 +1,9 @@
-"use client";
-
-import { useTranslations } from "next-intl";
+import Hero from "@/components/home/Hero";
 
 export default function HomePage() {
-  const t = useTranslations("HomePage");
-
   return (
     <div className="light:text-dark dark:text-gray">
-      <h1 className="">{t("title")}</h1>
+      <Hero />
     </div>
   );
 }
