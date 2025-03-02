@@ -35,34 +35,36 @@ module.exports = {
       addCommonColors: true, // override common colors (e.g. "blue", "green", "pink").
       defaultTheme: "light", // default theme from the themes object
       defaultExtendTheme: "light",
-      light: {
-        layout: {},
-        colors: {
-          primary: {
-            foreground: "hsl(var(--primary))",
-            DEFAULT: "hsl(var(--primary))",
+      themes: {
+        light: {
+          colors: {
+            background: "#FFFFFF",
+            primary: {
+              foreground: "hsl(var(--primary))",
+              DEFAULT: "hsl(var(--primary))",
+            },
+            secondary: {
+              foreground: "hsl(var(--secondary))",
+              DEFAULT: "hsl(var(--secondary))",
+            },
+            dark: "hsl(var(--dark))",
+            gray: "hsl(var(--gray))",
           },
-          secondary: {
-            foreground: "hsl(var(--secondary))",
-            DEFAULT: "hsl(var(--secondary))",
-          },
-          dark: "hsl(var(--dark))",
-          gray: "hsl(var(--gray))",
         },
-      },
-      dark: {
-        layout: {},
-        colors: {
-          primary: {
-            foreground: "hsl(var(--primary))",
-            DEFAULT: "hsl(var(--primary))",
+        dark: {
+          colors: {
+            background: "hsl(212, 15%, 22%)",
+            primary: {
+              foreground: "hsl(var(--primary))",
+              DEFAULT: "hsl(var(--primary))",
+            },
+            secondary: {
+              foreground: "hsl(var(--secondary))",
+              DEFAULT: "hsl(var(--secondary))",
+            },
+            dark: "hsl(var(--dark))",
+            gray: "hsl(var(--gray))",
           },
-          secondary: {
-            foreground: "hsl(var(--secondary))",
-            DEFAULT: "hsl(var(--secondary))",
-          },
-          dark: "hsl(var(--dark))",
-          gray: "hsl(var(--gray))",
         },
       },
     }),
