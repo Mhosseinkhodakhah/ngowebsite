@@ -25,13 +25,13 @@ function Footer() {
         <RightSection />
       </section>
       <Divider className="bg-gray my-2" />
-      <section className="text-gray flex justify-between">
+      <section className="text-gray flex flex-col justify-center items-center md:flex-row md:justify-between">
         <p className="text-xs">
           {t("Copyright")}
           <CopyrightIcon />
           {new Date().getFullYear()}.{t("All rights of this site are reserved")}
         </p>
-        <ul className="flex gap-1 items-center">
+        <ul className="flex gap-1 items-center my-2">
           <li>
             <Link href="http://www.facebook.com">
               <Facebook />

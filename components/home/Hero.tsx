@@ -1,8 +1,11 @@
 import Image from "next/image";
 import { Button } from "@heroui/button";
+import { useTranslations } from "next-intl";
 
 import HeroImg from "@/public/images/hero-img.jpg";
 function Hero() {
+  const t = useTranslations("homePage");
+
   return (
     <section className="h-screen flex justify-center">
       <Image
@@ -17,12 +20,8 @@ function Hero() {
           laudantium veniam, dolorum officiis esse eaque temporibus facere
           veritatis maxime.
         </p>
-        <Button
-          className="mt-4 text-gray w-1/3"
-          color="primary"
-          variant="shadow"
-        >
-          Join Us
+        <Button className="mt-4 text-gray" color="primary" variant="shadow">
+          {t("Join Us")}
         </Button>
       </div>
     </section>

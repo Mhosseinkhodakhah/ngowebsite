@@ -1,3 +1,5 @@
+import { useTranslations } from "next-intl";
+
 function Title({
   titleText,
   description,
@@ -5,10 +7,12 @@ function Title({
   titleText: string;
   description: string;
 }) {
+  const t = useTranslations("navbar");
+
   return (
     <>
       <h1 className="text-xl font-bold border-b-5 border-primary mt-20">
-        {titleText}
+        {t(titleText)}
       </h1>
       <p className="mt-5 max-w-md text-center text-secondary dark:text-gray font-light">
         {description}

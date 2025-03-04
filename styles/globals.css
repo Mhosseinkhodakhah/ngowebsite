@@ -13,4 +13,5 @@ html {
   overflow-x: hidden;
   max-width: 1800px;
   margin: 0 auto;
+  scroll-behavior: smooth;
 }
