@@ -3,11 +3,13 @@ import { useTranslations } from "next-intl";
 function Title({
   titleText,
   description,
+  page,
 }: {
   titleText: string;
-  description: string;
+  description?: string;
+  page?: string;
 }) {
-  const t = useTranslations("navbar");
+  const t = useTranslations(page === "aboutUs" ? "aboutUs" : "navbar");
 
   return (
     <>

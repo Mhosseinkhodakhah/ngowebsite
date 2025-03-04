@@ -9,10 +9,8 @@ import { fontSans, vazir } from "@/config/fonts";
 import { routing } from "@/i18n/routing";
 import { Providers } from "@/app/providers";
 import { Navbar } from "@/components/common/navbar";
-import Footer from "@/components/footer";
 
 import "@/styles/globals.css";
-import GoUp from "@/components/common/go-up";
 
 export const metadata: Metadata = {
   title: {
@@ -63,11 +61,7 @@ export default async function LocaleLayout({
         <NextIntlClientProvider messages={messages}>
           <Providers themeProps={{ attribute: "class", defaultTheme: "light" }}>
             <Navbar />
-            <main className="mx-auto flex-grow">
-              {children}
-              <GoUp />
-            </main>
-            <Footer />
+            <main className="mx-auto flex-grow">{children}</main>
           </Providers>
         </NextIntlClientProvider>
       </body>
