@@ -39,6 +39,15 @@
     "Details": "جزئیات",
     "Search": "جستجو"
   },
+  "NGOPage": {
+    "Image of NGO activities": "تصاویر فعالیت ها",
+    "Similar NGOs": "سمن های مشابه",
+    "INFO & CONTACTS": "اطلاعات تماس",
+    "Website": "وب سایت",
+    "Mail": "ایمیل",
+    "Social": "شبکه اجتماعی",
+    "Address": "آدرس"
+  },
   "footer": {
     "Get Updates": "دریافت آخرین اخبار",
     "Enter your email": "ایمیل خود را وارد کنید",

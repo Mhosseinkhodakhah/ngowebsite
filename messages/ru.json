@@ -39,6 +39,15 @@
     "Details": "Подробности",
     "Search": "Поиск"
   },
+  "NGOPage": {
+    "Image of NGO activities": "Изображение деятельности НПО",
+    "Similar NGOs": "Похожие НПО",
+    "INFO & CONTACTS": "ИНФОРМАЦИЯ И КОНТАКТЫ",
+    "Website": "Веб-сайт",
+    "Mail": "Почта",
+    "Social": "Социальный",
+    "Address": "Адрес"
+  },
   "footer": {
     "Get Updates": "Получайте обновления",
     "Enter your email": "Введите адрес электронной почты",

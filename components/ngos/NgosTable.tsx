@@ -9,21 +9,23 @@ import { useParams } from "next/navigation";
 import { Avatar } from "@heroui/avatar";
 import { useTranslations } from "next-intl";
 import { Button } from "@heroui/button";
-
-import { SearchIcon } from "../icons";
-
-import "ag-grid-community/styles/ag-grid.css";
-import "ag-grid-community/styles/ag-theme-alpine.css"; // or any other theme you prefer
 import {
   AG_GRID_LOCALE_EN,
   AG_GRID_LOCALE_IR,
 } from "@ag-grid-community/locale";
+
+import { SearchIcon } from "../common/icons";
+
+import "ag-grid-community/styles/ag-grid.css";
+import "ag-grid-community/styles/ag-theme-alpine.css"; // or any other theme you prefer
+import { useRouter } from "@/i18n/navigation";
 
 const NgoTable = () => {
   const [searchText, setSearchText] = useState("");
   const { theme } = useTheme();
   const { locale } = useParams();
   const t = useTranslations("NGO");
+  const router = useRouter();
 
   const [rowData, setRowData] = useState([
     {
@@ -109,6 +111,7 @@ const NgoTable = () => {
             color="primary"
             size="sm"
             variant="solid"
+            onPress={() => router.push("/ngo/1")}
           >
             {t("Details")}
           </Button>

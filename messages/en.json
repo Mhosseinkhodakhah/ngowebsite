@@ -39,6 +39,16 @@
     "Details": "Details",
     "Search": "Search"
   },
+  "NGOPage": {
+    "Image of NGO activities": "Image of NGO activities",
+    "Similar NGOs": "Similar NGOs",
+    "INFO & CONTACTS": "INFO & CONTACTS",
+    "Website": "Website",
+    "Mail": "Mail",
+    "Social": "Social",
+    "Address": "Address"
+  },
+
   "footer": {
     "Get Updates": "Get Updates",
     "Enter your email": "Enter your email",

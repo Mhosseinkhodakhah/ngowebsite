@@ -10,6 +10,12 @@ const nextConfig = {
         port: "",
         search: "",
       },
+      {
+        protocol: "https",
+        hostname: "fakeimg.pl",
+        port: "",
+        search: "",
+      },
     ],
   },
 };

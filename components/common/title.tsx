@@ -9,7 +9,9 @@ function Title({
   description?: string;
   page?: string;
 }) {
-  const t = useTranslations(page === "aboutUs" ? "aboutUs" : "navbar");
+  const t = useTranslations(
+    page === "aboutUs" ? "aboutUs" : page === "NGOPage" ? "NGOPage" : "navbar",
+  );
 
   return (
     <>

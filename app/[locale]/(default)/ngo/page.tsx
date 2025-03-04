@@ -1,6 +1,6 @@
 import Title from "@/components/common/title";
-import MapChart from "@/components/common/ngos/MapChart";
-import NgosTable from "@/components/common/ngos/NgosTable";
+import MapChart from "@/components/ngos/MapChart";
+import NgosTable from "@/components/ngos/NgosTable";
 
 function Page() {
   return (
