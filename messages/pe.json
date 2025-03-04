@@ -28,6 +28,17 @@
   "aboutUs": {
     "Mission and goals": "ماموریت و اهداف"
   },
+  "NGO": {
+    "Logo": "نشان",
+    "Name": "نام",
+    "Country": "کشور",
+    "Active Projects": "پروژه های فعال",
+    "Activity Field": "حوزه فعالیت",
+    "Year of establishment": "سال تاسیس",
+    "Licenses": "مجوز",
+    "Details": "جزئیات",
+    "Search": "جستجو"
+  },
   "footer": {
     "Get Updates": "دریافت آخرین اخبار",
     "Enter your email": "ایمیل خود را وارد کنید",

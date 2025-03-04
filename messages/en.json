@@ -28,6 +28,17 @@
   "aboutUs": {
     "Mission and goals": "Mission and goals"
   },
+  "NGO": {
+    "Logo": "Logo",
+    "Name": "Name",
+    "Country": "Country",
+    "Active Projects": "Active Projects",
+    "Activity Field": "Activity Field",
+    "Year of establishment": "Year of establishment",
+    "Licenses": "Licenses",
+    "Details": "Details",
+    "Search": "Search"
+  },
   "footer": {
     "Get Updates": "Get Updates",
     "Enter your email": "Enter your email",

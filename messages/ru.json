@@ -28,6 +28,17 @@
   "aboutUs": {
     "Mission and goals": "Миссия и цели"
   },
+  "NGO": {
+    "Logo": "Логотип",
+    "Name": "Имя",
+    "Country": "Страна",
+    "Active Projects": "Активные проекты",
+    "Activity Field": "Поле деятельности",
+    "Year of establishment": "Год основания",
+    "Licenses": "Лицензии",
+    "Details": "Подробности",
+    "Search": "Поиск"
+  },
   "footer": {
     "Get Updates": "Получайте обновления",
     "Enter your email": "Введите адрес электронной почты",

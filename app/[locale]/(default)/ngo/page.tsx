@@ -1,5 +1,6 @@
-import MapChart from "@/components/common/ngos/MapChart";
 import Title from "@/components/common/title";
+import MapChart from "@/components/common/ngos/MapChart";
+import NgosTable from "@/components/common/ngos/NgosTable";
 
 function Page() {
   return (
@@ -9,6 +10,7 @@ function Page() {
         titleText="NGO"
       />
       <MapChart />
+      <NgosTable />
     </section>
   );
 }

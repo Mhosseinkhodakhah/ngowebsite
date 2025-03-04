@@ -15,3 +15,22 @@ html {
   margin: 0 auto;
   scroll-behavior: smooth;
 }
+
+.header-cell {
+  background-color: hsl(var(--primay));
+  color: hsl(var(--gray));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transition: background-color 0.3s;
+}
+
+.header-cell:hover {
+  background-color: hsl(var(--primay)) !important;
+  color: hsl(var(--gray)) !important;
+}
+
+.ag-header-cell-label {
+  justify-content: center;
+}
