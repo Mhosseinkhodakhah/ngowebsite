@@ -17,11 +17,11 @@ export default function AboutPage() {
         />
         <div className="mt-20 flex flex-col md:flex-row justify-around w-2/3">
           <div>
-            <Image alt="about us" className="w-2/3" src={AboutUsImage} />
+            <Image alt="about us" className="md:w-2/3" src={AboutUsImage} />
           </div>
           <div>
-            <h2 className="text-xl font-bold text-start">Lorem Ipsum</h2>
-            <p className="font-light text-start mt-4">
+            <h2 className="text-xl font-bold text-center md:text-start my-4 md:my-0">Lorem Ipsum</h2>
+            <p className="font-light text-center md:text-start mt-4">
               Lorem Ipsum is simply dummy text of the printing and typesetting
               industry. Lorem Ipsum has been the industry's standard dummy text
               ever since the 1500s Lorem Ipsum is simply dummy text of the
@@ -34,10 +34,10 @@ export default function AboutPage() {
           <Title page="aboutUs" titleText="Mission and goals" />
           <Image
             alt="mission and goal"
-            className="w-1/3"
+            className="md:w-1/3 w-2/3"
             src={MissionAndGoal}
           />
-          <p className="font-light text-center mt-4 max-w-lg">
+          <p className="font-light text-center mt-4 max-w-lg px-2">
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry. Lorem Ipsum has been the industry's standard dummy text
             ever since the 1500s Lorem Ipsum is simply dummy text of the
