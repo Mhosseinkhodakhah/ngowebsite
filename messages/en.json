@@ -48,6 +48,10 @@
     "Social": "Social",
     "Address": "Address"
   },
+  "statics": {
+    "Participation": "Participation",
+    "Countries": "Countries"
+  },
 
   "footer": {
     "Get Updates": "Get Updates",

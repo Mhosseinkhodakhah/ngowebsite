@@ -48,6 +48,10 @@
     "Social": "Социальный",
     "Address": "Адрес"
   },
+  "statics": {
+    "Participation": "Участие",
+    "Countries": "Страны"
+  },
   "footer": {
     "Get Updates": "Получайте обновления",
     "Enter your email": "Введите адрес электронной почты",

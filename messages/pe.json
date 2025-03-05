@@ -48,6 +48,10 @@
     "Social": "شبکه اجتماعی",
     "Address": "آدرس"
   },
+  "statics": {
+    "Participation": "مشارکت",
+    "Countries": "کشور ها"
+  },
   "footer": {
     "Get Updates": "دریافت آخرین اخبار",
     "Enter your email": "ایمیل خود را وارد کنید",

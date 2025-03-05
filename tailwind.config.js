@@ -18,8 +18,8 @@ module.exports = {
           foreground: "#3A4750",
           DEFAULT: "#3A4750",
         },
-        dark: "hsl(var(--dark))",
-        gray: "hsl(var(--gray))",
+        dark: "#303841",
+        gray: "#F3F3F3",
       },
       fontFamily: {
         sans: ["var(--font-sans)"],
@@ -40,30 +40,30 @@ module.exports = {
           colors: {
             background: "#FFFFFF",
             primary: {
-              foreground: "hsl(var(--primary))",
-              DEFAULT: "hsl(var(--primary))",
+              foreground: "#2185D5",
+              DEFAULT: "#2185D5",
             },
             secondary: {
-              foreground: "hsl(var(--secondary))",
-              DEFAULT: "hsl(var(--secondary))",
+              foreground: "#3A4750",
+              DEFAULT: "#3A4750",
             },
-            dark: "hsl(var(--dark))",
-            gray: "hsl(var(--gray))",
+            dark: "#303841",
+            gray: "#F3F3F3",
           },
         },
         dark: {
           colors: {
             background: "hsl(212, 15%, 22%)",
             primary: {
-              foreground: "hsl(var(--primary))",
-              DEFAULT: "hsl(var(--primary))",
+              foreground: "#2185D5",
+              DEFAULT: "#2185D5",
             },
             secondary: {
-              foreground: "hsl(var(--secondary))",
-              DEFAULT: "hsl(var(--secondary))",
+              foreground: "#3A4750",
+              DEFAULT: "#3A4750",
             },
-            dark: "hsl(var(--dark))",
-            gray: "hsl(var(--gray))",
+            dark: "#303841",
+            gray: "#F3F3F3",
           },
         },
       },

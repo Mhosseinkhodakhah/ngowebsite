@@ -2,6 +2,7 @@ import Image from "next/image";
 
 import Slider from "../common/slider";
 import Title from "../common/title";
+import Card from "../common/card";
 
 function SimilarNgosSlider() {
   return (
@@ -13,15 +14,12 @@ function SimilarNgosSlider() {
       />
       <div className="flex flex-col w-full lg:w-2/3 px-12 mt-20">
         <Slider content={[{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }]}>
-          <div>
-            <Image
-              alt="slide 1"
-              className="w-full h-full"
-              height={100}
-              src="https://fakeimg.pl/600x400"
-              width={100}
-            />
-          </div>
+          <Card
+            description="Lorem Ipsum is simply dummy text of the printing and typesetting industry"
+            imageUrl="https://fakeimg.pl/600x400"
+            name="NGO Name"
+            route="/ngo/2"
+          />
         </Slider>
       </div>
     </section>

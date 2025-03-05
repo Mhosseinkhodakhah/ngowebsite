@@ -10,7 +10,13 @@ function Title({
   page?: string;
 }) {
   const t = useTranslations(
-    page === "aboutUs" ? "aboutUs" : page === "NGOPage" ? "NGOPage" : "navbar",
+    page === "aboutUs"
+      ? "aboutUs"
+      : page === "NGOPage"
+        ? "NGOPage"
+        : page === "statics"
+          ? "statics"
+          : "navbar",
   );
 
   return (
