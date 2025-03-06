@@ -365,7 +365,7 @@
     "Choose Logo": "Choose Logo",
     "Logo": "Logo",
     "Upload Document": "Upload Document",
-    "Drop the files here ...": "Drop the files here ...",
+    "Drop the files here": "Drop the files here ...",
     "Is it allowed to publish information publicly?": "Is it allowed to publish information publicly?",
     "Limited": "Limited",
     "Information authorized for publication": "Information authorized for publication",
@@ -376,6 +376,12 @@
     "Cancel": "Cancel",
     "Country not found.": "Country not found.",
     "Code not found": "Code not found"
+  },
+
+  "dashboard": {
+    "Projects": "Projects",
+    "Documents": "Documents",
+    "Logout": "Logout"
   },
 
   "footer": {

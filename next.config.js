@@ -18,6 +18,16 @@ const nextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      // Wildcard path matching
+      {
+        source: "/[locale]/dashboard",
+        destination: "/dashboard/projects",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 const withNextIntl = createNextIntlPlugin();

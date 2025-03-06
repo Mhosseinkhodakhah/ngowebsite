@@ -1,9 +1,11 @@
-function Page() {
-  return (
-    <div>
-      <h1>DASHBOARD</h1>
-    </div>
-  );
+import { redirect } from "@/i18n/navigation";
+
+async function Page({ params }: { params: any }) {
+  const { locale } = await params;
+
+  redirect({ href: "/dashboard/projects", locale: locale });
+
+  return <></>;
 }
 
 export default Page;

@@ -363,7 +363,7 @@
     "Choose Logo": "Выберите логотип",
     "Logo": "Логотип",
     "Upload Document": "Загрузить документ",
-    "Drop the files here ...": "Кидайте файлы сюда...",
+    "Drop the files here": "Кидайте файлы сюда...",
     "Is it allowed to publish information publicly?": "Разрешено ли публиковать информацию публично?",
     "Limited": "Ограниченный",
     "Information authorized for publication": "Информация разрешена к публикации",
@@ -372,9 +372,13 @@
     "I have read the registration terms and conditions and I agree with them Any liability arising from non-compliance These conditions will be the responsibility of this organization": "Я прочитал условия регистрации и согласен с ними. Любая ответственность, возникающая в результате несоблюдения настоящих условий, будет нести ответственность данной организации.",
     "Submit": "Представлять на рассмотрение",
     "Cancel": "Отмена",
-    "No results found.": "Результаты не найдены.",
     "Country not found": "Страна не найдена",
     "Code not found": "Код не найден"
+  },
+  "dashboard": {
+    "Projects": "Проекты",
+    "Documents": "Документы",
+    "Logout": "Выход из системы"
   },
   "footer": {
     "Get Updates": "Получайте обновления",

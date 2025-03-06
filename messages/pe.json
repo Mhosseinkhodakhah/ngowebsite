@@ -365,7 +365,7 @@
     "Choose Logo": "انتخاب نشان",
     "Logo": "نشان",
     "Upload Document": "بارگذاری مستندات",
-    "Drop the files here ...": "فایل ها را اینجا رها کنید...",
+    "Drop the files here": "فایل ها را اینجا رها کنید...",
     "Is it allowed to publish information publicly?": "آیا انتشار اطلاعات به صورت عمومی مجاز است؟",
     "Limited": "به صورت محدود",
     "Information authorized for publication": "اطلاعات مجاز برای انتشار",
@@ -376,6 +376,11 @@
     "Cancel": "انصراف",
     "Country not found": "کشور یافت نشد.",
     "Code not found": "کد یافت نشد"
+  },
+  "dashboard": {
+    "Projects": "پروژها",
+    "Documents": "مدارک و مستندات",
+    "Logout": "خروج"
   },
   "footer": {
     "Get Updates": "دریافت آخرین اخبار",

@@ -81,7 +81,7 @@ function UploadSection() {
           {isDragActive ? (
             <div>
               <GalleryIcon />
-              <p>{t("Drop the files here ...")}</p>
+              <p>{t("Drop the files here")}</p>
             </div>
           ) : (
             <div className="flex flex-col justify-center items-center gap-4">
