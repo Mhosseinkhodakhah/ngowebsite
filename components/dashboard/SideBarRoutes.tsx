@@ -18,10 +18,10 @@ function SideBarRoutes({ route }: Props) {
 
   return (
     <li
-      className={`px-4  rounded-md ${pathname.includes(route.name.toLowerCase()) ? "bg-primary text-gray " : "text-secondary dark:text-gray hover:bg-dark dark:hover:bg-dark"} transition ease-in duration-100`}
+      className={`px-4  rounded-md ${pathname.includes(route.name.toLowerCase()) ? "bg-primary text-gray " : "text-secondary dark:text-gray hover:bg-[#EAEAEA] dark:hover:bg-dark"} transition ease-in duration-100`}
     >
       <Link
-        className={`w-full flex justify-between items-center h-full py-2 ${pathname.includes(route.name.toLowerCase()) ? "bg-primary text-gray rounded-md" : "text-secondary dark:text-gray hover:text-gray  dark:hover:bg-dark"} transition ease-in duration-100`}
+        className={`w-full flex justify-between items-center h-full py-2 ${pathname.includes(route.name.toLowerCase()) ? "bg-primary text-gray rounded-md" : "text-secondary dark:text-gray hover:text-dark  dark:hover:bg-dark"} transition ease-in duration-100`}
         href={route.routes}
       >
         {t(route.name)}

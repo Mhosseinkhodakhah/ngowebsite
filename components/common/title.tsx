@@ -18,7 +18,9 @@ function Title({
           ? "statics"
           : page === "ngo-registration"
             ? "ngo-registration"
-            : "navbar",
+            : page === "dashboard"
+              ? "dashboard"
+              : "navbar",
   );
 
   return (

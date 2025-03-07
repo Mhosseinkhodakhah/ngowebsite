@@ -219,6 +219,20 @@
     "@heroui/react-utils" "2.1.8"
     "@heroui/shared-utils" "2.1.7"
 
+"@heroui/breadcrumbs@^2.2.11":
+  version "2.2.11"
+  resolved "https://registry.npmjs.org/@heroui/breadcrumbs/-/breadcrumbs-2.2.11.tgz#5a5acf2e8e479d6d5fa1f5212f625e735fb13e9e"
+  integrity sha512-DfrJhUT+HyiFh/F5j6CI7yxVuwd+F2sfJOC3EJrrbsrUS1q5ZXapkX1e4hkzAJ4SG31cb+fM3Np+8ga/Vdq+sg==
+  dependencies:
+    "@heroui/react-utils" "2.1.8"
+    "@heroui/shared-icons" "2.1.6"
+    "@heroui/shared-utils" "2.1.7"
+    "@react-aria/breadcrumbs" "3.5.20"
+    "@react-aria/focus" "3.19.1"
+    "@react-aria/utils" "3.27.0"
+    "@react-types/breadcrumbs" "3.7.10"
+    "@react-types/shared" "3.27.0"
+
 "@heroui/button@2.2.13":
   version "2.2.13"
   resolved "https://registry.npmjs.org/@heroui/button/-/button-2.2.13.tgz"
@@ -814,6 +828,25 @@
     "@react-types/overlays" "3.8.12"
     "@react-types/tooltip" "3.4.14"
 
+"@heroui/tooltip@^2.2.12":
+  version "2.2.12"
+  resolved "https://registry.npmjs.org/@heroui/tooltip/-/tooltip-2.2.12.tgz#225e984efdd8407a2b9c6cb14a19b9103a4b9726"
+  integrity sha512-S9Hpc+DvK+E1lKEahBDGrIImzC99cVLjtB3bkv3u0zAhkEFfTs9JM5ti4wNWANG7i7G80MZemNRXHA0LQQmCtg==
+  dependencies:
+    "@heroui/aria-utils" "2.2.12"
+    "@heroui/dom-animation" "2.1.6"
+    "@heroui/framer-utils" "2.1.11"
+    "@heroui/react-utils" "2.1.8"
+    "@heroui/shared-utils" "2.1.7"
+    "@heroui/use-safe-layout-effect" "2.1.6"
+    "@react-aria/interactions" "3.23.0"
+    "@react-aria/overlays" "3.25.0"
+    "@react-aria/tooltip" "3.7.11"
+    "@react-aria/utils" "3.27.0"
+    "@react-stately/tooltip" "3.5.1"
+    "@react-types/overlays" "3.8.12"
+    "@react-types/tooltip" "3.4.14"
+
 "@heroui/use-aria-accordion@2.2.7":
   version "2.2.7"
   resolved "https://registry.npmjs.org/@heroui/use-aria-accordion/-/use-aria-accordion-2.2.7.tgz#1cb89180b975d1d5449fb83c00909637391c905f"
@@ -1234,6 +1267,18 @@
   resolved "https://registry.npmjs.org/@pkgr/core/-/core-0.1.1.tgz"
   integrity sha512-cq8o4cWH0ibXh9VGi5P20Tu9XF/0fFXl9EUinr9QfTM7a7p0oTA4iJRCQWppXR1Pg8dSM0UCItCkPwsk9qWWYA==
 
+"@react-aria/breadcrumbs@3.5.20":
+  version "3.5.20"
+  resolved "https://registry.npmjs.org/@react-aria/breadcrumbs/-/breadcrumbs-3.5.20.tgz#b4b2d8647b6386d34c721db4a22f1675c63c1a97"
+  integrity sha512-xqVSSDPpQuUFpJyIXMQv8L7zumk5CeGX7qTzo4XRvqm5T9qnNAX4XpYEMdktnLrQRY/OemCBScbx7SEwr0B3Kg==
+  dependencies:
+    "@react-aria/i18n" "^3.12.5"
+    "@react-aria/link" "^3.7.8"
+    "@react-aria/utils" "^3.27.0"
+    "@react-types/breadcrumbs" "^3.7.10"
+    "@react-types/shared" "^3.27.0"
+    "@swc/helpers" "^0.5.0"
+
 "@react-aria/button@3.11.1":
   version "3.11.1"
   resolved "https://registry.npmjs.org/@react-aria/button/-/button-3.11.1.tgz"
@@ -1384,6 +1429,17 @@
     "@react-types/shared" "^3.27.0"
     "@swc/helpers" "^0.5.0"
 
+"@react-aria/interactions@^3.24.0":
+  version "3.24.0"
+  resolved "https://registry.npmjs.org/@react-aria/interactions/-/interactions-3.24.0.tgz#5502ff5049578a6ae8cdbc3d96d64fb6ceeef362"
+  integrity sha512-6Zdhp1pswyPgbwEWzvXARdKAWPjP7mACczoIUvlEQiMsX04fuizBiBLAA+W/5mPe17pbJYHA/rxZF5Y5m+M0Ng==
+  dependencies:
+    "@react-aria/ssr" "^3.9.7"
+    "@react-aria/utils" "^3.28.0"
+    "@react-stately/flags" "^3.1.0"
+    "@react-types/shared" "^3.28.0"
+    "@swc/helpers" "^0.5.0"
+
 "@react-aria/label@^3.7.14":
   version "3.7.14"
   resolved "https://registry.npmjs.org/@react-aria/label/-/label-3.7.14.tgz"
@@ -1403,6 +1459,17 @@
     "@react-aria/utils" "^3.27.0"
     "@react-types/link" "^3.5.10"
     "@react-types/shared" "^3.27.0"
+    "@swc/helpers" "^0.5.0"
+
+"@react-aria/link@^3.7.8":
+  version "3.7.9"
+  resolved "https://registry.npmjs.org/@react-aria/link/-/link-3.7.9.tgz#cf48a85cd420fd41d8db710f0500f3dd807662e8"
+  integrity sha512-2LE3p5Gqp1Tl/3JF4CmeJT3RsdDBawBaIMlqiOT7t505z1TZI8ygHHq5FFok8FMwpy2yxpqRNW9jDa3gZj575w==
+  dependencies:
+    "@react-aria/interactions" "^3.24.0"
+    "@react-aria/utils" "^3.28.0"
+    "@react-types/link" "^3.5.11"
+    "@react-types/shared" "^3.28.0"
     "@swc/helpers" "^0.5.0"
 
 "@react-aria/listbox@3.14.0", "@react-aria/listbox@^3.14.0":
@@ -1570,6 +1637,18 @@
     "@swc/helpers" "^0.5.0"
     clsx "^2.0.0"
 
+"@react-aria/utils@^3.28.0":
+  version "3.28.0"
+  resolved "https://registry.npmjs.org/@react-aria/utils/-/utils-3.28.0.tgz#8b524815bb368c16efa1aba04a5d92b7014624ee"
+  integrity sha512-FfpvpADk61OvEnFe37k6jF1zr5gtafIPN9ccJRnPCTqrzuExag01mGi+wX/hWyFK0zAe1OjWf1zFOX3FsFvikg==
+  dependencies:
+    "@react-aria/ssr" "^3.9.7"
+    "@react-stately/flags" "^3.1.0"
+    "@react-stately/utils" "^3.10.5"
+    "@react-types/shared" "^3.28.0"
+    "@swc/helpers" "^0.5.0"
+    clsx "^2.0.0"
+
 "@react-aria/visually-hidden@3.8.19", "@react-aria/visually-hidden@^3.8.19":
   version "3.8.19"
   resolved "https://registry.npmjs.org/@react-aria/visually-hidden/-/visually-hidden-3.8.19.tgz"
@@ -1637,6 +1716,13 @@
     "@react-stately/utils" "^3.10.5"
     "@react-types/datepicker" "^3.10.0"
     "@react-types/shared" "^3.27.0"
+    "@swc/helpers" "^0.5.0"
+
+"@react-stately/flags@^3.1.0":
+  version "3.1.0"
+  resolved "https://registry.npmjs.org/@react-stately/flags/-/flags-3.1.0.tgz#04a97edb487c6ca6723397315ca7257b5bd8708b"
+  integrity sha512-KSHOCxTFpBtxhIRcKwsD1YDTaNxFtCYuAUb0KEihc16QwqZViq4hasgPBs2gYm7fHRbw7WYzWKf6ZSo/+YsFlg==
+  dependencies:
     "@swc/helpers" "^0.5.0"
 
 "@react-stately/form@3.1.1", "@react-stately/form@^3.1.1":
@@ -1743,6 +1829,22 @@
   dependencies:
     "@react-types/shared" "^3.27.0"
 
+"@react-types/breadcrumbs@3.7.10":
+  version "3.7.10"
+  resolved "https://registry.npmjs.org/@react-types/breadcrumbs/-/breadcrumbs-3.7.10.tgz#4d5b84460890107e6438b8d00025557cc7163237"
+  integrity sha512-5HhRxkKHfAQBoyOYzyf4HT+24HgPE/C/QerxJLNNId303LXO03yeYrbvRqhYZSlD1ACLJW9OmpPpREcw5iSqgw==
+  dependencies:
+    "@react-types/link" "^3.5.10"
+    "@react-types/shared" "^3.27.0"
+
+"@react-types/breadcrumbs@^3.7.10":
+  version "3.7.11"
+  resolved "https://registry.npmjs.org/@react-types/breadcrumbs/-/breadcrumbs-3.7.11.tgz#34ef069099b9c01068f26d8a2d1f886ca14a439f"
+  integrity sha512-pMvMLPFr7qs4SSnQ0GyX7i3DkWVs9wfm1lGPFbBO7pJLrHTSK/6Ii4cTEvP6d5o2VgjOVkvce9xCLWW5uosuEQ==
+  dependencies:
+    "@react-types/link" "^3.5.11"
+    "@react-types/shared" "^3.28.0"
+
 "@react-types/button@3.10.2", "@react-types/button@^3.10.2":
   version "3.10.2"
   resolved "https://registry.npmjs.org/@react-types/button/-/button-3.10.2.tgz"
@@ -1804,6 +1906,13 @@
   dependencies:
     "@react-types/shared" "^3.27.0"
 
+"@react-types/link@^3.5.11":
+  version "3.5.11"
+  resolved "https://registry.npmjs.org/@react-types/link/-/link-3.5.11.tgz#0768ade2be65bda50df583a90f784df6507427ef"
+  integrity sha512-aX9sJod9msdQaOT0NUTYNaBKSkXGPazSPvUJ/Oe4/54T3sYkWeRqmgJ84RH55jdBzpbObBTg8qxKiPA26a1q9Q==
+  dependencies:
+    "@react-types/shared" "^3.28.0"
+
 "@react-types/listbox@^3.5.4":
   version "3.5.4"
   resolved "https://registry.npmjs.org/@react-types/listbox/-/listbox-3.5.4.tgz"
@@ -1842,6 +1951,11 @@
   version "3.27.0"
   resolved "https://registry.npmjs.org/@react-types/shared/-/shared-3.27.0.tgz"
   integrity sha512-gvznmLhi6JPEf0bsq7SwRYTHAKKq/wcmKqFez9sRdbED+SPMUmK5omfZ6w3EwUFQHbYUa4zPBYedQ7Knv70RMw==
+
+"@react-types/shared@^3.28.0":
+  version "3.28.0"
+  resolved "https://registry.npmjs.org/@react-types/shared/-/shared-3.28.0.tgz#7b4b5485b758228bdbe31ecae66ed07a29e2be4d"
+  integrity sha512-9oMEYIDc3sk0G5rysnYvdNrkSg7B04yTKl50HHSZVbokeHpnU0yRmsDaWb9B/5RprcKj8XszEk5guBO8Sa/Q+Q==
 
 "@react-types/switch@^3.5.8":
   version "3.5.8"
