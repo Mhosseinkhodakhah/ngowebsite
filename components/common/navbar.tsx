@@ -1,16 +1,10 @@
 "use client";
 
-import {
-  NavbarContent,
-  NavbarMenu,
-  NavbarBrand,
-  NavbarItem,
-} from "@heroui/navbar";
+import { NavbarContent, NavbarBrand, NavbarItem } from "@heroui/navbar";
 import NextLink from "next/link";
 
 import LoginBtn from "../navbar/LoginBtn";
 import Links from "../navbar/Links";
-import MenuLinks from "../navbar/MenuLinks";
 import NavbarContainer from "../navbar/NavbarContainer";
 
 import LanguageSwitch from "./language-switch";

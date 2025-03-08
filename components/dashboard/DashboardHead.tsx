@@ -36,7 +36,7 @@ function DashboardHead() {
               </Link>
             </BreadcrumbItem>
           )}
-          {pathname.includes("add-documents") && (
+          {pathname.includes("add-document") && (
             <BreadcrumbItem>
               <Link href="/dashboard/documents/add-documents">
                 {t("Add Documents")}

@@ -437,7 +437,8 @@
     "PDF": "PDF",
     "Video": "Video",
     "Description Doc": "Description",
-    "Delete Documents":"Delete Documents"
+    "Delete Documents": "Delete Documents",
+    "Uploading documents and records": "Uploading documents and records"
   },
 
   "footer": {

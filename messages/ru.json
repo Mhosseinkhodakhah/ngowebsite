@@ -434,7 +434,8 @@
     "PDF": "PDF",
     "Video": "Видео",
     "Description Doc": "Описание",
-    "Delete Documents": "Удалить документы"
+    "Delete Documents": "Удалить документы",
+    "Uploading documents and records": "Загрузка документов и записей"
   },
   "footer": {
     "Get Updates": "Получайте обновления",
