@@ -1,13 +1,14 @@
 import AddButton from "@/components/dashboard/AddButton";
 import DashboardHead from "@/components/dashboard/DashboardHead";
+import DocumentsTable from "@/components/dashboard/DocumentsTable";
 
 function Page() {
   return (
-    <div className="w-full md:w-3/5 lg:w-3/4 p-10">
+    <section className="flex flex-col items-center w-full md:w-3/5 lg:w-3/4 px-10 overflow-y-auto">
       <DashboardHead />
       <AddButton />
-      <p>This is the Document Page.</p>
-    </div>
+      <DocumentsTable />
+    </section>
   );
 }
 

@@ -427,7 +427,16 @@
     "Link": "لینک",
     "Actions": "اقدامات",
     "Delete Project": "حذف پروژه",
-    "Search": "جستجو"
+    "Search": "جستجو",
+    "NGO Name": "نام سمن",
+    "Interface Name": "نام رابط",
+    "Document Type": "نوع اسناد",
+    "Image": "تصویر",
+    "Word File": "وورد",
+    "PDF": "پی دی اف",
+    "Video": "ویدیو",
+    "Description Doc": "توضیحات",
+    "Delete Documents": "حذف اسناد"
   },
   "footer": {
     "Get Updates": "دریافت آخرین اخبار",

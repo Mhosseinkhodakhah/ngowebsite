@@ -425,7 +425,16 @@
     "Link": "Связь",
     "Actions": "Действия",
     "Delete Project": "Удалить проект",
-    "Search": "Поиск"
+    "Search": "Поиск",
+    "NGO Name": "Название НПО",
+    "Interface Name": "Имя интерфейса",
+    "Document Type": "Тип документа",
+    "Image": "Изображение",
+    "Word File": "Word",
+    "PDF": "PDF",
+    "Video": "Видео",
+    "Description Doc": "Описание",
+    "Delete Documents": "Удалить документы"
   },
   "footer": {
     "Get Updates": "Получайте обновления",

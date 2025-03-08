@@ -428,7 +428,16 @@
     "Link": "Link",
     "Actions": "Actions",
     "Delete Project": "Delete Project",
-    "Search": "Search"
+    "Search": "Search",
+    "NGO Name": "NGO Name",
+    "Interface Name": "Interface Name",
+    "Document Type": "Document Type",
+    "Image": "Image",
+    "Word File": "Word File",
+    "PDF": "PDF",
+    "Video": "Video",
+    "Description Doc": "Description",
+    "Delete Documents":"Delete Documents"
   },
 
   "footer": {
