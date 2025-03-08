@@ -420,7 +420,15 @@
     "Select File": "Select File",
     "Visual documents": "Visual documents",
     "More Information": "More Information",
-    "Link for additional information": "Link for additional information"
+    "Link for additional information": "Link for additional information",
+    "City": "City",
+    "Project Manager Name": "Project Manager Name",
+    "Project Manager Email": "Project Manager Email",
+    "Project Manager Phone": "Project Manager Phone",
+    "Link": "Link",
+    "Actions": "Actions",
+    "Delete Project": "Delete Project",
+    "Search": "Search"
   },
 
   "footer": {

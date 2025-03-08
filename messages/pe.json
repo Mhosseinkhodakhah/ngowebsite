@@ -418,7 +418,16 @@
     "Select File": "انتخاب فایل",
     "Visual documents": "اسناد تصویری (عکس با مشخصات)",
     "More Information": "اطلاعات بیشتر",
-    "Link for additional information": "لینک برای اطلاعات بیشتر"
+    "Link for additional information": "لینک برای اطلاعات بیشتر",
+    "Country": "کشور",
+    "City": "شهر",
+    "Project Manager Name": "نام مدیر پروژه",
+    "Project Manager Email": "ایمیل مدیر پروژه",
+    "Project Manager Phone": "تلفن مدیر پروژه",
+    "Link": "لینک",
+    "Actions": "اقدامات",
+    "Delete Project": "حذف پروژه",
+    "Search": "جستجو"
   },
   "footer": {
     "Get Updates": "دریافت آخرین اخبار",

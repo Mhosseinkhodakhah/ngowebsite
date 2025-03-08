@@ -33,7 +33,7 @@ function AddButton() {
     >
       <Button
         isIconOnly
-        className={`text-gray fixed ${locale === "pe" ? "left-10" : "right-10"} bottom-10 rounded-full`}
+        className={`text-gray fixed ${locale === "pe" ? "left-10" : "right-10"} bottom-10 rounded-full z-10 hidden md:flex`}
         color="primary"
         variant="shadow"
         onPress={handlePress}

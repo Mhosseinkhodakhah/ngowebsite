@@ -416,7 +416,16 @@
     "Select File": "Выберите файл",
     "Visual documents": "Визуальные документы",
     "More Information": "Дополнительная информация",
-    "Link for additional information": "Ссылка для дополнительной информации"
+    "Link for additional information": "Ссылка для дополнительной информации",
+    "City": "Город",
+    "Country": "Страна",
+    "Project Manager Name": "Имя менеджера проекта",
+    "Project Manager Email": "Электронная почта менеджера проекта",
+    "Project Manager Phone": "Телефон менеджера проекта",
+    "Link": "Связь",
+    "Actions": "Действия",
+    "Delete Project": "Удалить проект",
+    "Search": "Поиск"
   },
   "footer": {
     "Get Updates": "Получайте обновления",
