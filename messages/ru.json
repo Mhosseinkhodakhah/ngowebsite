@@ -1,9 +1,18 @@
 {
+  "common": {
+    "See More": "Посмотреть больше",
+    "Read More": "Читать далее",
+    "Sort": "Сортировать",
+    "Recently": "Недавно",
+    "Last": "Последний",
+    "Total": "Общий",
+    "Filter": "Фильтр"
+  },
   "navbar": {
     "Home": "Дом",
     "About Us": "нас",
     "NGO": "НПО",
-    "Education": "Образование",
+    "Education & Training": "Образование и обучение",
     "Events": "События",
     "Projects": "Проекты",
     "Data Archive": "Архив данных",
@@ -21,7 +30,6 @@
   },
   "homePage": {
     "title": "HHHHH",
-    "Read More": "Читать далее",
     "More About Us": "Подробнее о нас",
     "Join Us": "Присоединяйтесь к нам"
   },
@@ -436,6 +444,13 @@
     "Description Doc": "Описание",
     "Delete Documents": "Удалить документы",
     "Uploading documents and records": "Загрузка документов и записей"
+  },
+  "education": {
+    "Filter by file format": "Фильтровать по формату файла",
+    "Image": "Изображение",
+    "Word File": "Word",
+    "PDF": "PDF",
+    "Video": "Видео"
   },
   "footer": {
     "Get Updates": "Получайте обновления",

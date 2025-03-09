@@ -5,8 +5,8 @@ import { useTranslations } from "next-intl";
 
 import { useRouter } from "@/i18n/navigation";
 
-function CardButton({ route }: { route: string }) {
-  const t = useTranslations("homePage");
+function CardButton({ route, btnText }: { route: string; btnText?: string }) {
+  const t = useTranslations("common");
   const router = useRouter();
 
   const handlePressed = () => {
@@ -21,7 +21,7 @@ function CardButton({ route }: { route: string }) {
       variant="shadow"
       onPress={handlePressed}
     >
-      {t("Read More")}
+      {btnText ? t(btnText) : t("Read More")}
     </Button>
   );
 }

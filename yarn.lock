@@ -314,6 +314,19 @@
     "@react-types/checkbox" "3.9.1"
     "@react-types/shared" "3.27.0"
 
+"@heroui/chip@^2.2.12":
+  version "2.2.12"
+  resolved "https://registry.npmjs.org/@heroui/chip/-/chip-2.2.12.tgz#b0697bb052c73a4c0352d100ceef3c771d61ac2e"
+  integrity sha512-4wyIrkr4CtsvCgjdLe5v3kov2uQEPBRlJJdlTyRaBsHQ7hLtQaKXKPPmiK6x+2yrzth5PUAyueJF1YsRBxZL1g==
+  dependencies:
+    "@heroui/react-utils" "2.1.8"
+    "@heroui/shared-icons" "2.1.6"
+    "@heroui/shared-utils" "2.1.7"
+    "@react-aria/focus" "3.20.0"
+    "@react-aria/interactions" "3.24.0"
+    "@react-aria/utils" "3.28.0"
+    "@react-types/checkbox" "3.9.2"
+
 "@heroui/code@2.2.10":
   version "2.2.10"
   resolved "https://registry.npmjs.org/@heroui/code/-/code-2.2.10.tgz"
@@ -591,6 +604,22 @@
     "@react-aria/utils" "3.27.0"
     "@react-stately/toggle" "3.8.1"
     "@react-stately/utils" "3.10.5"
+
+"@heroui/pagination@^2.2.14":
+  version "2.2.14"
+  resolved "https://registry.npmjs.org/@heroui/pagination/-/pagination-2.2.14.tgz#d48b47516898a3e0f027fe480007adf5eb974d3d"
+  integrity sha512-QjZwCtMK9l8KjCnjEppbTHVRoUXz6zCBfSMgFLJ8cEuiDTzNQqmKe1H0q6dzzb5wbbWSQlAe8SX+nuNFQ1SJXw==
+  dependencies:
+    "@heroui/react-utils" "2.1.8"
+    "@heroui/shared-icons" "2.1.6"
+    "@heroui/shared-utils" "2.1.7"
+    "@heroui/use-intersection-observer" "2.2.8"
+    "@heroui/use-pagination" "2.2.9"
+    "@react-aria/focus" "3.20.0"
+    "@react-aria/i18n" "3.12.6"
+    "@react-aria/interactions" "3.24.0"
+    "@react-aria/utils" "3.28.0"
+    scroll-into-view-if-needed "3.0.10"
 
 "@heroui/popover@2.3.15":
   version "2.3.15"
@@ -923,6 +952,16 @@
     "@heroui/react-utils" "2.1.8"
     "@heroui/use-safe-layout-effect" "2.1.6"
 
+"@heroui/use-intersection-observer@2.2.8":
+  version "2.2.8"
+  resolved "https://registry.npmjs.org/@heroui/use-intersection-observer/-/use-intersection-observer-2.2.8.tgz#17ec720f18717fd87a180b20f48d3851b18a8f16"
+  integrity sha512-A9YQCS5UecgkdfGhxevHJRfdH9zZg4YpRlaOB3qrJIfjBupW+89IUSUsuS1UQEsoi14fK7f7QRGJDov+XBmgBA==
+  dependencies:
+    "@react-aria/interactions" "3.24.0"
+    "@react-aria/ssr" "3.9.7"
+    "@react-aria/utils" "3.28.0"
+    "@react-types/shared" "3.28.0"
+
 "@heroui/use-is-mobile@2.2.6":
   version "2.2.6"
   resolved "https://registry.npmjs.org/@heroui/use-is-mobile/-/use-is-mobile-2.2.6.tgz"
@@ -946,6 +985,14 @@
   version "2.1.6"
   resolved "https://registry.npmjs.org/@heroui/use-measure/-/use-measure-2.1.6.tgz#18575474409b88e783b60df39df4560bd4069b81"
   integrity sha512-FiN3Za6hExqU1B0d2drCm9JUFneQ1W5gyNoX0owf3aIWG98QR+LR1MOL3WBAGWtDsp4K6q8rqUKXatNxGJd/sA==
+
+"@heroui/use-pagination@2.2.9":
+  version "2.2.9"
+  resolved "https://registry.npmjs.org/@heroui/use-pagination/-/use-pagination-2.2.9.tgz#a2d48d7a4f9302978a9d4b9edfd42a28057d2d1c"
+  integrity sha512-5walu5+b9i/8Nsv5xNFIRh9Cdqk+8ZJIBTNqAtXeJnRjvdPJ+kZteiIJkDOHbsMdWJXBlekNOjuoDlcvLKNeHg==
+  dependencies:
+    "@heroui/shared-utils" "2.1.7"
+    "@react-aria/i18n" "3.12.6"
 
 "@heroui/use-safe-layout-effect@2.1.5":
   version "2.1.5"
@@ -1394,6 +1441,17 @@
     "@swc/helpers" "^0.5.0"
     clsx "^2.0.0"
 
+"@react-aria/focus@3.20.0":
+  version "3.20.0"
+  resolved "https://registry.npmjs.org/@react-aria/focus/-/focus-3.20.0.tgz#eb46f9f285c17a5357d09c3ded65aaa6a23e1f6d"
+  integrity sha512-KXZCwWzwnmtUo6xhnyV26ptxlxmqd0Reez7axduqqqeDDgDZOVscoo/5gFg71fdPZmnDC8MyUK1vxSbMhOTrGg==
+  dependencies:
+    "@react-aria/interactions" "^3.24.0"
+    "@react-aria/utils" "^3.28.0"
+    "@react-types/shared" "^3.28.0"
+    "@swc/helpers" "^0.5.0"
+    clsx "^2.0.0"
+
 "@react-aria/form@^3.0.12":
   version "3.0.12"
   resolved "https://registry.npmjs.org/@react-aria/form/-/form-3.0.12.tgz"
@@ -1419,6 +1477,20 @@
     "@react-types/shared" "^3.27.0"
     "@swc/helpers" "^0.5.0"
 
+"@react-aria/i18n@3.12.6":
+  version "3.12.6"
+  resolved "https://registry.npmjs.org/@react-aria/i18n/-/i18n-3.12.6.tgz#0b45bff2b9c0421e7fbfff2dc3a3c02d78ff819d"
+  integrity sha512-I2Qz1vAlgdeW2GUMLhHucYhk514/BRuEzvH1iih8qeqvv0gEbKdSIjPJUomW+WzYVmJ2/bwKQAr7otr2fNcbrw==
+  dependencies:
+    "@internationalized/date" "^3.7.0"
+    "@internationalized/message" "^3.1.6"
+    "@internationalized/number" "^3.6.0"
+    "@internationalized/string" "^3.2.5"
+    "@react-aria/ssr" "^3.9.7"
+    "@react-aria/utils" "^3.28.0"
+    "@react-types/shared" "^3.28.0"
+    "@swc/helpers" "^0.5.0"
+
 "@react-aria/interactions@3.23.0", "@react-aria/interactions@^3.23.0":
   version "3.23.0"
   resolved "https://registry.npmjs.org/@react-aria/interactions/-/interactions-3.23.0.tgz"
@@ -1429,7 +1501,7 @@
     "@react-types/shared" "^3.27.0"
     "@swc/helpers" "^0.5.0"
 
-"@react-aria/interactions@^3.24.0":
+"@react-aria/interactions@3.24.0", "@react-aria/interactions@^3.24.0":
   version "3.24.0"
   resolved "https://registry.npmjs.org/@react-aria/interactions/-/interactions-3.24.0.tgz#5502ff5049578a6ae8cdbc3d96d64fb6ceeef362"
   integrity sha512-6Zdhp1pswyPgbwEWzvXARdKAWPjP7mACczoIUvlEQiMsX04fuizBiBLAA+W/5mPe17pbJYHA/rxZF5Y5m+M0Ng==
@@ -1637,7 +1709,7 @@
     "@swc/helpers" "^0.5.0"
     clsx "^2.0.0"
 
-"@react-aria/utils@^3.28.0":
+"@react-aria/utils@3.28.0", "@react-aria/utils@^3.28.0":
   version "3.28.0"
   resolved "https://registry.npmjs.org/@react-aria/utils/-/utils-3.28.0.tgz#8b524815bb368c16efa1aba04a5d92b7014624ee"
   integrity sha512-FfpvpADk61OvEnFe37k6jF1zr5gtafIPN9ccJRnPCTqrzuExag01mGi+wX/hWyFK0zAe1OjWf1zFOX3FsFvikg==
@@ -1867,6 +1939,13 @@
   dependencies:
     "@react-types/shared" "^3.27.0"
 
+"@react-types/checkbox@3.9.2":
+  version "3.9.2"
+  resolved "https://registry.npmjs.org/@react-types/checkbox/-/checkbox-3.9.2.tgz#3bf842a19b424d8fda06d575cd4a492959b0863a"
+  integrity sha512-BruOLjr9s0BS2+G1Q2ZZ0ubnSTG54hZWr59lCHXaLxMdA/+KVsR6JVMQuYKsW0P8RDDlQXE/QGz3n9yB/Ara4A==
+  dependencies:
+    "@react-types/shared" "^3.28.0"
+
 "@react-types/combobox@3.13.2", "@react-types/combobox@^3.13.2":
   version "3.13.2"
   resolved "https://registry.npmjs.org/@react-types/combobox/-/combobox-3.13.2.tgz#b6ee140166691e59bebe57f082dc6127f9bb7210"
@@ -1952,7 +2031,7 @@
   resolved "https://registry.npmjs.org/@react-types/shared/-/shared-3.27.0.tgz"
   integrity sha512-gvznmLhi6JPEf0bsq7SwRYTHAKKq/wcmKqFez9sRdbED+SPMUmK5omfZ6w3EwUFQHbYUa4zPBYedQ7Knv70RMw==
 
-"@react-types/shared@^3.28.0":
+"@react-types/shared@3.28.0", "@react-types/shared@^3.28.0":
   version "3.28.0"
   resolved "https://registry.npmjs.org/@react-types/shared/-/shared-3.28.0.tgz#7b4b5485b758228bdbe31ecae66ed07a29e2be4d"
   integrity sha512-9oMEYIDc3sk0G5rysnYvdNrkSg7B04yTKl50HHSZVbokeHpnU0yRmsDaWb9B/5RprcKj8XszEk5guBO8Sa/Q+Q==

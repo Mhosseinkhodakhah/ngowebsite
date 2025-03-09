@@ -1,11 +1,12 @@
 "use client";
 
-import { useRouter } from "@/i18n/navigation";
 import { Button } from "@heroui/button";
 import { Tooltip } from "@heroui/tooltip";
 import { Icon } from "@iconify/react";
 import { useTranslations } from "next-intl";
 import { useParams, usePathname } from "next/navigation";
+
+import { useRouter } from "@/i18n/navigation";
 
 function AddButton() {
   const { locale } = useParams();

@@ -1,8 +1,18 @@
 {
+  "common": {
+    "See More": "نمایش بیشتر",
+    "Read More": "مطالعه جزئیات",
+    "Sort": "ترتیب",
+    "Recently": "جدیدترین",
+    "Last": "قدیمی ترین",
+    "Total": "مجموع",
+    "Filter": "فیلتر"
+  },
   "navbar": {
     "Home": "خانه",
     "About Us": "درباره ما",
     "NGO": "سمن",
+    "Education & Training": "آموزش و پرورش",
     "Education": "آموزش",
     "Events": "رویدادها",
     "Projects": "پروژها",
@@ -21,7 +31,6 @@
   },
   "homePage": {
     "title": "سلام دنیا",
-    "Read More": "مطالعه جزئیات",
     "More About Us": "مطالعه بیشتر",
     "Join Us": "به ما بپیوندید"
   },
@@ -438,6 +447,13 @@
     "Description Doc": "توضیحات",
     "Delete Documents": "حذف اسناد",
     "Uploading documents and records": "بارگذاری اسناد و مدارک"
+  },
+  "education": {
+    "Filter by file format": "بر اساس نوع فایل",
+    "Image": "تصویر",
+    "Word File": "وورد",
+    "PDF": "پی دی اف",
+    "Video": "ویدیو"
   },
   "footer": {
     "Get Updates": "دریافت آخرین اخبار",

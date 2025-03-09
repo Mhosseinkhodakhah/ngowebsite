@@ -1,9 +1,19 @@
 {
+  "common": {
+    "See More": "See More",
+    "Read More": "Read More",
+    "Sort": "Sort",
+    "Recently": "Recently",
+    "Last": "Last",
+    "Total": "Total",
+    "Filter": "Filter"
+  },
+
   "navbar": {
     "Home": "Home",
     "About Us": "About Us",
     "NGO": "NGO",
-    "Education": "Education",
+    "Education & Training": "Education & Training",
     "Events": "Events",
     "Projects": "Projects",
     "Data Archive": "Data Archive",
@@ -21,7 +31,6 @@
   },
   "homePage": {
     "title": "Hello world!",
-    "Read More": "Read More",
     "More About Us": "More About Us",
     "Join Us": "Join Us"
   },
@@ -439,6 +448,14 @@
     "Description Doc": "Description",
     "Delete Documents": "Delete Documents",
     "Uploading documents and records": "Uploading documents and records"
+  },
+
+  "education": {
+    "Filter by file format": "Filter by file format",
+    "Image": "Image",
+    "Word File": "Word File",
+    "PDF": "PDF",
+    "Video": "Video"
   },
 
   "footer": {

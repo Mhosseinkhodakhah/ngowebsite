@@ -7,9 +7,10 @@ interface Props {
   imageUrl: string;
   description: string;
   route: string;
+  btnText?: string;
 }
 
-function Card({ name, imageUrl, description, route }: Props) {
+function Card({ name, imageUrl, description, route, btnText }: Props) {
   return (
     <article className="border border-slate-400 dark:border-secondary rounded-md flex flex-col  gap-2  shadow-md">
       <Image
@@ -24,7 +25,7 @@ function Card({ name, imageUrl, description, route }: Props) {
         <p className="text-sm font-light p-2  overflow-hidden text-wrap">
           {description}
         </p>
-        <CardButton route={route} />
+        <CardButton btnText={btnText} route={route} />
       </div>
     </article>
   );

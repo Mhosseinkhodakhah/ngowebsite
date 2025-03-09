@@ -33,7 +33,7 @@ export const siteConfig = {
       ],
     },
     {
-      label: "Education",
+      label: "Education & Training",
       href: "/education",
     },
     {
