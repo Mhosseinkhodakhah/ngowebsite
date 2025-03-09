@@ -10,6 +10,7 @@ function Projects() {
         description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus velit
         assumenda tenetur perspiciatis sapiente cumque omnis perferendis magni
         dolore numquam!"
+        page="navbar"
         titleText="Projects"
       />
 

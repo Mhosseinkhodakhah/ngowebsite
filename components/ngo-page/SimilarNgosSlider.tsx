@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 import Slider from "../common/slider";
 import Title from "../common/title";
 import Card from "../common/card";

@@ -11,6 +11,7 @@ function Ngos() {
     <section className="my-20 flex flex-col justify-center items-center">
       <Title
         description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, assumenda."
+        page="navbar"
         titleText="NGO"
       />
       <div className="flex flex-col w-full lg:w-2/3 px-12 mt-20">

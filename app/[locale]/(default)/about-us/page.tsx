@@ -6,13 +6,12 @@ import AboutUsImage from "@/public/images/about-us-1.jpg";
 import MissionAndGoal from "@/public/images/mission-and-goal.png";
 
 export default function AboutPage() {
-  const t = useTranslations("aboutUs");
-
   return (
     <>
       <section className="flex flex-col justify-center items-center">
         <Title
           description="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
+          page="navbar"
           titleText="About Us"
         />
         <div className="mt-20 flex flex-col md:flex-row justify-around w-2/3">
@@ -20,7 +19,9 @@ export default function AboutPage() {
             <Image alt="about us" className="md:w-2/3" src={AboutUsImage} />
           </div>
           <div>
-            <h2 className="text-xl font-bold text-center md:text-start my-4 md:my-0">Lorem Ipsum</h2>
+            <h2 className="text-xl font-bold text-center md:text-start my-4 md:my-0">
+              Lorem Ipsum
+            </h2>
             <p className="font-light text-center md:text-start mt-4">
               Lorem Ipsum is simply dummy text of the printing and typesetting
               industry. Lorem Ipsum has been the industry's standard dummy text
