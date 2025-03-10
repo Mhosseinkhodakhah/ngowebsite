@@ -1,5 +1,26 @@
 import { useTranslations } from "next-intl";
 
+const switechTranslate = (translate: string) => {
+  switch (translate) {
+    case "aboutUs":
+      return "aboutUs";
+    case "NGOPage":
+      return "NGOPage";
+    case "statics":
+      return "statics";
+    case "ngo-registration":
+      return "ngo-registration";
+    case "dashboard":
+      return "dashboard";
+    case "education":
+      return "education";
+    case "navbar":
+      return "navbar";
+    default:
+      break;
+  }
+};
+
 function Title({
   titleText,
   description,
@@ -9,21 +30,7 @@ function Title({
   description?: string;
   page?: string;
 }) {
-  const t = useTranslations(
-    page === "aboutUs"
-      ? "aboutUs"
-      : page === "NGOPage"
-        ? "NGOPage"
-        : page === "statics"
-          ? "statics"
-          : page === "ngo-registration"
-            ? "ngo-registration"
-            : page === "dashboard"
-              ? "dashboard"
-              : page === "navbar"
-                ? "navbar"
-                : "",
-  );
+  const t = useTranslations(switechTranslate(page ? page : ""));
 
   return (
     <>

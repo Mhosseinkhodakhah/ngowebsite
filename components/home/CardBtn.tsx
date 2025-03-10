@@ -6,7 +6,7 @@ import { useTranslations } from "next-intl";
 import { useRouter } from "@/i18n/navigation";
 
 function CardBtn() {
-  const t = useTranslations("homePage");
+  const t = useTranslations("common");
   const router = useRouter();
 
   const handlePressed = () => {
