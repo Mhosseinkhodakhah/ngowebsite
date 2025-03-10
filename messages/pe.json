@@ -6,7 +6,9 @@
     "Recently": "جدیدترین",
     "Last": "قدیمی ترین",
     "Total": "مجموع",
-    "Filter": "فیلتر"
+    "Filter": "فیلتر",
+    "Close": "بستن",
+    "Submit": "تایید"
   },
   "navbar": {
     "Home": "خانه",
@@ -456,6 +458,17 @@
     "Video": "ویدیو",
     "Similar Education & Training": "آموزش های مشابه"
   },
+
+  "events": {
+    "Events": "رویدادها",
+    "Type": "نوع",
+    "Filter by Type": "فیلتر بر اساس نوع",
+    "From": "از",
+    "To": "تا",
+    "Filter by Date": "فیلتر بر اساس زمان",
+    "Similar Events": "رویداد های مشابه"
+  },
+
   "footer": {
     "Get Updates": "دریافت آخرین اخبار",
     "Enter your email": "ایمیل خود را وارد کنید",

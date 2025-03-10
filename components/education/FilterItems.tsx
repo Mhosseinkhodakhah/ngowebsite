@@ -5,9 +5,9 @@ function FilterItems() {
   const t = useTranslations("education");
 
   return (
-    <div className="px-4">
+    <div className="md:px-4">
       <CheckboxGroup
-        className="px-4 md:px-0 mt-8"
+        className="md:px-0 md:mt-8"
         defaultValue={[]}
         label={t("Filter by file format")}
       >

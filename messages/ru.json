@@ -6,7 +6,9 @@
     "Recently": "Недавно",
     "Last": "Последний",
     "Total": "Общий",
-    "Filter": "Фильтр"
+    "Filter": "Фильтр",
+    "Close": "Закрывать",
+    "Submit": "Представлять на рассмотрение"
   },
   "navbar": {
     "Home": "Дом",
@@ -453,6 +455,17 @@
     "Video": "Видео",
     "Similar Education & Training": "Подобное образование и обучение"
   },
+
+  "events": {
+    "Events": "События",
+    "Type": "Тип",
+    "Filter by Type": "Фильтровать по типу",
+    "From": "От",
+    "To": "К",
+    "Filter by Date": "Фильтровать по дате",
+    "Similar Events": "Похожие события"
+  },
+
   "footer": {
     "Get Updates": "Получайте обновления",
     "Enter your email": "Введите адрес электронной почты",

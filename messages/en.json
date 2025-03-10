@@ -6,7 +6,9 @@
     "Recently": "Recently",
     "Last": "Last",
     "Total": "Total",
-    "Filter": "Filter"
+    "Filter": "Filter",
+    "Close": "Close",
+    "Submit": "Submit"
   },
 
   "navbar": {
@@ -458,6 +460,16 @@
     "PDF": "PDF",
     "Video": "Video",
     "Similar Education & Training": "Similar Education & Training"
+  },
+
+  "events": {
+    "Events": "Events",
+    "Type": "Type",
+    "Filter by Type": "Filter by Type",
+    "From": "From",
+    "To": "To",
+    "Filter by Date": "Filter by Date",
+    "Similar Events": "Similar Events"
   },
 
   "footer": {

@@ -4,7 +4,7 @@ import { NavbarItem } from "@heroui/navbar";
 import clsx from "clsx";
 import { useTranslations } from "use-intl";
 import { link as linkStyles } from "@heroui/theme";
-import { useParams, useRouter } from "next/navigation";
+import { useParams, usePathname, useRouter } from "next/navigation";
 
 import ArrowDown from "../common/icons/arrow-down";
 
@@ -15,6 +15,7 @@ const Links = () => {
   const t = useTranslations("navbar");
   const router = useRouter();
   const { locale } = useParams() as { locale: string };
+  const pathname = usePathname();
 
   const handleRoute = (mainRoute: string, route: string) => {
     router.push(`/${locale}/${mainRoute}/${route}`);
@@ -27,7 +28,7 @@ const Links = () => {
           <Link
             className={clsx(
               linkStyles({ color: "foreground" }),
-              "data-[active=true]:text-primary data-[active=true]:font-medium hover:text-primary active:text-primary group relative gap-1",
+              `data-[active=true]:text-primary data-[active=true]:font-medium hover:text-primary active:text-primary group relative gap-1 ${pathname === `/${locale}` && pathname.includes(item.href) ? "border-b-5 border-b-primary" : pathname.includes(item.href) && item.href.length > 1 ? "border-b-5 border-b-primary" : ""}`,
             )}
             color="foreground"
             href={`${item.href}`}

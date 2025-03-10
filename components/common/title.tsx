@@ -14,6 +14,8 @@ const switechTranslate = (translate: string) => {
       return "dashboard";
     case "education":
       return "education";
+    case "events":
+      return "events";
     case "navbar":
       return "navbar";
     default:

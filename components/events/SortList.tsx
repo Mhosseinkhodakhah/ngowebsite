@@ -36,13 +36,9 @@ function SortList() {
         <SortDropDown />
         <FilterModal />
       </div>
-      <div className="flex items-center gap-1 md:gap-4">
-        <h5 className="text-xs md:text-md">{t("Total")}</h5>
-        <Chip
-          className="text-gray text-xs md:text-md"
-          color="primary"
-          variant="shadow"
-        >
+      <div className="flex items-center gap-4">
+        <h5>{t("Total")}</h5>
+        <Chip className="text-gray" color="primary" variant="shadow">
           24
         </Chip>
       </div>
