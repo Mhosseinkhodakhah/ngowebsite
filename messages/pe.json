@@ -469,6 +469,17 @@
     "Similar Events": "رویداد های مشابه"
   },
 
+  "projects": {
+    "Good Practice": "ابتکارات مشترک",
+    "Ongoing Projects": "پروژه های فعال",
+    "Completed Projects": "پروژه های تکمیل شده",
+    "Collaboration Opportunities": "فرصت های همکاری",
+    "Last Projects": "آخرین پروژها",
+    "Completed": "تکمیل شده",
+    "Ongoing": "فعال",
+    "Most participation": "بیشترین مشارکت"
+  },
+
   "footer": {
     "Get Updates": "دریافت آخرین اخبار",
     "Enter your email": "ایمیل خود را وارد کنید",

@@ -466,6 +466,17 @@
     "Similar Events": "Похожие события"
   },
 
+  "projects": {
+    "Good Practice": "Совместные инициативы",
+    "Ongoing Projects": "Текущие проекты",
+    "Completed Projects": "Завершенные проекты",
+    "Collaboration Opportunities": "Возможности сотрудничества",
+    "Last Projects": "Последние проекты",
+    "Completed": "Завершенный",
+    "Ongoing": "Непрерывный",
+    "Most participation":"Наибольшее участие"
+  },
+
   "footer": {
     "Get Updates": "Получайте обновления",
     "Enter your email": "Введите адрес электронной почты",

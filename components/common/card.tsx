@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Chip } from "@heroui/chip";
 
 import CardButton from "./card-button";
 
@@ -8,11 +9,21 @@ interface Props {
   description: string;
   route: string;
   btnText?: string;
+  status?: string;
 }
 
-function Card({ name, imageUrl, description, route, btnText }: Props) {
+function Card({ name, imageUrl, description, route, btnText, status }: Props) {
   return (
     <article className="border border-slate-400 dark:border-secondary rounded-md flex flex-col  gap-2  shadow-md">
+      {status && (
+        <Chip
+          className="absolute right-2 top-2 text-gray"
+          color="primary"
+          size="sm"
+        >
+          {status}
+        </Chip>
+      )}
       <Image
         alt="placeholder"
         className="object-fill w-full  h-full"

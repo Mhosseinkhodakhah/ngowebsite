@@ -472,6 +472,17 @@
     "Similar Events": "Similar Events"
   },
 
+  "projects": {
+    "Completed Projects": "Completed Projects",
+    "Ongoing Projects": "Ongoing Projects",
+    "Collaboration Opportunities": "Collaboration Opportunities",
+    "Good Practice": "Good Practice",
+    "Last Projects": "Last Projects",
+    "Completed": "Completed",
+    "Ongoing": "Ongoing",
+    "Most participation": "Most participation"
+  },
+
   "footer": {
     "Get Updates": "Get Updates",
     "Enter your email": "Enter your email",
