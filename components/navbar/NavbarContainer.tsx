@@ -9,22 +9,29 @@ import {
   NavbarMenuToggle,
 } from "@heroui/navbar";
 import { useParams } from "next/navigation";
-import { Link } from "@heroui/link";
 import { useTranslations } from "next-intl";
+import { Button } from "@heroui/button";
 
 import { ThemeSwitch } from "../common/theme-switch";
 import LanguageSwitch from "../common/language-switch";
 import HambergerMenu from "../common/icons/hamberger-menu";
 
+import LoginBtn from "./LoginBtn";
+
 import { siteConfig } from "@/config/site";
+import { Link, useRouter } from "@/i18n/navigation";
 
 const NavbarContainer = ({ children }: { children: ReactNode }) => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const t = useTranslations("navbar");
 
   const { locale } = useParams() as { locale: string };
+  const router = useRouter();
 
   const handleCloseMenu = () => setIsMenuOpen(false);
+  const handleJoinUs = () => {
+    router.push("/ngo/ngos-registration");
+  };
 
   return (
     <HeroUINavbar
@@ -34,15 +41,26 @@ const NavbarContainer = ({ children }: { children: ReactNode }) => {
       onMenuOpenChange={setIsMenuOpen}
     >
       {children}
-      <NavbarContent className="sm:hidden basis-1 pl-4" justify="end">
-        <ThemeSwitch />
-        <LanguageSwitch />
+      <NavbarContent className="lg:hidden basis-1 pl-4" justify="end">
+        <Button
+          className="text-gray"
+          color="primary"
+          size="sm"
+          variant="solid"
+          onPress={handleJoinUs}
+        >
+          {t("Join Us")}
+        </Button>
+        <LoginBtn />
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           icon={<HambergerMenu className="text-xl dark:text-gray" />}
         />
         <NavbarMenu>
-          {/* <MenuLinks closeMenu={handleCloseMenu} /> */}
+          <div className="flex justify-between items-center py-4">
+            <LanguageSwitch />
+            <ThemeSwitch />
+          </div>
           {siteConfig.navMenuItems.map((item, index) => (
             <NavbarMenuItem
               key={`${item}-${index}`}
@@ -50,8 +68,8 @@ const NavbarContainer = ({ children }: { children: ReactNode }) => {
             >
               <Link
                 className="text-dark dark:text-gray hover:text-primary dark:hover:text-primary w-full"
-                href={`/${locale}/${item.href}`}
-                onPress={handleCloseMenu}
+                href={item.href}
+                onClick={handleCloseMenu}
               >
                 {t(item.label)}
               </Link>
@@ -59,8 +77,8 @@ const NavbarContainer = ({ children }: { children: ReactNode }) => {
                 <Link
                   key={ch.label}
                   className="text-dark dark:text-gray hover:text-primary my-2"
-                  href={`/${locale}/${item.href}/${ch.href}`}
-                  onPress={handleCloseMenu}
+                  href={`${item.href}/${ch.href}`}
+                  onClick={handleCloseMenu}
                 >
                   {t(ch.label)}
                 </Link>

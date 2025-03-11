@@ -29,7 +29,8 @@
     "Good Practice": "ابتکارات مشترک",
     "Onegoing Projects": "پروژه های فعال",
     "Completed Projects": "پروژه های تکمیل شده",
-    "Collaboration Opportunities": "فرصت های همکاری"
+    "Collaboration Opportunities": "فرصت های همکاری",
+    "Join Us": "به ما بپیوندید"
   },
   "homePage": {
     "title": "سلام دنیا",
@@ -484,7 +485,7 @@
     "Reports and Documentation": "گزارش ها و مستندات",
     "impact on the protection of intangible heritage": "تاثیر بر حفاظت از میراث ناملموس",
     "Digital Archive": "آرشیو دیجیتال",
-    "Search for images , videos and documents":"جستجوی تصاویر ، ویدیو ها و مستندات"
+    "Search for images , videos and documents": "جستجوی تصاویر ، ویدیو ها و مستندات"
   },
 
   "footer": {

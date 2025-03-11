@@ -34,7 +34,7 @@ function LanguageSwitch() {
   return (
     <Dropdown>
       <DropdownTrigger>
-        <Button className="border-primary" size="md" variant="bordered">
+        <Button className="border-primary" size="sm" variant="bordered">
           {locale === "en" ? (
             <>
               <p className="font-bold">{t("En")}</p>

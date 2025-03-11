@@ -10,9 +10,10 @@ const LoginBtn = () => {
   return (
     <Button
       as={Link}
-      className="text-sm font-normal text-gray bg-primary"
-      endContent={<LoginIcon className="text-xl" />}
+      className="font-normal text-gray bg-primary"
+      endContent={<LoginIcon className="text-lg" />}
       href={"login"}
+      size="sm"
       variant="shadow"
     >
       {t("Login")}

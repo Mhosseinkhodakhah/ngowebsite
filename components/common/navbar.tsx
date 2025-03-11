@@ -2,23 +2,28 @@
 
 import { NavbarContent, NavbarBrand, NavbarItem } from "@heroui/navbar";
 import NextLink from "next/link";
+import { useTranslations } from "next-intl";
+import Image from "next/image";
+import { Button } from "@heroui/button";
 
 import LoginBtn from "../navbar/LoginBtn";
 import Links from "../navbar/Links";
 import NavbarContainer from "../navbar/NavbarContainer";
 
 import LanguageSwitch from "./language-switch";
-import { Logo } from "./icons";
 import { ThemeSwitch } from "./theme-switch";
 
+import Logo from "@/public/images/logo.jpg";
+
 export const Navbar = () => {
+  const t = useTranslations("navbar");
+
   return (
     <NavbarContainer>
       <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
-        <NavbarBrand as="li" className="gap-3 max-w-fit">
+        <NavbarBrand as="li" className="gap-3 ">
           <NextLink className="flex justify-start items-center gap-1" href="/">
-            <Logo />
-            <p className="font-bold text-inherit">ACME</p>
+            <Image priority alt="Logo" height={100} src={Logo} width={100} />
           </NextLink>
         </NavbarBrand>
         <Links />
@@ -28,9 +33,17 @@ export const Navbar = () => {
         className="hidden sm:flex basis-1/5 sm:basis-full"
         justify="end"
       >
-        <NavbarItem className="hidden sm:flex gap-2">
+        <NavbarItem className="hidden lg:flex gap-2">
           <ThemeSwitch />
           <LoginBtn />
+          <Button
+            className="text-gray"
+            color="primary"
+            size="sm"
+            variant="shadow"
+          >
+            {t("Join Us")}
+          </Button>
           <LanguageSwitch />
         </NavbarItem>
       </NavbarContent>
