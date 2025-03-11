@@ -2,26 +2,39 @@ import Image from "next/image";
 import { Chip } from "@heroui/chip";
 
 import CardButton from "./card-button";
+import { Icon } from "@iconify/react";
 
 interface Props {
   name: string;
   imageUrl: string;
-  description: string;
-  route: string;
+  description?: string;
+  route?: string;
   btnText?: string;
   status?: string;
 }
 
 function Card({ name, imageUrl, description, route, btnText, status }: Props) {
   return (
-    <article className="border border-slate-400 dark:border-secondary rounded-md flex flex-col  gap-2  shadow-md">
+    <article className="border border-slate-400 dark:border-secondary rounded-md flex flex-col  gap-2  shadow-md relative">
       {status && (
         <Chip
-          className="absolute right-2 top-2 text-gray"
+          className="absolute right-2 top-2 text-gray "
           color="primary"
           size="sm"
         >
-          {status}
+          {status === "Video" && (
+            <Icon height="30" icon="lets-icons:video-fill" width="24" />
+          )}
+          {status === "Image" && (
+            <Icon height="30" icon="mynaui:image-solid" width="24" />
+          )}
+          {status === "Document" && (
+            <Icon height="30" icon="solar:document-bold" width="24" />
+          )}
+          {status !== "Video" &&
+            status !== "Image" &&
+            status !== "Document" &&
+            status}
         </Chip>
       )}
       <Image
@@ -36,7 +49,7 @@ function Card({ name, imageUrl, description, route, btnText, status }: Props) {
         <p className="text-sm font-light p-2  overflow-hidden text-wrap">
           {description}
         </p>
-        <CardButton btnText={btnText} route={route} />
+        {route && <CardButton btnText={btnText} route={route} />}
       </div>
     </article>
   );

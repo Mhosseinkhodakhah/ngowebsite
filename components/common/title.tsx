@@ -29,10 +29,12 @@ function Title({
   titleText,
   description,
   page,
+  className,
 }: {
   titleText: string;
   description?: string;
   page?: string;
+  className?: string;
 }) {
   const t = useTranslations(switechTranslate(page ? page : ""));
 
@@ -41,7 +43,9 @@ function Title({
       <h1 className="text-xl font-bold border-b-5 border-primary mt-20">
         {page ? t(titleText) : titleText}
       </h1>
-      <p className="mt-5 max-w-md text-center text-secondary dark:text-gray font-light px-4 md:px-0">
+      <p
+        className={`mt-5  w-full  text-secondary dark:text-gray font-light px-4 md:px-0 ${className ? className : "text-center max-w-screen-md"}`}
+      >
         {description}
       </p>
     </>
