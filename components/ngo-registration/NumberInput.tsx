@@ -10,13 +10,17 @@ function NumberInput({
   name,
   label,
   className,
+  page,
+  isRequired,
 }: {
   formik: FormikProps<any>;
   name: string;
   label: string;
   className?: string;
+  page?: string;
+  isRequired?: boolean;
 }) {
-  const t = useTranslations("ngo-registration");
+  const t = useTranslations(page ? page : "ngo-registration");
 
   const handleSetNumberInput = (e: ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value.replace(/\D/g, "");
@@ -28,13 +32,13 @@ function NumberInput({
 
   return (
     <Input
-      isRequired
       className={className}
       errorMessage={() => {
         if (formik.errors[name]) {
           return t(formik.errors[name]);
         }
       }}
+      isRequired={isRequired ?? true}
       label={t(label)}
       name={name}
       value={formik.values[name]}

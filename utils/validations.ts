@@ -63,4 +63,10 @@ export const ngoRegisterSchema = Yup.object().shape({
     .required("Please select all options"),
 });
 
-// Please select all options
+export const documentSchema = Yup.object().shape({
+  ngoName: Yup.string().required("Ngo name is required"),
+  email: Yup.string().email("Email is not valid").required("Email is required"),
+  documentType: Yup.array().min(1, "Please select an option"),
+  title: Yup.string().required("Title is required"),
+  description: Yup.string().required("Description is required"),
+});

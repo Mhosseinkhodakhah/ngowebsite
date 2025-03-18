@@ -480,7 +480,13 @@
     "Video": "ویدیو",
     "Description Doc": "توضیحات",
     "Delete Documents": "حذف اسناد",
-    "Uploading documents and records": "بارگذاری اسناد و مدارک"
+    "Uploading documents and records": "بارگذاری اسناد و مدارک",
+    "Ngo name is required": "نام سمن الزامی است",
+    "Email is not valid": "ایمیل معتبر نیست",
+    "Email is required": "ایمیل الزامی است",
+    "Please select an option": "لطفا یک گزینه را انتخاب کنید",
+    "Title is required": "عنوان الزامی است",
+    "Description is required": "توضیحات الزامی است"
   },
   "education": {
     "Filter by file format": "بر اساس نوع فایل",

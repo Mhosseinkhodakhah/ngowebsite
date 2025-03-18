@@ -10,9 +10,18 @@ interface Props {
   type?: "text" | "email" | "password" | "number" | "phone";
   className?: string;
   page?: string;
+  formik: any;
 }
 
-function CInput({ label, name, isRequired, type, className, page }: Props) {
+function CInput({
+  label,
+  name,
+  isRequired,
+  type,
+  className,
+  page,
+  formik,
+}: Props) {
   const t = useTranslations(
     page === "dashboard" ? "dashboard" : "ngo-registration",
   );
@@ -20,10 +29,15 @@ function CInput({ label, name, isRequired, type, className, page }: Props) {
   return (
     <Input
       className={className}
+      errorMessage={() => {
+        if (formik.errors[name]) {
+          return t(formik.errors[name]);
+        }
+      }}
       isRequired={isRequired}
       label={t(label)}
-      name={name}
       type={type}
+      {...formik.getFieldProps(name)}
     />
   );
 }

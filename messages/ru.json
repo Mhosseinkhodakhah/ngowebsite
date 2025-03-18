@@ -475,7 +475,13 @@
     "Video": "Видео",
     "Description Doc": "Описание",
     "Delete Documents": "Удалить документы",
-    "Uploading documents and records": "Загрузка документов и записей"
+    "Uploading documents and records": "Загрузка документов и записей",
+    "Ngo name is required": "Требуется название НПО",
+    "Email is not valid": "Недействительный адрес электронной почты",
+    "Email is required": "Требуется электронная почта",
+    "Please select an option": "Пожалуйста, выберите вариант",
+    "Title is required": "Требуется название",
+    "Description is required": "Требуется описание"
   },
   "education": {
     "Filter by file format": "Фильтровать по формату файла",

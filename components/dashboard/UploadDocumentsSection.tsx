@@ -3,20 +3,24 @@
 import { useCallback, useState } from "react";
 import { useTranslations } from "next-intl";
 import { useDropzone } from "react-dropzone";
+import Image from "next/image";
+import { Tooltip } from "@heroui/tooltip";
+import { Button } from "@heroui/button";
+import { Icon } from "@iconify/react";
 
 import GalleryIcon from "../common/icons/gallery-icon";
 
 function UploadDocumentsSection() {
-  const [docList, setDocList] = useState<string[]>([]);
+  const [docList, setDocList] = useState<{ name: string; url: string }[]>([]);
 
   const t = useTranslations("ngo-registration");
 
   const onDrop = useCallback((acceptedFiles: File[]) => {
     // Do something with the files
-    let files: string[] = [];
+    let files: { name: string; url: string }[] = [];
 
     acceptedFiles.forEach((file: File) => {
-      files.push(file.name);
+      files.push({ name: file.name, url: URL.createObjectURL(file as Blob) });
     });
 
     setDocList(files);
@@ -52,9 +56,31 @@ function UploadDocumentsSection() {
           )}
         </div>
         <ul className="my-4 px-4 text-start grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 j">
-          {docList.map((doc, index) => (
-            <li className="my-2 md:mx-auto" key={index}>
-              {doc}
+          {docList.map((doc) => (
+            <li key={doc.url} className="my-2 md:mx-auto relative py-4">
+              <Image
+                alt="document"
+                className="w-[150px] h-[150px] md:w-[200px] md:h-[200px] object-contain"
+                height={100}
+                src={doc.url}
+                width={100}
+              />
+              {doc.name}
+              <Tooltip content={t("Delete")}>
+                <Button
+                  isIconOnly
+                  className="absolute -top-2 right-1 cursor-pointer "
+                  color="danger"
+                  onPress={() => {
+                    const cpDocList = [...docList];
+                    const filter = cpDocList.filter((f) => f.url !== doc.url);
+
+                    setDocList(filter);
+                  }}
+                >
+                  <Icon height="24" icon="uim:times-circle" width="24" />
+                </Button>
+              </Tooltip>
             </li>
           ))}
         </ul>

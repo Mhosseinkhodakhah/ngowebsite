@@ -482,7 +482,13 @@
     "Video": "Video",
     "Description Doc": "Description",
     "Delete Documents": "Delete Documents",
-    "Uploading documents and records": "Uploading documents and records"
+    "Uploading documents and records": "Uploading documents and records",
+    "Ngo name is required": "Ngo name is required",
+    "Email is not valid": "Email is not valid",
+    "Email is required": "Email is required",
+    "Please select an option": "Please select an option",
+    "Title is required": "Title is required",
+    "Description is required": "Description is required"
   },
 
   "education": {
