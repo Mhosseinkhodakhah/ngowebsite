@@ -4,23 +4,29 @@ import { Input } from "@heroui/input";
 import { useTranslations } from "use-intl";
 
 interface Props {
-  label: string;
   name: string;
+  label: string;
   isRequired: boolean;
   type?: "text" | "email" | "password" | "number";
   className?: string;
+  formik: any;
 }
 
-function CInput({ label, name, isRequired, type, className }: Props) {
+function CInput({ label, isRequired, type, className, formik, name }: Props) {
   const t = useTranslations("ngo-registration");
 
   return (
     <Input
       className={className}
+      errorMessage={() => {
+        if (formik.errors[name]) {
+          return t(formik.errors[name]);
+        }
+      }}
       isRequired={isRequired}
       label={t(label)}
-      name={name}
       type={type}
+      {...formik.getFieldProps(name)}
     />
   );
 }

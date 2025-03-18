@@ -1,9 +1,24 @@
 import { Checkbox, CheckboxGroup } from "@heroui/checkbox";
-import { Input } from "@heroui/input";
 import { useTranslations } from "next-intl";
+import { FormikErrors, FormikProps } from "formik";
 
-function AreaActivity() {
+import OtherInput from "./OtherInput";
+
+function AreaActivity({ formik }: { formik: FormikProps<any> }) {
   const t = useTranslations("ngo-registration");
+
+  const handleSetAreaActivity = (value: string[]) => {
+    const lastValue = value[value.length - 1];
+
+    if (value.length) {
+      if (lastValue !== "other") {
+        formik.setFieldValue("otherAreaAndScope", "");
+      }
+      formik.setFieldValue("areaAndScope", [lastValue]);
+    } else {
+      formik.setFieldValue("areaAndScope", []);
+    }
+  };
 
   return (
     <>
@@ -12,8 +27,13 @@ function AreaActivity() {
         isRequired
         className="px-4 md:px-0"
         defaultValue={[]}
+        errorMessage={
+          formik.errors.areaAndScope &&
+          t(formik.errors.areaAndScope as unknown as FormikErrors<any>)
+        }
         label={t("In which countries or regions do you primarily operate?")}
-        // orientation="horizontal"
+        {...formik.getFieldProps("areaAndScope")}
+        onChange={handleSetAreaActivity}
       >
         <Checkbox className="my-1" value="western-asia">
           {t("Western Asia")}
@@ -21,17 +41,18 @@ function AreaActivity() {
         <Checkbox className="my-1" value="central-asia">
           {t("Central Asia")}
         </Checkbox>
-        <div className="flex flex-col items-start md:flex-row  md:items-center gap-4 w-full mt-5">
-          <Checkbox value="other">{t("Other")}</Checkbox>
-          <div className="flex items-center gap-4 w-full flex-1 flex-grow">
-            <Input
-              isRequired={false}
-              label={t("Please specify")}
-              name="other"
-            />
-          </div>
-        </div>
+
+        <Checkbox className="my-1" value="other">
+          {t("Other")}
+        </Checkbox>
       </CheckboxGroup>
+      <div className="flex items-center gap-4 flex-1 mx-4 md:mx-0 mt-2">
+        <OtherInput
+          formik={formik}
+          name="otherAreaAndScope"
+          refName="areaAndScope"
+        />
+      </div>
     </>
   );
 }

@@ -1,18 +1,34 @@
 import { Checkbox, CheckboxGroup } from "@heroui/checkbox";
+import { FormikErrors, FormikProps } from "formik";
 import { useTranslations } from "next-intl";
 
-function ActivityAgeRange() {
+function ActivityAgeRange({ formik }: { formik: FormikProps<any> }) {
   const t = useTranslations("ngo-registration");
+
+  const handleSetAgeRange = (value: string[]) => {
+    const lastValue = value[value.length - 1];
+
+    if (value.length) {
+      formik.setFieldValue("group", [lastValue]);
+    } else {
+      formik.setFieldValue("group", []);
+    }
+  };
 
   return (
     <CheckboxGroup
       isRequired
       className="px-4 md:px-0 my-10"
-      defaultValue={[]}
+      defaultValue={formik.values.group}
+      errorMessage={
+        formik.errors.group &&
+        t(formik.errors.group as unknown as FormikErrors<any>)
+      }
       label={t(
         "What age groups does your organization mainly work with? (Select all relevant options)",
       )}
-      // orientation="horizontal"
+      {...formik.getFieldProps("group")}
+      onChange={handleSetAgeRange}
     >
       <Checkbox className="my-1" value="under 18">
         {t("Children (under 18 years old)")}

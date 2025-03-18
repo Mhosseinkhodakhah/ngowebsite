@@ -1,19 +1,27 @@
 import { Checkbox, CheckboxGroup } from "@heroui/checkbox";
 import { useTranslations } from "next-intl";
+import { FormikProps, FormikErrors } from "formik";
 
-function ConditionAndConfirm() {
+function ConditionAndConfirm({ formik }: { formik: FormikProps<any> }) {
   const t = useTranslations("ngo-registration");
+
+  const handleSetConditionAndConfirm = (value: string[]) => {
+    formik.setFieldValue("conditonAndConfirm", value);
+  };
 
   return (
     <>
-      <h5 className="py-8 px-4 md:px-0">{t("Confirm and send")}</h5>
       <CheckboxGroup
         isRequired
         className="px-4 md:px-0 my-10"
-        defaultValue={[]}
-        label={t(
-          "Does your organization have licenses and permits for its activities?",
-        )}
+        defaultValue={formik.values.conditonAndConfirm}
+        errorMessage={
+          formik.errors.conditonAndConfirm &&
+          t(formik.errors.conditonAndConfirm as unknown as FormikErrors<any>)
+        }
+        label={t("Confirm and send")}
+        {...formik.getFieldProps("conditonAndConfirm")}
+        onChange={handleSetConditionAndConfirm}
       >
         <Checkbox className="my-1" value="confirm">
           {t(

@@ -6,30 +6,43 @@ import {
   parseAbsoluteToLocal,
   today,
 } from "@internationalized/date";
-import { I18nProvider } from "@react-aria/i18n";
+import { I18nProvider, useDateFormatter } from "@react-aria/i18n";
+import { FormikProps } from "formik";
 import { useTranslations } from "next-intl";
 import { useParams } from "next/navigation";
 import { useState } from "react";
 
-function RegisterDatePicker() {
+function RegisterDatePicker({ formik }: { formik: FormikProps<any> }) {
   const { locale } = useParams();
   const t = useTranslations("ngo-registration");
   const [date, setDate] = useState(
     parseAbsoluteToLocal(new Date().toISOString()),
   );
 
+  let formatter = useDateFormatter({ dateStyle: "full" });
+
+  const handleSetDate = (value: any) => {
+    setDate(value);
+    const valueFormated = formatter.format(value.toDate());
+
+    formik.setFieldValue("expiryDate", valueFormated);
+  };
+
   return (
-    <div className="flex flex-col gap-4 mt-5">
+    <div className="flex flex-col gap-4 mt-5 mx-5 md:mx-0">
       <I18nProvider locale={locale === "pe" ? "fa" : "en"}>
         <DatePicker
           hideTimeZone
           showMonthAndYearPickers
           className="max-w-md"
+          isDisabled={formik.values.licenseValue.includes("yes") ? false : true}
+          isInvalid={formik.values.licenseValue.includes("yes") ? true : false}
+          isRequired={formik.values.licenseValue.includes("yes") ? true : false}
           label={t("Expiry date")}
-          onChange={setDate}
+          maxValue={today(getLocalTimeZone())}
           value={date}
           variant="bordered"
-          maxValue={today(getLocalTimeZone())}
+          onChange={handleSetDate}
         />
       </I18nProvider>
     </div>

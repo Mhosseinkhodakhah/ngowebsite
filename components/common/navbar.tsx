@@ -14,6 +14,7 @@ import LanguageSwitch from "./language-switch";
 import { ThemeSwitch } from "./theme-switch";
 
 import Logo from "@/public/images/logo.jpg";
+import { Link } from "@/i18n/navigation";
 
 export const Navbar = () => {
   const t = useTranslations("navbar");
@@ -37,8 +38,10 @@ export const Navbar = () => {
           <ThemeSwitch />
           <LoginBtn />
           <Button
+            as={Link}
             className="text-gray"
             color="primary"
+            href="/ngo/ngos-registration"
             size="sm"
             variant="shadow"
           >

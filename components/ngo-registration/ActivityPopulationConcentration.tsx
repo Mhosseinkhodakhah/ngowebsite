@@ -1,9 +1,28 @@
 import { Checkbox, CheckboxGroup } from "@heroui/checkbox";
-import { Input } from "@heroui/input";
+import { FormikErrors, FormikProps } from "formik";
 import { useTranslations } from "next-intl";
 
-function ActivityPopulationConcentration() {
+import OtherInput from "./OtherInput";
+
+function ActivityPopulationConcentration({
+  formik,
+}: {
+  formik: FormikProps<any>;
+}) {
   const t = useTranslations("ngo-registration");
+
+  const handleSetPopulationConcentration = (value: string[]) => {
+    const lastValue = value[value.length - 1];
+
+    if (value.length) {
+      if (lastValue !== "other") {
+        formik.setFieldValue("populationConcentrationValue", "");
+      }
+      formik.setFieldValue("populationConcentration", [lastValue]);
+    } else {
+      formik.setFieldValue("populationConcentration", []);
+    }
+  };
 
   return (
     <>
@@ -11,11 +30,19 @@ function ActivityPopulationConcentration() {
       <CheckboxGroup
         isRequired
         className="px-4 md:px-0 my-10"
-        defaultValue={[]}
+        defaultValue={formik.values.populationConcentration}
+        errorMessage={
+          formik.errors.populationConcentration &&
+          t(
+            formik.errors
+              .populationConcentration as unknown as FormikErrors<any>,
+          )
+        }
         label={t(
           "What is the gender distribution of the community you are working with?",
         )}
-        // orientation="horizontal"
+        {...formik.getFieldProps("populationConcentration")}
+        onChange={handleSetPopulationConcentration}
       >
         <Checkbox className="my-1" value="male">
           {t("Mostly male")}
@@ -26,17 +53,17 @@ function ActivityPopulationConcentration() {
         <Checkbox className="my-1" value="balanced">
           {t("Balanced")}
         </Checkbox>
-        <div className="flex flex-col items-start md:flex-row  md:items-center gap-4 w-full mt-5">
-          <Checkbox value="other">{t("Other")}</Checkbox>
-          <div className="flex items-center gap-4 w-full flex-1 flex-grow">
-            <Input
-              isRequired={false}
-              label={t("Please specify")}
-              name="other"
-            />
-          </div>
-        </div>
+        <Checkbox className="my-1" value="other">
+          {t("Other")}
+        </Checkbox>
       </CheckboxGroup>
+      <div className="flex items-center gap-4 flex-1 mx-4 md:mx-0 mt-2">
+        <OtherInput
+          formik={formik}
+          name="populationConcentrationValue"
+          refName="populationConcentration"
+        />
+      </div>
     </>
   );
 }
