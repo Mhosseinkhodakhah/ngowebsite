@@ -16,14 +16,14 @@ function LoginData({ formik }: { formik: FormikProps<any> }) {
           formik={formik}
           label="Password"
           name="password"
-          type="password"
+          // type="password"
         />
         <CInput
           isRequired
           formik={formik}
           label="Confirm Password"
           name="confirmPassword"
-          type="password"
+          // type="password"
         />
       </div>
     </>

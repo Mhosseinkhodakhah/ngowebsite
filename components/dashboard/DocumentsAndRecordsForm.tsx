@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { Checkbox, CheckboxGroup } from "@heroui/checkbox";
 import { Textarea } from "@heroui/input";
@@ -12,21 +13,48 @@ import UploadDocumentsSection from "./UploadDocumentsSection";
 import FormButtons from "./FormButtons";
 
 import { documentSchema } from "@/utils/validations";
+import { uploadDocs } from "@/server/ngo";
+import { useMutation } from "@tanstack/react-query";
+import { createDocument } from "@/server/dashboard";
 
 function DocumentsAndRecordsForm() {
   const t = useTranslations("dashboard");
+  const [documents, setDocuments] = useState<FormData>(new FormData());
+
+  const mutation = useMutation({
+    mutationKey: ["createDocument"],
+    mutationFn: createDocument,
+    onSuccess: (data) => {
+      console.log("ddddddddddd", data);
+    },
+  });
 
   const formik = useFormik({
     initialValues: {
-      ngoName: "",
+      name: "",
       email: "",
       interfaceName: "",
-      documentType: [],
+      phone: "",
+      type: [],
+      file: [],
       title: "",
       description: "",
     },
     validationSchema: documentSchema,
-    onSubmit: (values) => {},
+    onSubmit: async (values) => {
+      const upload = await uploadDocs(documents);
+
+      if (upload.success) {
+        values.file = upload.data;
+      } else {
+        // Handle error
+        console.error("Failed to upload documents:", upload.error);
+
+        return;
+      }
+
+      mutation.mutate(values);
+    },
   });
 
   return (
@@ -36,7 +64,7 @@ function DocumentsAndRecordsForm() {
           isRequired
           formik={formik}
           label="NGO Name"
-          name="ngoName"
+          name="name"
           page="dashboard"
         />
         <CInput
@@ -65,15 +93,15 @@ function DocumentsAndRecordsForm() {
         <CheckboxGroup
           isRequired
           className="px-4 md:px-0 mt-8"
-          defaultValue={formik.values.documentType}
+          defaultValue={formik.values.type}
           errorMessage={
-            formik.errors.documentType &&
-            t(formik.errors.documentType as unknown as FormikErrors<any>)
+            formik.errors.type &&
+            t(formik.errors.type as unknown as FormikErrors<any>)
           }
           label={t("Document Type")}
-          {...formik.getFieldProps("documentType")}
+          {...formik.getFieldProps("type")}
           onChange={(value: string[]) => {
-            formik.setFieldValue("documentType", value);
+            formik.setFieldValue("type", value);
           }}
         >
           <Checkbox className="my-1" value="image">
@@ -103,8 +131,8 @@ function DocumentsAndRecordsForm() {
           label={t("Description Doc")}
           {...formik.getFieldProps("description")}
         />
-        <UploadDocumentsSection />
-        <FormButtons />
+        <UploadDocumentsSection onDocuments={setDocuments} />
+        <FormButtons isLoading={mutation.isPending} />
       </div>
     </form>
   );

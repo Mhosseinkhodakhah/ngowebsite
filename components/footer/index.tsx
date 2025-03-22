@@ -3,6 +3,7 @@
 import { Divider } from "@heroui/divider";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 import Facebook from "../common/icons/facebook";
 import Twitter from "../common/icons/twitter";
@@ -17,8 +18,12 @@ import RightSection from "./RightSection";
 function Footer() {
   const t = useTranslations("footer");
 
+  const pathname = usePathname();
+
   return (
-    <footer className="w-full bg-primary p-4">
+    <footer
+      className={`${pathname.includes("login") ? "hidden" : "block"} w-full bg-primary p-4`}
+    >
       <section className="w-full grid md:grid-rows-1 md:grid-cols-3 justify-center items-center">
         <LeftSection />
         <CenterSection />

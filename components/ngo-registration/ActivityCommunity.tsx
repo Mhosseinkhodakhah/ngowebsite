@@ -29,11 +29,12 @@ function ActivityCommunity({ formik }: { formik: FormikProps<any> }) {
           formik.errors.specificCultureGroupValue &&
           t(
             formik.errors
-              .specificCultureGroupValue as unknown as FormikErrors<any>,
+              .specificCultureGroupValue as unknown as FormikErrors<any>
           )
         }
+        isInvalid={formik.errors.specificCultureGroupValue ? true : false}
         label={t(
-          "Do you focus on specific cultural groups, ethnicities, or communities?",
+          "Do you focus on specific cultural groups, ethnicities, or communities?"
         )}
         {...formik.getFieldProps("specificCultureGroupValue")}
         onChange={handleSetActivityCommunity}

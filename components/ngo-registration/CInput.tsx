@@ -23,6 +23,7 @@ function CInput({ label, isRequired, type, className, formik, name }: Props) {
           return t(formik.errors[name]);
         }
       }}
+      isInvalid={formik.errors[name]}
       isRequired={isRequired}
       label={t(label)}
       type={type}

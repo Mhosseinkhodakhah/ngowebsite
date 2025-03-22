@@ -414,7 +414,15 @@
     "Confirm password is required": "Подтверждение пароля обязательно",
     "Passwords must match": "Пароли должны совпадать",
     "The Confirm password must not be shorter than 8 characters": "Подтверждение пароля не должно быть короче 8 символов",
-    "Please select all options": "Пожалуйста, выберите все варианты"
+    "Please select all options": "Пожалуйста, выберите все варианты",
+    "Please choose a logo for your organization This is required": "Пожалуйста, выберите логотип для вашей организации. Это обязательно",
+    "Upload Documentation": "Загрузить документацию",
+    "Please select your organization's documents This is required": "Пожалуйста, выберите документы вашей организации. Это обязательно",
+    "Logo failed to load, please try again": "Не удалось загрузить логотип. Попробуйте еще раз.",
+    "Documents failed to load, please try again": "Не удалось загрузить документы. Попробуйте еще раз.",
+    "Registration": "Регистрация",
+    "Registration failed, please try again": "Регистрация не удалась, попробуйте еще раз",
+    "Please Wait":"Пожалуйста, подождите"
   },
   "dashboard": {
     "Projects": "Проекты",

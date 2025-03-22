@@ -21,49 +21,16 @@ import "ag-grid-community/styles/ag-grid.css";
 import "ag-grid-community/styles/ag-theme-alpine.css"; // or any other theme you prefer
 import { Tooltip } from "@heroui/tooltip";
 
-const ProjectTable = () => {
+const ProjectTable = ({ data }: { data: any }) => {
   const [searchText, setSearchText] = useState("");
   const { theme } = useTheme();
   const { locale } = useParams();
   const t = useTranslations("dashboard");
 
-  const [rowData, setRowData] = useState([
-    {
-      projectName: "Model Y",
-      status: "Good Practice",
-      country: "Iran",
-      city: "Tehran",
-      projectManagerName: "Ali Mohamadi",
-      projectManagerEmail: "@example.com",
-      projectManagerPhone: "09123456789",
-      link: "http://www.google.com",
-    },
-    {
-      projectName: "F-Series",
-      status: "Ongoing",
-      country: "Iraq",
-      city: "Baghdad",
-      projectManagerName: "Ali Mohamadi",
-      projectManagerEmail: "@example.com",
-      projectManagerPhone: "09123456789",
-      link: "http://www.google.com",
-    },
-    {
-      projectName: "Corolla",
-      status: "Completed",
-      country: "India",
-      city: "New Delhi",
-      projectManagerName: "Ali Mohamadi",
-      projectManagerEmail: "@example.com",
-      projectManagerPhone: "09123456789",
-      link: "http://www.google.com",
-    },
-  ]);
-
   const [colDefs, setColDefs] = useState<ColDef[]>([
     {
       headerName: t("Project Name"),
-      field: "projectName",
+      field: "name",
     },
     {
       headerName: t("Project Status"),
@@ -72,11 +39,11 @@ const ProjectTable = () => {
     },
     {
       headerName: t("Country"),
-      field: "country",
+      field: "location.country",
     },
     {
       headerName: t("City"),
-      field: "city",
+      field: "location.city",
     },
     {
       headerName: t("Project Manager Name"),
@@ -92,7 +59,7 @@ const ProjectTable = () => {
     },
     {
       headerName: t("Link"),
-      field: "link",
+      field: "moreInformation",
       cellRenderer: (params: any) => {
         return (
           <Link href={`${params.value}`} rel="noreferrer" target="_blank">
@@ -151,8 +118,8 @@ const ProjectTable = () => {
         type="text"
         value={searchText}
         variant="bordered"
-        onChange={onSearchChange}
         startContent={<SearchIcon />}
+        onChange={onSearchChange}
       />
       <AgGridReact
         columnDefs={colDefs}
@@ -163,7 +130,7 @@ const ProjectTable = () => {
         pagination={true}
         paginationPageSize={10}
         quickFilterText={searchText}
-        rowData={rowData}
+        rowData={data ?? []}
       />
     </div>
   );

@@ -20,9 +20,14 @@ function AutoCompleteCountry({ formik }: { formik: FormikProps<any> }) {
         emptyContent: t("Country not found"),
       }}
       {...formik.getFieldProps("country")}
+      selectedKey={formik.values.country}
+      // Fix: Use the correct event type and handle the selection
+      onSelectionChange={(val) => {
+        formik.setFieldValue("country", val);
+      }}
     >
       {countries.map((country) => (
-        <AutocompleteItem key={country.code}>
+        <AutocompleteItem key={country.name}>
           {t(country.name)}
         </AutocompleteItem>
       ))}

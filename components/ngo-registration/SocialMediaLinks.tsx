@@ -26,7 +26,7 @@ function SocialMediaLinks({ formik }: { formik: FormikProps<any> }) {
           formik={formik}
           isRequired={false}
           label="Linkedin"
-          name="linkedin"
+          name="linkedIn"
         />
       </div>
     </>

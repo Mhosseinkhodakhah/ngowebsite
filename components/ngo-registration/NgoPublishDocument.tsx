@@ -13,9 +13,9 @@ function NgoPublishDocument({ formik }: { formik: FormikProps<any> }) {
       if (lastValue === "no" || lastValue === "yes") {
         formik.setFieldValue("publishValue", "");
       }
-      formik.setFieldValue("publish", [lastValue]);
+      formik.setFieldValue("publishSelect", [lastValue]);
     } else {
-      formik.setFieldValue("publish", []);
+      formik.setFieldValue("publishSelect", []);
     }
   };
 
@@ -24,13 +24,13 @@ function NgoPublishDocument({ formik }: { formik: FormikProps<any> }) {
       <CheckboxGroup
         isRequired
         className="px-4 md:px-0 my-10"
-        defaultValue={formik.values.publish}
+        defaultValue={formik.values.publishSelect}
         errorMessage={
-          formik.errors.publish &&
-          t(formik.errors.publish as unknown as FormikErrors<any>)
+          formik.errors.publishSelect &&
+          t(formik.errors.publishSelect as unknown as FormikErrors<any>)
         }
         label={t("Is it allowed to publish information publicly?")}
-        {...formik.getFieldProps("publish")}
+        {...formik.getFieldProps("publishSelect")}
         onChange={handleSetPublishDocument}
       >
         <Checkbox className="my-1" value="yes">
@@ -45,19 +45,23 @@ function NgoPublishDocument({ formik }: { formik: FormikProps<any> }) {
       </CheckboxGroup>
       <div className="flex items-center gap-4 flex-1 mx-4 md:mx-0 mt-2">
         <Input
-          disabled={formik.values.publish.includes("limited") ? false : true}
+          disabled={
+            formik.values.publishSelect.includes("limited") ? false : true
+          }
           errorMessage={() => {
-            if (formik.errors.publish) {
-              return t(formik.errors.publish);
+            if (formik.errors.publishSelect) {
+              return t(formik.errors.publishSelect);
             }
           }}
           isInvalid={
-            formik.values.publish.includes("limited") &&
+            formik.values.publishSelect.includes("limited") &&
             formik.errors.publishValue
               ? true
               : false
           }
-          isRequired={formik.values.publish.includes("limited") ? true : false}
+          isRequired={
+            formik.values.publishSelect.includes("limited") ? true : false
+          }
           label={t("Information authorized for publication")}
           {...formik.getFieldProps("publishValue")}
         />

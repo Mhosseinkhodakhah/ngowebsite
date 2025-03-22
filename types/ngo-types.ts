@@ -1,7 +1,7 @@
 export interface INGO {
   name: string;
   nationalId: string;
-  establishmentYear: number | null;
+  establishmentYear: string;
   activityField: string[];
   otherActivityField: string;
   country: string;
@@ -14,29 +14,47 @@ export interface INGO {
   website: string;
   areaAndScope: string[];
   otherAreaAndScope: string;
+  specificCultureGroupValue: string[];
+  specificCultureGroupDescription: string;
   specificCultureGroup: {
     has: boolean;
-    describtion: string;
+    description: string;
   };
-  specificActiveAreas: string[];
+  specificActiveAreas: [];
   areaOfExpertise: string[];
   areaOfExpertiseValue: string;
-  PopulationConcentration: string[];
-  PopulationConcentrationValue: string;
-  group: string[];
+  populationConcentration: string[];
+  populationConcentrationValue: string;
+  group: [];
   additionalInformation: string;
   socialMedia: {
     instagram: string;
     telegram: string;
     linkedIn: string;
   };
-  cooperation: string[];
+  instagram: string;
+  telegram: string;
+  linkedIn: string;
+  cooperationSelect: string[];
+  cooperation: boolean;
+  licenseValue: string[];
+  licenseDescription: string;
   license: {
     has: boolean;
-    describtion: string;
+    description: string;
   };
   expiryDate: string;
-
-  issuedBy: boolean;
-  publish: boolean;
+  documents: [];
+  publishSelect: string[];
+  publishValue: string;
+  publish: {
+    status: number;
+    description: string;
+  };
+  conditonAndConfirm: [];
+  logo: string;
+  documentsFile: [];
+  username: string;
+  password: string;
+  confirmPassword: string;
 }

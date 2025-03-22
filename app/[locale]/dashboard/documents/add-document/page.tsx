@@ -4,7 +4,7 @@ import DocumentsAndRecordsForm from "@/components/dashboard/DocumentsAndRecordsF
 
 function AddDocument() {
   return (
-    <section className="flex flex-col items-center w-full md:w-3/5 lg:w-3/4 md:p-10 overflow-y-auto">
+    <section className="flex flex-col items-center w-full md:w-3/5 lg:w-3/4 md:p-10 overflow-y-auto h-screen">
       <div className="px-6 w-full mt-4">
         <DashboardHead />
       </div>
@@ -14,7 +14,7 @@ function AddDocument() {
         titleText="Uploading documents and records"
       />
 
-      <div className="w-full md:px-10 mt-10">
+      <div className="w-full md:px-10 mt-10 h-full">
         <DocumentsAndRecordsForm />
       </div>
     </section>

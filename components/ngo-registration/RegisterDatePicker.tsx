@@ -25,6 +25,7 @@ function RegisterDatePicker({ formik }: { formik: FormikProps<any> }) {
     setDate(value);
     const valueFormated = formatter.format(value.toDate());
 
+    console.log(valueFormated);
     formik.setFieldValue("expiryDate", valueFormated);
   };
 
@@ -36,7 +37,6 @@ function RegisterDatePicker({ formik }: { formik: FormikProps<any> }) {
           showMonthAndYearPickers
           className="max-w-md"
           isDisabled={formik.values.licenseValue.includes("yes") ? false : true}
-          isInvalid={formik.values.licenseValue.includes("yes") ? true : false}
           isRequired={formik.values.licenseValue.includes("yes") ? true : false}
           label={t("Expiry date")}
           maxValue={today(getLocalTimeZone())}

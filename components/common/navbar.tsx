@@ -21,7 +21,7 @@ export const Navbar = () => {
 
   return (
     <NavbarContainer>
-      <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
+      <NavbarContent className=" basis-1/5 sm:basis-full" justify="start">
         <NavbarBrand as="li" className="gap-3 ">
           <NextLink className="flex justify-start items-center gap-1" href="/">
             <Image priority alt="Logo" height={100} src={Logo} width={100} />

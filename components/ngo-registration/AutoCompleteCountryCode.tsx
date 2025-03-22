@@ -23,6 +23,7 @@ function AutoCompleteContryCode({ formik }: { formik: FormikProps<any> }) {
         emptyContent: t("Code not found"),
       }}
       {...formik.getFieldProps("code")}
+      onSelectionChange={(value) => formik.setFieldValue("code", value)}
     >
       {countriesCodes.map((code) => (
         <AutocompleteItem key={code.dial_code}>

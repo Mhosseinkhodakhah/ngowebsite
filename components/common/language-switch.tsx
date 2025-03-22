@@ -27,6 +27,8 @@ function LanguageSwitch() {
     if (locale && typeof newLocale === "string") {
       const newRoute = params.replace(locale, newLocale);
 
+      localStorage.setItem("locale", JSON.stringify(newLocale));
+
       router.push(`${newRoute}`);
     }
   };

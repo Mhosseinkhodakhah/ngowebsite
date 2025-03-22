@@ -35,19 +35,35 @@ export const ngoRegisterSchema = Yup.object().shape({
   specificCultureGroupDescription: Yup.string().required("Please specify"),
   specificActiveAreas: Yup.array().min(1, "Please select an option"),
   areaOfExpertise: Yup.array().min(1, "Please select an option"),
-  areaOfExpertiseValue: Yup.string().required("Please specify"),
+  areaOfExpertiseValue: Yup.string().when("areaOfExpertise", {
+    is: (value: string[]) => value?.includes("other"),
+    then: () => Yup.string().required("Please specify"),
+    otherwise: () => Yup.string(),
+  }),
   populationConcentration: Yup.array().min(1, "Please select an option"),
-  populationConcentrationValue: Yup.string().required("Please specify"),
+  populationConcentrationValue: Yup.string().when("populationConcentration", {
+    is: (value: string[]) => value?.includes("other"),
+    then: () => Yup.string().required("Please specify"),
+    otherwise: () => Yup.string(),
+  }),
   group: Yup.array().min(1, "Please select an option"),
   additionalInformation: Yup.string().required(
-    "Additional information is required",
+    "Additional information is required"
   ),
-  cooperation: Yup.array().min(1, "Please select an option"),
+  cooperationSelect: Yup.array().min(1, "Please select an option"),
   licenseValue: Yup.array().min(1, "Please select an option"),
-  licenseDescription: Yup.string().required("Please specify"),
+  licenseDescription: Yup.string().when("licenseValue", {
+    is: (value: string[]) => value?.includes("yes"),
+    then: () => Yup.string().required("Please specify"),
+    otherwise: () => Yup.string(),
+  }),
   documents: Yup.array().min(1, "Please select an option"),
-  publish: Yup.array().min(1, "Please select an option"),
-  publishValue: Yup.string().required("Please specify"),
+  publishSelect: Yup.array().min(1, "Please select an option"),
+  publishValue: Yup.string().when("areaOfExpertise", {
+    is: (value: string[]) => value?.includes("limited"),
+    then: () => Yup.string().required("Please specify"),
+    otherwise: () => Yup.string(),
+  }),
   username: Yup.string().required("Username is required"),
   password: Yup.string()
     .required("Password is required")
@@ -64,9 +80,18 @@ export const ngoRegisterSchema = Yup.object().shape({
 });
 
 export const documentSchema = Yup.object().shape({
-  ngoName: Yup.string().required("Ngo name is required"),
+  name: Yup.string().required("Ngo name is required"),
   email: Yup.string().email("Email is not valid").required("Email is required"),
-  documentType: Yup.array().min(1, "Please select an option"),
+  type: Yup.array().min(1, "Please select an option"),
   title: Yup.string().required("Title is required"),
   description: Yup.string().required("Description is required"),
+});
+
+export const ProjectSchema = Yup.object().shape({});
+
+export const loginSchema = Yup.object().shape({
+  username: Yup.string().required("Username is required"),
+  password: Yup.string()
+    .required("Password is required")
+    .min(8, "The password must not be shorter than 8 characters"),
 });

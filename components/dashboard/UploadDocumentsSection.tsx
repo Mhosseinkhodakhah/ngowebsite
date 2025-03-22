@@ -10,7 +10,11 @@ import { Icon } from "@iconify/react";
 
 import GalleryIcon from "../common/icons/gallery-icon";
 
-function UploadDocumentsSection() {
+function UploadDocumentsSection({
+  onDocuments,
+}: {
+  onDocuments: (formData: FormData) => void;
+}) {
   const [docList, setDocList] = useState<{ name: string; url: string }[]>([]);
 
   const t = useTranslations("ngo-registration");
@@ -18,10 +22,15 @@ function UploadDocumentsSection() {
   const onDrop = useCallback((acceptedFiles: File[]) => {
     // Do something with the files
     let files: { name: string; url: string }[] = [];
+    const formData = new FormData();
 
     acceptedFiles.forEach((file: File) => {
       files.push({ name: file.name, url: URL.createObjectURL(file as Blob) });
+
+      formData.append("picture", file);
     });
+
+    onDocuments(formData);
 
     setDocList(files);
   }, []);

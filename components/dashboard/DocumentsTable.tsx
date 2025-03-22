@@ -20,46 +20,18 @@ import { SearchIcon } from "../common/icons";
 import "ag-grid-community/styles/ag-grid.css";
 import "ag-grid-community/styles/ag-theme-alpine.css"; // or any other theme you prefer
 
-const DocumentsTable = () => {
+const DocumentsTable = ({ data }: { data: any }) => {
   const [searchText, setSearchText] = useState("");
   const { theme } = useTheme();
   const { locale } = useParams();
   const t = useTranslations("dashboard");
 
-  const [rowData, setRowData] = useState([
-    {
-      ngoName: "Model Y",
-      email: "@example.com",
-      interfaceName: "Ali Mohamadi",
-      Phone: "09123456789",
-      documentType: t("Image"),
-      title: "Title",
-      description: "Description",
-    },
-    {
-      ngoName: "F-Series",
-      email: "@example.com",
-      interfaceName: "Ali Mohamadi",
-      Phone: "09123456789",
-      documentType: t("PDF"),
-      title: "Title",
-      description: "Description",
-    },
-    {
-      ngoName: "Corolla",
-      email: "@example.com",
-      interfaceName: "Ali Mohamadi",
-      Phone: "09123456789",
-      documentType: t("Video"),
-      title: "Title",
-      description: "Description",
-    },
-  ]);
+  console.log("ffffffff", data);
 
   const [colDefs, setColDefs] = useState<ColDef[]>([
     {
       headerName: t("NGO Name"),
-      field: "ngoName",
+      field: "name",
     },
     {
       headerName: t("Email"),
@@ -72,11 +44,11 @@ const DocumentsTable = () => {
     },
     {
       headerName: t("Phone"),
-      field: "Phone",
+      field: "phone",
     },
     {
       headerName: t("Document Type"),
-      field: "documentType",
+      field: "type",
     },
     {
       headerName: t("Title"),
@@ -137,8 +109,8 @@ const DocumentsTable = () => {
         type="text"
         value={searchText}
         variant="bordered"
-        onChange={onSearchChange}
         startContent={<SearchIcon />}
+        onChange={onSearchChange}
       />
       <AgGridReact
         columnDefs={colDefs}
@@ -149,7 +121,7 @@ const DocumentsTable = () => {
         pagination={true}
         paginationPageSize={10}
         quickFilterText={searchText}
-        rowData={rowData}
+        rowData={data}
       />
     </div>
   );

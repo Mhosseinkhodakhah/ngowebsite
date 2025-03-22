@@ -420,7 +420,15 @@
     "Confirm password is required": "Confirm password is required",
     "Passwords must match": "Passwords must match",
     "The Confirm password must not be shorter than 8 characters": "The Confirm password must not be shorter than 8 characters",
-    "Please select all options": "Please select all options"
+    "Please select all options": "Please select all options",
+    "Please choose a logo for your organization This is required": "Please choose a logo for your organization. This is required",
+    "Upload Documentation": "Upload Documentation",
+    "Please select your organization's documents This is required": "Please select your organization's documents. This is required",
+    "Logo failed to load, please try again": "Logo failed to load, please try again",
+    "Documents failed to load, please try again": "Documents failed to load, please try again",
+    "Registration": "Registration",
+    "Registration failed, please try again": "Registration failed, please try again",
+    "Please Wait": "Please Wait"
   },
 
   "dashboard": {

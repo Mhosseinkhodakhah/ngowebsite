@@ -9,9 +9,9 @@ function CooperateCheck({ formik }: { formik: FormikProps<any> }) {
     const lastValue = value[value.length - 1];
 
     if (value.length) {
-      formik.setFieldValue("cooperation", [lastValue]);
+      formik.setFieldValue("cooperationSelect", [lastValue]);
     } else {
-      formik.setFieldValue("cooperation", []);
+      formik.setFieldValue("cooperationSelect", []);
     }
   };
 
@@ -19,13 +19,13 @@ function CooperateCheck({ formik }: { formik: FormikProps<any> }) {
     <CheckboxGroup
       isRequired
       className="px-4 md:px-0 my-10"
-      defaultValue={formik.values.cooperation}
+      defaultValue={formik.values.cooperationSelect}
       errorMessage={
-        formik.errors.cooperation &&
-        t(formik.errors.cooperation as unknown as FormikErrors<any>)
+        formik.errors.cooperationSelect &&
+        t(formik.errors.cooperationSelect as unknown as FormikErrors<any>)
       }
       label={t("Do you want to cooperate with other NGOs?")}
-      {...formik.getFieldProps("cooperation")}
+      {...formik.getFieldProps("cooperationSelect")}
       onChange={handleSetCooperateCheck}
     >
       <Checkbox className="my-1" value="yes">

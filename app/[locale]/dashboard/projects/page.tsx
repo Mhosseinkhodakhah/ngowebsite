@@ -1,13 +1,17 @@
 import DashboardHead from "@/components/dashboard/DashboardHead";
 import AddButton from "@/components/dashboard/AddButton";
-import ProjectTable from "@/components/dashboard/ProjectTable";
+import { getProjects } from "@/server/dashboard";
+import ProjectTabs from "@/components/dashboard/ProjectsTabs";
 
-function Page() {
+async function Page() {
+  const data = await getProjects();
+
   return (
     <section className="flex flex-col items-center w-full md:w-3/5 lg:w-3/4 px-10 overflow-y-auto">
       <DashboardHead />
       <AddButton />
-      <ProjectTable />
+
+      <ProjectTabs data={data.data} />
     </section>
   );
 }

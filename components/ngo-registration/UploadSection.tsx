@@ -13,7 +13,12 @@ import GalleryIcon from "../common/icons/gallery-icon";
 
 interface HandleSetLogoEvent extends React.ChangeEvent<HTMLInputElement> {}
 
-function UploadSection() {
+interface Props {
+  onLogo: (formData: FormData) => void;
+  onDocumentsFile: (formData: FormData) => void;
+}
+
+function UploadSection({ onLogo, onDocumentsFile }: Props) {
   const [logo, setLogo] = useState<string>("");
   const [docList, setDocList] = useState<{ name: string; url: string }[]>([]);
 
@@ -22,11 +27,14 @@ function UploadSection() {
   const onDrop = useCallback((acceptedFiles: File[]) => {
     // Do something with the files
     let files: { name: string; url: string }[] = [];
+    const formData = new FormData();
 
     acceptedFiles.forEach((file: File) => {
       files.push({ name: file.name, url: URL.createObjectURL(file as Blob) });
+      formData.append("picture", file);
     });
 
+    onDocumentsFile(formData);
     setDocList(files);
   }, []);
 
@@ -44,6 +52,10 @@ function UploadSection() {
   const handleSetLogo = (e: HandleSetLogoEvent): void => {
     if (e.target.files) {
       const file = e.target.files[0];
+      const formData = new FormData();
+
+      formData.append("picture", file);
+      onLogo(formData);
 
       if (file) {
         const url: string = URL.createObjectURL(file as Blob);
@@ -83,6 +95,7 @@ function UploadSection() {
               }
               onPress={() => {
                 setLogo("");
+                onLogo(new FormData());
               }}
             >
               {t("Delete")}

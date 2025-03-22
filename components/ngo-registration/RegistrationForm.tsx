@@ -1,6 +1,10 @@
 "use client";
 
+import { addToast } from "@heroui/toast";
+import { useState } from "react";
+import { useTranslations } from "next-intl";
 import { useFormik } from "formik";
+import { useMutation } from "@tanstack/react-query";
 
 import UploadSection from "./UploadSection";
 import GlobalInfo from "./GlobalInfo";
@@ -22,16 +26,44 @@ import LoginData from "./LoginData";
 import FormButtons from "./FormButtons";
 import ContactFields from "./ContactFields";
 
-import { INGO } from "@/types/ngo-types";
 import { ngoRegisterSchema } from "@/utils/validations";
+import { INGO } from "@/types/ngo-types";
+import { NogsRegisteration, uploadDocs } from "@/server/ngo";
+import { useRouter } from "@/i18n/navigation";
 
 function RegistrationForm() {
-  const formik = useFormik({
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const t = useTranslations("ngo-registration");
+  const router = useRouter();
+
+  const [logo, setLogo] = useState<FormData>(new FormData());
+  const [documentsFile, setDocumentsFile] = useState<FormData>(new FormData());
+
+  const mutation = useMutation({
+    mutationKey: ["NogsRegisteration"],
+    mutationFn: NogsRegisteration,
+    onSuccess: (data: any) => {
+      if (data.success) {
+        router.push("/login");
+        formik.resetForm();
+      } else {
+        addToast({
+          title: t("Registration"),
+          description: t("Registration failed, please try again"),
+          promise: new Promise((resolve) => setTimeout(resolve, 3000)),
+          color: "danger",
+        });
+      }
+      setIsLoading(false);
+    },
+  });
+
+  const formik = useFormik<INGO>({
     initialValues: {
       name: "",
       nationalId: "",
       establishmentYear: "",
-      activityField: [],
+      activityField: [] as string[],
       otherActivityField: "",
       country: "",
       city: "",
@@ -41,47 +73,171 @@ function RegistrationForm() {
       code: "",
       email: "",
       website: "",
-      areaAndScope: [],
+      areaAndScope: [] as string[],
       otherAreaAndScope: "",
       specificCultureGroupValue: [],
-      specificCultureGroupHas: false,
       specificCultureGroupDescription: "",
-      // specificCultureGroup: {
-      //   has: false,
-      //   description: "",
-      // },
+      specificCultureGroup: {
+        has: false,
+        description: "",
+      },
       specificActiveAreas: [],
-      areaOfExpertise: [],
+      areaOfExpertise: [] as string[],
       areaOfExpertiseValue: "",
-      populationConcentration: [],
+      populationConcentration: [] as string[],
       populationConcentrationValue: "",
       group: [],
       additionalInformation: "",
-      // socialMedia: {
-      //   instagram: string;
-      //   telegram: string;
-      //   linkedIn: string;
-      // };
+      socialMedia: {
+        instagram: "",
+        telegram: "",
+        linkedIn: "",
+      },
       instagram: "",
       telegram: "",
-      linkedin: "",
-      cooperation: [],
+      linkedIn: "",
+      cooperationSelect: [],
+      cooperation: false,
       licenseValue: [],
-      licenseHas: false,
       licenseDescription: "",
-      // license: {
-      //   has: false,
-      //   describtion: "",
-      // },
+      license: {
+        has: false,
+        description: "",
+      },
       expiryDate: "",
       documents: [],
-      publish: [],
+      publishSelect: [] as string[],
       publishValue: "",
+      publish: {
+        status: 0,
+        description: "",
+      },
       conditonAndConfirm: [],
+      logo: "",
+      documentsFile: [],
+      username: "",
+      password: "",
+      confirmPassword: "",
     },
     validationSchema: ngoRegisterSchema,
-    onSubmit: (values) => {
-      console.log(values);
+    onSubmit: async (values) => {
+      if (logo.get("picture") === null) {
+        addToast({
+          title: t("Logo"),
+          description: t(
+            "Please choose a logo for your organization This is required"
+          ),
+          promise: new Promise((resolve) => setTimeout(resolve, 3000)),
+          color: "danger",
+        });
+
+        return;
+      }
+      if (documentsFile.get("picture") === null) {
+        addToast({
+          title: t("Upload Documentation"),
+          description: t(
+            "Please select your organization's documents This is required"
+          ),
+          promise: new Promise((resolve) => setTimeout(resolve, 3000)),
+          color: "danger",
+        });
+
+        return;
+      }
+
+      setIsLoading(true);
+
+      const uploadLogo = await uploadDocs(logo);
+      const uploadDocuments = await uploadDocs(documentsFile);
+
+      if (uploadLogo.success) {
+        values.logo = uploadLogo.data[0];
+      } else {
+        addToast({
+          title: t("Logo"),
+          description: t("Logo failed to load, please try again"),
+          promise: new Promise((resolve) => setTimeout(resolve, 3000)),
+          color: "danger",
+        });
+
+        return;
+      }
+      if (uploadDocuments.success) {
+        values.documentsFile = uploadDocuments.data;
+      } else {
+        addToast({
+          title: t("Logo"),
+          description: t("Documents failed to load, please try again"),
+          promise: new Promise((resolve) => setTimeout(resolve, 3000)),
+          color: "danger",
+        });
+
+        return;
+      }
+
+      if (values.activityField[0] === "other") {
+        values.activityField[0] = values.otherActivityField;
+      }
+
+      if (values.areaAndScope[0] === "other") {
+        values.areaAndScope[0] = values.otherAreaAndScope;
+      }
+
+      if (values.areaOfExpertise[0] === "other") {
+        values.areaOfExpertise[0] = values.areaOfExpertiseValue;
+      }
+
+      if (values.populationConcentration[0] === "other") {
+        values.populationConcentration[0] = values.populationConcentrationValue;
+      }
+
+      values.specificCultureGroup = {
+        has: values.specificCultureGroupValue[0] === "yes" ? true : false,
+        description: values.specificCultureGroupDescription,
+      };
+
+      values.socialMedia = {
+        instagram: values.instagram,
+        telegram: values.telegram,
+        linkedIn: values.linkedIn,
+      };
+
+      values.cooperation = values.cooperationSelect[0] === "yes" ? true : false;
+      values.license = {
+        has: values.licenseValue[0] === "yes" ? true : false,
+        description: values.licenseDescription,
+      };
+
+      values.publish = {
+        status:
+          values.publishValue[0] === "no"
+            ? 0
+            : values.publishValue[0] === "yes"
+              ? 1
+              : 2,
+        description: values.publishValue,
+      };
+
+      const cpValues: Partial<typeof values> = { ...values };
+
+      delete cpValues.areaOfExpertiseValue;
+
+      delete cpValues.cooperationSelect;
+      delete cpValues.licenseDescription;
+      delete cpValues.licenseValue;
+      delete cpValues.otherActivityField;
+      delete cpValues.otherAreaAndScope;
+      delete cpValues.populationConcentrationValue;
+      delete cpValues.publishSelect;
+      delete cpValues.publishValue;
+      delete cpValues.specificCultureGroupDescription;
+      delete cpValues.specificCultureGroupValue;
+      delete cpValues.telegram;
+      delete cpValues.instagram;
+      delete cpValues.linkedIn;
+
+      mutation.mutate(cpValues);
     },
   });
 
@@ -101,11 +257,14 @@ function RegistrationForm() {
       <CooperateCheck formik={formik} />
       <ActivityLicense formik={formik} />
       <NgoDocuments formik={formik} />
-      <UploadSection />
+      <UploadSection onDocumentsFile={setDocumentsFile} onLogo={setLogo} />
       <NgoPublishDocument formik={formik} />
       <LoginData formik={formik} />
       <ConditionAndConfirm formik={formik} />
-      <FormButtons />
+      <FormButtons
+        isDisabled={!!formik.values.name.length}
+        isLoading={isLoading || mutation.isPending}
+      />
     </form>
   );
 }

@@ -419,7 +419,15 @@
     "Confirm password is required": "تکرار رمز عبور الزامی است",
     "Passwords must match": "رمز عبور و تکرار رمز عبور یکسان نیستند",
     "The Confirm password must not be shorter than 8 characters": "تکرار رمز عبور نباید کوتاه تر از 8 کاراکتر باشد",
-    "Please select all options": "لطفا تمام گزینه ها را انتخاب کنید"
+    "Please select all options": "لطفا تمام گزینه ها را انتخاب کنید",
+    "Please choose a logo for your organization This is required": "لطفا یک نشان برای سازمان خود انتخاب کنید این مورد الزامی است",
+    "Upload Documentation": "بارگذاری مستندات",
+    "Please select your organization's documents This is required": "لطفا مستندات و مدارک سازمان خود را انتخاب کنید این مورد الزامی است",
+    "Logo failed to load, please try again": "نشان بارگذاری نشد ، لطفا دوباره امتحان کنید",
+    "Documents failed to load, please try again": "مستندات و مدارک بارگذاری نشد، لطفا دوباره امتحان کنید",
+    "Registration": "ثبت نام سمن",
+    "Registration failed, please try again": "ثبت نام انجام نشد ، لطفا دوباره امتحان کنید",
+    "Please Wait":"لطفا صبر کنید"
   },
   "dashboard": {
     "Projects": "پروژها",
