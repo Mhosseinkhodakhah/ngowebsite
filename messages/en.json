@@ -31,7 +31,8 @@
     "Good Practice": "Good Practice",
     "Onegoing Projects": "Onegoing Projects",
     "Completed Projects": "Completed Projects",
-    "Collaboration Opportunities": "Collaboration Opportunities"
+    "Collaboration Opportunities": "Collaboration Opportunities",
+    "Dashboard": "Dashboard"
   },
   "homePage": {
     "title": "Hello world!",
@@ -428,7 +429,10 @@
     "Documents failed to load, please try again": "Documents failed to load, please try again",
     "Registration": "Registration",
     "Registration failed, please try again": "Registration failed, please try again",
-    "Please Wait": "Please Wait"
+    "Please Wait": "Please Wait",
+    "Login": "Login",
+    "Error": "Error",
+    "The username or password is incorrect": "The username or password is incorrect"
   },
 
   "dashboard": {
@@ -542,5 +546,10 @@
     "Submit": "Submit",
     "All rights of this site are reserved": "All rights of this site are reserved",
     "Copyright": "Copyright"
+  },
+
+  "error": {
+    "Something went wrong!": "Something went wrong!",
+    "Try again": "Try again"
   }
 }

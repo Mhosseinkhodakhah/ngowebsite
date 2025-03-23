@@ -29,7 +29,8 @@
     "Onegoing Projects": "Текущие проекты",
     "Completed Projects": "Завершенные проекты",
     "Collaboration Opportunities": "Возможности сотрудничества",
-    "Join Us": "Присоединяйтесь к нам"
+    "Join Us": "Присоединяйтесь к нам",
+    "Dashboard": "Панель управления"
   },
   "homePage": {
     "title": "HHHHH",
@@ -422,8 +423,12 @@
     "Documents failed to load, please try again": "Не удалось загрузить документы. Попробуйте еще раз.",
     "Registration": "Регистрация",
     "Registration failed, please try again": "Регистрация не удалась, попробуйте еще раз",
-    "Please Wait":"Пожалуйста, подождите"
+    "Please Wait": "Пожалуйста, подождите",
+    "Login": "Авторизоваться",
+    "Error": "Ошибка",
+    "The username or password is incorrect": "Неверное имя пользователя или пароль"
   },
+
   "dashboard": {
     "Projects": "Проекты",
     "Documents": "Документы",
@@ -538,5 +543,9 @@
     "Statutes": "Уставы",
     "Activity license": "Лицензия на деятельность",
     "Introduction letter of related institutions": "Рекомендательное письмо соответствующих учреждений"
+  },
+  "error": {
+    "Something went wrong!": "Что-то пошло не так!",
+    "Try again": "Попробуйте еще раз"
   }
 }

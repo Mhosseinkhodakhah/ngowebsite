@@ -1,3 +1,11 @@
+// export default function Layout({ children }: { children: React.ReactNode }) {
+//   return (
+//     <html lang="en">
+//       <body>{children}</body>
+//     </html>
+//   );
+// }
+
 import { Metadata, Viewport } from "next";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
@@ -54,7 +62,7 @@ export default async function LocaleLayout({
         className={clsx(
           "min-h-screen bg-background  antialiased ",
           locale === "pe" ? vazir.variable : fontSans.variable,
-          locale === "pe" ? "font-vazir" : "font-sans",
+          locale === "pe" ? "font-vazir" : "font-sans"
         )}
         dir={locale === "pe" ? "rtl" : "ltr"}
       >

@@ -30,7 +30,8 @@
     "Onegoing Projects": "پروژه های فعال",
     "Completed Projects": "پروژه های تکمیل شده",
     "Collaboration Opportunities": "فرصت های همکاری",
-    "Join Us": "به ما بپیوندید"
+    "Join Us": "به ما بپیوندید",
+    "Dashboard": "داشبورد"
   },
   "homePage": {
     "title": "سلام دنیا",
@@ -427,8 +428,12 @@
     "Documents failed to load, please try again": "مستندات و مدارک بارگذاری نشد، لطفا دوباره امتحان کنید",
     "Registration": "ثبت نام سمن",
     "Registration failed, please try again": "ثبت نام انجام نشد ، لطفا دوباره امتحان کنید",
-    "Please Wait":"لطفا صبر کنید"
+    "Please Wait": "لطفا صبر کنید",
+    "Login": "ورود",
+    "Error": "خطا",
+    "The username or password is incorrect": "نام کاربری یا رمز عبور اشتباه است"
   },
+
   "dashboard": {
     "Projects": "پروژها",
     "Documents": "مدارک و مستندات",
@@ -539,5 +544,9 @@
     "Submit": "تایید",
     "All rights of this site are reserved": "کلیه حقوق این سایت محفوظ میباشد",
     "Copyright": "کپی رایت"
+  },
+  "error": {
+    "Something went wrong!": "مشکلی پیش آمده!",
+    "Try again": "تلاش مجدد"
   }
 }

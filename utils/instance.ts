@@ -1,13 +1,13 @@
 import axios from "axios";
-import { redirect } from "next/navigation";
 
 import { getCookie } from "./cookie";
-import handleRedirect from "./handleRedirect";
 
 const token = async () => {
   const token: any = await getCookie("miras-token");
 
-  return token.value;
+  if (token) {
+    return token.value;
+  }
 };
 
 const instance = axios.create({
@@ -44,30 +44,43 @@ instance.interceptors.response.use(
       // Server responded with a status code outside of 2xx
       switch (error.response.status) {
         case 401:
-          // Handle unauthorized error (e.g., redirect to login)
-          // handleRedirect();
-          redirect("/login");
+          const UnauthorizedError = new Error("401");
 
-          console.error("Unauthorized access 401");
+          return Promise.reject(UnauthorizedError);
 
-          break;
         case 404:
-          console.error("Resource not found 404");
+          const notFoundError = new Error("404");
+
+          return Promise.reject(notFoundError);
           break;
         case 500:
-          console.error("Server error 500");
+          const serverError = new Error("500");
+
+          return Promise.reject(serverError);
           break;
         default:
-          console.error("An error occurred:", error.response.status);
+          const defaultError = new Error(
+            `An error occurred: ${error.response.status}`
+          );
+
+          (defaultError as any).status = error.response.status;
+
+          return Promise.reject(defaultError);
       }
     } else if (error.request) {
-      // Request was made but no response received
-      console.error("No response received:", error.request);
+      const networkError = new Error("No response received from server");
+
+      (networkError as any).status = 0;
+
+      return Promise.reject(networkError);
     } else {
       // Error in setting up the request
-      console.error("Error setting up request:", error.message);
+      const setupError = new Error(error.message);
+
+      (setupError as any).status = -1;
+
+      return Promise.reject(setupError);
     }
-    return Promise.reject(error);
   }
 );
 

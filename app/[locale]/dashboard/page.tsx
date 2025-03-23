@@ -1,9 +1,22 @@
+"use client";
+
+import { useParams } from "next/navigation";
+import { useEffect } from "react";
+
 import { redirect } from "@/i18n/navigation";
+import useStore from "@/store";
 
-async function Page({ params }: { params: any }) {
-  const { locale } = await params;
+function Page() {
+  const isLogin = useStore((state) => state.isLogin);
+  const { locale } = useParams() as { locale: string };
 
-  redirect({ href: "/dashboard/projects", locale: locale });
+  useEffect(() => {
+    if (isLogin) {
+      return redirect({ href: "/dashboard/projects", locale: locale });
+    } else {
+      redirect({ href: "/", locale: locale });
+    }
+  }, [isLogin]);
 
   return <></>;
 }

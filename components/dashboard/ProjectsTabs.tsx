@@ -8,8 +8,6 @@ import ProjectTable from "./ProjectTable";
 function ProjectTabs({ data }: { data: any }) {
   const t = useTranslations("dashboard");
 
-  console.log("ddd", data);
-
   return (
     <div className="flex w-full flex-col">
       <Tabs
@@ -22,28 +20,28 @@ function ProjectTabs({ data }: { data: any }) {
           className="text-slate-50 active:text-slate-50"
           title={t("Good Practice")}
         >
-          <ProjectTable data={data.goodPractice} />
+          <ProjectTable data={data?.goodPractice} />
         </Tab>
         <Tab
           key="ongoing"
           className="text-white active:text-slate-50"
           title={t("Ongoing")}
         >
-          <ProjectTable data={data.ongoing} />
+          <ProjectTable data={data?.ongoing} />
         </Tab>
         <Tab
           key="completed"
           className="text-white active:text-slate-50"
           title={t("Completed")}
         >
-          <ProjectTable data={data.completed} />
+          <ProjectTable data={data?.completed} />
         </Tab>
         <Tab
           key="collaborationOpportunities"
           className="text-white active:text-slate-50"
           title={t("Collaboration Opportunities")}
         >
-          <ProjectTable data={data.collaborationOpportunities} />
+          <ProjectTable data={data?.collaborationOpportunities} />
         </Tab>
       </Tabs>
     </div>

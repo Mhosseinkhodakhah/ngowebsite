@@ -35,3 +35,15 @@ export const getCookie = async (name: string) => {
     return error;
   }
 };
+
+export const deleteCookie = async (name: string) => {
+  try {
+    const cookieStore = await cookies();
+
+    return cookieStore.delete(name);
+  } catch (error) {
+    console.log(error);
+
+    return error;
+  }
+};

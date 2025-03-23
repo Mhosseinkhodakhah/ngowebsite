@@ -5,10 +5,10 @@ export const getProjects = async () => {
     const { data } = await instance.get("ngo/pannel/projects");
 
     return data;
-  } catch (err) {
+  } catch (err: any) {
     console.log("eeerrrr", err);
 
-    return false;
+    throw new Error(err);
   }
 };
 
@@ -17,10 +17,12 @@ export const createProject = async (values: any) => {
     const { data } = await instance.post("ngo/project/create", values);
 
     return data;
-  } catch (err) {
+  } catch (err: any) {
     console.log("eeerrrr", err);
 
-    return false;
+    return {
+      props: { error: "Failed to fetch data" },
+    };
   }
 };
 

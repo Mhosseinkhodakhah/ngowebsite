@@ -11,7 +11,7 @@ async function Page() {
       <DashboardHead />
       <AddButton />
 
-      <ProjectTabs data={data.data} />
+      <ProjectTabs data={data?.data} />
     </section>
   );
 }
