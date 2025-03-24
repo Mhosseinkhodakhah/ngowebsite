@@ -14,6 +14,7 @@ function ProjectTabs({ data }: { data: any }) {
         aria-label="Status"
         className="text-slate-50 active:text-slate-50"
         color="primary"
+        variant="underlined"
       >
         <Tab
           key="goodPractice"

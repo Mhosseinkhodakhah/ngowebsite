@@ -11,10 +11,22 @@ import { Icon } from "@iconify/react";
 import { useParams, usePathname } from "next/navigation";
 import { useTranslations } from "use-intl";
 
+import { useRouter } from "@/i18n/navigation";
+import useStore from "@/store";
+import { deleteCookie } from "@/utils/cookie";
+
 function DashboardDropDownMenu() {
   const t = useTranslations("dashboard");
   const { locale } = useParams();
   const pathname = usePathname();
+  const logOutNGO = useStore((state) => state.logoutNgo);
+  const router = useRouter();
+
+  const handleLogout = () => {
+    logOutNGO();
+    deleteCookie("miras-token");
+    router.replace("/");
+  };
 
   return (
     <Dropdown>
@@ -72,6 +84,7 @@ function DashboardDropDownMenu() {
           startContent={
             <Icon height="24" icon="solar:login-outline" width="24" />
           }
+          onPress={handleLogout}
         >
           {t("Logout")}
         </DropdownItem>

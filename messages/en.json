@@ -500,7 +500,11 @@
     "Email is required": "Email is required",
     "Please select an option": "Please select an option",
     "Title is required": "Title is required",
-    "Description is required": "Description is required"
+    "Description is required": "Description is required",
+    "Error": "Error",
+    "Documents failed to load, please try again": "Documents failed to load, please try again",
+    "Success": "Success",
+    "Document created successfully": "Document created successfully"
   },
 
   "education": {

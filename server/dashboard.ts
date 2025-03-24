@@ -1,3 +1,5 @@
+import { revalidatePath } from "next/cache";
+
 import instance from "@/utils/instance";
 
 export const getProjects = async () => {
@@ -6,8 +8,6 @@ export const getProjects = async () => {
 
     return data;
   } catch (err: any) {
-    console.log("eeerrrr", err);
-
     throw new Error(err);
   }
 };
@@ -19,16 +19,14 @@ export const createProject = async (values: any) => {
     return data;
   } catch (err: any) {
     console.log("eeerrrr", err);
-
-    return {
-      props: { error: "Failed to fetch data" },
-    };
   }
 };
 
 export const createDocument = async (values: any) => {
   try {
     const { data } = await instance.post("ngo/document/create", values);
+
+    revalidatePath("/dashboard/documents");
 
     return data;
   } catch (err) {
@@ -43,9 +41,7 @@ export const getDocuments = async () => {
     const { data } = await instance.get("ngo/pannel/documents");
 
     return data;
-  } catch (err) {
-    console.log("eeerrrr ", `${err}`);
-
-    return false;
+  } catch (err: any) {
+    throw new Error(err);
   }
 };

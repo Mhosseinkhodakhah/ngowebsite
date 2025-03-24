@@ -494,7 +494,11 @@
     "Email is required": "Требуется электронная почта",
     "Please select an option": "Пожалуйста, выберите вариант",
     "Title is required": "Требуется название",
-    "Description is required": "Требуется описание"
+    "Description is required": "Требуется описание",
+    "Error": "Ошибка",
+    "Documents failed to load, please try again": "Не удалось загрузить документы. Попробуйте еще раз.",
+    "Success": "Успех",
+    "Document created successfully": "Документ успешно создан"
   },
   "education": {
     "Filter by file format": "Фильтровать по формату файла",

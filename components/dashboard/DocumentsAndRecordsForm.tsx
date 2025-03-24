@@ -5,6 +5,8 @@ import { useTranslations } from "next-intl";
 import { Checkbox, CheckboxGroup } from "@heroui/checkbox";
 import { Textarea } from "@heroui/input";
 import { FormikErrors, useFormik } from "formik";
+import { useMutation } from "@tanstack/react-query";
+import { addToast } from "@heroui/toast";
 
 import CInput from "../common/cinput";
 import NumberInput from "../ngo-registration/NumberInput";
@@ -14,18 +16,30 @@ import FormButtons from "./FormButtons";
 
 import { documentSchema } from "@/utils/validations";
 import { uploadDocs } from "@/server/ngo";
-import { useMutation } from "@tanstack/react-query";
 import { createDocument } from "@/server/dashboard";
+import { useRouter } from "@/i18n/navigation";
 
 function DocumentsAndRecordsForm() {
   const t = useTranslations("dashboard");
+  const [isLoading, setIsLoading] = useState<boolean>(false);
   const [documents, setDocuments] = useState<FormData>(new FormData());
+
+  const router = useRouter();
 
   const mutation = useMutation({
     mutationKey: ["createDocument"],
     mutationFn: createDocument,
-    onSuccess: (data) => {
-      console.log("ddddddddddd", data);
+    onSuccess: () => {
+      setIsLoading(false);
+      addToast({
+        title: t("Success"),
+        description: t("Document created successfully"),
+        promise: new Promise((resolve) => setTimeout(resolve, 3000)),
+        color: "success",
+      });
+      setDocuments(new FormData());
+      formik.resetForm();
+      router.push("/dashboard/documents");
     },
   });
 
@@ -42,18 +56,24 @@ function DocumentsAndRecordsForm() {
     },
     validationSchema: documentSchema,
     onSubmit: async (values) => {
+      setIsLoading(true);
       const upload = await uploadDocs(documents);
 
       if (upload.success) {
         values.file = upload.data;
+        mutation.mutate(values);
+
+        return;
       } else {
-        // Handle error
-        console.error("Failed to upload documents:", upload.error);
+        addToast({
+          title: t("Error"),
+          description: t("Documents failed to load, please try again"),
+          promise: new Promise((resolve) => setTimeout(resolve, 3000)),
+          color: "danger",
+        });
 
         return;
       }
-
-      mutation.mutate(values);
     },
   });
 
@@ -128,11 +148,17 @@ function DocumentsAndRecordsForm() {
         <Textarea
           isClearable
           isRequired
+          errorMessage={() => {
+            if (formik.errors.description) {
+              return t(formik.errors.description);
+            }
+          }}
+          isInvalid={formik.errors.description ? true : false}
           label={t("Description Doc")}
           {...formik.getFieldProps("description")}
         />
         <UploadDocumentsSection onDocuments={setDocuments} />
-        <FormButtons isLoading={mutation.isPending} />
+        <FormButtons isLoading={mutation.isPending || isLoading} />
       </div>
     </form>
   );

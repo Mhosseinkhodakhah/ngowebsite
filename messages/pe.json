@@ -499,7 +499,11 @@
     "Email is required": "ایمیل الزامی است",
     "Please select an option": "لطفا یک گزینه را انتخاب کنید",
     "Title is required": "عنوان الزامی است",
-    "Description is required": "توضیحات الزامی است"
+    "Description is required": "توضیحات الزامی است",
+    "Error": "خطا",
+    "Documents failed to load, please try again": "مستندات و مدارک بارگذاری نشد، لطفا دوباره امتحان کنید",
+    "Success": "انجام شد",
+    "Document created successfully": "مستندات با موفقیت ساخته شد"
   },
   "education": {
     "Filter by file format": "بر اساس نوع فایل",
