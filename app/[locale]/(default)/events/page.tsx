@@ -1,8 +1,11 @@
+import { getEvents } from "@/actions/events";
 import Title from "@/components/common/title";
 import EventsList from "@/components/events/EventsList";
 import FilterEvents from "@/components/events/FilterEvents";
 
-function Page() {
+async function Page() {
+  const data = await getEvents();
+
   return (
     <section className="flex flex-col justify-center items-center">
       <Title
@@ -13,7 +16,7 @@ function Page() {
 
       <div className="flex gap-4 w-full m-4 px-4 mt-20">
         <FilterEvents />
-        <EventsList />
+        <EventsList data={data?.data} />
       </div>
     </section>
   );

@@ -1,6 +1,6 @@
 import DashboardHead from "@/components/dashboard/DashboardHead";
 import AddButton from "@/components/dashboard/AddButton";
-import { getProjects } from "@/server/dashboard";
+import { getProjects } from "@/actions/dashboard";
 import ProjectTabs from "@/components/dashboard/ProjectsTabs";
 
 async function Page() {

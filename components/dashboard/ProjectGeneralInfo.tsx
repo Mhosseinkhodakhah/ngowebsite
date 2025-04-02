@@ -32,6 +32,12 @@ function ProjectGeneralInfo({ formik }: { formik: FormikProps<any> }) {
           isClearable
           isRequired
           className="h-40"
+          errorMessage={() => {
+            if (formik.errors.description) {
+              return t(formik.errors.description);
+            }
+          }}
+          isInvalid={formik.errors.description ? true : false}
           label={t("Description")}
           {...formik.getFieldProps("description")}
         />

@@ -16,6 +16,12 @@ const nextConfig = {
         port: "",
         search: "",
       },
+      {
+        protocol: "https",
+        hostname: "ngoupload.oceanjourney.ir",
+        port: "",
+        search: "",
+      },
     ],
   },
   async redirects() {

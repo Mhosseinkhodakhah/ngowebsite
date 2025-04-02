@@ -28,7 +28,7 @@ import ContactFields from "./ContactFields";
 
 import { ngoRegisterSchema } from "@/utils/validations";
 import { INGO } from "@/types/ngo-types";
-import { NogsRegisteration, uploadDocs } from "@/server/ngo";
+import { NogsRegisteration, uploadDocs } from "@/actions/ngo";
 import { useRouter } from "@/i18n/navigation";
 
 function RegistrationForm() {

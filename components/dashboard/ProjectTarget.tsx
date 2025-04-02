@@ -1,6 +1,6 @@
 import { Checkbox, CheckboxGroup } from "@heroui/checkbox";
 import { Input } from "@heroui/input";
-import { FormikProps } from "formik";
+import { FormikErrors, FormikProps } from "formik";
 import { useTranslations } from "next-intl";
 
 function ProjectTarget({ formik }: { formik: FormikProps<any> }) {
@@ -12,11 +12,10 @@ function ProjectTarget({ formik }: { formik: FormikProps<any> }) {
     if (value.length) {
       if (lastValue !== "other") {
         formik.setFieldValue("otherGoalAndAchievements", "");
-        formik.setFieldValue("goalAndAchievements", value);
-      } else {
-        formik.setFieldValue("goalAndAchievements", []);
-        formik.setFieldValue("goalAndAchievements", lastValue);
       }
+      formik.setFieldValue("goalAndAchievements", [lastValue]);
+    } else {
+      formik.setFieldValue("goalAndAchievements", []);
     }
   };
 
@@ -25,7 +24,11 @@ function ProjectTarget({ formik }: { formik: FormikProps<any> }) {
       <CheckboxGroup
         isRequired
         className="px-4 md:px-0 mt-8"
-        defaultValue={[]}
+        defaultValue={formik.values.goalAndAchievements}
+        errorMessage={
+          formik.errors.goalAndAchievements &&
+          t(formik.errors.goalAndAchievements as unknown as FormikErrors<any>)
+        }
         label={t("Expected goals and achievements")}
         {...formik.getFieldProps("goalAndAchievements")}
         onChange={handleSetProjectTarget}
@@ -56,7 +59,27 @@ function ProjectTarget({ formik }: { formik: FormikProps<any> }) {
         </Checkbox>
       </CheckboxGroup>
       <div className="flex items-center gap-4 flex-1 mx-4 md:mx-0 mt-2">
-        <Input isRequired={false} label={t("Please specify")} name="other" />
+        <Input
+          disabled={
+            formik.values.goalAndAchievements.includes("other") ? false : true
+          }
+          errorMessage={() => {
+            if (formik.errors.goalAndAchievements) {
+              return t(formik.errors.goalAndAchievements);
+            }
+          }}
+          isInvalid={
+            formik.values.goalAndAchievements.includes("other") &&
+            formik.errors.otherGoalAndAchievements
+              ? true
+              : false
+          }
+          isRequired={
+            formik.values.goalAndAchievements.includes("other") ? true : false
+          }
+          label={t("Please specify")}
+          {...formik.getFieldProps("otherGoalAndAchievements")}
+        />
       </div>
     </>
   );

@@ -1,22 +1,54 @@
+"use client";
+
 import { Pagination } from "@heroui/pagination";
+import { useParams } from "next/navigation";
 
 import Card from "../common/card";
 
 import SortList from "./SortList";
 
-function EducationList() {
+function EducationList({ data }: { data: any }) {
+  const { locale } = useParams() as { locale: string };
+
+  console.log(locale);
+  console.log(data);
+
   return (
     <div className="w-full md:w-4/6 lg:w-3/4">
-      <SortList />
+      <SortList total={data?.length} />
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-        {new Array(10).fill(null).map((eucation, index) => (
+        {data?.map((education: any) => (
           <Card
-            key={index}
+            key={education?._id}
             btnText="See More"
-            description="lorem ipsum dolor sit amet, consectetur adip nonum"
-            imageUrl="https://unsplash.it/g/640/425"
-            name="Education 1"
-            route="education/1"
+            description={
+              locale === "en"
+                ? education?.enDescription
+                : locale === "pe"
+                  ? education?.peDescription
+                  : education?.ruDescription
+            }
+            imageUrl={
+              locale === "en"
+                ? education?.enPictures.length > 0
+                  ? education?.enPictures[0]
+                  : ""
+                : locale === "pe"
+                  ? education?.pePictures.length > 0
+                    ? education?.pePictures[0]
+                    : ""
+                  : education?.ruPictures.length > 0
+                    ? education?.ruPictures[0]
+                    : ""
+            }
+            name={
+              locale === "en"
+                ? education?.enTitle
+                : locale === "pe"
+                  ? education?.peTitle
+                  : education?.ruTitle
+            }
+            route={`education/${education?._id}`}
           />
         ))}
       </div>

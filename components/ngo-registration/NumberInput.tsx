@@ -38,6 +38,7 @@ function NumberInput({
           return t(formik.errors[name]);
         }
       }}
+      isInvalid={formik.errors[name] ? true : false}
       isRequired={isRequired ?? true}
       label={t(label)}
       name={name}

@@ -14,7 +14,7 @@ function Projects() {
         titleText="Projects"
       />
 
-      <div className="mt-10 grid grid-cols-1 lg:grid-cols-2  gap-2 px-5 w-full md:w-auto">
+      <div className="mt-10 grid grid-cols-1 lg:grid-cols-2  gap-2 px-5 w-full md:w-auto container">
         <ProjectCard />
         <ProjectCard />
         <ProjectCard />

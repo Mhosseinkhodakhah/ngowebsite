@@ -1,7 +1,13 @@
 import { Button } from "@heroui/button";
 import { useTranslations } from "next-intl";
 
-function FormButtons({ isLoading }: { isLoading: boolean }) {
+function FormButtons({
+  isLoading,
+  isDisabled,
+}: {
+  isLoading: boolean;
+  isDisabled: boolean;
+}) {
   const t = useTranslations("ngo-registration");
 
   return (
@@ -9,6 +15,7 @@ function FormButtons({ isLoading }: { isLoading: boolean }) {
       <Button
         className="text-gray"
         color="primary"
+        isDisabled={isDisabled}
         isLoading={isLoading}
         type="submit"
       >

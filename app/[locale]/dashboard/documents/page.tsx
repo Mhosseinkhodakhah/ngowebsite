@@ -1,7 +1,7 @@
 import AddButton from "@/components/dashboard/AddButton";
 import DashboardHead from "@/components/dashboard/DashboardHead";
 import DocumentsTable from "@/components/dashboard/DocumentsTable";
-import { getDocuments } from "@/server/dashboard";
+import { getDocuments } from "@/actions/dashboard";
 
 async function Page() {
   const data = await getDocuments();

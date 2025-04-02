@@ -16,23 +16,41 @@ import ProjectFiles from "./ProjectFiles";
 import ProjectCountry from "./ProjectCountry";
 
 import { ProjectSchema } from "@/utils/validations";
-import { createProject } from "@/server/dashboard";
-import { uploadDocs } from "@/server/ngo";
+import { createProject } from "@/actions/dashboard";
+import { uploadDocs } from "@/actions/ngo";
+import { addToast } from "@heroui/toast";
+import { useRouter } from "@/i18n/navigation";
 
 function ProjectForm() {
+  const [isLoading, setIsLoading] = useState<boolean>(false);
   const [documentsAndReportFormData, setDocumentsAndReportFormData] = useState<
     []
   >([]);
 
-  const [visualDocuments, setVisualDocuments] = useState<[]>([]);
+  const [visualDocuments, setVisualDocuments] = useState<(File | undefined)[]>(
+    []
+  );
 
   const t = useTranslations("dashboard");
+
+  const router = useRouter();
 
   const mutation = useMutation({
     mutationKey: ["createProject"],
     mutationFn: createProject,
     onSuccess: (data) => {
       console.log("ddddddddddd", data);
+      if (data.success) {
+        formik.resetForm();
+        router.push("/dashboard/projects");
+      } else {
+        addToast({
+          title: t("Error"),
+          description: t("Failed to create project"),
+          timeout: 3000,
+          color: "danger",
+        });
+      }
     },
   });
 
@@ -57,35 +75,38 @@ function ProjectForm() {
       goalAndAchievements: [],
       otherGoalAndAchievements: "",
       documentsAndReportTitle: "",
-      documentsAndReport: { title: "", files: [] },
-      visualDocuments: [] as { title: string; files: string[] }[],
+      documentsAndReportFiles: [] as string[],
       visualDocuments1: "",
       visualDocuments2: "",
       visualDocuments3: "",
       visualDocuments4: "",
+      visualDocuments: [] as { title: string; files: string[] }[],
       moreInformation: "",
     },
-    // validationSchema: ProjectSchema,
+    validationSchema: ProjectSchema,
     onSubmit: async (values) => {
-      console.log("cccccc", values);
-      console.log("cccccc", documentsAndReportFormData);
-      console.log("cccccc", visualDocuments);
-      // handle form submission
+      if (documentsAndReportFormData.length === 0) {
+        addToast({
+          title: t("Error"),
+          description: t("Please select the documentation and reports file"),
+          timeout: 3000,
+          color: "danger",
+        });
 
-      // const
-      // const formData = new FormData();
+        return;
+      }
 
-      // documentsAndReportFormData.forEach((value) => {
-      //   formData.append("picture", value);
-      // });
+      if (visualDocuments.includes(undefined) || visualDocuments.length < 4) {
+        addToast({
+          title: t("Error"),
+          description: t("Please select all visual documents"),
+          timeout: 3000,
+          color: "danger",
+        });
 
-      // const uploadDocumentsAndReportFormData = await uploadDocs(formData);
-
-      // if (uploadDocumentsAndReportFormData.success) {
-      //   values.documentsAndReport.title =
-      //     uploadDocumentsAndReportFormData.data.title;
-      //   values.documentsAndReport.files = uploadDocumentsAndReportFormData.data;
-      // }
+        return;
+      }
+      setIsLoading(true);
 
       const filterVisualDocuments = visualDocuments.filter(
         (f) => typeof f !== "undefined"
@@ -101,16 +122,48 @@ function ProjectForm() {
 
       if (uploadVisualDocuments.success) {
         uploadVisualDocuments.data.forEach((value: string, index: number) => {
-          values.visualDocuments.push({
-            title: `visualDocuments${index + 1}`,
+          values.visualDocuments[index] = {
+            title: values.visualDocuments[index].title,
             files: [value],
-          });
+          };
         });
-        console.log("cccccc", uploadVisualDocuments);
-        console.log("cccccc", values);
       }
 
-      mutation.mutate(values);
+      const formDataDocumentAndReport = new FormData();
+
+      documentsAndReportFormData.forEach((value) => {
+        formDataDocumentAndReport.append("picture", value);
+      });
+
+      const uploadDocumentAndReposrt = await uploadDocs(
+        formDataVisualDocuments
+      );
+
+      if (uploadDocumentAndReposrt.success) {
+        values.documentsAndReportFiles = uploadDocumentAndReposrt.data;
+      }
+
+      const cpValues = { ...values } as {
+        -readonly [K in keyof typeof values]+?: (typeof values)[K];
+      };
+
+      cpValues.location = {
+        country: values.country,
+        city: values.city,
+      };
+
+      delete cpValues.country;
+      delete cpValues.city;
+      delete cpValues.visualDocuments1;
+      delete cpValues.visualDocuments2;
+      delete cpValues.visualDocuments3;
+      delete cpValues.visualDocuments4;
+
+      setIsLoading(false);
+
+      console.log(cpValues);
+
+      mutation.mutate(cpValues);
     },
   });
 
@@ -140,6 +193,7 @@ function ProjectForm() {
 
       <ProjectTarget formik={formik} />
       <ProjectFiles
+        files={documentsAndReportFormData}
         formik={formik}
         visualDocuments={visualDocuments}
         onFiles={setDocumentsAndReportFormData}
@@ -154,7 +208,10 @@ function ProjectForm() {
         page="dashboard"
       />
       <div className="my-10">
-        <FormButtons isLoading={mutation.isPending} />
+        <FormButtons
+          isDisabled={formik.values.name.length ? false : true}
+          isLoading={mutation.isPending || isLoading}
+        />
       </div>
     </form>
   );

@@ -498,7 +498,24 @@
     "Error": "Ошибка",
     "Documents failed to load, please try again": "Не удалось загрузить документы. Попробуйте еще раз.",
     "Success": "Успех",
-    "Document created successfully": "Документ успешно создан"
+    "Document created successfully": "Документ успешно создан",
+    "Project name is required": "Укажите название проекта.",
+    "Project start date is required": "Требуется дата начала проекта",
+    "Project end date is required": "Требуется дата окончания проекта",
+    "Country is required": "Укажите страну",
+    "City is required": "Требуется город",
+    "Implementer and stakeholders name is required": "Необходимо указать имя исполнителя и заинтересованных лиц.",
+    "Project manager name is required": "Требуется имя менеджера проекта",
+    "Project manager email is required": "Требуется адрес электронной почты менеджера проекта",
+    "Project manager phone is required": "Требуется телефон менеджера проекта",
+    "Colleagues and stakeholders is required": "Требуется участие коллег и заинтересованных сторон",
+    "Documents and report title is required": "Требуется указать название документа и отчета",
+    "Delete": "Удалить",
+    "Visual documents is required": "Требуются визуальные документы",
+    "Please select all visual documents":"Пожалуйста, выберите все визуальные документы",
+    "Please select the documentation and reports file":"Пожалуйста, выберите файл документации и отчетов",
+    "Failed to create project" : "Не удалось создать проект"
+
   },
   "education": {
     "Filter by file format": "Фильтровать по формату файла",

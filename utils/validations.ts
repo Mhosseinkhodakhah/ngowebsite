@@ -87,7 +87,41 @@ export const documentSchema = Yup.object().shape({
   description: Yup.string().required("Description is required"),
 });
 
-export const ProjectSchema = Yup.object().shape({});
+export const ProjectSchema = Yup.object().shape({
+  name: Yup.string().required("Project name is required"),
+  startDate: Yup.string().required("Project start date is required"),
+  endDate: Yup.string().required("Project end date is required"),
+  description: Yup.string().required("Description is required"),
+  status: Yup.array().min(1, "Please select an option"),
+  country: Yup.string().required("Country is required"),
+  city: Yup.string().required("City is required"),
+  organizationName: Yup.string().required(
+    "Implementer and stakeholders name is required"
+  ),
+  projectManagerName: Yup.string().required("Project manager name is required"),
+  projectManagerEmail: Yup.string()
+    .email("Email is not valid")
+    .required("Project manager email is required"),
+  projectManagerPhone: Yup.string().required(
+    "Project manager phone is required"
+  ),
+  colleaguesAndStakeholders: Yup.string().required(
+    "Colleagues and stakeholders is required"
+  ),
+  goalAndAchievements: Yup.array().min(1, "Please select an option"),
+  otherGoalAndAchievements: Yup.string().when("goalAndAchievements", {
+    is: (value: string[]) => value?.includes("other"),
+    then: () => Yup.string().required("Please specify"),
+    otherwise: () => Yup.string(),
+  }),
+  documentsAndReportTitle: Yup.string().required(
+    "Documents and report title is required"
+  ),
+  visualDocuments1: Yup.string().required("Visual documents is required"),
+  visualDocuments2: Yup.string().required("Visual documents is required"),
+  visualDocuments3: Yup.string().required("Visual documents is required"),
+  visualDocuments4: Yup.string().required("Visual documents is required"),
+});
 
 export const loginSchema = Yup.object().shape({
   username: Yup.string().required("Username is required"),

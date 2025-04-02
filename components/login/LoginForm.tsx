@@ -11,7 +11,7 @@ import { useTranslations } from "next-intl";
 import CInput from "../common/cinput";
 
 import { loginSchema } from "@/utils/validations";
-import { loginRequest } from "@/server/login";
+import { loginRequest } from "@/actions/login";
 import { setCookie } from "@/utils/cookie";
 import { useRouter } from "@/i18n/navigation";
 import { ILogin } from "@/types/login-types";
@@ -27,7 +27,6 @@ function LoginForm() {
     mutationKey: ["login"],
     mutationFn: loginRequest,
     onSuccess: (data) => {
-      console.log("ddddddddddd", data);
       if (data.success) {
         setCookie({ name: "miras-token", value: data.data.token });
         store(data.data);

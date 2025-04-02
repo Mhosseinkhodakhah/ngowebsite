@@ -1,8 +1,11 @@
 import Title from "@/components/common/title";
 import EducationList from "@/components/education/EducationList";
 import FilterEducation from "@/components/education/FilterEducation";
+import { getEducations } from "@/actions/educations";
 
-function Page() {
+async function Page() {
+  const data = await getEducations();
+
   return (
     <section className="flex flex-col justify-center items-center">
       <Title
@@ -12,7 +15,7 @@ function Page() {
       />
       <div className="flex gap-4 w-full m-4 px-4 mt-20">
         <FilterEducation />
-        <EducationList />
+        <EducationList data={data?.data} />
       </div>
     </section>
   );

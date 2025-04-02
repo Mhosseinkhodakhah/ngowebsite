@@ -504,7 +504,23 @@
     "Error": "Error",
     "Documents failed to load, please try again": "Documents failed to load, please try again",
     "Success": "Success",
-    "Document created successfully": "Document created successfully"
+    "Document created successfully": "Document created successfully",
+    "Project name is required": "Project name is required",
+    "Project start date is required": "Project start date is required",
+    "Project end date is required": "Project end date is required",
+    "Country is required": "Country is required",
+    "City is required": "City is required",
+    "Implementer and stakeholders name is required": "Implementer and stakeholders name is required",
+    "Project manager name is required": "Project manager name is required",
+    "Project manager email is required": "Project manager email is required",
+    "Project manager phone is required": "Project manager phone is required",
+    "Colleagues and stakeholders is required": "Colleagues and stakeholders is required",
+    "Documents and report title is required": "Documents and report title is required",
+    "Delete": "Delete",
+    "Visual documents is required": "Visual documents is required",
+    "Please select all visual documents": "Please select all visual documents",
+    "Please select the documentation and reports file": "Please select the documentation and reports file",
+    "Failed to create project": "Failed to create project"
   },
 
   "education": {

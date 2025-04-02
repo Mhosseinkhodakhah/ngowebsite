@@ -16,6 +16,8 @@ export const createProject = async (values: any) => {
   try {
     const { data } = await instance.post("ngo/project/create", values);
 
+    revalidatePath("/dashboard/projects");
+
     return data;
   } catch (err: any) {
     console.log("eeerrrr", err);

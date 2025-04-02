@@ -5,7 +5,11 @@ import { useTranslations } from "next-intl";
 import SortDropDown from "./SortDropDown";
 import FilterModal from "./FilterModal";
 
-function SortList() {
+interface ISortList {
+  total: number;
+}
+
+function SortList({ total }: ISortList) {
   const t = useTranslations("common");
 
   return (
@@ -43,7 +47,7 @@ function SortList() {
           color="primary"
           variant="shadow"
         >
-          24
+          {total}
         </Chip>
       </div>
     </div>

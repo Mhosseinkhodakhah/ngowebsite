@@ -53,6 +53,12 @@ instance.interceptors.response.use(
 
           return Promise.reject(notFoundError);
           break;
+        case 400:
+          const errorSource = new Error("400");
+          console.log(errorSource);
+          
+          return Promise.reject(errorSource);
+          break;
         case 500:
           const serverError = new Error("500");
 
@@ -68,7 +74,7 @@ instance.interceptors.response.use(
           return Promise.reject(defaultError);
       }
     } else if (error.request) {
-      const networkError = new Error("No response received from server");
+      const networkError = new Error("No response");
 
       (networkError as any).status = 0;
 

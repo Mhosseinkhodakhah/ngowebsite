@@ -16,6 +16,12 @@ function ProjectStatus({ formik }: { formik: FormikProps<any> }) {
       isRequired
       className="px-4 md:px-0"
       defaultValue={formik.values.status}
+      errorMessage={() => {
+        if (formik.errors.status) {
+          return t(formik.errors.status as unknown as string);
+        }
+      }}
+      isInvalid={formik.errors.status ? true : false}
       label={t("Project Status")}
       {...formik.getFieldProps("status")}
       onChange={handleSetProjectStatus}

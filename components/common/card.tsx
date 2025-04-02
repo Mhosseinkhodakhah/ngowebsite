@@ -1,8 +1,9 @@
 import Image from "next/image";
 import { Chip } from "@heroui/chip";
+import { Icon } from "@iconify/react";
 
 import CardButton from "./card-button";
-import { Icon } from "@iconify/react";
+import PlaceHolder from '@/public/images/placeholder.png'
 
 interface Props {
   name: string;
@@ -39,9 +40,9 @@ function Card({ name, imageUrl, description, route, btnText, status }: Props) {
       )}
       <Image
         alt="placeholder"
-        className="object-fill w-full  h-full"
+        className="object-contain w-full  h-full min-h-[200px] "
         height={100}
-        src={imageUrl}
+        src={imageUrl ? imageUrl : PlaceHolder}
         width={100}
       />
       <div className="py-6 px-2">

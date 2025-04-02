@@ -15,8 +15,8 @@ import UploadDocumentsSection from "./UploadDocumentsSection";
 import FormButtons from "./FormButtons";
 
 import { documentSchema } from "@/utils/validations";
-import { uploadDocs } from "@/server/ngo";
-import { createDocument } from "@/server/dashboard";
+import { uploadDocs } from "@/actions/ngo";
+import { createDocument } from "@/actions/dashboard";
 import { useRouter } from "@/i18n/navigation";
 
 function DocumentsAndRecordsForm() {
