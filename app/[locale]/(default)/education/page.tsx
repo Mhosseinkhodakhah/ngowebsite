@@ -3,8 +3,11 @@ import EducationList from "@/components/education/EducationList";
 import FilterEducation from "@/components/education/FilterEducation";
 import { getEducations } from "@/actions/educations";
 
-async function Page() {
-  const data = await getEducations();
+async function Page({ searchParams }: { searchParams?: any }) {
+  const data = await getEducations(searchParams.type, searchParams.sort);
+
+  const sort = await searchParams.sort;
+  const type = await searchParams.type;
 
   return (
     <section className="flex flex-col justify-center items-center">
@@ -14,8 +17,8 @@ async function Page() {
         titleText="Education & Training"
       />
       <div className="flex gap-4 w-full m-4 px-4 mt-20">
-        <FilterEducation />
-        <EducationList data={data?.data} />
+        <FilterEducation sort={sort} />
+        <EducationList data={data?.data} sort={sort} type={type} />
       </div>
     </section>
   );

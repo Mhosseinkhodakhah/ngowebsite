@@ -1,3 +1,5 @@
+"use client";
+
 import { Chip } from "@heroui/chip";
 import { Icon } from "@iconify/react";
 import { useTranslations } from "next-intl";
@@ -5,12 +7,17 @@ import { useTranslations } from "next-intl";
 import SortDropDown from "./SortDropDown";
 import FilterModal from "./FilterModal";
 
+import { useRouter } from "@/i18n/navigation";
 interface ISortList {
   total: number;
+  sort: string | undefined;
+  type: string | undefined;
 }
 
-function SortList({ total }: ISortList) {
+function SortList({ total, sort, type }: ISortList) {
   const t = useTranslations("common");
+
+  const router = useRouter();
 
   return (
     <div className="flex justify-between py-4">
@@ -18,20 +25,40 @@ function SortList({ total }: ISortList) {
         <Icon height="20" icon="icon-park-outline:sort-two" width="20" />
         <h6 className="font-bold">{t("Sort")}</h6>
         <Chip
+          className="cursor-pointer"
           color="primary"
           startContent={
-            <Icon height="24" icon="lets-icons:check-fill" width="24" />
+            sort === "recent" && (
+              <Icon height="24" icon="lets-icons:check-fill" width="24" />
+            )
           }
           variant="faded"
+          onClick={() => {
+            if (type) {
+              router.push(`/education?type=${type}&sort=recent`);
+            } else {
+              router.push(`/education?sort=recent`);
+            }
+          }}
         >
           {t("Recently")}
         </Chip>
         <Chip
+          className="cursor-pointer"
           color="primary"
           startContent={
-            <Icon height="24" icon="lets-icons:check-fill" width="24" />
+            sort === "latest" && (
+              <Icon height="24" icon="lets-icons:check-fill" width="24" />
+            )
           }
           variant="faded"
+          onClick={() => {
+            if (type) {
+              router.push(`/education?type=${type}&sort=latest`);
+            } else {
+              router.push(`/education?sort=latest`);
+            }
+          }}
         >
           {t("Last")}
         </Chip>

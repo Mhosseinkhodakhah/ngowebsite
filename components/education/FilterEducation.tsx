@@ -6,7 +6,7 @@ import { Icon } from "@iconify/react";
 
 import FilterItems from "./FilterItems";
 
-function FilterEducation() {
+function FilterEducation({ sort }: { sort?: string }) {
   const t = useTranslations("common");
   const { locale } = useParams();
 
@@ -19,7 +19,7 @@ function FilterEducation() {
         <Icon height="24" icon="lets-icons:filter" width="24" />
         <h4 className="font-bold text-xl">{t("Filter")}</h4>
       </div>
-      <FilterItems />
+      <FilterItems sort={sort} />
     </aside>
   );
 }

@@ -7,15 +7,20 @@ import Card from "../common/card";
 
 import SortList from "./SortList";
 
-function EducationList({ data }: { data: any }) {
+function EducationList({
+  data,
+  sort,
+  type,
+}: {
+  data: any;
+  sort?: string;
+  type?: string;
+}) {
   const { locale } = useParams() as { locale: string };
-
-  console.log(locale);
-  console.log(data);
 
   return (
     <div className="w-full md:w-4/6 lg:w-3/4">
-      <SortList total={data?.length} />
+      <SortList sort={sort} total={data?.length} type={type} />
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
         {data?.map((education: any) => (
           <Card
