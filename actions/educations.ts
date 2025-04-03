@@ -17,3 +17,14 @@ export const getEducations = async (
     console.error(err);
   }
 };
+
+export const getSingleEducation = async (id: string) => {
+  try {
+    const { data } = await instance.get(`events-educations/education/${id}`);
+
+    return data;
+  } catch (err) {
+    console.error("Error fetching events:", err);
+    return false;
+  }
+};

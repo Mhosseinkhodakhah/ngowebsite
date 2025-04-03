@@ -18,3 +18,14 @@ export const getEvents = async (
     return false;
   }
 };
+
+export const getSingleEvent = async (id: string) => {
+  try {
+    const { data } = await instance.get(`events-educations/event/${id}`);
+
+    return data;
+  } catch (err) {
+    console.error("Error fetching events:", err);
+    return false;
+  }
+};

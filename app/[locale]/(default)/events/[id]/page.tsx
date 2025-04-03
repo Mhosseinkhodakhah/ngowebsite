@@ -3,8 +3,12 @@ import Image from "next/image";
 import Title from "@/components/common/title";
 import Slider from "@/components/common/slider";
 import Card from "@/components/common/card";
+import { getSingleEvent } from "@/actions/events";
 
-function Page() {
+async function Page({ params }: { params: any }) {
+  const { id } = await params;
+  const data = await getSingleEvent(id);
+
   return (
     <section className="flex flex-col justify-center items-center">
       <Title
