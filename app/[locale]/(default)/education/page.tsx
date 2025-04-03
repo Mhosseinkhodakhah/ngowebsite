@@ -3,11 +3,11 @@ import EducationList from "@/components/education/EducationList";
 import FilterEducation from "@/components/education/FilterEducation";
 import { getEducations } from "@/actions/educations";
 
-async function Page({ searchParams }: { searchParams?: any }) {
-  const data = await getEducations(searchParams.type, searchParams.sort);
-
-  const sort = await searchParams.sort;
+async function Page({ searchParams }: { searchParams: any }) {
   const type = await searchParams.type;
+  const sort = await searchParams.sort;
+
+  const data = await getEducations(type, sort);
 
   return (
     <section className="flex flex-col justify-center items-center">

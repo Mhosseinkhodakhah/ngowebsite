@@ -6,13 +6,32 @@ import { useParams } from "next/navigation";
 import Card from "../common/card";
 
 import SortList from "./SortList";
+import handleQuery from "@/utils/handleQuery";
+import { useRouter } from "@/i18n/navigation";
 
-function EventsList({ data }: { data: any }) {
+function EventsList({
+  data,
+  query,
+}: {
+  data: any;
+  query: { end: any; start: any; sort: any; type: any; page: any };
+}) {
   const { locale } = useParams() as { locale: string };
+
+  const router = useRouter();
 
   return (
     <div className="w-full md:w-4/6 lg:w-3/4">
-      <SortList />
+      <SortList
+        query={{
+          end: query.end,
+          start: query.start,
+          sort: query.sort,
+          type: query.type,
+          page: query.page,
+        }}
+        total={data.length}
+      />
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
         {data?.map((event: any) => (
           <Card
@@ -45,16 +64,35 @@ function EventsList({ data }: { data: any }) {
                   ? event?.peTitle
                   : event?.ruTitle
             }
-            route={`education/${event?._id}`}
+            route={`events/${event?._id}`}
           />
         ))}
       </div>
       <div className="mt-10 w-full justify-center items-center flex">
         <Pagination
+          showControls
+          showShadow
+          classNames={{
+            cursor: "bg-primary text-white",
+          }}
           color="primary"
-          initialPage={1}
+          initialPage={query.page ? +query.page : 1}
           total={10}
-          variant="faded"
+          variant="bordered"
+          onChange={(value) => {
+            const val = {
+              route: "events",
+              type: query.type,
+              end: query.end,
+              start: query.start,
+              sort: query.sort,
+              page: value.toString(),
+            };
+
+            const getRoute = handleQuery(val);
+
+            router.push(getRoute);
+          }}
         />
       </div>
     </div>

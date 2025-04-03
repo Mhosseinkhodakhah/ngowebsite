@@ -3,8 +3,14 @@ import Title from "@/components/common/title";
 import EventsList from "@/components/events/EventsList";
 import FilterEvents from "@/components/events/FilterEvents";
 
-async function Page() {
-  const data = await getEvents();
+async function Page({ searchParams }: { searchParams: any }) {
+  const type = await searchParams.type;
+  const sort = await searchParams.sort;
+  const start = await searchParams.start;
+  const end = await searchParams.end;
+  const page = await searchParams.page;
+
+  const data = await getEvents(type, sort, start, end, page);
 
   return (
     <section className="flex flex-col justify-center items-center">
@@ -15,8 +21,11 @@ async function Page() {
       />
 
       <div className="flex gap-4 w-full m-4 px-4 mt-20">
-        <FilterEvents />
-        <EventsList data={data?.data} />
+        <FilterEvents query={{ end, sort, start, type, page }} />
+        <EventsList
+          data={data?.data}
+          query={{ end, sort, start, type, page }}
+        />
       </div>
     </section>
   );
