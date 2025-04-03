@@ -46,19 +46,19 @@ export const siteConfig = {
       children: [
         {
           label: "Good Practice",
-          href: "/good-practice",
+          href: "/good-practice?status=goodPractice&page=1",
         },
         {
           label: "Onegoing Projects",
-          href: "/ongoing-projects",
+          href: "/ongoing-projects?status=ongoing&page=1",
         },
         {
           label: "Completed Projects",
-          href: "/completed-projects",
+          href: "/completed-projects?status=completed&page=1",
         },
         {
           label: "Collaboration Opportunities",
-          href: "/collaboration-opportunities",
+          href: "/collaboration-opportunities?status=collaborationOpportunities&page=1",
         },
       ],
     },

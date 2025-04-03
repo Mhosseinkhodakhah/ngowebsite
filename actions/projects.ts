@@ -10,3 +10,18 @@ export const getProjects = async () => {
     return err;
   }
 };
+
+export const getCategoryProjects = async (status: string, page: string) => {
+  try {
+    const { data } = await instance.get(
+      `page/projects/all?status=${status}&page=${page}`
+    );
+
+    console.log("ddd", data);
+
+    return data;
+  } catch (err) {
+    console.log(err);
+    return err;
+  }
+};

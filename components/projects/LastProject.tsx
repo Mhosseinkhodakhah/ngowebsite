@@ -39,7 +39,13 @@ function LastProject() {
                   status={
                     project?.status[0] === "goodPractice"
                       ? t("Good Practice")
-                      : t("Bad practice")
+                      : project?.status[0] === "ongoing"
+                        ? t("Ongoing")
+                        : project?.status[0] === "completed"
+                          ? t("Completed")
+                          : project?.status[0] === "collaborationOpportunities"
+                            ? t("Collaboration Opportunities")
+                            : t("")
                   }
                 />
               </SwiperSlide>
