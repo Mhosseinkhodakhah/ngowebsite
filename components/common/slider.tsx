@@ -1,7 +1,7 @@
 "use client";
 
 import { ReactNode, useRef } from "react";
-import { SwiperSlide, Swiper } from "swiper/react";
+import { Swiper } from "swiper/react";
 import { useParams } from "next/navigation";
 import {
   A11y,
@@ -11,19 +11,18 @@ import {
   Pagination,
 } from "swiper/modules";
 
-import ArrowDown from "./icons/arrow-down";
-
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
+import ArrowDown from "./icons/arrow-down";
 
 interface Props {
   children: ReactNode;
-  content: {}[];
+  single?: number;
 }
 
-function Slider({ content, children }: Props) {
+function Slider({ single, children }: Props) {
   const prevRef = useRef(null);
   const nextRef = useRef(null);
   const { locale } = useParams();
@@ -53,12 +52,12 @@ function Slider({ content, children }: Props) {
         breakpoints={{
           // when window width is >= 640px
           640: {
-            slidesPerView: 2,
+            slidesPerView: single ? single : 2,
             spaceBetween: 20,
           },
           // when window width is >= 768px
           768: {
-            slidesPerView: 3,
+            slidesPerView: single ? single : 3,
             spaceBetween: 30,
           },
           // when window width is >= 1024px
@@ -76,11 +75,10 @@ function Slider({ content, children }: Props) {
           swiper.navigation.update();
         }}
         loop
+        centeredSlides
         spaceBetween={50}
       >
-        {content.map((item: any) => (
-          <SwiperSlide key={item.id}>{children}</SwiperSlide>
-        ))}
+        {children}
       </Swiper>
     </>
   );

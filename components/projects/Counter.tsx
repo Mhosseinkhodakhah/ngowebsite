@@ -1,9 +1,17 @@
 "use client";
 import { useTranslations } from "next-intl";
 import CountUp from "react-countup";
+import { useQuery } from "@tanstack/react-query";
+
+import { getProjects } from "@/actions/projects";
 
 function Counter() {
   const t = useTranslations("projects");
+
+  const { data } = useQuery({
+    queryKey: ["projects"],
+    queryFn: getProjects,
+  });
 
   return (
     <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  mt-20 w-full">
@@ -13,7 +21,7 @@ function Counter() {
           decimal=","
           delay={2}
           duration={2.75}
-          end={100}
+          end={data?.data?.completed}
           style={{ fontWeight: "bold", fontSize: 80 }}
         />
         <h2>{t("Completed Projects")}</h2>
@@ -24,7 +32,7 @@ function Counter() {
           decimal=","
           delay={2}
           duration={2.75}
-          end={100}
+          end={data?.data?.ongoing}
           style={{ fontWeight: "bold", fontSize: 80 }}
         />
         <h2>{t("Ongoing Projects")}</h2>
@@ -35,7 +43,7 @@ function Counter() {
           decimal=","
           delay={2}
           duration={2.75}
-          end={100}
+          end={data?.data?.collaborationOpportunities}
           style={{ fontWeight: "bold", fontSize: 80 }}
         />
         <h2>{t("Collaboration Opportunities")}</h2>
@@ -46,7 +54,7 @@ function Counter() {
           decimal=","
           delay={2}
           duration={2.75}
-          end={100}
+          end={data?.data?.goodPractice}
           style={{ fontWeight: "bold", fontSize: 80 }}
         />
         <h2>{t("Good Practice")}</h2>

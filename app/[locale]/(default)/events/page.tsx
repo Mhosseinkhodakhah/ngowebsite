@@ -4,11 +4,7 @@ import EventsList from "@/components/events/EventsList";
 import FilterEvents from "@/components/events/FilterEvents";
 
 async function Page({ searchParams }: { searchParams: any }) {
-  const type = await searchParams.type;
-  const sort = await searchParams.sort;
-  const start = await searchParams.start;
-  const end = await searchParams.end;
-  const page = await searchParams.page;
+  const { type, sort, start, end, page } = await searchParams;
 
   const data = await getEvents(type, sort, start, end, page);
 
