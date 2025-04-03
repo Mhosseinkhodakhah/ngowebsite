@@ -8,13 +8,21 @@ import SortDropDown from "./SortDropDown";
 import FilterModal from "./FilterModal";
 
 import { useRouter } from "@/i18n/navigation";
-interface ISortList {
-  total: number;
-  sort: string | undefined;
-  type: string | undefined;
-}
+import handleQuery from "@/utils/handleQuery";
 
-function SortList({ total, sort, type }: ISortList) {
+function SortList({
+  total,
+  query,
+}: {
+  total: number;
+  query: {
+    end: any;
+    start: any;
+    sort: any;
+    type: any;
+    page: any;
+  };
+}) {
   const t = useTranslations("common");
 
   const router = useRouter();
@@ -28,17 +36,24 @@ function SortList({ total, sort, type }: ISortList) {
           className="cursor-pointer"
           color="primary"
           startContent={
-            sort === "recent" && (
+            query.sort === "recent" && (
               <Icon height="24" icon="lets-icons:check-fill" width="24" />
             )
           }
           variant="faded"
           onClick={() => {
-            if (type) {
-              router.push(`/education?type=${type}&sort=recent`);
-            } else {
-              router.push(`/education?sort=recent`);
-            }
+            const val = {
+              route: "education",
+              start: query.start,
+              end: query.end,
+              type: query.type,
+              page: query.page,
+              sort: "recent",
+            };
+
+            const getRouter = handleQuery(val);
+
+            router.push(getRouter);
           }}
         >
           {t("Recently")}
@@ -47,17 +62,24 @@ function SortList({ total, sort, type }: ISortList) {
           className="cursor-pointer"
           color="primary"
           startContent={
-            sort === "latest" && (
+            query.sort === "latest" && (
               <Icon height="24" icon="lets-icons:check-fill" width="24" />
             )
           }
           variant="faded"
           onClick={() => {
-            if (type) {
-              router.push(`/education?type=${type}&sort=latest`);
-            } else {
-              router.push(`/education?sort=latest`);
-            }
+            const val = {
+              route: "education",
+              start: query.start,
+              end: query.end,
+              type: query.type,
+              page: query.page,
+              sort: "latest",
+            };
+
+            const getRouter = handleQuery(val);
+
+            router.push(getRouter);
           }}
         >
           {t("Last")}

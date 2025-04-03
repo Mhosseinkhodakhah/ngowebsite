@@ -6,6 +6,7 @@ import { useParams } from "next/navigation";
 import Card from "../common/card";
 
 import SortList from "./SortList";
+
 import handleQuery from "@/utils/handleQuery";
 import { useRouter } from "@/i18n/navigation";
 

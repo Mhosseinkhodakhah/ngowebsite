@@ -6,8 +6,11 @@ import { getEducations } from "@/actions/educations";
 async function Page({ searchParams }: { searchParams: any }) {
   const type = await searchParams.type;
   const sort = await searchParams.sort;
+  const start = await searchParams.start;
+  const end = await searchParams.end;
+  const page = await searchParams.page;
 
-  const data = await getEducations(type, sort);
+  const data = await getEducations(type, sort, start, end, page);
 
   return (
     <section className="flex flex-col justify-center items-center">
@@ -17,8 +20,11 @@ async function Page({ searchParams }: { searchParams: any }) {
         titleText="Education & Training"
       />
       <div className="flex gap-4 w-full m-4 px-4 mt-20">
-        <FilterEducation sort={sort} />
-        <EducationList data={data?.data} sort={sort} type={type} />
+        <FilterEducation query={{ end, sort, start, type, page }} />
+        <EducationList
+          data={data?.data}
+          query={{ end, sort, start, type, page }}
+        />
       </div>
     </section>
   );
