@@ -1,32 +1,25 @@
-"use client";
-
-import { Pagination } from "@heroui/pagination";
-import { useQuery } from "@tanstack/react-query";
-import { useSearchParams } from "next/navigation";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 
 import Card from "../common/card";
 
-import { getCategoryProjects } from "@/actions/projects";
-import { useRouter } from "@/i18n/navigation";
+import PaginationProjects from "./PaginationProject";
+
 import PlaceHolder from "@/public/images/placeholder.png";
 import Empty from "@/public/images/empty.webp";
 
-function ProjectList() {
+function ProjectList({
+  data,
+  route,
+  page,
+  status,
+}: {
+  data: any;
+  route: string;
+  page: string;
+  status: string;
+}) {
   const t = useTranslations("projects");
-  const searchParams = useSearchParams();
-
-  const status: string | null = searchParams.get("status");
-  const page: string | null = searchParams.get("page");
-
-  const router = useRouter();
-
-  const { data } = useQuery({
-    queryKey: ["getCategoryProjects", status, page],
-    queryFn: () =>
-      getCategoryProjects(status ? status : "completed", page ? page : "1"),
-  });
 
   return (
     <>
@@ -43,7 +36,8 @@ function ProjectList() {
                   : PlaceHolder
               }
               name={project?.name}
-              route={`/projects/completed-projects/${project?._id}`}
+              ngo={project?.ngo?.name}
+              route={`/projects/${route}/${project?._id}`}
               status={
                 project?.status[0] === "goodPractice"
                   ? t("Good Practice")
@@ -59,7 +53,7 @@ function ProjectList() {
           ))}
         </div>
       ) : (
-        <div className="w-full justify-center items-center flex">
+        <div className="w-full flex justify-center items-center">
           <Image
             alt="Empty"
             className="w-[200px] h-[200px] object-contain"
@@ -71,20 +65,7 @@ function ProjectList() {
       )}
 
       <div className="mt-10 w-full justify-center items-center flex">
-        <Pagination
-          showControls
-          showShadow
-          classNames={{
-            cursor: "bg-primary text-white",
-          }}
-          color="primary"
-          initialPage={page ? +page : 1}
-          total={10}
-          variant="bordered"
-          onChange={(value) => {
-            router.push(`completed-projects?status=completed&page=${value}`);
-          }}
-        />
+        <PaginationProjects page={page} route={route} status={status} />
       </div>
     </>
   );

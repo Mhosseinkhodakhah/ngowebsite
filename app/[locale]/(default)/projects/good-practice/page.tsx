@@ -1,11 +1,18 @@
-import { useTranslations } from "next-intl";
-
+import { getCategoryProjects } from "@/actions/projects";
 import Title from "@/components/common/title";
-import ProjectList from "@/components/good-practice-project/ProjectList";
-// import { getOngoingProjects } from "@/actions/projects";
+import ProjectList from "@/components/projects/ProjectList";
 
-function Page() {
-  const t = useTranslations("projects");
+async function Page({
+  searchParams,
+}: {
+  searchParams: { status: string; page: string };
+}) {
+  const { status, page } = await searchParams;
+
+  const data = await getCategoryProjects(
+    status ? status : "goodPractice",
+    page ? page : "1"
+  );
 
   return (
     <section className="flex flex-col justify-center items-center">
@@ -15,7 +22,12 @@ function Page() {
         titleText="Good Practice"
       />
 
-      <ProjectList />
+      <ProjectList
+        data={data}
+        page={page}
+        route="good-practice"
+        status={status}
+      />
     </section>
   );
 }

@@ -25,3 +25,14 @@ export const getCategoryProjects = async (status: string, page: string) => {
     return err;
   }
 };
+
+export const getSingleProject = async (id: string) => {
+  try {
+    const { data } = await instance.get(`page/projects/${id}`);
+
+    return data;
+  } catch (err) {
+    console.log(err);
+    return err;
+  }
+};

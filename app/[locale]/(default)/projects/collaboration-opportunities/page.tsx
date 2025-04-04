@@ -1,8 +1,19 @@
+import { getCategoryProjects } from "@/actions/projects";
 import Title from "@/components/common/title";
-import ProjectList from "@/components/collaboration-opportunities/ProjectList";
-// import { getOngoingProjects } from "@/actions/projects";
+import ProjectList from "@/components/projects/ProjectList";
 
-function Page() {
+async function Page({
+  searchParams,
+}: {
+  searchParams: { status: string; page: string };
+}) {
+  const { status, page } = await searchParams;
+
+  const data = await getCategoryProjects(
+    status ? status : "collaborationOpportunities",
+    page ? page : "1"
+  );
+
   return (
     <section className="flex flex-col justify-center items-center">
       <Title
@@ -11,7 +22,12 @@ function Page() {
         titleText="Collaboration Opportunities"
       />
 
-      <ProjectList />
+      <ProjectList
+        data={data}
+        page={page}
+        route="collaboration-opportunities"
+        status={status}
+      />
     </section>
   );
 }

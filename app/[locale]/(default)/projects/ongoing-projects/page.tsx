@@ -1,8 +1,19 @@
+import { getCategoryProjects } from "@/actions/projects";
 import Title from "@/components/common/title";
-import ProjectList from "@/components/ongoing-projects/ProjectList";
-// import { getOngoingProjects } from "@/actions/projects";
+import ProjectList from "@/components/projects/ProjectList";
 
-function Page() {
+async function Page({
+  searchParams,
+}: {
+  searchParams: { status: string; page: string };
+}) {
+  const { status, page } = await searchParams;
+
+  const data = await getCategoryProjects(
+    status ? status : "ongoing",
+    page ? page : "1"
+  );
+
   return (
     <section className="flex flex-col justify-center items-center">
       <Title
@@ -11,7 +22,12 @@ function Page() {
         titleText="Ongoing Projects"
       />
 
-      <ProjectList />
+      <ProjectList
+        data={data}
+        page={page}
+        route="ongoing-projects"
+        status={status}
+      />
     </section>
   );
 }

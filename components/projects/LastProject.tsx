@@ -1,23 +1,17 @@
-/* eslint-disable react/jsx-sort-props */
 "use client";
 
-import { useQuery } from "@tanstack/react-query";
+/* eslint-disable react/jsx-sort-props */
+
 import { useTranslations } from "next-intl";
 import { SwiperSlide } from "swiper/react";
 
 import Card from "../common/card";
 import Slider from "../common/slider";
 
-import { getProjects } from "@/actions/projects";
 import PlaceHolder from "@/public/images/placeholder.png";
 
-function LastProject() {
+function LastProject({ data }: { data: any }) {
   const t = useTranslations("projects");
-
-  const { data } = useQuery({
-    queryKey: ["projects"],
-    queryFn: getProjects,
-  });
 
   return (
     <div className="flex flex-col w-full lg:w-2/3 px-12 mt-20">
@@ -35,6 +29,7 @@ function LastProject() {
                       : PlaceHolder
                   }
                   name={project?.name}
+                  ngo={project?.ngo?.name}
                   route={`/projects/${project?._id}`}
                   status={
                     project?.status[0] === "goodPractice"
