@@ -512,10 +512,9 @@
     "Documents and report title is required": "Требуется указать название документа и отчета",
     "Delete": "Удалить",
     "Visual documents is required": "Требуются визуальные документы",
-    "Please select all visual documents":"Пожалуйста, выберите все визуальные документы",
-    "Please select the documentation and reports file":"Пожалуйста, выберите файл документации и отчетов",
-    "Failed to create project" : "Не удалось создать проект"
-
+    "Please select all visual documents": "Пожалуйста, выберите все визуальные документы",
+    "Please select the documentation and reports file": "Пожалуйста, выберите файл документации и отчетов",
+    "Failed to create project": "Не удалось создать проект"
   },
   "education": {
     "Filter by file format": "Фильтровать по формату файла",
@@ -552,6 +551,10 @@
     "impact on the protection of intangible heritage": "влияние на защиту нематериального наследия",
     "Digital Archive": "Цифровой архив",
     "Search for images , videos and documents": "Поиск изображений, видео и документов"
+  },
+
+  "data-archive": {
+    "See Ngo": "видеть НПО"
   },
 
   "footer": {

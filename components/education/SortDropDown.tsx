@@ -10,8 +10,20 @@ import {
 import { Icon } from "@iconify/react";
 import { useTranslations } from "next-intl";
 
-function SortDropDown() {
+import { useRouter } from "@/i18n/navigation";
+import handleQuery from "@/utils/handleQuery";
+
+function SortDropDown({ query }: { query: any }) {
   const t = useTranslations("common");
+  const router = useRouter();
+
+  const handleSort = (value: string) => {
+    const newquery = { ...query, sort: value };
+
+    const getRouter = handleQuery(newquery);
+
+    router.push(getRouter);
+  };
 
   return (
     <Dropdown>
@@ -22,8 +34,12 @@ function SortDropDown() {
         </Button>
       </DropdownTrigger>
       <DropdownMenu aria-label="Sort Actions">
-        <DropdownItem key="Recently">{t("Recently")}</DropdownItem>
-        <DropdownItem key="Last">{t("Last")}</DropdownItem>
+        <DropdownItem key="Recently" onPress={() => handleSort("recent")}>
+          {t("Recently")}
+        </DropdownItem>
+        <DropdownItem key="Last" onPress={() => handleSort("latest")}>
+          {t("Last")}
+        </DropdownItem>
       </DropdownMenu>
     </Dropdown>
   );

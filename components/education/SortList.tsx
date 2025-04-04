@@ -86,8 +86,16 @@ function SortList({
         </Chip>
       </div>
       <div className="flex gap-2">
-        <SortDropDown />
-        <FilterModal />
+        <SortDropDown
+          query={{
+            route: "education",
+            start: query.start,
+            end: query.end,
+            type: query.type,
+            page: query.page,
+          }}
+        />
+        <FilterModal query={query} />
       </div>
       <div className="flex items-center gap-1 md:gap-4">
         <h5 className="text-xs md:text-md">{t("Total")}</h5>

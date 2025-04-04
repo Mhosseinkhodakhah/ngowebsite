@@ -33,18 +33,18 @@ function Card({
           color="primary"
           size="sm"
         >
-          {status === "Video" && (
+          {status === "vodeo" && (
             <Icon height="30" icon="lets-icons:video-fill" width="24" />
           )}
-          {status === "Image" && (
+          {status === "image" && (
             <Icon height="30" icon="mynaui:image-solid" width="24" />
           )}
-          {status === "Document" && (
+          {status === "document" && (
             <Icon height="30" icon="solar:document-bold" width="24" />
           )}
-          {status !== "Video" &&
-            status !== "Image" &&
-            status !== "Document" &&
+          {status !== "vodeo" &&
+            status !== "image" &&
+            status !== "document" &&
             status}
         </Chip>
       )}
@@ -52,7 +52,7 @@ function Card({
         alt="placeholder"
         className="object-contain w-full  h-full min-h-[200px] "
         height={100}
-        src={imageUrl ? imageUrl : PlaceHolder}
+        src={!!imageUrl ? imageUrl : PlaceHolder}
         width={100}
       />
       <div className="py-6 px-2">

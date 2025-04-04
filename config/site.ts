@@ -64,7 +64,7 @@ export const siteConfig = {
     },
     {
       label: "Data Archive",
-      href: "/data-archive",
+      href: "/data-archive?page=1",
     },
   ],
 

@@ -21,7 +21,9 @@ function FilterItems({
   };
 }) {
   const t = useTranslations("education");
-  const [filter, setFilter] = useState<string[]>([]);
+  const [filter, setFilter] = useState<string[]>(
+    query.type ? [query.type] : []
+  );
   const router = useRouter();
 
   const handleChange = (value: string[]) => {
