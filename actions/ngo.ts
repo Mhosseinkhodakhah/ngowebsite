@@ -9,7 +9,7 @@ export const uploadDocs = async (file: FormData) => {
       file,
       {
         headers: { "Content-Type": "multipart/form-data" },
-      },
+      }
     );
 
     return data;
@@ -27,6 +27,30 @@ export const NogsRegisteration = async (values: any) => {
     return data;
   } catch (error) {
     console.error(error);
+
+    return false;
+  }
+};
+
+export const getSingleNgo = async (id: string) => {
+  try {
+    const { data } = await instance.get(`ngo/${id}`);
+
+    return data;
+  } catch (err) {
+    console.error(err);
+
+    return false;
+  }
+};
+
+export const getNgoData = async () => {
+  try {
+    const { data } = await instance.get(`/ngo/all`);
+
+    return data;
+  } catch (err) {
+    console.error(err);
 
     return false;
   }

@@ -20,53 +20,21 @@ import "ag-grid-community/styles/ag-grid.css";
 import "ag-grid-community/styles/ag-theme-alpine.css"; // or any other theme you prefer
 import { useRouter } from "@/i18n/navigation";
 
-const NgoTable = () => {
+const NgoTable = ({ data }: { data: any }) => {
   const [searchText, setSearchText] = useState("");
   const { theme } = useTheme();
   const { locale } = useParams();
   const t = useTranslations("NGO");
+  const translate = useTranslations("ngo-registration");
   const router = useRouter();
 
-  const [rowData, setRowData] = useState([
-    {
-      make: "Tesla",
-      name: "Model Y",
-      country: "Iran",
-      activeProjects: 5,
-      activityField: "Education and Culture",
-      yearOfEstablishment: "2015",
-      licenses: true,
-    },
-    {
-      make: "Ford",
-      name: "F-Series",
-      country: "Iraq",
-      activeProjects: 4,
-      activityField: "Health & Wellness",
-      yearOfEstablishment: "2019",
-      licenses: false,
-    },
-    {
-      make: "Toyota",
-      name: "Corolla",
-      country: "Pakistan",
-      activeProjects: 3,
-      activityField: "Environment",
-      yearOfEstablishment: "2022",
-      licenses: true,
-    },
-  ]);
+  console.log(data);
 
   const [colDefs, setColDefs] = useState<ColDef[]>([
     {
       headerName: t("Logo"),
       field: "logo",
-      cellRenderer: () => (
-        <Avatar
-          size="sm"
-          src="https://i.pravatar.cc/150?u=a042581f4e29026024d"
-        />
-      ),
+      cellRenderer: (params: any) => <Avatar size="sm" src={params.value} />,
       maxWidth: 100,
       headerClass: "header-cell",
     },
@@ -78,19 +46,52 @@ const NgoTable = () => {
       headerName: t("Country"),
       field: "country",
       width: 200,
+      cellRenderer: (params: any) => {
+        return translate(params.value);
+      },
     },
     {
-      headerName: t("Active Projects"),
-      field: "activeProjects",
+      headerName: t("Area And Scope"),
+      field: "areaAndScope",
+      width: 200,
+      cellRenderer: (params: any) => {
+        return params.value[0] === "western-asia"
+          ? translate("Western Asia")
+          : params.value[0] === "central-asia"
+            ? "Central Asia"
+            : params.value[0];
+      },
+    },
+    {
+      headerName: t("Projects"),
+      field: "projects",
       width: 150,
+      cellRenderer: (params: any) => {
+        return params.value.length;
+      },
     },
     {
       headerName: t("Activity Field"),
       field: "activityField",
+      cellRenderer: (params: any) => {
+        return params.value[0] === "language"
+          ? translate("Language")
+          : params.value[0] === "environment"
+            ? translate("Environment")
+            : params.value[0] === "education-and-culture"
+              ? translate("Education and Culture")
+              : params.value[0] === "training"
+                ? translate("Training")
+                : params.value[0] === "health-and-wellness"
+                  ? translate("Health & Wellness")
+                  : params.value[0] === "sustainable-development"
+                    ? translate("Sustainable development")
+                    : params.value[0];
+      },
     },
     {
       headerName: t("Year of establishment"),
-      field: "yearOfEstablishment",
+      field: "establishmentYear",
       width: 150,
     },
     {
@@ -98,20 +99,22 @@ const NgoTable = () => {
       field: "licenses",
       width: 150,
       cellRenderer: (params: any) => {
-        return params.value ? "Have Licensed" : "Not Have Licensed";
+        return params.value?.have ? t("Have Licensed") : t("Not Have Licensed");
       },
     },
     {
       headerName: t("Details"),
       field: "details",
       cellRenderer: (params: any) => {
+        const id = params.data._id;
+
         return (
           <Button
             className="text-gray"
             color="primary"
             size="sm"
             variant="solid"
-            onPress={() => router.push("/ngo/1")}
+            onPress={() => router.push(`/ngo/${id}`)}
           >
             {t("Details")}
           </Button>
@@ -164,7 +167,7 @@ const NgoTable = () => {
         pagination={true}
         paginationPageSize={10}
         quickFilterText={searchText}
-        rowData={rowData}
+        rowData={data || []}
       />
     </div>
   );

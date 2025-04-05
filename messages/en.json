@@ -51,7 +51,11 @@
     "Year of establishment": "Year of establishment",
     "Licenses": "Licenses",
     "Details": "Details",
-    "Search": "Search"
+    "Search": "Search",
+    "Area And Scope": "Area And Scope",
+    "Projects": "Projects",
+    "Have Licensed": "Have Licensed",
+    "Not Have Licensed": "Not Have Licensed"
   },
   "NGOPage": {
     "Image of NGO activities": "Image of NGO activities",
@@ -564,7 +568,10 @@
     "End Date": "End Date",
     "Location": "Location",
     "Visit Ngo": "Visit Ngo",
-    "Visual Documents": "Visual Documents"
+    "Visual Documents": "Visual Documents",
+    "More Information": "More Information",
+    "Documents and Reports": "Documents and Reports",
+    "Goal And Achievements": "Goal And Achievements"
   },
   "data-archive": {
     "See Ngo": "See Ngo"

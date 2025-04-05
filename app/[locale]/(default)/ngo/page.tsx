@@ -1,8 +1,13 @@
+import { getNgoData } from "@/actions/ngo";
 import Title from "@/components/common/title";
 import MapChart from "@/components/ngos/MapChart";
 import NgosTable from "@/components/ngos/NgosTable";
 
-function Page() {
+async function Page() {
+  const data: any = await getNgoData();
+
+  // console.log(data);
+
   return (
     <section className="flex flex-col justify-center items-center">
       <Title
@@ -11,7 +16,7 @@ function Page() {
         titleText="NGO"
       />
       <MapChart />
-      <NgosTable />
+      <NgosTable data={data?.data?.ngoTabel} />
     </section>
   );
 }

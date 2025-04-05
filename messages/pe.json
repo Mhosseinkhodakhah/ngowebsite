@@ -50,7 +50,11 @@
     "Year of establishment": "سال تاسیس",
     "Licenses": "مجوز",
     "Details": "جزئیات",
-    "Search": "جستجو"
+    "Search": "جستجو",
+    "Area And Scope": "منطقه فعالیت",
+    "Projects": "پروژها",
+    "Have Licensed": "دارای مجوز",
+    "Not Have Licensed": "بدون مجوز"
   },
   "NGOPage": {
     "Image of NGO activities": "تصاویر فعالیت ها",
@@ -562,7 +566,10 @@
     "End Date": "زمان پایان",
     "Location": "موقعیت جغرافیایی پروژه",
     "Visit Ngo": "بازدید سمن",
-    "Visual Documents": "مستدات بصری"
+    "Visual Documents": "مستدات بصری",
+    "More Information": "اطلاعات بیشتر",
+    "Documents and Reports": "مستندات و گزارش ها",
+    "Goal And Achievements": "اهداف و دستاوردها"
   },
 
   "data-archive": {

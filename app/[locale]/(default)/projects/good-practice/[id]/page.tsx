@@ -1,5 +1,7 @@
 import { getSingleProject } from "@/actions/projects";
 import Title from "@/components/common/title";
+import DocumentsAndReports from "@/components/projects/DocumentsAndReports";
+import MoreInformation from "@/components/projects/MoreInformation";
 import ProjectInfo from "@/components/projects/ProjectInfo";
 import VisualDocuments from "@/components/projects/VisualDocuments";
 
@@ -9,7 +11,13 @@ async function Page({ params }: { params: any; locale: string }) {
 
   const data = await getSingleProject(id);
 
-  const { name, description, goalAndAchievements } = data?.data;
+  const {
+    name,
+    description,
+    goalAndAchievements,
+    documentsAndReports,
+    moreInformation,
+  } = data?.data;
 
   return (
     <section className="flex flex-col justify-center items-center">
@@ -23,14 +31,14 @@ async function Page({ params }: { params: any; locale: string }) {
       </p>
       <Title
         description={goalAndAchievements[0]}
+        page="projects"
         titleText="Goal And Achievements"
       />
 
       <ProjectInfo data={data?.data} locale={locale} />
+      {documentsAndReports && <DocumentsAndReports data={data?.data} />}
       <VisualDocuments data={data?.data} />
-
-      {/* یه اسلاید باید اینجا اضافه بشه واس تیم های همکار */}
-      {/* Participating teams */}
+      {moreInformation && <MoreInformation moreInformation={moreInformation} />}
     </section>
   );
 }

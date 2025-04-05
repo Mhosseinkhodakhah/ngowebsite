@@ -11,7 +11,7 @@ function VisualDocuments({ data }: { data: any }) {
 
   return (
     <section className="flex flex-col justify-center items-center">
-      <h1 className="text-xl font-bold border-b-5 border-primary my-20">
+      <h1 className="text-xl font-bold border-b-5 border-primary mt-20 mb-10">
         {t("Visual Documents")}
       </h1>
       <div className="w-full px-8 h-[400px] max-w-screen-lg  flex flex-col justify-center items-start">

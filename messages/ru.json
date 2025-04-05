@@ -49,7 +49,11 @@
     "Year of establishment": "Год основания",
     "Licenses": "Лицензии",
     "Details": "Подробности",
-    "Search": "Поиск"
+    "Search": "Поиск",
+    "Area And Scope": "Область и сфера применения",
+    "Projects": "Проекты",
+    "Have Licensed": "Иметь лицензию",
+    "Not Have Licensed": "Не имеют лицензии"
   },
   "NGOPage": {
     "Image of NGO activities": "Изображение деятельности НПО",
@@ -557,7 +561,10 @@
     "End Date": "Дата окончания",
     "Location": "Расположение",
     "Visit Ngo": "посетить НПО",
-    "Visual Documents": "Визуальные документы"
+    "Visual Documents": "Визуальные документы",
+    "More Information": "Дополнительная информация",
+    "Documents and Reports": "Документы и отчеты",
+    "Goal And Achievements": "Цель и достижения"
   },
 
   "data-archive": {
