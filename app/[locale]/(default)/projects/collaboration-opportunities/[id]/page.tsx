@@ -1,8 +1,11 @@
 import { getSingleProject } from "@/actions/projects";
 import Title from "@/components/common/title";
+import ProjectInfo from "@/components/projects/ProjectInfo";
+import VisualDocuments from "@/components/projects/VisualDocuments";
 
 async function Page({ params }: { params: any }) {
   const id = await params.id;
+  const locale = await params.locale;
 
   const data = await getSingleProject(id);
 
@@ -22,6 +25,9 @@ async function Page({ params }: { params: any }) {
         description={goalAndAchievements[0]}
         titleText="Goal And Achievements"
       />
+
+      <ProjectInfo data={data?.data} locale={locale} />
+      <VisualDocuments data={data?.data} />
 
       {/* یه اسلاید باید اینجا اضافه بشه واس تیم های همکار */}
       {/* Participating teams */}

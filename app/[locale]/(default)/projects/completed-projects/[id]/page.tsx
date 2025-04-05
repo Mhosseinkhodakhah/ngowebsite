@@ -1,13 +1,16 @@
 import { getSingleProject } from "@/actions/projects";
 import Title from "@/components/common/title";
 import CompletedProject from "@/components/projects/CompletedProject";
+import ProjectInfo from "@/components/projects/ProjectInfo";
+import VisualDocuments from "@/components/projects/VisualDocuments";
 
-async function Page({ params }: { params: { id: string } }) {
+async function Page({ params }: { params: { id: string; locale: string } }) {
   const id = await params.id;
+  const locale = await params.locale;
 
   const data = await getSingleProject(id);
 
-  const { name, description, goalAndAchievements, status } = data?.data;
+  const { name, description, goalAndAchievements } = data?.data;
 
   return (
     <section className="flex flex-col justify-center items-center">
@@ -24,6 +27,9 @@ async function Page({ params }: { params: { id: string } }) {
         titleText="Goal And Achievements"
       />
       <CompletedProject data={data} />
+
+      <ProjectInfo data={data?.data} locale={locale} />
+      <VisualDocuments data={data?.data} />
     </section>
   );
 }
