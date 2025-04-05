@@ -53,7 +53,9 @@
     "Area And Scope": "Область и сфера применения",
     "Projects": "Проекты",
     "Have Licensed": "Иметь лицензию",
-    "Not Have Licensed": "Не имеют лицензии"
+    "Not Have Licensed": "Не имеют лицензии",
+    "Main country where the NGO works": "Основная страна, где работает НПО",
+    "Area and scope of activity": "Область и сфера деятельности"
   },
   "NGOPage": {
     "Image of NGO activities": "Изображение деятельности НПО",
@@ -62,7 +64,10 @@
     "Website": "Веб-сайт",
     "Mail": "Почта",
     "Social": "Социальный",
-    "Address": "Адрес"
+    "Address": "Адрес",
+    "Documents": "Документы",
+    "Projects": "Проекты",
+    "Visit Website": "Посетите веб-сайт"
   },
   "statics": {
     "Participation": "Участие",
@@ -564,7 +569,8 @@
     "Visual Documents": "Визуальные документы",
     "More Information": "Дополнительная информация",
     "Documents and Reports": "Документы и отчеты",
-    "Goal And Achievements": "Цель и достижения"
+    "Goal And Achievements": "Цель и достижения",
+    "Projects": "Проекты"
   },
 
   "data-archive": {

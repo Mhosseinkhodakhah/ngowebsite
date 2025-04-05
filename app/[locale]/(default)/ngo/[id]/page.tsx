@@ -3,6 +3,7 @@ import InfoAndContacts from "@/components/ngo-page/InfoAndContacts";
 import NgoActivitiesSlider from "@/components/ngo-page/NgoActivitiesSlider";
 import NgoAvatar from "@/components/ngo-page/NgoAvatar";
 import NgoStatusCards from "@/components/ngo-page/NgoStatusCards";
+import ProjectsSlider from "@/components/ngo-page/ProjectsSlider";
 import SimilarNgosSlider from "@/components/ngo-page/SimilarNgosSlider";
 
 async function Page({ params }: { params: { id: string } }) {
@@ -10,15 +11,16 @@ async function Page({ params }: { params: { id: string } }) {
 
   const data = await getSingleNgo(id);
 
-  console.log(data);
+  const { ngo, similarNgo } = data?.data;
 
   return (
     <section className="my-20 flex flex-col justify-center items-center">
-      <NgoAvatar />
-      <NgoStatusCards />
-      <NgoActivitiesSlider />
-      <InfoAndContacts />
-      <SimilarNgosSlider />
+      <NgoAvatar data={ngo} />
+      <NgoStatusCards data={ngo} />
+      <NgoActivitiesSlider data={ngo} />
+      <ProjectsSlider data={ngo} />
+      <InfoAndContacts data={ngo} />
+      <SimilarNgosSlider data={similarNgo} />
     </section>
   );
 }

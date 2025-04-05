@@ -2,16 +2,16 @@
 
 import { Chart } from "react-google-charts";
 
-function MapChart() {
-  const data = [
-    ["Country", "NGO"],
-    ["North Korea", 200],
-    ["Pakistan", 300],
-    ["India", 400],
-    ["Iraq", 500],
-    ["japan", 600],
-    ["Iran", 700],
-  ];
+function MapChart({ data }: { data: any }) {
+  // const data = [
+  //   ["Country", "NGO"],
+  //   ["North Korea", 200],
+  //   ["Pakistan", 300],
+  //   ["India", 400],
+  //   ["Iraq", 500],
+  //   ["japan", 600],
+  //   ["Iran", 700],
+  // ];
 
   const options = {
     region: "142",
@@ -29,9 +29,9 @@ function MapChart() {
             callback: ({ chartWrapper }) => {
               const chart = chartWrapper?.getChart();
               const selection = chart?.getSelection();
-              if (selection.length === 0) return;
-              const region = data[selection[0].row + 1];
-              console.log("Selected : " + region);
+              // if (selection.length === 0) return;
+              // const region = data[selection[0].row + 1];
+              // console.log("Selected : " + region);
             },
           },
         ]}

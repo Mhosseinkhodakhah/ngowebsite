@@ -62,7 +62,7 @@ function Card({
           </Chip>
         )}
         <h4 className="text-bold p-2 text-wrap">{name}</h4>
-        <p className="text-sm font-light p-2  overflow-hidden text-wrap">
+        <p className="text-sm font-light p-2 overflow-hidden text-wrap line-clamp-3">
           {description}
         </p>
         {route && <CardButton btnText={btnText} route={route} />}

@@ -54,7 +54,9 @@
     "Area And Scope": "منطقه فعالیت",
     "Projects": "پروژها",
     "Have Licensed": "دارای مجوز",
-    "Not Have Licensed": "بدون مجوز"
+    "Not Have Licensed": "بدون مجوز",
+    "Main country where the NGO works": "کشور اصلی فعالیت سمن",
+    "Area and scope of activity": "ناحیه فعالیت سمن"
   },
   "NGOPage": {
     "Image of NGO activities": "تصاویر فعالیت ها",
@@ -63,7 +65,10 @@
     "Website": "وب سایت",
     "Mail": "ایمیل",
     "Social": "شبکه اجتماعی",
-    "Address": "آدرس"
+    "Address": "آدرس",
+    "Documents": "اسناد و مدارک",
+    "Projects": "پروژها",
+    "Visit Website": "بازدید وب سایت"
   },
   "statics": {
     "Participation": "مشارکت",
@@ -569,7 +574,8 @@
     "Visual Documents": "مستدات بصری",
     "More Information": "اطلاعات بیشتر",
     "Documents and Reports": "مستندات و گزارش ها",
-    "Goal And Achievements": "اهداف و دستاوردها"
+    "Goal And Achievements": "اهداف و دستاوردها",
+    "Projects": "پروژها"
   },
 
   "data-archive": {

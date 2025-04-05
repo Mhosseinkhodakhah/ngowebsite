@@ -1,23 +1,27 @@
+"use client";
 import Image from "next/image";
+import { SwiperSlide } from "swiper/react";
 
 import Slider from "../common/slider";
 import Title from "../common/title";
 
-function NgoActivitiesSlider() {
+function NgoActivitiesSlider({ data }: { data: any }) {
   return (
     <section className="w-full flex flex-col justify-center items-center my-14">
-      <Title page="NGOPage" titleText="Image of NGO activities" />
-      <div className="flex flex-col w-full lg:w-2/3 px-12 mt-20">
-        <Slider content={[{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }]}>
-          <div>
-            <Image
-              alt="slide 1"
-              className="w-full h-full"
-              height={100}
-              src="https://fakeimg.pl/600x400"
-              width={100}
-            />
-          </div>
+      <Title page="NGOPage" titleText="Documents" />
+      <div className="flex flex-col w-full lg:w-2/3 px-12 mt-20 h-[400px] items-center">
+        <Slider single={3}>
+          {data?.documentsFile?.map((image: string, index: number) => (
+            <SwiperSlide key={index}>
+              <Image
+                alt="ngo activities"
+                className="w-full object-contain"
+                height={100}
+                src={image}
+                width={100}
+              />
+            </SwiperSlide>
+          ))}
         </Slider>
       </div>
     </section>

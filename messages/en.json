@@ -55,7 +55,9 @@
     "Area And Scope": "Area And Scope",
     "Projects": "Projects",
     "Have Licensed": "Have Licensed",
-    "Not Have Licensed": "Not Have Licensed"
+    "Not Have Licensed": "Not Have Licensed",
+    "Main country where the NGO works": "Main country where the NGO works",
+    "Area and scope of activity": "Area and scope of activity"
   },
   "NGOPage": {
     "Image of NGO activities": "Image of NGO activities",
@@ -64,7 +66,10 @@
     "Website": "Website",
     "Mail": "Mail",
     "Social": "Social",
-    "Address": "Address"
+    "Address": "Address",
+    "Documents": "Documents",
+    "Projects": "Projects",
+    "Visit Website": "Visit Website"
   },
   "statics": {
     "Participation": "Participation",
@@ -571,7 +576,8 @@
     "Visual Documents": "Visual Documents",
     "More Information": "More Information",
     "Documents and Reports": "Documents and Reports",
-    "Goal And Achievements": "Goal And Achievements"
+    "Goal And Achievements": "Goal And Achievements",
+    "Projects": "Projects"
   },
   "data-archive": {
     "See Ngo": "See Ngo"
