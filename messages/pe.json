@@ -555,7 +555,13 @@
     "Reports and Documentation": "گزارش ها و مستندات",
     "impact on the protection of intangible heritage": "تاثیر بر حفاظت از میراث ناملموس",
     "Digital Archive": "آرشیو دیجیتال",
-    "Search for images , videos and documents": "جستجوی تصاویر ، ویدیو ها و مستندات"
+    "Search for images , videos and documents": "جستجوی تصاویر ، ویدیو ها و مستندات",
+    "Project Information": "اطلاعات پروژه",
+    "Start Date": "زمان شروع",
+    "Project Manager Email": "ایمیل مدیر پروژه",
+    "End Date": "زمان پایان",
+    "Location": "موقعیت جغرافیایی پروژه",
+    "Visit Ngo": "بازدید سمن"
   },
 
   "data-archive": {

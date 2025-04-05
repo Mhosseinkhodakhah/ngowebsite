@@ -1,9 +1,11 @@
 import { getSingleProject } from "@/actions/projects";
 import Title from "@/components/common/title";
 import CompletedProject from "@/components/projects/CompletedProject";
+import ProjectInfo from "@/components/projects/ProjectInfo";
 
-async function Page({ params }: { params: { id: string } }) {
+async function Page({ params }: { params: { id: string; locale: string } }) {
   const id = await params.id;
+  const locale = await params.locale;
 
   const data = await getSingleProject(id);
 
@@ -24,6 +26,8 @@ async function Page({ params }: { params: { id: string } }) {
         titleText="Goal And Achievements"
       />
       {status[0] === "completed" && <CompletedProject data={data} />}
+
+      <ProjectInfo data={data?.data} locale={locale} />
     </section>
   );
 }
