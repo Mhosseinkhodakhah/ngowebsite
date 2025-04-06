@@ -129,24 +129,24 @@ function UpdateProjectForm({ data }: { data: any }) {
             documentsAndReportFormData[0]
           );
         }
-        const uploadDocumentAndReposrt = await uploadDocs(
+        const uploadDocumentAndReport = await uploadDocs(
           formDataDocumentAndReport
         );
 
-        if (uploadDocumentAndReposrt.success) {
-          values.documentsAndReportFiles = uploadDocumentAndReposrt.data;
+        if (uploadDocumentAndReport.success) {
+          values.documentsAndReportFiles = uploadDocumentAndReport.data;
         }
       } else if (documentsAndReportFormData.length > 1) {
         documentsAndReportFormData.forEach((value) => {
           formDataDocumentAndReport.append("picture", value);
         });
 
-        const uploadDocumentAndReposrt = await uploadDocs(
+        const uploadDocumentAndReport = await uploadDocs(
           formDataDocumentAndReport
         );
 
-        if (uploadDocumentAndReposrt.success) {
-          values.documentsAndReportFiles = uploadDocumentAndReposrt.data;
+        if (uploadDocumentAndReport.success) {
+          values.documentsAndReportFiles = uploadDocumentAndReport.data;
         }
       }
 

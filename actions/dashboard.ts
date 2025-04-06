@@ -29,11 +29,49 @@ export const createProject = async (values: any) => {
 };
 
 export const updateProject = async (values: any, id: string) => {
-  console.log("values", values);
-  console.log("values", id);
-
   try {
     const { data } = await instance.post(`/ngo/project/update/${id}`, values);
+
+    revalidatePath("/dashboard/projects");
+
+    return data;
+  } catch (err: any) {
+    console.log("eeerrrr", err);
+
+    return false;
+  }
+};
+
+export const completeProject = async (values: any) => {
+  try {
+    const { data } = await instance.post(`/ngo/project/complete`, values);
+
+    revalidatePath("/dashboard/projects");
+
+    return data;
+  } catch (err: any) {
+    console.log("eeerrrr", err);
+
+    return false;
+  }
+};
+
+export const ongoingProject = async (id: any) => {
+  try {
+    const { data } = await instance.post(`/ngo/project/delete/${id}`);
+
+    revalidatePath("/dashboard/projects");
+
+    return data;
+  } catch (err: any) {
+    console.log("eeerrrr", err);
+
+    return false;
+  }
+};
+export const deleteProject = async (id: any) => {
+  try {
+    const { data } = await instance.post(`/ngo/project/delete/${id}`);
 
     revalidatePath("/dashboard/projects");
 

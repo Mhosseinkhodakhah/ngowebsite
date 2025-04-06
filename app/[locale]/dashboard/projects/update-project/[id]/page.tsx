@@ -8,8 +8,6 @@ async function UpdateProject({ params }: { params: any }) {
 
   const data = await getSingleProject(id);
 
-  console.log("data", data);
-
   return (
     <section className="flex flex-col items-center w-full md:w-3/5 lg:w-3/4 md:p-10 overflow-y-auto">
       <div className="px-6 w-full mt-4">

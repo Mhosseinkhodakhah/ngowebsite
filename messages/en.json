@@ -533,7 +533,24 @@
     "Failed to create project": "Failed to create project",
     "Project created successfully": "Project created successfully",
     "Project updated successfully": "Project updated successfully",
-    "Failed to update project": "Failed to update project"
+    "Failed to update project": "Failed to update project",
+    "Complete Project": "Complete Project",
+    "Achivements": "Achivements",
+    "Project completed successfully": "Project completed successfully",
+    "Failed to complete project": "Failed to complete project",
+    "End date is required": "End date is required",
+    "Achivements is required": "Achivements is required",
+    "Achivements must be at least 200 characters": "Achivements must be at least 200 characters",
+    "Complete": "Complete",
+    "Ongoing Project": "Ongoing Project",
+    "Are you sure you want to ongoing this project?": "Are you sure you want to ongoing this project?",
+    "Cancel": "Cancel",
+    "Submit": "Submit",
+    "Are you sure you want to delete this project?": "Are you sure you want to delete this project?",
+    "Project status changed to ongoing": "Project status changed to ongoing",
+    "Failed to change project status": "Failed to change project status",
+    "Project deleted successfully": "Project deleted successfully",
+    "Failed to delete project": "Failed to delete project"
   },
 
   "education": {
