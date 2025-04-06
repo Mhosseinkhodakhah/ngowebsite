@@ -44,7 +44,10 @@ function ProjectDocumentFiles({
           return URL.createObjectURL(file);
         });
 
-        formik.setFieldValue("documentsAndReportFiles", FilesUrl);
+        formik.setFieldValue("documentsAndReportFiles", [
+          ...formik.values.documentsAndReportFiles,
+          ...FilesUrl,
+        ]);
         onFile(files);
       } else {
         const file = event.target.files[0];
@@ -92,10 +95,9 @@ function ProjectDocumentFiles({
     <div className="flex flex-col gap-4 items-center">
       <div className="flex gap-4 items-center justify-start w-full">
         <Input
-          isRequired
           className={className}
           errorMessage={() => {
-            if (formik.errors[name]) {
+            if (formik.errors[name] && formik.touched[name]) {
               return t(formik.errors[name]);
             }
           }}
@@ -117,33 +119,35 @@ function ProjectDocumentFiles({
       </div>
 
       {typeof index !== "undefined" &&
-        formik.values.visualDocuments[index]?.files[0] && (
-          <div className="relative w-full my-4 flex">
-            <Image
-              alt="Document"
-              className="object-contain"
-              height={200}
-              src={formik.values.visualDocuments[index]?.files[0]}
-              width={200}
-            />
-            <div className="absolute -top-5 -right-5">
-              <Tooltip content={t("Delete")}>
-                <Button
-                  isIconOnly
-                  color="danger"
-                  size="sm"
-                  onPress={() => handleDeleteFile(index)}
-                >
-                  <Icon
-                    height="24"
-                    icon="material-symbols:delete-rounded"
-                    width="24"
-                  />
-                </Button>
-              </Tooltip>
-            </div>
+      formik.values?.visualDocuments[index]?.files?.length ? (
+        <div className="relative w-full my-4 flex">
+          <Image
+            alt="Document"
+            className="object-contain"
+            height={200}
+            src={formik.values?.visualDocuments[index]?.files[0]}
+            width={200}
+          />
+          <div className="absolute -top-5 -right-5">
+            <Tooltip content={t("Delete")}>
+              <Button
+                isIconOnly
+                color="danger"
+                size="sm"
+                onPress={() => handleDeleteFile(index)}
+              >
+                <Icon
+                  height="24"
+                  icon="material-symbols:delete-rounded"
+                  width="24"
+                />
+              </Button>
+            </Tooltip>
           </div>
-        )}
+        </div>
+      ) : (
+        <></>
+      )}
     </div>
   );
 }

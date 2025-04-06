@@ -491,7 +491,8 @@
     "Project Manager Phone": "تلفن مدیر پروژه",
     "Link": "لینک",
     "Actions": "اقدامات",
-    "Delete Project": "حذف پروژه",
+    "Delete Project": "حذف",
+    "Update Project": "به روز رسانی",
     "Search": "جستجو",
     "NGO Name": "نام سمن",
     "Interface Name": "نام رابط",
@@ -528,7 +529,10 @@
     "Visual documents is required": "مستندات تصویری الزامی است",
     "Please select all visual documents": "لطفا تمام مستندات تصویری را وارد کنید",
     "Please select the documentation and reports file": "لطفا فایل مستندات و گزارش ها را وارد کنید",
-    "Failed to create project": "پروژه ایجاد نشد!!!"
+    "Failed to create project": "پروژه ایجاد نشد!!!",
+    "Project created successfully": "پروژه با موفقیت ساخته شد",
+    "Project updated successfully": "پروژه با موفقیت به روز رسانی شد",
+    "Failed to update project": "پروژه به روز رسانی نشد"
   },
   "education": {
     "Filter by file format": "بر اساس نوع فایل",

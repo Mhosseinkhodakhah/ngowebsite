@@ -40,6 +40,7 @@ instance.interceptors.response.use(
   },
   (error) => {
     // Handle specific error cases
+    console.log("error", error);
     if (error.response) {
       // Server responded with a status code outside of 2xx
       switch (error.response.status) {
@@ -55,8 +56,8 @@ instance.interceptors.response.use(
           break;
         case 400:
           const errorSource = new Error("400");
-          console.log(errorSource);
-          
+          console.log("error", error.response);
+
           return Promise.reject(errorSource);
           break;
         case 500:

@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import React, { useState } from "react";
 import { AgGridReact } from "ag-grid-react";
 import { ClientSideRowModelModule, ColDef } from "ag-grid-community";
@@ -14,12 +13,13 @@ import {
 } from "@ag-grid-community/locale";
 import { Button } from "@heroui/button";
 import { Icon } from "@iconify/react";
+import { Tooltip } from "@heroui/tooltip";
 
 import { SearchIcon } from "../common/icons";
 
 import "ag-grid-community/styles/ag-grid.css";
 import "ag-grid-community/styles/ag-theme-alpine.css"; // or any other theme you prefer
-import { Tooltip } from "@heroui/tooltip";
+import { Link } from "@/i18n/navigation";
 
 const ProjectTable = ({ data }: { data: any }) => {
   const [searchText, setSearchText] = useState("");
@@ -36,6 +36,21 @@ const ProjectTable = ({ data }: { data: any }) => {
       headerName: t("Project Status"),
       field: "status",
       width: 200,
+      cellRenderer: (params: any) => {
+        return (
+          <>
+            {params?.value[0] === "goodPractice"
+              ? t("Good Practice")
+              : params?.value[0] === "ongoing"
+                ? t("Ongoing")
+                : params?.value[0] === "completed"
+                  ? t("Completed")
+                  : params?.value[0] === "collaborationOpportunities"
+                    ? t("Collaboration Opportunities")
+                    : t("")}
+          </>
+        );
+      },
     },
     {
       headerName: t("Country"),
@@ -71,16 +86,44 @@ const ProjectTable = ({ data }: { data: any }) => {
     {
       headerName: t("Actions"),
       field: "actions",
-      cellRenderer: () => {
+      cellRenderer: (params: { data: { _id: string } }) => {
+        const id: string = params?.data?._id;
+
         return (
-          <Tooltip color="danger" content="Delete Project">
-            <Icon
-              className="text-danger"
-              height="24"
-              icon="mdi-light:delete"
-              width="24"
-            />
-          </Tooltip>
+          <div className="flex gap-3">
+            <Tooltip color="danger" content={t("Delete Project")}>
+              <Button isIconOnly color="danger" size="sm" variant="flat">
+                <Icon
+                  className="text-danger"
+                  height="24"
+                  icon="mdi-light:delete"
+                  width="24"
+                />
+              </Button>
+            </Tooltip>
+            <Tooltip color="warning" content={t("Update Project")}>
+              <Link href={`projects/update-project/${id}`}>
+                <Button isIconOnly color="warning" size="sm" variant="flat">
+                  <Icon
+                    className="text-warning"
+                    height="24"
+                    icon="material-symbols:update"
+                    width="24"
+                  />
+                </Button>
+              </Link>
+            </Tooltip>
+            <Tooltip color="success" content={t("Completed")}>
+              <Button isIconOnly color="success" size="sm" variant="flat">
+                <Icon
+                  className="text-green-500"
+                  height="24"
+                  icon="lets-icons:done-ring-round-fill"
+                  width="24"
+                />
+              </Button>
+            </Tooltip>
+          </div>
         );
       },
     },
@@ -93,10 +136,8 @@ const ProjectTable = ({ data }: { data: any }) => {
   };
 
   const defaultColDef = {
-    // sortable: true,
-    // filter: true,
+    sortable: true,
     resizable: true,
-    // flex: 1, // Allows columns to take equal space
     cellStyle: {
       display: "flex",
       justifyContent: "center",

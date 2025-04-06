@@ -13,7 +13,7 @@ function ProjectCountry({ formik }: { formik: FormikProps<any> }) {
     <Autocomplete
       isRequired
       errorMessage={() => {
-        if (formik.errors.country) {
+        if (formik.errors.country && formik.touched.country) {
           return t(formik.errors.country);
         }
       }}

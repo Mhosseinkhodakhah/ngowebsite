@@ -16,7 +16,7 @@ function ProjectFiles({
 }: {
   formik: FormikProps<any>;
   onFiles: (value: any) => void;
-  files: [];
+  files: File[];
   visualDocuments: (File | undefined)[];
   onSingleFile: (value: any) => void;
 }) {

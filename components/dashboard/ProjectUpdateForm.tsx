@@ -4,6 +4,7 @@
 import { useTranslations } from "next-intl";
 import { useState } from "react";
 import { useFormik } from "formik";
+import { addToast } from "@heroui/toast";
 import { useMutation } from "@tanstack/react-query";
 
 import CInput from "../common/cinput";
@@ -17,12 +18,11 @@ import ProjectFiles from "./ProjectFiles";
 import ProjectCountry from "./ProjectCountry";
 
 import { ProjectSchema } from "@/utils/validations";
-import { createProject } from "@/actions/dashboard";
+import { updateProject } from "@/actions/dashboard";
 import { uploadDocs } from "@/actions/ngo";
-import { addToast } from "@heroui/toast";
 import { useRouter } from "@/i18n/navigation";
 
-function ProjectForm() {
+function UpdateProjectForm({ data }: { data: any }) {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [documentsAndReportFormData, setDocumentsAndReportFormData] = useState<
     File[]
@@ -36,15 +36,16 @@ function ProjectForm() {
 
   const router = useRouter();
 
-  const mutation = useMutation({
-    mutationKey: ["createProject"],
-    mutationFn: createProject,
+  const mutation = useMutation<void, unknown, { values: any; id: string }>({
+    mutationKey: ["updateProject"],
+    mutationFn: async ({ values, id }: { values: any; id: string }) =>
+      await updateProject(values, id),
     onSuccess: (data: any) => {
       if (data.success) {
         formik.resetForm();
         addToast({
           title: t("Success"),
-          description: t("Project created successfully"),
+          description: t("Project updated successfully"),
           timeout: 3000,
           color: "success",
         });
@@ -54,7 +55,7 @@ function ProjectForm() {
       } else {
         addToast({
           title: t("Error"),
-          description: t("Failed to create project"),
+          description: t("Failed to update project"),
           timeout: 3000,
           color: "danger",
         });
@@ -64,37 +65,58 @@ function ProjectForm() {
 
   const formik = useFormik({
     initialValues: {
-      name: "",
-      startDate: "",
-      description: "",
-      status: [] as string[],
-      country: "",
-      city: "",
+      name: data?.name,
+      startDate: data?.startDate,
+      description: data?.description,
+      status: data?.status as string[],
+      country: data?.location?.country,
+      city: data?.location?.city,
       location: {
-        country: "",
-        city: "",
+        country: data?.location?.country,
+        city: data?.location?.city,
       },
-      organizationName: "",
-      projectManagerName: "",
-      projectManagerEmail: "",
-      projectManagerPhone: "",
-      colleaguesAndStakeholders: "",
-      goalAndAchievements: [] as string[],
-      otherGoalAndAchievements: "",
-      documentsAndReportTitle: "",
-      documentsAndReportFiles: [] as string[],
+      organizationName: data?.organizationName,
+      projectManagerName: data?.projectManagerName,
+      projectManagerEmail: data?.projectManagerEmail,
+      projectManagerPhone: data?.projectManagerPhone,
+      colleaguesAndStakeholders: data?.colleaguesAndStakeholders,
+      goalAndAchievements: data?.goalAndAchievements,
+      otherGoalAndAchievements:
+        data?.goalAndAchievements.length > 1
+          ? data?.goalAndAchievements[1]
+          : "",
+      documentsAndReportTitle: data?.documentsAndReport?.title,
+      documentsAndReportFiles: data?.documentsAndReport?.files as string[],
       documentsAndReport: {
-        title: "",
-        files: [] as string[],
+        title: data?.documentsAndReport?.title,
+        files: data?.documentsAndReport?.files as string[],
       },
-      visualDocuments1: "",
-      visualDocuments2: "",
-      visualDocuments3: "",
-      visualDocuments4: "",
-      visualDocuments: [] as { title: string; files: string[] }[],
-      moreInformation: "",
+      visualDocuments1: data?.visualDocuments[0]?.title,
+      visualDocuments2: data?.visualDocuments[1]?.title,
+      visualDocuments3: data?.visualDocuments[2]?.title,
+      visualDocuments4: data?.visualDocuments[3]?.title,
+      visualDocuments: [
+        {
+          title: data?.visualDocuments[0]?.title,
+          files: data?.visualDocuments[0]?.files,
+        },
+        {
+          title: data?.visualDocuments[1]?.title,
+          files: data?.visualDocuments[1]?.files,
+        },
+        {
+          title: data?.visualDocuments[2]?.title,
+          files: data?.visualDocuments[2]?.files,
+        },
+        {
+          title: data?.visualDocuments[3]?.title,
+          files: data?.visualDocuments[3]?.files,
+        },
+      ] as { title: string; files: string[] }[],
+      moreInformation: data?.moreInformation,
     },
     validationSchema: ProjectSchema,
+    enableReinitialize: true,
     onSubmit: async (values) => {
       setIsLoading(true);
 
@@ -134,7 +156,7 @@ function ProjectForm() {
 
       const formDataVisualDocuments = new FormData();
 
-      filterVisualDocuments?.forEach((value) => {
+      filterVisualDocuments.forEach((value) => {
         formDataVisualDocuments.append("picture", value);
       });
 
@@ -151,6 +173,8 @@ function ProjectForm() {
         }
       }
 
+      console.log("vvvvvvvvvv", values);
+
       const cpValues = { ...values } as {
         -readonly [K in keyof typeof values]+?: (typeof values)[K];
       };
@@ -164,6 +188,7 @@ function ProjectForm() {
             values.otherGoalAndAchievements as string;
         }
       }
+
       cpValues.location = {
         country: values.country,
         city: values.city,
@@ -185,7 +210,7 @@ function ProjectForm() {
 
       setIsLoading(false);
 
-      mutation.mutate(cpValues);
+      mutation.mutate({ values: cpValues, id: data?._id });
     },
   });
 
@@ -239,4 +264,4 @@ function ProjectForm() {
   );
 }
 
-export default ProjectForm;
+export default UpdateProjectForm;

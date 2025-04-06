@@ -6,9 +6,7 @@ function ProjectStatus({ formik }: { formik: FormikProps<any> }) {
   const t = useTranslations("dashboard");
 
   const handleSetProjectStatus = (value: string[]) => {
-    const lastValue = value[value.length - 1];
-
-    formik.setFieldValue("status", [lastValue]);
+    formik.setFieldValue("status", value);
   };
 
   return (
@@ -17,7 +15,7 @@ function ProjectStatus({ formik }: { formik: FormikProps<any> }) {
       className="px-4 md:px-0"
       defaultValue={formik.values.status}
       errorMessage={() => {
-        if (formik.errors.status) {
+        if (formik.errors.status && formik.touched.status) {
           return t(formik.errors.status as unknown as string);
         }
       }}
@@ -31,9 +29,6 @@ function ProjectStatus({ formik }: { formik: FormikProps<any> }) {
       </Checkbox>
       <Checkbox className="my-1" value="ongoing">
         {t("Ongoing")}
-      </Checkbox>
-      <Checkbox className="my-1" value="completed">
-        {t("Completed")}
       </Checkbox>
       <Checkbox className="my-1" value="collaborationOpportunities">
         {t("Collaboration Opportunities")}

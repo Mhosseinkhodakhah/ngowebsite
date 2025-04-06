@@ -34,7 +34,7 @@ function NumberInput({
     <Input
       className={className}
       errorMessage={() => {
-        if (formik.errors[name]) {
+        if (formik.errors[name] && formik.touched[name]) {
           return t(formik.errors[name]);
         }
       }}

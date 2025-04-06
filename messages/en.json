@@ -493,6 +493,7 @@
     "Link": "Link",
     "Actions": "Actions",
     "Delete Project": "Delete Project",
+    "Update Project": "Update Project",
     "Search": "Search",
     "NGO Name": "NGO Name",
     "Interface Name": "Interface Name",
@@ -529,7 +530,10 @@
     "Visual documents is required": "Visual documents is required",
     "Please select all visual documents": "Please select all visual documents",
     "Please select the documentation and reports file": "Please select the documentation and reports file",
-    "Failed to create project": "Failed to create project"
+    "Failed to create project": "Failed to create project",
+    "Project created successfully": "Project created successfully",
+    "Project updated successfully": "Project updated successfully",
+    "Failed to update project": "Failed to update project"
   },
 
   "education": {

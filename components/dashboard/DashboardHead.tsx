@@ -36,6 +36,13 @@ function DashboardHead() {
               </Link>
             </BreadcrumbItem>
           )}
+          {pathname.includes("update-project") && (
+            <BreadcrumbItem>
+              <Link href="/dashboard/projects/update-project">
+                {t("Update Project")}
+              </Link>
+            </BreadcrumbItem>
+          )}
           {pathname.includes("add-document") && (
             <BreadcrumbItem>
               <Link href="/dashboard/documents/add-documents">

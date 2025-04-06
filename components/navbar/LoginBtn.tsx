@@ -14,6 +14,8 @@ const LoginBtn = () => {
   const { locale } = useParams();
   const isLogin = useStore((state: any) => state.isLogin);
 
+  console.log(isLogin)
+
   return (
     <>
       {isLogin ? (

@@ -9,6 +9,8 @@ import { ThemeProvider as NextThemesProvider } from "next-themes";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ToastProvider } from "@heroui/toast";
 
+import CheckToken from "@/hoc/CheckToken";
+
 export interface ProvidersProps {
   children: React.ReactNode;
   themeProps?: ThemeProviderProps;
@@ -32,7 +34,7 @@ export function Providers({ children, themeProps }: ProvidersProps) {
       <NextThemesProvider {...themeProps}>
         <ToastProvider />
         <QueryClientProvider client={queryClient}>
-          {children}
+          <CheckToken>{children}</CheckToken>
         </QueryClientProvider>
       </NextThemesProvider>
     </HeroUIProvider>

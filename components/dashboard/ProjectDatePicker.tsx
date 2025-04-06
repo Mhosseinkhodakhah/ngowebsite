@@ -19,7 +19,9 @@ function ProjectDatePicker({ label, className, formik, name }: Props) {
   const { locale } = useParams();
   const t = useTranslations("dashboard");
   const [date, setDate] = useState(
-    parseAbsoluteToLocal(new Date().toISOString())
+    formik.values[name]
+      ? parseAbsoluteToLocal(new Date(formik.values[name]).toISOString())
+      : parseAbsoluteToLocal(new Date().toISOString())
   );
 
   let formatter = useDateFormatter({ dateStyle: "full" });
@@ -40,7 +42,7 @@ function ProjectDatePicker({ label, className, formik, name }: Props) {
           showMonthAndYearPickers
           className={className}
           errorMessage={() => {
-            if (formik.errors[name]) {
+            if (formik.errors[name] && formik.touched[name]) {
               return t(formik.errors[name]);
             }
           }}

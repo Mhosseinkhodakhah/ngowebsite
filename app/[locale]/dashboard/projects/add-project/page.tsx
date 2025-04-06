@@ -8,11 +8,7 @@ function AddProject() {
       <div className="px-6 w-full mt-4">
         <DashboardHead />
       </div>
-      <Title
-        description="Lorem ipsum odor amet, consectetuer adipiscing elit. Iaculis mus leo; imperdiet mi fusce fames? Montes mi habitasse torquent venenatis rutrum bibendum. Ultrices magnis velit cursus,"
-        page="dashboard"
-        titleText="Project Registration"
-      />
+      <Title page="dashboard" titleText="Project Registration" />
 
       <div className="w-full md:px-10">
         <ProjectForm />

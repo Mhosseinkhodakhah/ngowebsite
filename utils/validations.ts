@@ -90,7 +90,6 @@ export const documentSchema = Yup.object().shape({
 export const ProjectSchema = Yup.object().shape({
   name: Yup.string().required("Project name is required"),
   startDate: Yup.string().required("Project start date is required"),
-  endDate: Yup.string().required("Project end date is required"),
   description: Yup.string().required("Description is required"),
   status: Yup.array().min(1, "Please select an option"),
   country: Yup.string().required("Country is required"),
@@ -114,13 +113,6 @@ export const ProjectSchema = Yup.object().shape({
     then: () => Yup.string().required("Please specify"),
     otherwise: () => Yup.string(),
   }),
-  documentsAndReportTitle: Yup.string().required(
-    "Documents and report title is required"
-  ),
-  visualDocuments1: Yup.string().required("Visual documents is required"),
-  visualDocuments2: Yup.string().required("Visual documents is required"),
-  visualDocuments3: Yup.string().required("Visual documents is required"),
-  visualDocuments4: Yup.string().required("Visual documents is required"),
 });
 
 export const loginSchema = Yup.object().shape({

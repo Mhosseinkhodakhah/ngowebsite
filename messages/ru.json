@@ -487,6 +487,7 @@
     "Link": "Связь",
     "Actions": "Действия",
     "Delete Project": "Удалить проект",
+    "Update Project": "Обновить проект",
     "Search": "Поиск",
     "NGO Name": "Название НПО",
     "Interface Name": "Имя интерфейса",
@@ -523,7 +524,10 @@
     "Visual documents is required": "Требуются визуальные документы",
     "Please select all visual documents": "Пожалуйста, выберите все визуальные документы",
     "Please select the documentation and reports file": "Пожалуйста, выберите файл документации и отчетов",
-    "Failed to create project": "Не удалось создать проект"
+    "Failed to create project": "Не удалось создать проект",
+    "Project created successfully": "Проект успешно создан",
+    "Project updated successfully": "Проект успешно обновлен",
+    "Failed to update project": "Не удалось обновить проект"
   },
   "education": {
     "Filter by file format": "Фильтровать по формату файла",

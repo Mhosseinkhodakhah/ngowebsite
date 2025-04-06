@@ -18,7 +18,7 @@ const useStore = create<NGOStore>()(
     }),
     {
       name: "ngo-storage",
-      storage: createJSONStorage(() => sessionStorage),
+      storage: createJSONStorage(() => localStorage),
     }
   )
 );

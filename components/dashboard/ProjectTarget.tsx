@@ -27,29 +27,45 @@ function ProjectTarget({ formik }: { formik: FormikProps<any> }) {
         defaultValue={formik.values.goalAndAchievements}
         errorMessage={
           formik.errors.goalAndAchievements &&
+          formik.touched.goalAndAchievements &&
           t(formik.errors.goalAndAchievements as unknown as FormikErrors<any>)
         }
         label={t("Expected goals and achievements")}
         {...formik.getFieldProps("goalAndAchievements")}
         onChange={handleSetProjectTarget}
       >
-        <Checkbox className="my-1" value="goodPractice">
+        <Checkbox
+          className="my-1"
+          value="Preservation and revitalization of intangible cultural heritage"
+        >
           {t("Preservation and revitalization of intangible cultural heritage")}
         </Checkbox>
-        <Checkbox className="my-1" value="ongoing">
+        <Checkbox
+          className="my-1"
+          value="Educating and Passing on Knowledge to the Future Hype Generation"
+        >
           {t(
             "Educating and Passing on Knowledge to the Future Hype Generation"
           )}
         </Checkbox>
-        <Checkbox className="my-1" value="completed">
+        <Checkbox
+          className="my-1"
+          value="Documentation and Archiving of Related Information"
+        >
           {t("Documentation and Archiving of Related Information")}
         </Checkbox>
-        <Checkbox className="my-1" value="collaborationOpportunities">
+        <Checkbox
+          className="my-1"
+          value="Increasing public awareness and participation of local communities"
+        >
           {t(
             "Increasing public awareness and participation of local communities"
           )}
         </Checkbox>
-        <Checkbox className="my-1" value="public">
+        <Checkbox
+          className="my-1"
+          value="Creating economic opportunities for heritage bearers (eg, supporting local artists)"
+        >
           {t(
             "Creating economic opportunities for heritage bearers (eg, supporting local artists)"
           )}
@@ -64,13 +80,17 @@ function ProjectTarget({ formik }: { formik: FormikProps<any> }) {
             formik.values.goalAndAchievements.includes("other") ? false : true
           }
           errorMessage={() => {
-            if (formik.errors.goalAndAchievements) {
+            if (
+              formik.errors.goalAndAchievements &&
+              formik.touched.goalAndAchievements
+            ) {
               return t(formik.errors.goalAndAchievements);
             }
           }}
           isInvalid={
             formik.values.goalAndAchievements.includes("other") &&
-            formik.errors.otherGoalAndAchievements
+            formik.errors.otherGoalAndAchievements &&
+            formik.touched.otherGoalAndAchievements
               ? true
               : false
           }

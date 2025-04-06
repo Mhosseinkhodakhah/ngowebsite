@@ -25,7 +25,6 @@ function ProjectGeneralInfo({ formik }: { formik: FormikProps<any> }) {
           label="Start Date"
           name="startDate"
         />
-        <ProjectDatePicker formik={formik} label="End Date" name="endDate" />
       </div>
       <div className="my-4">
         <Textarea
@@ -33,7 +32,7 @@ function ProjectGeneralInfo({ formik }: { formik: FormikProps<any> }) {
           isRequired
           className="h-40"
           errorMessage={() => {
-            if (formik.errors.description) {
+            if (formik.errors.description && formik.touched.description) {
               return t(formik.errors.description);
             }
           }}

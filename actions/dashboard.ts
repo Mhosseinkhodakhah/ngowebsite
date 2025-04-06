@@ -1,3 +1,5 @@
+"use server";
+
 import { revalidatePath } from "next/cache";
 
 import instance from "@/utils/instance";
@@ -21,6 +23,25 @@ export const createProject = async (values: any) => {
     return data;
   } catch (err: any) {
     console.log("eeerrrr", err);
+
+    return false;
+  }
+};
+
+export const updateProject = async (values: any, id: string) => {
+  console.log("values", values);
+  console.log("values", id);
+
+  try {
+    const { data } = await instance.post(`/ngo/project/update/${id}`, values);
+
+    revalidatePath("/dashboard/projects");
+
+    return data;
+  } catch (err: any) {
+    console.log("eeerrrr", err);
+
+    return false;
   }
 };
 

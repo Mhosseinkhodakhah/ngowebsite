@@ -28,7 +28,7 @@ function CInput({
   onVisible,
 }: Props) {
   const t = useTranslations(
-    page === "dashboard" ? "dashboard" : "ngo-registration",
+    page === "dashboard" ? "dashboard" : "ngo-registration"
   );
 
   const handleVisible = () => {
@@ -48,7 +48,7 @@ function CInput({
         )
       }
       errorMessage={() => {
-        if (formik.errors[name]) {
+        if (formik.errors[name] && formik.touched[name]) {
           return t(formik.errors[name]);
         }
       }}
