@@ -80,7 +80,7 @@ function ProjectDocumentFiles({
       const cpVisualDocuments = [...formik.values.visualDocuments];
 
       let findItem = cpVisualDocuments.find(
-        (f, idx) => f.title === formik.values.visualDocuments[i]?.title
+        (f) => f.title === formik.values.visualDocuments[i]?.title
       );
 
       findItem.files = [];

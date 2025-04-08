@@ -30,7 +30,7 @@ function UploadDocumentsSection({
       if (
         file.type.includes("pdf") ||
         file.type.includes(
-          "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+          "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
         ) ||
         file.type.includes("application/msword")
       ) {
@@ -39,7 +39,7 @@ function UploadDocumentsSection({
         }
         if (
           file.type.includes(
-            "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+            "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
           ) ||
           file.type.includes("application/msword")
         ) {
@@ -50,8 +50,6 @@ function UploadDocumentsSection({
           });
         }
       } else {
-        console.log("file type", file.type);
-
         if (
           file.type === "image/png" ||
           file.type === "image/jpg" ||
@@ -160,11 +158,11 @@ function UploadDocumentsSection({
                         width={100}
                       >
                         <track
+                          default
                           kind="captions"
+                          label="English"
                           src="captions.vtt"
                           srcLang="en"
-                          label="English"
-                          default
                         />
                       </video>
                     </div>

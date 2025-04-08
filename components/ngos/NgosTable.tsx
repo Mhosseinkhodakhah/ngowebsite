@@ -28,9 +28,7 @@ const NgoTable = ({ data }: { data: any }) => {
   const translate = useTranslations("ngo-registration");
   const router = useRouter();
 
-  console.log(data);
-
-  const [colDefs, setColDefs] = useState<ColDef[]>([
+  const [colDefs] = useState<ColDef[]>([
     {
       headerName: t("Logo"),
       field: "logo",
@@ -152,11 +150,11 @@ const NgoTable = ({ data }: { data: any }) => {
       <Input
         className="max-w-sm my-2"
         placeholder={t("Search")}
+        startContent={<SearchIcon />}
         type="text"
         value={searchText}
         variant="bordered"
         onChange={onSearchChange}
-        startContent={<SearchIcon />}
       />
       <AgGridReact
         columnDefs={colDefs}

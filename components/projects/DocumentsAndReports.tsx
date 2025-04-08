@@ -1,6 +1,6 @@
 import { useTranslations } from "next-intl";
 
-function DocumentsAndReports({ data }: { data: any }) {
+function DocumentsAndReports() {
   const t = useTranslations("projects");
 
   return (

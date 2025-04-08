@@ -24,10 +24,10 @@ function DateFilter({
   const { locale } = useParams();
   const t = useTranslations("events");
   const [startDate, setStartDate] = useState(
-    parseAbsoluteToLocal(new Date().toISOString())
+    parseAbsoluteToLocal(new Date().toISOString()),
   );
   const [endDate, setEndDate] = useState(
-    parseAbsoluteToLocal(new Date().toISOString())
+    parseAbsoluteToLocal(new Date().toISOString()),
   );
 
   const router = useRouter();

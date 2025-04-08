@@ -96,7 +96,7 @@ const ProjectTable = ({ data }: { data: any }) => {
     }
   };
 
-  const [colDefs, setColDefs] = useState<ColDef[]>([
+  const [colDefs] = useState<ColDef[]>([
     {
       headerName: t("Project Name"),
       field: "name",

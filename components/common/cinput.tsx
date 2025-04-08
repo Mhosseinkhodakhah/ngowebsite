@@ -28,7 +28,7 @@ function CInput({
   onVisible,
 }: Props) {
   const t = useTranslations(
-    page === "dashboard" ? "dashboard" : "ngo-registration"
+    page === "dashboard" ? "dashboard" : "ngo-registration",
   );
 
   const handleVisible = () => {

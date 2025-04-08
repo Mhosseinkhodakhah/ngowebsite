@@ -23,8 +23,6 @@ function SearchInput({ page }: { page: string }) {
 
     const getQuery = handleQuery(val);
 
-    console.log(getQuery);
-
     router.push(getQuery);
   };
 

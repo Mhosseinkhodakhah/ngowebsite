@@ -125,7 +125,7 @@ function RegistrationForm() {
         addToast({
           title: t("Logo"),
           description: t(
-            "Please choose a logo for your organization This is required"
+            "Please choose a logo for your organization This is required",
           ),
           promise: new Promise((resolve) => setTimeout(resolve, 3000)),
           color: "danger",
@@ -137,7 +137,7 @@ function RegistrationForm() {
         addToast({
           title: t("Upload Documentation"),
           description: t(
-            "Please select your organization's documents This is required"
+            "Please select your organization's documents This is required",
           ),
           promise: new Promise((resolve) => setTimeout(resolve, 3000)),
           color: "danger",

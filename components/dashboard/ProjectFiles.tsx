@@ -24,7 +24,7 @@ function ProjectFiles({
 
   const handleDeleteFile = (index: number) => {
     const filterFormik = formik.values.documentsAndReportFiles.filter(
-      (f: string, i: number) => i !== index
+      (f: string, i: number) => i !== index,
     );
 
     const filterFiles = files.filter((f, i) => i !== index);
@@ -72,7 +72,7 @@ function ProjectFiles({
                   </Tooltip>
                 </div>
               </div>
-            )
+            ),
           )}
         </div>
       )}

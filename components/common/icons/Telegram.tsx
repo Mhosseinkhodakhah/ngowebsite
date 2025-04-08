@@ -1,6 +1,4 @@
-import { IconSvgProps } from "@/types";
-
-const Telegram = (props: IconSvgProps) => (
+const Telegram = () => (
   <svg
     height="24"
     viewBox="0 0 24 24"

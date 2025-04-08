@@ -25,7 +25,6 @@ function RegisterDatePicker({ formik }: { formik: FormikProps<any> }) {
     setDate(value);
     const valueFormated = formatter.format(value.toDate());
 
-    console.log(valueFormated);
     formik.setFieldValue("expiryDate", valueFormated);
   };
 

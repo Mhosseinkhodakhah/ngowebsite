@@ -11,7 +11,7 @@ async function Page({
 
   const data = await getCategoryProjects(
     status ? status : "completed",
-    page ? page : "1"
+    page ? page : "1",
   );
 
   return (

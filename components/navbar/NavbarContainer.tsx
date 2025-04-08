@@ -8,7 +8,6 @@ import {
   NavbarMenuItem,
   NavbarMenuToggle,
 } from "@heroui/navbar";
-import { useParams } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { Button } from "@heroui/button";
 
@@ -25,7 +24,6 @@ const NavbarContainer = ({ children }: { children: ReactNode }) => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const t = useTranslations("navbar");
 
-  const { locale } = useParams() as { locale: string };
   const router = useRouter();
 
   const handleCloseMenu = () => setIsMenuOpen(false);

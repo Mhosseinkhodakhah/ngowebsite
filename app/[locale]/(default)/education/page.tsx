@@ -4,7 +4,7 @@ import FilterEducation from "@/components/education/FilterEducation";
 import { getEducations } from "@/actions/educations";
 
 async function Page({ searchParams }: { searchParams: any }) {
-  const { type, sort, start, end, page } = await searchParams
+  const { type, sort, start, end, page } = await searchParams();
 
   const data = await getEducations(type, sort, start, end, page);
 

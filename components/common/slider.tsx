@@ -16,7 +16,6 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import ArrowDown from "./icons/arrow-down";
-import { delay } from "framer-motion";
 
 interface Props {
   children: ReactNode;
@@ -51,6 +50,8 @@ function Slider({ single, children }: Props) {
         </div>
       )}
       <Swiper
+        centeredSlides
+        loop
         autoplay={{
           delay: 5000,
         }}
@@ -73,15 +74,13 @@ function Slider({ single, children }: Props) {
           prevEl: prevRef.current,
           nextEl: nextRef.current,
         }}
+        spaceBetween={50}
         onInit={(swiper: any) => {
           swiper.params.navigation.prevEl = prevRef.current;
           swiper.params.navigation.nextEl = nextRef.current;
           swiper.navigation.init();
           swiper.navigation.update();
         }}
-        loop
-        centeredSlides
-        spaceBetween={50}
       >
         {children}
       </Swiper>

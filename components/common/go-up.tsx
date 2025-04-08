@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+
 import ArrowDown from "./icons/arrow-down";
 
 function GoUp() {
@@ -17,6 +18,7 @@ function GoUp() {
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };

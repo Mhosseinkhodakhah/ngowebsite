@@ -2,9 +2,9 @@
 
 import { Autocomplete, AutocompleteItem } from "@heroui/autocomplete";
 import { useTranslations } from "next-intl";
+import { FormikProps } from "formik";
 
 import countries from "@/constants/countries";
-import { FormikProps } from "formik";
 
 function ProjectCountry({ formik }: { formik: FormikProps<any> }) {
   const t = useTranslations("ngo-registration");

@@ -45,7 +45,7 @@ function ProjectTarget({ formik }: { formik: FormikProps<any> }) {
           value="Educating and Passing on Knowledge to the Future Hype Generation"
         >
           {t(
-            "Educating and Passing on Knowledge to the Future Hype Generation"
+            "Educating and Passing on Knowledge to the Future Hype Generation",
           )}
         </Checkbox>
         <Checkbox
@@ -59,15 +59,15 @@ function ProjectTarget({ formik }: { formik: FormikProps<any> }) {
           value="Increasing public awareness and participation of local communities"
         >
           {t(
-            "Increasing public awareness and participation of local communities"
+            "Increasing public awareness and participation of local communities",
           )}
         </Checkbox>
         <Checkbox
           className="my-1"
-          value="Creating economic opportunities for heritage bearers (eg, supporting local artists)"
+          value="Creating economic opportunities for heritage bearers (eg, supporting local artists"
         >
           {t(
-            "Creating economic opportunities for heritage bearers (eg, supporting local artists)"
+            "Creating economic opportunities for heritage bearers (eg, supporting local artists)",
           )}
         </Checkbox>
         <Checkbox className="my-1" value="other">

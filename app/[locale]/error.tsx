@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { Button } from "@heroui/button";
 import { useEffect } from "react";
 import { Icon } from "@iconify/react";
@@ -9,7 +10,6 @@ import { deleteCookie } from "@/utils/cookie";
 import { useRouter } from "@/i18n/navigation";
 import useStore from "@/store";
 import ErrorImage from "@/public/images/error.webp";
-import Image from "next/image";
 
 export default function Error({
   error,

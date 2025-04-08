@@ -5,10 +5,8 @@ import Image from "next/image";
 
 import AchievementsImg from "@/public/images/achivement.png";
 
-function CompletedProject({ data }: { data: any }) {
+function CompletedProject() {
   const t = useTranslations("projects");
-
-  console.log(data);
 
   return (
     <div className="flex flex-col items-center justify-center">

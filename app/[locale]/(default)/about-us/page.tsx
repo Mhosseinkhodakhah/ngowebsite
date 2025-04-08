@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { useTranslations } from "next-intl";
 
 import Title from "@/components/common/title";
 import AboutUsImage from "@/public/images/about-us-1.jpg";
@@ -23,11 +22,11 @@ export default function AboutPage() {
               Lorem Ipsum
             </h2>
             <p className="font-light text-center md:text-start mt-4">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s Lorem Ipsum is simply dummy text of the
-              printing and typesetting industry. Lorem Ipsum has been the
-              industry's standard dummy text ever since the 1500s
+              Lorem is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industrys standard dummy text
+              ever since the 1500s Lorem is simply dummy text of the printing
+              and typesetting industry. Lorem Ipsum has been the industrys
+              standard dummy text ever since the 1500s
             </p>
           </div>
         </div>
@@ -39,11 +38,11 @@ export default function AboutPage() {
             src={MissionAndGoal}
           />
           <p className="font-light text-center mt-4 max-w-lg px-2">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s Lorem Ipsum is simply dummy text of the
-            printing and typesetting industry. Lorem Ipsum has been the
-            industry's standard dummy text ever since the 1500s
+            Lorem simply dummy text of the printing and typesetting industry.
+            Lorem Ipsum has been the industrys standard dummy text ever since
+            the 1500s Lorem simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industrys standard dummy text
+            ever since the 1500s
           </p>
         </div>
       </section>

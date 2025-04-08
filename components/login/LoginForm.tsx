@@ -10,7 +10,6 @@ import { useTranslations } from "next-intl";
 
 import CInput from "../common/cinput";
 
-import { loginSchema } from "@/utils/validations";
 import { loginRequest } from "@/actions/login";
 import { setCookie } from "@/utils/cookie";
 import { useRouter } from "@/i18n/navigation";

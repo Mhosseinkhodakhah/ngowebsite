@@ -21,8 +21,6 @@ async function Page({ params }: { params: { id: string; locale: string } }) {
     documentsAndReports,
   } = data?.data;
 
-  console.log(data?.data);
-
   return (
     <section className="flex flex-col justify-center items-center">
       <h1 className="text-xl font-bold border-b-5 border-primary mt-20">

@@ -173,8 +173,6 @@ function UpdateProjectForm({ data }: { data: any }) {
         }
       }
 
-      console.log("vvvvvvvvvv", values);
-
       const cpValues = { ...values } as {
         -readonly [K in keyof typeof values]+?: (typeof values)[K];
       };

@@ -64,7 +64,7 @@ const DocumentsTable = ({ data }: { data: any }) => {
     }
   };
 
-  const [colDefs, setColDefs] = useState<ColDef[]>([
+  const [colDefs] = useState<ColDef[]>([
     {
       headerName: t("NGO Name"),
       field: "name",

@@ -21,7 +21,7 @@ function ProjectDatePicker({ label, className, formik, name }: Props) {
   const [date, setDate] = useState(
     formik.values[name]
       ? parseAbsoluteToLocal(new Date(formik.values[name]).toISOString())
-      : parseAbsoluteToLocal(new Date().toISOString())
+      : parseAbsoluteToLocal(new Date().toISOString()),
   );
 
   let formatter = useDateFormatter({ dateStyle: "full" });

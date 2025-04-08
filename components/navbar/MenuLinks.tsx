@@ -29,15 +29,15 @@ function MenuLinks({ closeMenu }: { closeMenu: () => void }) {
           >
             {item.children ? (
               <Accordion
+                className="w-full p-0 m-0"
                 onClick={(e) => {
                   e.preventDefault();
                 }}
-                className="w-full p-0 m-0"
               >
                 <AccordionItem
                   aria-label="Accordion 1"
-                  title={t(item.label)}
                   className="w-full text-xs my-2 p-0 m-0 hover:text-primary"
+                  title={t(item.label)}
                   onClick={(e) => {
                     e.preventDefault();
                   }}
