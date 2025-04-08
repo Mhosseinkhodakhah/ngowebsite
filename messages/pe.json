@@ -549,7 +549,15 @@
     "Project status changed to ongoing": "وضعیت پروژه به فعال تغییر یافت",
     "Failed to change project status": "وضعیت پروژه تغییر نکرد ، لطفا دوباره امتحان کنید",
     "Project deleted successfully": "پروژه با موفقیت حذف شد",
-    "Failed to delete project": "پروژه حذف نشد ، لطفا دوباره امتحان کنید"
+    "Failed to delete project": "پروژه حذف نشد ، لطفا دوباره امتحان کنید",
+    "Are you sure you want to delete this document?": "آیا میخواهید این سند را حذف کنید؟",
+    "Delete Decument": "حذف اسناد و مدارک",
+    "Document deleted successfully": "سند با موفقیت حذف شد",
+    "Failed to delete document": "سند حذف نشد ، لطفا دوباره امتحان کنید",
+    "Update Document": "به روزرسانی",
+    "Update document and record": "به روز رسانی سند و مدرک",
+    "Please upload the documents file": "لطفا فایل اسناد و مدارک را ارسال کنید",
+    "Document updated successfully": "به روز رسانی اسناد و مدارک با موفقیت انجام شد"
   },
   "education": {
     "Filter by file format": "بر اساس نوع فایل",

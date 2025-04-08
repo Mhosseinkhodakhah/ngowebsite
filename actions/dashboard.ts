@@ -97,9 +97,46 @@ export const createDocument = async (values: any) => {
   }
 };
 
+export const updateDocument = async (values: any, id: string) => {
+  try {
+    const { data } = await instance.post(`/ngo/document/update/${id}`, values);
+
+    revalidatePath("/dashboard/documents");
+
+    return data;
+  } catch (err) {
+    console.log("eeerrrr", err);
+
+    return false;
+  }
+};
+
+export const deleteDocument = async (id: string) => {
+  try {
+    const { data } = await instance.post(`/ngo/document/delete/${id}`);
+
+    revalidatePath("/dashboard/documents");
+
+    return data;
+  } catch (err) {
+    console.log("eeerrrr", err);
+
+    return false;
+  }
+};
+
 export const getDocuments = async () => {
   try {
     const { data } = await instance.get("ngo/pannel/documents");
+
+    return data;
+  } catch (err: any) {
+    throw new Error(err);
+  }
+};
+export const getSingleDocument = async (id: string) => {
+  try {
+    const { data } = await instance.get(`page/documents/${id}`);
 
     return data;
   } catch (err: any) {

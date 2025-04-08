@@ -544,7 +544,15 @@
     "Project status changed to ongoing": "Статус проекта изменен на текущий",
     "Failed to change project status": "Не удалось изменить статус проекта",
     "Project deleted successfully": "Проект успешно удален",
-    "Failed to delete project": "Не удалось удалить проект"
+    "Failed to delete project": "Не удалось удалить проект",
+    "Are you sure you want to delete this document?": "Вы уверены, что хотите удалить этот документ?",
+    "Delete Decument": "Удалить документ",
+    "Document deleted successfully": "Документ успешно удален",
+    "Failed to delete document": "Не удалось удалить документ",
+    "Update Document": "Обновлять",
+    "Update document and record": "Обновить документ и записать",
+    "Please upload the documents file": "Пожалуйста, загрузите файл документов",
+    "Document updated successfully": "Документ успешно обновлен"
   },
   "education": {
     "Filter by file format": "Фильтровать по формату файла",

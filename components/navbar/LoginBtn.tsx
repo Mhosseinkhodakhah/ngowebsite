@@ -14,15 +14,13 @@ const LoginBtn = () => {
   const { locale } = useParams();
   const isLogin = useStore((state: any) => state.isLogin);
 
-  console.log(isLogin)
-
   return (
     <>
       {isLogin ? (
         <Button
           as={Link}
           className="font-normal text-gray bg-primary"
-          href={`/${locale}/dashboard`}
+          href={`/${locale}/dashboard/projects`}
           size="sm"
           variant="shadow"
         >

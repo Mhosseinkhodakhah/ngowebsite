@@ -550,7 +550,15 @@
     "Project status changed to ongoing": "Project status changed to ongoing",
     "Failed to change project status": "Failed to change project status",
     "Project deleted successfully": "Project deleted successfully",
-    "Failed to delete project": "Failed to delete project"
+    "Failed to delete project": "Failed to delete project",
+    "Are you sure you want to delete this document?": "Are you sure you want to delete this document?",
+    "Delete Decument": "Delete Decument",
+    "Document deleted successfully": "Document deleted successfully",
+    "Failed to delete document": "Failed to delete document",
+    "Update Document": "Update Document",
+    "Update document and record": "Update document and record",
+    "Please upload the documents file": "Please upload the documents file",
+    "Document updated successfully": "Document updated successfully"
   },
 
   "education": {

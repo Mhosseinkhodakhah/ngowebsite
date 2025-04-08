@@ -210,10 +210,10 @@ const ProjectTable = ({ data }: { data: any }) => {
               </Tooltip>
             )}
             {ongoing && (
-              <Tooltip color="success" content={t("Ongoing")}>
+              <Tooltip color="primary" content={t("Ongoing")}>
                 <Button
                   isIconOnly
-                  color="success"
+                  color="primary"
                   size="sm"
                   variant="flat"
                   onPress={() => {

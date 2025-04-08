@@ -16,10 +16,10 @@ import FormButtons from "./FormButtons";
 
 import { documentSchema } from "@/utils/validations";
 import { uploadDocs } from "@/actions/ngo";
-import { createDocument } from "@/actions/dashboard";
+import { updateDocument } from "@/actions/dashboard";
 import { useRouter } from "@/i18n/navigation";
 
-function DocumentsAndRecordsForm() {
+function UpdateDocumentForm({ data }: { data: any }) {
   const t = useTranslations("dashboard");
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [documents, setDocuments] = useState<File[]>([]);
@@ -27,13 +27,14 @@ function DocumentsAndRecordsForm() {
   const router = useRouter();
 
   const mutation = useMutation({
-    mutationKey: ["createDocument"],
-    mutationFn: createDocument,
+    mutationKey: ["updateDocument"],
+    mutationFn: ({ values, id }: { values: any; id: string }) =>
+      updateDocument(values, id),
     onSuccess: () => {
       setIsLoading(false);
       addToast({
         title: t("Success"),
-        description: t("Document created successfully"),
+        description: t("Document updated successfully"),
         promise: new Promise((resolve) => setTimeout(resolve, 3000)),
         color: "success",
       });
@@ -45,15 +46,16 @@ function DocumentsAndRecordsForm() {
 
   const formik = useFormik({
     initialValues: {
-      name: "",
-      email: "",
-      interfaceName: "",
-      phone: "",
-      type: [],
-      file: [],
-      title: "",
-      description: "",
+      name: data?.name,
+      email: data?.email,
+      interfaceName: data?.interfaceName,
+      phone: data?.phone,
+      type: data?.type,
+      file: data?.file,
+      title: data?.title,
+      description: data?.description,
     },
+    enableReinitialize: true,
     validationSchema: documentSchema,
     onSubmit: async (values) => {
       if (documents.length) {
@@ -63,11 +65,12 @@ function DocumentsAndRecordsForm() {
         documents.forEach((file) => {
           formData.append("picture", file);
         });
+
         const upload = await uploadDocs(formData);
 
         if (upload.success) {
-          values.file = upload.data;
-          mutation.mutate(values);
+          values.file = values.file.concat(upload.data);
+          mutation.mutate({ values, id: data?._id });
 
           return;
         } else {
@@ -81,14 +84,18 @@ function DocumentsAndRecordsForm() {
           return;
         }
       } else {
-        addToast({
-          title: t("Error"),
-          description: t("Please upload the documents file"),
-          promise: new Promise((resolve) => setTimeout(resolve, 3000)),
-          color: "danger",
-        });
+        if (values.file.length === 0) {
+          addToast({
+            title: t("Error"),
+            description: t("Please upload the documents file"),
+            promise: new Promise((resolve) => setTimeout(resolve, 3000)),
+            color: "danger",
+          });
 
-        return;
+          return;
+        } else {
+          mutation.mutate({ values, id: data?._id });
+        }
       }
     },
   });
@@ -173,7 +180,7 @@ function DocumentsAndRecordsForm() {
           label={t("Description Doc")}
           {...formik.getFieldProps("description")}
         />
-        <UploadDocumentsSection onDocuments={setDocuments} />
+        <UploadDocumentsSection formik={formik} onDocuments={setDocuments} />
         <FormButtons
           isDisabled={mutation.isPending}
           isLoading={mutation.isPending || isLoading}
@@ -183,4 +190,4 @@ function DocumentsAndRecordsForm() {
   );
 }
 
-export default DocumentsAndRecordsForm;
+export default UpdateDocumentForm;
