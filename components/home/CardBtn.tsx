@@ -15,7 +15,7 @@ function CardBtn() {
 
   return (
     <Button
-      className="text-gray w-full md:w-1/3"
+      className="text-gray  w-max"
       color="primary"
       size="sm"
       variant="shadow"

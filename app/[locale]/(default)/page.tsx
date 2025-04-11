@@ -1,15 +1,26 @@
+import { getHomeData } from "@/actions/home";
+import AboutUs from "@/components/home/AboutUs";
 import Children from "@/components/home/Children";
 import Hero from "@/components/home/Hero";
 import Ngos from "@/components/home/Ngos";
 import Projects from "@/components/home/Projects";
 
-export default function HomePage() {
+async function HomePage() {
+  const data = await getHomeData();
+
+  const { home } = data?.data;
+
+  // console.log("hhh", data?.data);
+
   return (
     <div className="light:text-dark dark:text-gray">
-      <Hero />
-      <Children />
-      <Projects />
-      <Ngos />
+      <Hero data={home} />
+      <Children data={home} />
+      <Projects data={data?.data} />
+      <AboutUs data={home} />
+      <Ngos data={data?.data?.ngo} />
     </div>
   );
 }
+
+export default HomePage;

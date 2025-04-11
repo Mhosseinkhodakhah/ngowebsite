@@ -1,8 +1,13 @@
+"use client";
+
+import { SwiperSlide } from "swiper/react";
 import Card from "../common/card";
 import Slider from "../common/slider";
 import Title from "../common/title";
 
-function Ngos() {
+function Ngos({ data }: { data: any }) {
+  console.log("ppppppppppp", data);
+
   const discription: string = `Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae
           unde quisquam esse tenetur eveniet magni, amet asperiores maxime
           labore temporibus!`;
@@ -15,28 +20,17 @@ function Ngos() {
         titleText="NGO"
       />
       <div className="flex flex-col w-full lg:w-2/3 px-12 mt-20">
-        <Slider
-          content={[
-            {
-              id: Math.floor(Math.random() * 100),
-            },
-            {
-              id: Math.floor(Math.random() * 100),
-            },
-            {
-              id: Math.floor(Math.random() * 100),
-            },
-            {
-              id: Math.floor(Math.random() * 100),
-            },
-          ]}
-        >
-          <Card
-            description={discription}
-            imageUrl="https://unsplash.it/g/640/425"
-            name="NOG 1"
-            route="/ngo"
-          />
+        <Slider>
+          {data?.map((ngo: any) => (
+            <SwiperSlide key={ngo._id}>
+              <Card
+                description={ngo?.additionalInformation}
+                imageUrl={ngo?.logo}
+                name={ngo?.name}
+                route={`/ngo/${ngo._id}`}
+              />
+            </SwiperSlide>
+          ))}
         </Slider>
       </div>
     </section>
