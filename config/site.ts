@@ -1,8 +1,9 @@
 export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
-  name: "Next.js + HeroUI",
-  description: "Make beautiful websites regardless of your design experience.",
+  name: "سامانه پاسداری از میراث فرهنگی ناملموس",
+  description:
+    "سامانه مدیریت سایت مرکز مطالعات منطقه ای پاسداری از میراث فرهنگی ناملموس در آسیای غربی و مرکزی تحت نظارت یونسکو",
   navItems: [
     {
       label: "Home",
