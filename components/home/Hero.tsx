@@ -1,9 +1,10 @@
 "use client";
 
+import { useParams } from "next/navigation";
 import Image from "next/image";
 import { Button } from "@heroui/button";
 import { useTranslations } from "next-intl";
-import { useParams } from "next/navigation";
+
 import { Link } from "@/i18n/navigation";
 
 interface HeroProps {

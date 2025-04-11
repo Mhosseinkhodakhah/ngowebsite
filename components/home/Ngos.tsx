@@ -1,17 +1,12 @@
 "use client";
 
 import { SwiperSlide } from "swiper/react";
+
 import Card from "../common/card";
 import Slider from "../common/slider";
 import Title from "../common/title";
 
 function Ngos({ data }: { data: any }) {
-  console.log("ppppppppppp", data);
-
-  const discription: string = `Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae
-          unde quisquam esse tenetur eveniet magni, amet asperiores maxime
-          labore temporibus!`;
-
   return (
     <section className="my-20 flex flex-col justify-center items-center">
       <Title
