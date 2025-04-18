@@ -28,3 +28,15 @@ export const getSingleEducation = async (id: string) => {
     return false;
   }
 };
+
+export const getDescriptionPage = async (page: string) => {
+  try {
+    const { data } = await instance.get(`/page/description/${page}`);
+
+    return data;
+  } catch (err) {
+    console.log(err);
+
+    return false;
+  }
+};
