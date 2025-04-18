@@ -1,28 +1,47 @@
+import Image from "next/image";
+import { useParams } from "next/navigation";
+
 import EmailIcon from "../common/icons/email";
 import Location from "../common/icons/location";
 import PhoneIcon from "../common/icons/phone";
 
-function LeftSection() {
+function LeftSection({ data }: { data: any }) {
+  const { locale } = useParams();
+
   return (
     <section className="text-gray">
-      <h1 className="text-3xl p-4">Logo</h1>
+      <Image
+        alt="Logo"
+        className="text-3xl p-4"
+        height={100}
+        src={data?.logo[0]}
+        width={100}
+      />
+
       <p className="p-4 font-light">
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reprehenderit
-        accusantium adipisci ab alias blanditiis ullam optio ex dolor tempora,
-        officiis sit animi rem, ipsum dicta aliquid expedita omnis, vitae
-        ducimus?
+        {locale === "pe"
+          ? data?.peDescription
+          : locale === "en"
+            ? data?.enDescription
+            : data?.ruDescription}
       </p>
       <div className="flex px-4 py-1 gap-2 items-center">
         <Location className="text-gray" />
-        <span className="font-light text-sm">Lorem ipsum dolor sit amet.</span>
+        <span className="font-light text-sm">
+          {locale === "pe"
+            ? data?.peAddress
+            : locale === "en"
+              ? data?.enAddress
+              : data?.ruAddress}
+        </span>
       </div>
       <div className="flex px-4 py-1 gap-2 items-center">
         <PhoneIcon className="text-gray" />
-        <span className="font-light text-sm">09123456789</span>
+        <span className="font-light text-sm">{data?.phone}</span>
       </div>
       <div className="flex px-4 py-1 gap-2 items-center">
         <EmailIcon className="text-gray" />
-        <span className="font-light text-sm">@example.com</span>
+        <span className="font-light text-sm">{data?.gmail}</span>
       </div>
     </section>
   );

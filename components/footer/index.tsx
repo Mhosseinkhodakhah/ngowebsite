@@ -1,10 +1,13 @@
 "use client";
 
 import { Divider } from "@heroui/divider";
-import { useTranslations } from "next-intl";
+// import { useTranslations } from "next-intl";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useTranslations } from "next-intl";
+// import { usePathname } from "next/navigation";
 
+// import { getFooter } from "@/actions/home";
 import Facebook from "../common/icons/facebook";
 import Twitter from "../common/icons/twitter";
 import Linkedin from "../common/icons/linkedin";
@@ -15,17 +18,20 @@ import LeftSection from "./LeftSection";
 import CenterSection from "./CenterSection";
 import RightSection from "./RightSection";
 
+import useStore from "@/store";
+
 function Footer() {
   const t = useTranslations("footer");
 
   const pathname = usePathname();
+  const footer: any = useStore((state) => state.footer);
 
   return (
     <footer
       className={`${pathname.includes("login") ? "hidden" : "block"} w-full bg-primary p-4`}
     >
       <section className="w-full grid md:grid-rows-1 md:grid-cols-3 justify-center items-center">
-        <LeftSection />
+        <LeftSection data={footer} />
         <CenterSection />
         <RightSection />
       </section>
@@ -38,22 +44,22 @@ function Footer() {
         </p>
         <ul className="flex gap-1 items-center my-2">
           <li>
-            <Link href="http://www.facebook.com">
+            <Link href={footer ? footer?.faceBookLink : ""}>
               <Facebook />
             </Link>
           </li>
           <li>
-            <Link href="http://www.x.com">
+            <Link href={footer ? footer?.xLink : ""}>
               <Twitter />
             </Link>
           </li>
           <li>
-            <Link href="http://www.linkedin.com">
+            <Link href={footer ? footer.linkedInLink : ""}>
               <Linkedin />
             </Link>
           </li>
           <li>
-            <Link href="http://www.instagram.com">
+            <Link href={footer ? footer?.instaLink : ""}>
               <Instagram />
             </Link>
           </li>

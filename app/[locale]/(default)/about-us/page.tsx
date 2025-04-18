@@ -3,30 +3,47 @@ import Image from "next/image";
 import Title from "@/components/common/title";
 import AboutUsImage from "@/public/images/about-us-1.jpg";
 import MissionAndGoal from "@/public/images/mission-and-goal.png";
+import { getAboutUs } from "@/actions/about-us";
 
-export default function AboutPage() {
+export default async function AboutPage({ params }: { params: any }) {
+  const { data } = await getAboutUs();
+  const { locale } = await params;
+
+  console.log("ddddd", data);
+  console.log("ddddd", locale);
+
   return (
     <>
       <section className="flex flex-col justify-center items-center">
         <Title
-          description="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
+          description={
+            locale === "pe"
+              ? data?.peDescription
+              : locale === "en"
+                ? data?.enDescription
+                : data?.ruDescription
+          }
           page="navbar"
           titleText="About Us"
         />
-        <div className="mt-20 flex flex-col md:flex-row justify-around w-2/3">
-          <div>
+        <div className="mt-20 flex flex-col md:flex-row justify-around max-w-screen-lg">
+          <div className="flex-1">
             <Image alt="about us" className="md:w-2/3" src={AboutUsImage} />
           </div>
-          <div>
+          <div className="flex-1">
             <h2 className="text-xl font-bold text-center md:text-start my-4 md:my-0">
-              Lorem Ipsum
+              {locale === "pe"
+                ? data?.peTitle
+                : locale === "en"
+                  ? data?.enTitle
+                  : data?.ruTitle}
             </h2>
             <p className="font-light text-center md:text-start mt-4">
-              Lorem is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industrys standard dummy text
-              ever since the 1500s Lorem is simply dummy text of the printing
-              and typesetting industry. Lorem Ipsum has been the industrys
-              standard dummy text ever since the 1500s
+              {locale === "pe"
+                ? data?.peMiddleImageDescription
+                : locale === "en"
+                  ? data?.enMiddleImageDescription
+                  : data?.ruMiddleImageDescription}
             </p>
           </div>
         </div>
@@ -38,11 +55,11 @@ export default function AboutPage() {
             src={MissionAndGoal}
           />
           <p className="font-light text-center mt-4 max-w-lg px-2">
-            Lorem simply dummy text of the printing and typesetting industry.
-            Lorem Ipsum has been the industrys standard dummy text ever since
-            the 1500s Lorem simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industrys standard dummy text
-            ever since the 1500s
+            {locale === "pe"
+              ? data?.peMissionAndGoals
+              : locale === "en"
+                ? data?.enMissionAndGoals
+                : data?.ruMissionAndGoals}
           </p>
         </div>
       </section>

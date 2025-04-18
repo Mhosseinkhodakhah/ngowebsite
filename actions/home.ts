@@ -11,3 +11,15 @@ export const getHomeData = async () => {
     return false;
   }
 };
+
+export const getFooter = async () => {
+  try {
+    const { data } = await instance.get("/page/footer");
+
+    return data;
+  } catch (err) {
+    console.error("Error fetching events:", err);
+
+    return false;
+  }
+};

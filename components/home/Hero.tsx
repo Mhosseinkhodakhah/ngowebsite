@@ -1,21 +1,30 @@
 "use client";
 
+import { useEffect } from "react";
 import { useParams } from "next/navigation";
 import Image from "next/image";
 import { Button } from "@heroui/button";
 import { useTranslations } from "next-intl";
 
 import { Link } from "@/i18n/navigation";
+import useStore from "@/store";
 
 interface HeroProps {
   data: any;
+  footer: any;
 }
 
-function Hero({ data }: HeroProps) {
+function Hero({ data, footer }: HeroProps) {
   const t = useTranslations("homePage");
   const { locale } = useParams();
 
+  const setFooter = useStore((state: any) => state.setFooter);
+
   const { mainImages, peDescription, enDescription, ruDescription } = data;
+
+  useEffect(() => {
+    setFooter(footer.data);
+  }, []);
 
   return (
     <section className="h-screen flex justify-center">
