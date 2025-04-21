@@ -50,7 +50,6 @@ function Slider({ single, children }: Props) {
         </div>
       )}
       <Swiper
-        centeredSlides
         loop
         autoplay={{
           delay: 5000,
@@ -69,6 +68,7 @@ function Slider({ single, children }: Props) {
           // when window width is >= 1024px
         }}
         className="w-full"
+        dir={locale === "pe" ? "rtl" : "ltr"}
         modules={[A11y, Navigation, Pagination, Controller, Autoplay]}
         navigation={{
           prevEl: prevRef.current,

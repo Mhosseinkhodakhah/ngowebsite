@@ -15,17 +15,17 @@ async function Page({ params }: { params: any }) {
       <Title
         description={
           locale === "en"
-            ? data?.events.enDescription
+            ? data?.events?.enDescription
             : locale === "pe"
-              ? data?.events.enDescription
-              : data?.events.ruDescription
+              ? data?.events?.enDescription
+              : data?.events?.ruDescription
         }
         titleText={
           locale === "en"
-            ? data?.events.enTitle
+            ? data?.events?.enTitle
             : locale === "pe"
-              ? data?.events.enTitle
-              : data?.events.ruTitle
+              ? data?.events?.enTitle
+              : data?.events?.ruTitle
         }
       />
 
@@ -34,15 +34,15 @@ async function Page({ params }: { params: any }) {
 
         <p className="p-4 text-center">
           {locale === "en"
-            ? data?.events.enEventsBody
+            ? data?.events?.enEventsBody
             : locale === "pe"
-              ? data?.events.enEventsBody
-              : data?.events.ruEventsBody}
+              ? data?.events?.enEventsBody
+              : data?.events?.ruEventsBody}
         </p>
       </div>
       <Title page="events" titleText="Similar Events" />
 
-      {data?.similar.length > 0 && (
+      {data?.similar?.length > 0 && (
         <div className="flex flex-col w-full lg:w-2/3 px-12 mt-20">
           <SimilarSlider data={data} />
         </div>

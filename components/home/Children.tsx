@@ -27,12 +27,14 @@ function Children({ data }: { data: any }) {
                 src={images}
                 width={300}
               />
-              <div className="bg-primary text-gray absolute bottom-0 w-full h-20 text-center text-xs pt-2 px-1">
-                {locale === "pe"
-                  ? data?.peMiddleImageDescription
-                  : locale === "en"
-                    ? data?.enMiddleImageDescription
-                    : data?.ruMiddleImageDescription}
+              <div className="bg-primary text-gray absolute bottom-0 w-full h-20 text-center text-xs pt-2 px-1  text-wrap overflow-hidden py-2">
+                <p className="line-clamp-4">
+                  {locale === "pe"
+                    ? data?.peMiddleImageDescription
+                    : locale === "en"
+                      ? data?.enMiddleImageDescription
+                      : data?.ruMiddleImageDescription}
+                </p>
               </div>
             </div>
           )}

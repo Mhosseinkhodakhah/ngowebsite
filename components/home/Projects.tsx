@@ -23,7 +23,7 @@ function Projects({ data }: { data: any }) {
         titleText="Projects"
       />
 
-      <div className="mt-10 grid grid-cols-1 lg:grid-cols-2  gap-2 px-5 w-full md:w-auto container">
+      <div className="mt-10 grid grid-cols-1 lg:grid-cols-2  gap-2 px-5 w-full md:w-auto max-w-screen-lg">
         {data?.projects?.map((project: any) => (
           <ProjectCard key={project._id} project={project} />
         ))}

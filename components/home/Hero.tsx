@@ -5,9 +5,13 @@ import { useParams } from "next/navigation";
 import Image from "next/image";
 import { Button } from "@heroui/button";
 import { useTranslations } from "next-intl";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 import { Link } from "@/i18n/navigation";
 import useStore from "@/store";
+
+import "swiper/css";
+import { Autoplay } from "swiper/modules";
 
 interface HeroProps {
   data: any;
@@ -22,33 +26,58 @@ function Hero({ data, footer }: HeroProps) {
 
   const { mainImages, peDescription, enDescription, ruDescription } = data;
 
+  console.log(mainImages);
+
   useEffect(() => {
     setFooter(footer.data);
   }, []);
 
   return (
     <section className="h-screen flex justify-center">
-      <Image
-        alt="hero image"
-        className="object-cover md:h-screen md:object-fill md:absolute left-0 right-0 top-0 w-full h-full"
-        height={800}
-        src={mainImages.length > 0 ? mainImages[0] : ""}
-        width={800}
-      />
-      <div className="absolute mx-4 md:w-[500px] bottom-10 md:bottom-24 bg-gray dark:bg-secondary p-4 rounded-md flex justify-center items-center flex-col opacity-80 backdrop-blur-md">
-        <p className="text-dark dark:text-gray text-start">
-          {locale === "pe"
-            ? peDescription
-            : locale === "en"
-              ? enDescription
-              : ruDescription}
-        </p>
-        <Link href="/ngo/ngos-registeration">
-          <Button className="mt-4 text-gray" color="primary" variant="shadow">
-            {t("Join Us")}
-          </Button>
-        </Link>
-      </div>
+      <Swiper
+        loop
+        autoplay={{
+          delay: 3000,
+        }}
+        className="w-full h-screen relative"
+        modules={[Autoplay]}
+      >
+        {mainImages?.map((image: string, index: number) => (
+          <SwiperSlide
+            key={index}
+            className="md:h-screen md:object-fill l flex justify-center items-center"
+          >
+            <Image
+              alt="hero image"
+              className="object-cover w-full h-full md:h-screen md:object-fill "
+              height={800}
+              src={image}
+              width={800}
+            />
+
+            <div className="w-full bottom-10 md:bottom-24 bg-transparent backdrop-blur-none absolute flex justify-center ">
+              <div className="bg-gray dark:bg-secondary backdrop-blur-md p-4 rounded-md flex justify-center items-center flex-col opacity-80 max-w-lg ">
+                <p className="text-dark dark:text-gray text-start">
+                  {locale === "pe"
+                    ? peDescription
+                    : locale === "en"
+                      ? enDescription
+                      : ruDescription}
+                </p>
+                <Link href="/ngo/ngos-registeration">
+                  <Button
+                    className="mt-4 text-gray"
+                    color="primary"
+                    variant="shadow"
+                  >
+                    {t("Join Us")}
+                  </Button>
+                </Link>
+              </div>
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
     </section>
   );
 }

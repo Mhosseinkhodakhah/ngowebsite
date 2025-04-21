@@ -12,7 +12,7 @@ function ProjectCard({ project }: { project: any }) {
     <div className="border border-slate-400 dark:border-secondary rounded-md flex flex-col md:flex-row gap-2 relative shadow-md">
       <Image
         alt="Project 1"
-        className="object-fill w-full md:w-1/3 h-full"
+        className="object-contain w-full md:w-1/3 h-full"
         height={100}
         src={project?.visualDocuments[0]?.files[0] || PlaceHolderImage}
         width={100}

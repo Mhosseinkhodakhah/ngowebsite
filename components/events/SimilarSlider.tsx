@@ -36,7 +36,7 @@ function SimilarSlider({ data }: { data: any }) {
                   ? item?.peTitle
                   : item?.ruTitle
             }
-            route={`events/${item?._id}`}
+            route={`${item?._id}`}
           />
         </SwiperSlide>
       ))}

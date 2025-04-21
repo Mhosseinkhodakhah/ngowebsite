@@ -12,12 +12,12 @@ function PictureSlider({ data }: { data: any }) {
 
   return (
     <>
-      {locale === "en" && data?.events.enPictures.length && (
+      {locale === "en" && data?.events?.enPictures?.length && (
         <Slider single={1}>
-          {data?.events.enPictures.map((picture: string) => (
+          {data?.events?.enPictures?.map((picture: string) => (
             <SwiperSlide key={picture}>
               <Image
-                alt={data?.events.enTitle}
+                alt={data?.events?.enTitle}
                 className="w-full px-4 object-contain"
                 height={100}
                 src={picture}
@@ -28,13 +28,13 @@ function PictureSlider({ data }: { data: any }) {
         </Slider>
       )}
 
-      {locale === "pe" && data?.events.pePictures.length && (
+      {locale === "pe" && data?.events?.pePictures.length && (
         <Slider single={1}>
-          {data?.events.pePictures.map((picture: string) => (
+          {data?.events?.pePictures.map((picture: string) => (
             <SwiperSlide key={picture}>
               <Image
                 key={picture}
-                alt={data?.events.peTitle}
+                alt={data?.events?.peTitle}
                 className="w-full px-4 object-contain"
                 height={100}
                 src={picture}
@@ -45,9 +45,9 @@ function PictureSlider({ data }: { data: any }) {
         </Slider>
       )}
 
-      {locale === "ru" && data?.events.ruPictures.length && (
+      {locale === "ru" && data?.events?.ruPictures.length && (
         <Slider single={1}>
-          {data?.events.ruPictures.map((picture: string) => (
+          {data?.events?.ruPictures.map((picture: string) => (
             <SwiperSlide key={picture}>
               <Image
                 key={picture}
@@ -62,9 +62,9 @@ function PictureSlider({ data }: { data: any }) {
         </Slider>
       )}
 
-      {locale === "en" && data?.events.enVideo.length > 0 && (
+      {locale === "en" && data?.events?.enVideo.length > 0 && (
         <Slider single={1}>
-          {data?.events.enVideo.map((video: string) => (
+          {data?.events?.enVideo.map((video: string) => (
             <SwiperSlide key={video}>
               <video
                 key={video}
@@ -76,9 +76,9 @@ function PictureSlider({ data }: { data: any }) {
           ))}
         </Slider>
       )}
-      {locale === "pe" && data?.events.peVideo.length > 0 && (
+      {locale === "pe" && data?.events?.peVideo.length > 0 && (
         <Slider single={1}>
-          {data?.events.peVideo.map((video: string) => (
+          {data?.events?.peVideo.map((video: string) => (
             <SwiperSlide key={video}>
               <video
                 key={video}
@@ -91,9 +91,9 @@ function PictureSlider({ data }: { data: any }) {
         </Slider>
       )}
 
-      {locale === "ru" && data?.events.ruVideo.length > 0 && (
+      {locale === "ru" && data?.events?.ruVideo.length > 0 && (
         <Slider single={1}>
-          {data?.events.ruVideo.map((video: string) => (
+          {data?.events?.ruVideo.map((video: string) => (
             <SwiperSlide key={video}>
               <video
                 key={video}
