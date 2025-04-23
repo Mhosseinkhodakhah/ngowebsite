@@ -1,14 +1,19 @@
 import { ReactNode } from "react";
 
 import GoUp from "@/components/common/go-up";
-import Footer from "@/components/footer";
 
-function DefaultLayout({ children }: { children: ReactNode }) {
+function DefaultLayout({
+  children,
+  footer,
+}: {
+  children: ReactNode;
+  footer: ReactNode;
+}) {
   return (
     <>
       {children}
       <GoUp />
-      <Footer />
+      {footer}
     </>
   );
 }

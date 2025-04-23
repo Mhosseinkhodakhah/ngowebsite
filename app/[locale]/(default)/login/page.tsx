@@ -10,10 +10,10 @@ function Login() {
       <Image
         alt="background"
         className="fixed left-0 top-0 w-full h-full object-cover rounded-l-md"
-        height={100}
+        height={600}
         quality={100}
         src={Background}
-        width={100}
+        width={600}
       />
       <div className="w-full md:max-w-md bg-slate-300 bg-opacity-50 dark:bg-secondary dark:bg-opacity-45 rounded-md flex justify-center items-center flex-col shadow-md relative z-10 backdrop-blur-sm mt-20">
         <div className="p-8">

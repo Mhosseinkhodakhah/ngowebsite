@@ -1,11 +1,12 @@
-import Image from "next/image";
-
-import LoadingImg from "@/public/images/loading.gif";
+import { useTranslations } from "next-intl";
 
 function Loading() {
+  const t = useTranslations("common");
+
   return (
-    <div className=" w-full md:w-3/5 lg:w-3/4 h-screen flex justify-center items-center">
-      <Image alt="loading" height={200} src={LoadingImg} width={200} />
+    <div className="w-full h-screen flex flex-col justify-center items-center">
+      <div className="loader" />
+      <h4>{t("Please Waiting")}</h4>
     </div>
   );
 }

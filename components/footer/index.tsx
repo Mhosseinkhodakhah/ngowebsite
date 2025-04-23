@@ -20,11 +20,10 @@ import RightSection from "./RightSection";
 
 import useStore from "@/store";
 
-function Footer() {
+function Footer({ footer }: { footer: any }) {
   const t = useTranslations("footer");
 
   const pathname = usePathname();
-  const footer: any = useStore((state) => state.footer);
 
   return (
     <footer

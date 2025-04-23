@@ -25,10 +25,8 @@ function Card({
   status,
   ngo,
 }: Props) {
-  console.log(route);
-
   return (
-    <article className="border border-slate-400 dark:border-secondary rounded-md flex flex-col  gap-2  shadow-md relative">
+    <article className="border border-slate-400 dark:border-secondary rounded-md flex flex-col  gap-2  shadow-md relative h-[60vh]">
       {status && (
         <Chip
           className="absolute right-2 top-2 text-gray "
