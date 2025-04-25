@@ -43,9 +43,13 @@ function Hero({ data }: HeroProps) {
               width={800}
             />
 
-            <div className="w-full bottom-10 md:bottom-24 bg-transparent backdrop-blur-none absolute flex justify-center ">
-              <div className="bg-gray dark:bg-secondary backdrop-blur-md p-4 rounded-md flex justify-center items-center flex-col opacity-80 max-w-lg ">
-                <p className="text-dark dark:text-gray text-start ">
+            <div
+              className="w-full bottom-10 md:bottom-24 bg-transparent backdrop-blur-none absolute flex justify-center "
+              data-aos="fade-up"
+              data-aos-duration="1000"
+            >
+              <div className="bg-gray dark:bg-secondary backdrop-blur-md p-4 rounded-md flex justify-center items-center flex-col opacity-80 max-w-lg w-[90%] md:w-auto">
+                <p className="text-dark dark:text-gray text-start font-light text-sm md:font-medium">
                   {locale === "pe"
                     ? data?.peDescription
                     : locale === "en"

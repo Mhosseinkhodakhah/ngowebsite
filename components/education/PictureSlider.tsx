@@ -19,9 +19,9 @@ function PictureSlider({ data }: { data: any }) {
               <Image
                 alt={data?.educations.enTitle}
                 className="w-full px-4 object-contain"
-                height={100}
+                height={500}
                 src={picture}
-                width={100}
+                width={500}
               />
             </SwiperSlide>
           ))}
@@ -36,9 +36,9 @@ function PictureSlider({ data }: { data: any }) {
                 key={picture}
                 alt={data?.educations.peTitle}
                 className="w-full px-4 object-contain"
-                height={100}
+                height={500}
                 src={picture}
-                width={100}
+                width={500}
               />
             </SwiperSlide>
           ))}
@@ -53,9 +53,9 @@ function PictureSlider({ data }: { data: any }) {
                 key={picture}
                 alt={data?.educations.ruTitle}
                 className="w-full px-4 object-contain"
-                height={100}
+                height={500}
                 src={picture}
-                width={100}
+                width={500}
               />
             </SwiperSlide>
           ))}

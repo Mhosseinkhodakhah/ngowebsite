@@ -6,6 +6,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useTranslations } from "next-intl";
 // import { usePathname } from "next/navigation";
+import { useQuery } from "@tanstack/react-query";
 
 // import { getFooter } from "@/actions/home";
 import Facebook from "../common/icons/facebook";
@@ -18,10 +19,17 @@ import LeftSection from "./LeftSection";
 import CenterSection from "./CenterSection";
 import RightSection from "./RightSection";
 
-import useStore from "@/store";
+import { getFooter } from "@/actions/home";
 
-function Footer({ footer }: { footer: any }) {
+function Footer() {
   const t = useTranslations("footer");
+
+  const { data } = useQuery({
+    queryKey: ["getFooter"],
+    queryFn: getFooter,
+  });
+
+  console.log(data);
 
   const pathname = usePathname();
 
@@ -30,7 +38,7 @@ function Footer({ footer }: { footer: any }) {
       className={`${pathname.includes("login") ? "hidden" : "block"} w-full bg-primary p-4`}
     >
       <section className="w-full grid md:grid-rows-1 md:grid-cols-3 justify-center items-center">
-        <LeftSection data={footer} />
+        <LeftSection data={data?.data} />
         <CenterSection />
         <RightSection />
       </section>
@@ -43,22 +51,22 @@ function Footer({ footer }: { footer: any }) {
         </p>
         <ul className="flex gap-1 items-center my-2">
           <li>
-            <Link href={footer ? footer?.faceBookLink : ""}>
+            <Link href={data ? data?.data?.faceBookLink : ""}>
               <Facebook />
             </Link>
           </li>
           <li>
-            <Link href={footer ? footer?.xLink : ""}>
+            <Link href={data ? data?.data?.xLink : ""}>
               <Twitter />
             </Link>
           </li>
           <li>
-            <Link href={footer ? footer.linkedInLink : ""}>
+            <Link href={data ? data?.data?.linkedInLink : ""}>
               <Linkedin />
             </Link>
           </li>
           <li>
-            <Link href={footer ? footer?.instaLink : ""}>
+            <Link href={data ? data?.data?.instaLink : ""}>
               <Instagram />
             </Link>
           </li>

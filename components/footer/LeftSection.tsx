@@ -10,13 +10,13 @@ function LeftSection({ data }: { data: any }) {
 
   return (
     <section className="text-gray">
-      {/* <Image
+      <Image
         alt="Logo"
         className="text-3xl p-4"
-        height={100}
+        height={200}
         src={data?.logo[0]}
-        width={100}
-      /> */}
+        width={200}
+      />
 
       <p className="p-4 font-light">
         {locale === "pe"

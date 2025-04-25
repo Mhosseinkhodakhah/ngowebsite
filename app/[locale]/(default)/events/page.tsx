@@ -1,5 +1,6 @@
 import { getDescriptionPage } from "@/actions/educations";
 import { getEvents } from "@/actions/events";
+import Empty from "@/components/common/empty";
 import Title from "@/components/common/title";
 import EventsList from "@/components/events/EventsList";
 import FilterEvents from "@/components/events/FilterEvents";
@@ -32,13 +33,17 @@ async function Page({
         titleText="Events"
       />
 
-      <div className="flex gap-4 w-full m-4 px-4 mt-20">
-        <FilterEvents query={{ end, sort, start, type, page }} />
-        <EventsList
-          data={data?.data}
-          query={{ end, sort, start, type, page }}
-        />
-      </div>
+      {data?.data ? (
+        <div className="flex gap-4 w-full m-4 px-2 lg:px-10 mt-20">
+          <FilterEvents query={{ end, sort, start, type, page }} />
+          <EventsList
+            data={data?.data}
+            query={{ end, sort, start, type, page }}
+          />
+        </div>
+      ) : (
+        <Empty description="The list is empty" />
+      )}
     </section>
   );
 }

@@ -62,7 +62,7 @@ export default async function LocaleLayout({
         className={clsx(
           "min-h-screen bg-background  antialiased ",
           locale === "pe" ? vazir.variable : fontSans.variable,
-          locale === "pe" ? "font-vazir" : "font-sans",
+          locale === "pe" ? "font-vazir" : "font-sans"
         )}
         dir={locale === "pe" ? "rtl" : "ltr"}
       >

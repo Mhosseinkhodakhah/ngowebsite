@@ -23,7 +23,11 @@ function Projects({ data }: { data: any }) {
         titleText="Projects"
       />
 
-      <div className="mt-10 grid grid-cols-1 lg:grid-cols-2  gap-2 px-5 w-full md:w-auto max-w-screen-lg">
+      <div
+        className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  gap-2 px-5 w-full  md:max-w-screen-md lg:max-w-screen-lg"
+        data-aos="fade-up"
+        data-aos-duration="1000"
+      >
         {data?.projects?.map((project: any) => (
           <ProjectCard key={project._id} project={project} />
         ))}

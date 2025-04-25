@@ -22,7 +22,7 @@ function EventsList({
   const router = useRouter();
 
   return (
-    <div className="w-full md:w-4/6 lg:w-3/4">
+    <div className="w-full lg:w-8/12 xl:w-10/12">
       <SortList
         query={{
           end: query.end,

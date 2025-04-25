@@ -13,6 +13,8 @@ function MapChart({ data }: { data: any }) {
   //   ["Iran", 700],
   // ];
 
+  console.log("ddd", data);
+
   const options = {
     region: "142",
     colorAxis: { colors: ["#96B7E4", "#5C9EDC", "#2185D5"] },
@@ -21,7 +23,7 @@ function MapChart({ data }: { data: any }) {
   };
 
   return (
-    <div className="md:my-32 w-[90%] md:w-auto">
+    <div className="md:my-32 w-full md:w-auto">
       <Chart
         chartEvents={[
           {
@@ -37,6 +39,7 @@ function MapChart({ data }: { data: any }) {
           },
         ]}
         chartType="GeoChart"
+        className="w-full border rounded-lg border-slate-400 "
         data={data}
         height="100%"
         options={options}

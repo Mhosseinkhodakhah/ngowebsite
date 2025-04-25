@@ -12,7 +12,7 @@ async function HomePage() {
     <div className="light:text-dark dark:text-gray">
       <Hero data={data?.home} />
       <Children data={data?.home} />
-      <Projects data={data?.data} />
+      <Projects data={data} />
       <AboutUs data={data?.home} />
       <Ngos data={data?.ngo} />
     </div>

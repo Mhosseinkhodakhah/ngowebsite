@@ -40,14 +40,22 @@ function Title({
 
   return (
     <>
-      <h1 className="text-xl font-bold border-b-5 border-primary mt-20">
+      <h1
+        className="text-xl font-bold border-b-5 border-primary mt-20"
+        data-aos="fade-up"
+        data-aos-duration="1000"
+      >
         {page ? t(titleText) : titleText}
       </h1>
-      <p
-        className={`mt-5  w-full  text-secondary dark:text-gray font-light px-4 md:px-0 ${className ? className : "text-center max-w-screen-md"}`}
-      >
-        {description}
-      </p>
+      {description?.length && (
+        <p
+          className={`mt-5  w-full  text-secondary dark:text-gray font-thin rounded-md  md:px-0 bg-slate-100 dark:bg-slate-500 text-sm p-4 ${className ? className : "text-center max-w-screen-md"}`}
+          data-aos="fade-up"
+          data-aos-duration="1000"
+        >
+          {description}
+        </p>
+      )}
     </>
   );
 }

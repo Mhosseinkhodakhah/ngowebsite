@@ -36,47 +36,39 @@ function InfoAndContacts({ data }: { data: any }) {
           )}
         </div>
         <div className="flex flex-col items-center">
-          <div className="flex gap-2">
+          <div className="flex gap-2 mb-4">
             <EmailIcon />
             <span>{t("Mail")}</span>
           </div>
-          <Snippet className="text-white mt-2" symbol="" variant="flat">
-            {data?.email}
-          </Snippet>
+          <span className="text-sm font-light">{data?.email}</span>
         </div>
-        <div className="flex flex-col items-center">
-          <div className="flex gap-2">
+        <div className="flex flex-col items-center ">
+          <div className="flex gap-2 mb-4">
             <GroupIcon />
             <span>{t("Social")}</span>
           </div>
           {data?.socialMedia.instagram && (
-            <div className="my-2 text-white flex gap-2">
-              <div className="mt-2">
-                <Instagram />
-              </div>
-              <Snippet className="text-white" symbol="" variant="flat">
-                {data?.socialMedia.instagram}
-              </Snippet>
+            <div className="my-2 text-white flex gap-2 items-center">
+              <Instagram />
+              <span className="text-sm font-light">
+                {data?.socialMedia.linkedIn}
+              </span>
             </div>
           )}
           {data?.socialMedia.linkedIn && (
-            <div className="my-2 text-white flex gap-2">
-              <div className="mt-2">
-                <Linkedin />
-              </div>
-              <Snippet className="text-white" symbol="" variant="flat">
+            <div className="my-2 text-white flex gap-2 items-center">
+              <Linkedin />
+              <span className="text-sm font-light">
                 {data?.socialMedia.linkedIn}
-              </Snippet>
+              </span>
             </div>
           )}
           {data?.socialMedia.telegram && (
-            <div className="my-2 text-white flex gap-2">
-              <div className="mt-2">
-                <Telegram />
-              </div>
-              <Snippet className="text-white" symbol="" variant="flat">
+            <div className="my-2 text-white flex gap-2 items-center">
+              <Telegram />
+              <span className="text-sm font-light">
                 {data?.socialMedia.telegram}
-              </Snippet>
+              </span>
             </div>
           )}
         </div>

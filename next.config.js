@@ -12,18 +12,6 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "unsplash.it",
-        port: "",
-        search: "",
-      },
-      {
-        protocol: "https",
-        hostname: "fakeimg.pl",
-        port: "",
-        search: "",
-      },
-      {
-        protocol: "https",
         hostname: "ngoupload.oceanjourney.ir",
         port: "",
         search: "",

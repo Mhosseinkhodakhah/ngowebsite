@@ -10,6 +10,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ToastProvider } from "@heroui/toast";
 
 import CheckToken from "@/hoc/CheckToken";
+import AOSProvider from "./AOSProvider";
 
 export interface ProvidersProps {
   children: React.ReactNode;
@@ -31,12 +32,14 @@ export function Providers({ children, themeProps }: ProvidersProps) {
 
   return (
     <HeroUIProvider navigate={router.push}>
-      <NextThemesProvider {...themeProps}>
-        <ToastProvider />
-        <QueryClientProvider client={queryClient}>
-          <CheckToken>{children}</CheckToken>
-        </QueryClientProvider>
-      </NextThemesProvider>
+      <AOSProvider>
+        <NextThemesProvider {...themeProps}>
+          <ToastProvider />
+          <QueryClientProvider client={queryClient}>
+            <CheckToken>{children}</CheckToken>
+          </QueryClientProvider>
+        </NextThemesProvider>
+      </AOSProvider>
     </HeroUIProvider>
   );
 }

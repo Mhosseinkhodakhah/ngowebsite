@@ -9,9 +9,6 @@ export default async function AboutPage({ params }: { params: any }) {
   const { data } = await getAboutUs();
   const { locale } = await params;
 
-  console.log("ddddd", data);
-  console.log("ddddd", locale);
-
   return (
     <>
       <section className="flex flex-col justify-center items-center">
@@ -27,10 +24,10 @@ export default async function AboutPage({ params }: { params: any }) {
           titleText="About Us"
         />
         <div className="mt-20 flex flex-col md:flex-row justify-around max-w-screen-lg">
-          <div className="flex-1">
+          <div className="flex-1" data-aos="fade-up" data-aos-duration="1000">
             <Image alt="about us" className="md:w-2/3" src={AboutUsImage} />
           </div>
-          <div className="flex-1">
+          <div className="flex-1" data-aos="fade-up" data-aos-duration="1000">
             <h2 className="text-xl font-bold text-center md:text-start my-4 md:my-0">
               {locale === "pe"
                 ? data?.peTitle
@@ -54,7 +51,7 @@ export default async function AboutPage({ params }: { params: any }) {
             className="md:w-1/3 w-2/3"
             src={MissionAndGoal}
           />
-          <p className="font-light text-center mt-4 max-w-lg px-2">
+          <p className="font-light text-center mt-4 max-w-screen-md px-2">
             {locale === "pe"
               ? data?.peMissionAndGoals
               : locale === "en"

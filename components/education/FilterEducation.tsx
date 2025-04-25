@@ -16,7 +16,7 @@ function FilterEducation({
 
   return (
     <aside
-      className={`hidden md:flex md:w-2/6 lg:w-1/4 sticky top-20 ${locale === "pe" ? "border-l" : "border-r"} border-gray dark:border-secondary max-h-svh
+      className={`hidden md:flex lg:w-4/12 xl:w-2/12 sticky top-20 ${locale === "pe" ? "border-l" : "border-r"} border-gray dark:border-secondary max-h-svh
     flex-col`}
     >
       <div className="flex gap-2 p-4">

@@ -8,13 +8,13 @@ import Title from "../common/title";
 
 function Ngos({ data }: { data: any }) {
   return (
-    <section className="my-20 flex flex-col justify-center items-center">
-      <Title
-        description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, assumenda."
-        page="navbar"
-        titleText="NGO"
-      />
-      <div className="flex flex-col w-full lg:w-2/3 px-12 mt-20">
+    <section
+      className="my-20 flex flex-col justify-center items-center max-w-screen-lg mx-auto"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+    >
+      <Title page="navbar" titleText="NGO" />
+      <div className="flex flex-col w-full px-12 mt-20">
         <Slider>
           {data?.map((ngo: any) => (
             <SwiperSlide key={ngo._id}>

@@ -9,7 +9,7 @@ async function Page() {
   const { mapNgo, ngoTabel } = data?.data;
 
   return (
-    <section className="flex flex-col justify-center items-center">
+    <section className="flex flex-col justify-center items-center max-w-screen-xl mx-auto">
       <Title
         description="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
         page="navbar"

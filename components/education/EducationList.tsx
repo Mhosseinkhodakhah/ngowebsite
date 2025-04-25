@@ -22,7 +22,7 @@ function EducationList({
   const router = useRouter();
 
   return (
-    <div className="w-full md:w-4/6 lg:w-3/4">
+    <div className="w-full lg:w-8/12 xl:w-10/12">
       <SortList
         query={{
           end: query.end,
@@ -33,7 +33,7 @@ function EducationList({
         }}
         total={data?.length}
       />
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4   gap-4">
         {data?.map((education: any) => (
           <Card
             key={education?._id}

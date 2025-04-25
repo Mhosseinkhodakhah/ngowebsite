@@ -4,6 +4,7 @@ import Title from "@/components/common/title";
 import EducationList from "@/components/education/EducationList";
 import FilterEducation from "@/components/education/FilterEducation";
 import { getEducations } from "@/actions/educations";
+import Empty from "@/components/common/empty";
 
 async function Page(params: any) {
   const { type, sort, start, end, page } = await params.searchParams;
@@ -25,13 +26,17 @@ async function Page(params: any) {
         page="navbar"
         titleText="Education & Training"
       />
-      <div className="flex gap-4 w-full m-4 px-4 mt-20">
-        <FilterEducation query={{ end, sort, start, type, page }} />
-        <EducationList
-          data={data?.data}
-          query={{ end, sort, start, type, page }}
-        />
-      </div>
+      {data ? (
+        <div className="flex gap-4 w-full m-4 px-2 lg:px-10 mt-20">
+          <FilterEducation query={{ end, sort, start, type, page }} />
+          <EducationList
+            data={data?.data}
+            query={{ end, sort, start, type, page }}
+          />
+        </div>
+      ) : (
+        <Empty description="The list is empty" />
+      )}
     </section>
   );
 }
