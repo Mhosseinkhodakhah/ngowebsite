@@ -3,15 +3,22 @@ import Title from "@/components/common/title";
 import MapChart from "@/components/ngos/MapChart";
 import NgosTable from "@/components/ngos/NgosTable";
 
-async function Page() {
+async function Page({ params }: { params: any }) {
   const data: any = await getNgoData();
+  const { locale } = await params;
 
-  const { mapNgo, ngoTabel } = data?.data;
+  const { mapNgo, ngoTabel, description } = data?.data;
 
   return (
-    <section className="flex flex-col justify-center items-center max-w-screen-xl mx-auto">
+    <section className="flex flex-col justify-center items-center max-w-screen-3xl mx-auto">
       <Title
-        description="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
+        description={
+          locale === "pe"
+            ? description?.peDescription
+            : locale === "en"
+              ? description?.enDescription
+              : description?.ruDescription
+        }
         page="navbar"
         titleText="NGO"
       />

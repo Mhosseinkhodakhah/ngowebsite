@@ -22,7 +22,7 @@ function EducationList({
   const router = useRouter();
 
   return (
-    <div className="w-full lg:w-8/12 xl:w-10/12">
+    <div className="w-full lg:w-8/12 xl:w-10/12 bg-violet-100 px-10 rounded-lg">
       <SortList
         query={{
           end: query.end,

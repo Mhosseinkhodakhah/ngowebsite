@@ -29,13 +29,13 @@ function Footer() {
     queryFn: getFooter,
   });
 
-  console.log(data);
+  
 
   const pathname = usePathname();
 
   return (
     <footer
-      className={`${pathname.includes("login") ? "hidden" : "block"} w-full bg-primary p-4`}
+      className={`${pathname.includes("login") ? "hidden" : "block"} w-full bg-blue-300 p-4`}
     >
       <section className="w-full grid md:grid-rows-1 md:grid-cols-3 justify-center items-center">
         <LeftSection data={data?.data} />

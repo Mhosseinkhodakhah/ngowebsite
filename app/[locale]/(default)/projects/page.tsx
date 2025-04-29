@@ -9,25 +9,13 @@ async function Page() {
 
   return (
     <section className="flex flex-col justify-center items-center">
-      <Title
-        description="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
-        page="navbar"
-        titleText="Projects"
-      />
+      <Title page="navbar" titleText="Projects" />
 
       <Counter data={data?.data} />
 
-      <Title
-        description="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
-        page="projects"
-        titleText="Last Projects"
-      />
+      <Title page="projects" titleText="Last Projects" />
       <LastProject data={data} />
-      <Title
-        description="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
-        page="projects"
-        titleText="Most participation"
-      />
+      <Title page="projects" titleText="Most participation" />
       <MostParticipation data={data} />
     </section>
   );

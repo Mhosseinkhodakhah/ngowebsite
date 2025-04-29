@@ -1,11 +1,21 @@
+import { getDescriptionPage } from "@/actions/educations";
 import Title from "@/components/common/title";
 import RegistrationForm from "@/components/ngo-registration/RegistrationForm";
 
-function Page() {
+async function Page({ params }: { params: any }) {
+  const descriptions = await getDescriptionPage("ngoRegister");
+  const { locale } = await params;
+
   return (
     <section className="flex flex-col justify-center items-center">
       <Title
-        description="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
+        description={
+          locale === "en"
+            ? descriptions?.data?.enDescription
+            : locale === "pe"
+              ? descriptions?.data?.peDescription
+              : descriptions?.data?.ruDescription
+        }
         page="ngo-registration"
         titleText="NGO Registration"
       />

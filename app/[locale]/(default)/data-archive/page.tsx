@@ -19,7 +19,7 @@ async function Page({ searchParams }: { searchParams: any }) {
       <SearchInput page={page} />
 
       {data?.data.length > 0 ? (
-        <div className="w-full max-w-screen-lg grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-20">
+        <div className="w-full max-w-screen-lg grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-20 bg-violet-100 p-5 rounded-2xl">
           <>
             {data?.data?.map((doc: any) => (
               <Card
