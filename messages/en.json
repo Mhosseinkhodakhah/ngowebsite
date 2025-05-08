@@ -39,7 +39,10 @@
   "homePage": {
     "title": "Hello world!",
     "More About Us": "More About Us",
-    "Join Us": "Join Us"
+    "Join Us": "Join Us",
+    "Smile Project": "‟Smile Project‟",
+    "Spreading Joy Building Futures One Smile at a Time": "Spreading Joy, Building Futures – One Smile at a Time",
+    "Join the Movement": "Join the Movement"
   },
   "aboutUs": {
     "Mission and goals": "Mission and goals"
@@ -448,6 +451,9 @@
 
   "dashboard": {
     "Projects": "Projects",
+    "Approved": "Approved",
+    "Waiting": "Waiting",
+    "Rejected": "Rejected",
     "Documents": "Documents",
     "Logout": "Logout",
     "Dashboard": "Dashboard",

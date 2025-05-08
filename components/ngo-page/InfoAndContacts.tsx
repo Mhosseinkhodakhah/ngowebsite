@@ -15,7 +15,7 @@ function InfoAndContacts({ data }: { data: any }) {
   const t = useTranslations("NGOPage");
 
   return (
-    <section className="my-20 flex flex-col justify-center items-center mx-4 w-[90%] lg:mx-0 lg:w-2/3 text-gray bg-gradient-to-br from-secondary to-primary rounded-md gap-8">
+    <section className="my-10 flex flex-col justify-center items-center mx-4 w-[90%] lg:mx-0 lg:w-2/3 text-gray bg-gradient-to-br from-secondary to-primary rounded-md gap-8">
       <div className="w-full text-center py-4">
         <h2 className="font-bold text-xl">{t("INFO & CONTACTS")}</h2>
       </div>

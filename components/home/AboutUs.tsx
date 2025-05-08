@@ -15,7 +15,7 @@ function AboutUs({ data }: { data: any }) {
 
   return (
     <div
-      className="flex flex-col justify-center items-center md:items-center md:flex-row gap-20 mt-32 bg-slate-100 p-20 max-w-screen-lg mx-auto rounded-md dark:bg-slate-500"
+      className="flex flex-col justify-center items-center md:items-center md:flex-row gap-20 mt-32  p-20 max-w-screen-lg mx-auto rounded-md"
       data-aos="fade-up"
       data-aos-duration="1000"
     >
@@ -23,7 +23,7 @@ function AboutUs({ data }: { data: any }) {
         <h1 className="text-xl font-bold border-b-5 border-primary inline">
           {t("About Us")}
         </h1>
-        <p className="mt-5 max-w-md  text-secondary dark:text-gray font-light px-4 md:px-0 text-center md:text-start text-sm">
+        <p className="w-full mt-5   text-secondary dark:text-gray font-light px-4 md:px-0 text-center md:text-start text-sm">
           {locale === "pe"
             ? data?.peAboutUsDescription
             : locale === "en"
@@ -36,16 +36,16 @@ function AboutUs({ data }: { data: any }) {
         <Image
           alt="about us"
           className="w-[300px]"
-          height={100}
+          height={500}
           src={AboutUs2}
-          width={100}
+          width={500}
         />
         <Image
           alt="about us"
           className="w-[250px] border-5 border-primary relative start-5 "
-          height={100}
+          height={500}
           src={AboutUs1}
-          width={100}
+          width={500}
         />
       </div>
     </div>

@@ -146,6 +146,8 @@ const NgoTable = ({ data }: { data: any }) => {
   return (
     <div
       className={`w-3/4 h-[500px] ${theme === "dark" ? "ag-theme-alpine-dark" : "ag-theme-alpine"}  mb-32`}
+      data-aos="fade-up"
+      data-aos-duration="1000"
     >
       <Input
         className="max-w-sm my-2"

@@ -49,9 +49,15 @@ export default async function AboutPage({ params }: { params: any }) {
           <Image
             alt="mission and goal"
             className="md:w-1/3 w-2/3"
+            data-aos="fade-up"
+            data-aos-duration="1000"
             src={MissionAndGoal}
           />
-          <p className="font-light text-center mt-4 max-w-screen-md px-2">
+          <p
+            className="font-light text-center mt-4 max-w-screen-md px-2"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+          >
             {locale === "pe"
               ? data?.peMissionAndGoals
               : locale === "en"

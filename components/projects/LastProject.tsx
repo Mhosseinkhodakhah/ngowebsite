@@ -14,7 +14,11 @@ function LastProject({ data }: { data: any }) {
   const t = useTranslations("projects");
 
   return (
-    <div className="flex flex-col w-full lg:w-2/3 p-20 mt-20 bg-violet-100 rounded-2xl">
+    <div
+      className="flex flex-col w-full lg:w-2/3 p-20  rounded-2xl"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+    >
       <>
         {data?.data?.lastProjects?.length > 0 && (
           <Slider>

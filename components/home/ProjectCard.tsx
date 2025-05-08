@@ -12,7 +12,7 @@ function ProjectCard({ project }: { project: any }) {
   const t = useTranslations("projects");
 
   return (
-    <Card className="w-full">
+    <Card className="w-full dark:bg-slate-900">
       <CardHeader>
         <Chip
           className="absolute text-xs p-2 right-1 top-1 text-gray rounded-md w-max my-2"

@@ -15,9 +15,11 @@ import { ThemeSwitch } from "./theme-switch";
 
 import Logo from "@/public/images/logo.jpg";
 import { Link } from "@/i18n/navigation";
+import useStore from "@/store";
 
 export const Navbar = () => {
   const t = useTranslations("navbar");
+  const isLogin = useStore((state: any) => state.isLogin);
 
   return (
     <NavbarContainer>
@@ -37,16 +39,18 @@ export const Navbar = () => {
         <NavbarItem className="hidden lg:flex gap-2">
           <ThemeSwitch />
           <LoginBtn />
-          <Button
-            as={Link}
-            className="text-gray"
-            color="primary"
-            href="/ngo/ngos-registration"
-            size="sm"
-            variant="shadow"
-          >
-            {t("Join Us")}
-          </Button>
+          {!isLogin && (
+            <Button
+              as={Link}
+              className="text-gray"
+              color="primary"
+              href="/ngo/ngos-registration"
+              size="sm"
+              variant="shadow"
+            >
+              {t("Join Us")}
+            </Button>
+          )}
           <LanguageSwitch />
         </NavbarItem>
       </NavbarContent>

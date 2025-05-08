@@ -27,7 +27,11 @@ function SearchInput({ page }: { page: string }) {
   };
 
   return (
-    <div className="max-w-screen-sm w-full my-4">
+    <div
+      className="max-w-screen-sm w-full my-4"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+    >
       <Input
         className="w-full"
         color="primary"

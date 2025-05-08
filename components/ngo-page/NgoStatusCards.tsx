@@ -9,7 +9,7 @@ function NgoStatusCards({ data }: { data: any }) {
   const translate = useTranslations("ngo-registration");
 
   return (
-    <section className="flex flex-col md:flex-row justify-around w-full px-4 md:px-0 md:w-2/3 gap-4 my-20">
+    <section className="flex flex-col md:flex-row justify-around w-full px-4 md:px-0 md:w-2/3 gap-4 my-10">
       <div className="w-full md:w-1/3 flex flex-col items-center gap-8 md:gap-14 bg-secondary rounded-md py-4 md:py-8">
         <WorldIcon className="w-14 md:w-20 h-14 md:h-20" />
         <h3 className="text-gray text-xl font-bold">

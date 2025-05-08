@@ -26,6 +26,16 @@ module.exports = {
         vazir: ["var(--font-vazir)"],
         mono: ["var(--font-mono)"],
       },
+      animation: {
+        "border-radius": "border-radius-animation 3s ease-in-out forwards",
+      },
+      keyframes: {
+        "border-radius-animation": {
+          "0%": { borderRadius: "0%" },
+          "50%": { borderRadius: "40px" },
+          "100%": { borderRadius: "140px" },
+        },
+      },
     },
   },
   darkMode: "class",

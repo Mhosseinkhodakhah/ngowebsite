@@ -20,6 +20,8 @@ function Hero({ data }: HeroProps) {
   const t = useTranslations("homePage");
   const { locale } = useParams();
 
+  console.log("mmm", data);
+
   return (
     <section className="h-screen flex justify-center relative">
       <Swiper
@@ -37,7 +39,7 @@ function Hero({ data }: HeroProps) {
           >
             <Image
               alt="hero image"
-              className="object-cover w-full h-full md:h-screen md:object-fill"
+              className="object-cover w-full h-full md:h-svh md:object-fill"
               height={800}
               src={image}
               width={800}

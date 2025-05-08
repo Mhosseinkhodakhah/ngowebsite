@@ -30,6 +30,7 @@ import { ngoRegisterSchema } from "@/utils/validations";
 import { INGO } from "@/types/ngo-types";
 import { NogsRegisteration, uploadDocs } from "@/actions/ngo";
 import { useRouter } from "@/i18n/navigation";
+import { Divider } from "@heroui/divider";
 
 function RegistrationForm() {
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -125,7 +126,7 @@ function RegistrationForm() {
         addToast({
           title: t("Logo"),
           description: t(
-            "Please choose a logo for your organization This is required",
+            "Please choose a logo for your organization This is required"
           ),
           promise: new Promise((resolve) => setTimeout(resolve, 3000)),
           color: "danger",
@@ -137,7 +138,7 @@ function RegistrationForm() {
         addToast({
           title: t("Upload Documentation"),
           description: t(
-            "Please select your organization's documents This is required",
+            "Please select your organization's documents This is required"
           ),
           promise: new Promise((resolve) => setTimeout(resolve, 3000)),
           color: "danger",
@@ -242,25 +243,42 @@ function RegistrationForm() {
   });
 
   return (
-    <form className="w-full md:w-2/3 mt-20" onSubmit={formik.handleSubmit}>
+    <form
+      className="w-full md:w-2/3 mt-20 "
+      data-aos="fade-up"
+      data-aos-duration="1000"
+      onSubmit={formik.handleSubmit}
+    >
       <GlobalInfo formik={formik} />
+      <Divider className="my-5" />
       <ActivityField formik={formik} />
       <ContactFields formik={formik} />
+      <Divider className="my-5" />
       <AreaActivity formik={formik} />
       <ActivityCommunity formik={formik} />
       <ActivitySpeceficField formik={formik} />
+      <Divider className="my-5" />
       <ActivityAreaExpertise formik={formik} />
+      <Divider className="my-5" />
       <ActivityPopulationConcentration formik={formik} />
       <ActivityAgeRange formik={formik} />
+      <Divider className="my-5" />
       <DescriptionField formik={formik} />
+      <Divider className="my-5" />
       <SocialMediaLinks formik={formik} />
       <CooperateCheck formik={formik} />
+      <Divider className="my-5" />
       <ActivityLicense formik={formik} />
+      <Divider className="my-5" />
       <NgoDocuments formik={formik} />
       <UploadSection onDocumentsFile={setDocumentsFile} onLogo={setLogo} />
+      <Divider className="my-5" />
       <NgoPublishDocument formik={formik} />
+      <Divider className="my-5" />
       <LoginData formik={formik} />
+      <Divider className="my-5" />
       <ConditionAndConfirm formik={formik} />
+      <Divider className="my-5" />
       <FormButtons
         isDisabled={!!formik.values.name.length}
         isLoading={isLoading || mutation.isPending}

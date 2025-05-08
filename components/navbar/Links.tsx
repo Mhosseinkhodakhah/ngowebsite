@@ -10,12 +10,59 @@ import ArrowDown from "../common/icons/arrow-down";
 
 import { Link } from "@/i18n/navigation";
 import { siteConfig } from "@/config/site";
+import { useQuery } from "@tanstack/react-query";
+import { getDynamicPaths } from "@/actions/dynamic";
+import { useEffect, useState } from "react";
 
 const Links = () => {
+  const [dynamicLink, setDynamicLink] = useState<any[]>([]);
   const t = useTranslations("navbar");
   const router = useRouter();
   const { locale } = useParams() as { locale: string };
   const pathname = usePathname();
+
+  const { data } = useQuery({
+    queryKey: ["getDynamicPaths"],
+    queryFn: getDynamicPaths,
+  });
+
+  useEffect(() => {
+    if (data?.success) {
+      const getRoutes = data?.data?.map((item: any) => {
+        if (item?.children) {
+          return {
+            href: item?.href,
+            children: item?.children.map((child: any) => ({
+              href: child?.href,
+              label:
+                locale === "pe"
+                  ? child?.label[0]
+                  : locale === "en"
+                    ? child?.label[1]
+                    : child?.label[2],
+            })),
+            label:
+              locale === "pe"
+                ? item?.label[0]
+                : locale === "en"
+                  ? item?.label[1]
+                  : item?.label[2],
+          };
+        } else {
+          return {
+            href: item?.href,
+            label:
+              locale === "pe"
+                ? item?.label[0]
+                : locale === "en"
+                  ? item?.label[1]
+                  : item?.label[2],
+          };
+        }
+      });
+      // setDynamicLink(getRoutes);
+    }
+  }, [data]);
 
   const handleRoute = (mainRoute: string, route: string) => {
     router.push(`/${locale}/${mainRoute}/${route}`);
@@ -23,17 +70,17 @@ const Links = () => {
 
   return (
     <ul className="hidden lg:flex gap-4 justify-start ml-2">
-      {siteConfig.navItems.map((item) => (
+      {siteConfig.navItems?.concat(dynamicLink).map((item) => (
         <NavbarItem key={item.href}>
           <Link
             className={clsx(
               linkStyles({ color: "foreground" }),
-              `data-[active=true]:text-primary data-[active=true]:font-medium hover:text-primary active:text-primary group relative gap-1 ${pathname === `/${locale}` && pathname.includes(item.href) ? "border-b-5 border-b-primary" : pathname.includes(item.href) && item.href.length > 1 ? "border-b-5 border-b-primary" : ""}`,
+              `data-[active=true]:text-primary data-[active=true]:font-medium hover:text-primary active:text-primary group relative gap-1 ${pathname === `/${locale}` && pathname.includes(item.href) ? "border-b-5 border-b-primary" : pathname.includes(item.href) && item.href.length > 1 ? "border-b-5 border-b-primary" : ""}`
             )}
             color="foreground"
             href={`${item.href}`}
           >
-            {t(item.label)}
+            {item?.static ? t(item?.label) : item?.label}
             {item.children && (
               <ArrowDown className="group-hover:rotate-180 transition-all ease-out duration-300" />
             )}
@@ -53,7 +100,7 @@ const Links = () => {
                     if (e.key === "Enter") handleRoute(item.href, ch.href);
                   }}
                 >
-                  {t(ch.label)}
+                  {item?.static ? t(ch?.label) : ch?.label}
                 </button>
               ))}
             </ul>

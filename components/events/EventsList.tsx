@@ -22,7 +22,7 @@ function EventsList({
   const router = useRouter();
 
   return (
-    <div className="w-full lg:w-8/12 xl:w-10/12 bg-violet-100 px-10 rounded-lg">
+    <div className="w-full lg:w-8/12 xl:w-10/12 px-10 rounded-lg">
       <SortList
         query={{
           end: query.end,
@@ -69,7 +69,7 @@ function EventsList({
           />
         ))}
       </div>
-      <div className="mt-10 w-full justify-center items-center flex">
+      <div className="mt-10 w-full justify-center items-center flex my-10">
         <Pagination
           showControls
           showShadow

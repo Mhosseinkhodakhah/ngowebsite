@@ -18,6 +18,7 @@ const nextConfig = {
       },
     ],
   },
+
   async redirects() {
     return [
       // Wildcard path matching

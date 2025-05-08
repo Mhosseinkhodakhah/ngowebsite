@@ -6,6 +6,7 @@ import { Card, CardBody, CardFooter, CardHeader } from "@heroui/card";
 import CardButton from "./card-button";
 
 import PlaceHolder from "@/public/images/placeholder.png";
+import { Avatar } from "@heroui/avatar";
 
 interface Props {
   name: string;
@@ -29,7 +30,7 @@ function CardComponent({
   return (
     <Card
       as="article"
-      className="max-h-[55vh] h-[55vh] border-1 border-secondary-100"
+      className="max-h-[55vh] h-[55vh] border-1 border-secondary-100 dark:bg-slate-900 dark:shadow-slate-800 shadow-md"
     >
       <CardHeader>
         {status && (
@@ -58,18 +59,21 @@ function CardComponent({
         <Image
           alt="placeholder"
           className="object-contain w-full h-1/3"
-          height={100}
+          height={500}
           src={!!imageUrl ? imageUrl : PlaceHolder}
-          width={100}
+          width={500}
         />
+
         <div className="py-6 px-2">
           {ngo && (
             <Chip className="text-gray " color="primary" size="sm">
               {ngo}
             </Chip>
           )}
-          <h4 className="text-bold p-2 text-wrap">{name}</h4>
-          <p className="text-sm font-light line-clamp-3">{description}</p>
+          <h4 className="text-bold p-2 text-wrap text-center">{name}</h4>
+          <p className="text-sm font-light line-clamp-3 text-center">
+            {description}
+          </p>
         </div>
       </CardBody>
       <CardFooter>

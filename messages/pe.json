@@ -38,7 +38,10 @@
   "homePage": {
     "title": "سلام دنیا",
     "More About Us": "مطالعه بیشتر",
-    "Join Us": "به ما بپیوندید"
+    "Join Us": "به ما بپیوندید",
+    "Smile Project": "‟پروژه لبخند‟",
+    "Spreading Joy Building Futures One Smile at a Time": "پخش شادی، ساختن آینده‌— هر لبخند یک قدم نزدیک‌تر.",
+    "Join the Movement": "به جنبش بپیوندید"
   },
   "aboutUs": {
     "Mission and goals": "ماموریت و اهداف"
@@ -448,6 +451,9 @@
   "dashboard": {
     "Projects": "پروژها",
     "Documents": "مدارک و مستندات",
+    "Approved": "تایید شده",
+    "Waiting": "در انتظار تایید",
+    "Rejected": "رد شده",
     "Logout": "خروج",
     "Dashboard": "داشبورد",
     "Menu": "منو",

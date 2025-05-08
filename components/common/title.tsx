@@ -49,7 +49,7 @@ function Title({
       </h1>
       {description ? (
         <p
-          className={`mt-5  w-full  text-secondary dark:text-gray font-thin rounded-md  md:px-0 bg-slate-100 dark:bg-slate-500 text-sm p-4 ${className ? className : "text-center max-w-screen-md"}`}
+          className={`mt-5  w-full  text-secondary dark:text-gray  rounded-md  md:px-0  text-sm p-4 ${className ? className : "text-center max-w-screen-md"}`}
           data-aos="fade-up"
           data-aos-duration="1000"
         >

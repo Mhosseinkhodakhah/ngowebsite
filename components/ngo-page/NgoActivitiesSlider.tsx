@@ -16,9 +16,9 @@ function NgoActivitiesSlider({ data }: { data: any }) {
               <Image
                 alt="ngo activities"
                 className="w-full object-contain"
-                height={100}
+                height={500}
                 src={image}
-                width={100}
+                width={500}
               />
             </SwiperSlide>
           ))}

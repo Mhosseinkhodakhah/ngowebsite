@@ -27,7 +27,11 @@ async function Page(params: any) {
         titleText="Education & Training"
       />
       {data ? (
-        <div className="flex gap-4 w-full m-4 px-2 lg:px-10 mt-20">
+        <div
+          className="flex gap-4 w-full m-4 px-2 lg:px-10 mt-20"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+        >
           <FilterEducation query={{ end, sort, start, type, page }} />
           <EducationList
             data={data?.data}

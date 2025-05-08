@@ -27,10 +27,10 @@ function GoUp() {
   return (
     isVisible && (
       <div
-        className="p-3 rounded-full w-10 h-10 bg-primary sticky left-[95%] right-5 bottom-10 mb-2 cursor-pointer z-10"
+        aria-label="Scroll to top"
+        className="p-3 rounded-full w-10 h-10 bg-primary sticky left-[80%] md:left-[90%]  bottom-10 mb-2 cursor-pointer z-10"
         role="button"
         tabIndex={0}
-        aria-label="Scroll to top"
         onClick={handleClick}
         onKeyPress={(e) => {
           if (e.key === "Enter" || e.key === " ") {

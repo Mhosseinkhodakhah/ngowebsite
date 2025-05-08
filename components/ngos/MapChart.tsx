@@ -30,17 +30,19 @@ function MapChart({ data }: { data: any }) {
             eventName: "select",
             callback: () => {
               // این پارامز فانکشنه chartWrapper
-              // const chart = chartWrapper?.getChart();
-              // const selection = chart?.getSelection();
-              // if (selection.length === 0) return;
-              // const region = data[selection[0].row + 1];
-              // console.log("Selected : " + region);
+              const chart = chartWrapper?.getChart();
+              const selection = chart?.getSelection();
+              if (selection.length === 0) return;
+              const region = data[selection[0].row + 1];
+              console.log("Selected : " + region);
             },
           },
         ]}
         chartType="GeoChart"
         className="w-full border rounded-lg border-slate-400 "
         data={data}
+        data-aos="fade-up"
+        data-aos-duration="1000"
         height="100%"
         options={options}
         width="100%"

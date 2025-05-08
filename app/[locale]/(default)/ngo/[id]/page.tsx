@@ -1,3 +1,5 @@
+import { Divider } from "@heroui/divider";
+
 import { getSingleNgo } from "@/actions/ngo";
 import InfoAndContacts from "@/components/ngo-page/InfoAndContacts";
 import NgoActivitiesSlider from "@/components/ngo-page/NgoActivitiesSlider";
@@ -16,10 +18,11 @@ async function Page({ params }: { params: { id: string } }) {
   return (
     <section className="my-20 flex flex-col justify-center items-center">
       <NgoAvatar data={ngo} />
+      <Divider className="max-w-screen-lg mx-auto my-4" />
       <NgoStatusCards data={ngo} />
+      <InfoAndContacts data={ngo} />
       <NgoActivitiesSlider data={ngo} />
       <ProjectsSlider data={ngo} />
-      <InfoAndContacts data={ngo} />
       <SimilarNgosSlider data={similarNgo} />
     </section>
   );

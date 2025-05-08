@@ -11,7 +11,6 @@
     "Submit": "Представлять на рассмотрение",
     "Please Waiting": "Пожалуйста, подождите",
     "The list is empty": "Список пуст"
-
   },
   "navbar": {
     "Home": "Дом",
@@ -38,7 +37,10 @@
   "homePage": {
     "title": "HHHHH",
     "More About Us": "Подробнее о нас",
-    "Join Us": "Присоединяйтесь к нам"
+    "Join Us": "Присоединяйтесь к нам",
+    "Smile Project": "‟Проект Улыбка‟",
+    "Spreading Joy Building Futures One Smile at a Time": "Дарим радость, создаём будущее — одна улыбка за раз",
+    "Join the Movement": "Присоединиться"
   },
   "aboutUs": {
     "Mission and goals": "Миссия и цели"
@@ -445,6 +447,9 @@
     "Projects": "Проекты",
     "Documents": "Документы",
     "Logout": "Выход из системы",
+    "Approved": "Одобренный",
+    "Waiting": "Ожидающий",
+    "Rejected": "Отклоненный",
     "Dashboard": "Панель управления",
     "Menu": "Меню",
     "Add Project": "Добавить проект",

@@ -4,8 +4,9 @@ import { Tab, Tabs } from "@heroui/tabs";
 import { useTranslations } from "next-intl";
 
 import ProjectTable from "./ProjectTable";
+import DocumentsTable from "./DocumentsTable";
 
-function ProjectTabs({ data }: { data: any }) {
+function DocumentTabs({ data }: { data: any }) {
   const t = useTranslations("dashboard");
 
   return (
@@ -17,36 +18,29 @@ function ProjectTabs({ data }: { data: any }) {
         variant="underlined"
       >
         <Tab
-          key="goodPractice"
-          className="text-slate-50 active:text-slate-50"
-          title={t("Good Practice")}
+          key="Approved"
+          className="text-white active:text-slate-50"
+          title={t("Approved")}
         >
-          <ProjectTable data={data?.goodPractice} />
+          <DocumentsTable data={data.data} />
         </Tab>
         <Tab
-          key="ongoing"
+          key="Waiting"
           className="text-white active:text-slate-50"
-          title={t("Ongoing")}
+          title={t("Waiting")}
         >
-          <ProjectTable data={data?.ongoing} />
+          <DocumentsTable data={data.data} />
         </Tab>
         <Tab
-          key="completed"
+          key="Rejected"
           className="text-white active:text-slate-50"
-          title={t("Completed")}
+          title={t("Rejected")}
         >
-          <ProjectTable data={data?.completed} />
-        </Tab>
-        <Tab
-          key="collaborationOpportunities"
-          className="text-white active:text-slate-50"
-          title={t("Collaboration Opportunities")}
-        >
-          <ProjectTable data={data?.collaborationOpportunities} />
+          <DocumentsTable data={data.data} />
         </Tab>
       </Tabs>
     </div>
   );
 }
 
-export default ProjectTabs;
+export default DocumentTabs;

@@ -1,6 +1,7 @@
 import { getHomeData } from "@/actions/home";
 import AboutUs from "@/components/home/AboutUs";
 import Children from "@/components/home/Children";
+import GradientSection from "@/components/home/GradientSection";
 import Hero from "@/components/home/Hero";
 import Ngos from "@/components/home/Ngos";
 import Projects from "@/components/home/Projects";
@@ -15,6 +16,7 @@ async function HomePage() {
       <Projects data={data} />
       <AboutUs data={data?.home} />
       <Ngos data={data?.ngo} />
+      <GradientSection />
     </div>
   );
 }

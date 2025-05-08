@@ -7,8 +7,12 @@ function Counter({ data }: { data: any }) {
   const t = useTranslations("projects");
 
   return (
-    <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  mt-20 w-full">
-      <div className="flex flex-col justify-center items-center gap-4 m-10">
+    <section
+      className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  mt-10 w-[95%] lg:w-full max-w-screen-lg text-white bg-gradient-to-br from-secondary to-primary p-14 transition-all duration-500 ease-in-out animate-border-radius"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+    >
+      <div className="flex flex-col justify-center items-center gap-4 m-10 ">
         <CountUp
           className="text-2xl font-bold"
           decimal=","
@@ -17,7 +21,7 @@ function Counter({ data }: { data: any }) {
           end={data?.completed}
           style={{ fontWeight: "bold", fontSize: 80 }}
         />
-        <h2>{t("Completed Projects")}</h2>
+        <h2 className="text-center">{t("Completed Projects")}</h2>
       </div>
       <div className="flex flex-col justify-center items-center gap-4 m-10">
         <CountUp
@@ -28,7 +32,7 @@ function Counter({ data }: { data: any }) {
           end={data?.ongoing}
           style={{ fontWeight: "bold", fontSize: 80 }}
         />
-        <h2>{t("Ongoing Projects")}</h2>
+        <h2 className="text-center">{t("Ongoing Projects")}</h2>
       </div>
       <div className="flex flex-col justify-center items-center gap-4 m-10">
         <CountUp
@@ -39,7 +43,7 @@ function Counter({ data }: { data: any }) {
           end={data?.collaborationOpportunities}
           style={{ fontWeight: "bold", fontSize: 80 }}
         />
-        <h2>{t("Collaboration Opportunities")}</h2>
+        <h2 className="text-center">{t("Collaboration Opportunities")}</h2>
       </div>
       <div className="flex flex-col justify-center items-center gap-4 m-10">
         <CountUp
@@ -50,7 +54,7 @@ function Counter({ data }: { data: any }) {
           end={data?.goodPractice}
           style={{ fontWeight: "bold", fontSize: 80 }}
         />
-        <h2>{t("Good Practice")}</h2>
+        <h2 className="text-center">{t("Good Practice")}</h2>
       </div>
     </section>
   );

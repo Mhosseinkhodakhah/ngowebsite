@@ -19,7 +19,11 @@ async function Page({ searchParams }: { searchParams: any }) {
       <SearchInput page={page} />
 
       {data?.data.length > 0 ? (
-        <div className="w-full max-w-screen-lg grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-20 bg-violet-100 p-5 rounded-2xl">
+        <div
+          className="w-full max-w-screen-xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-20 p-5 rounded-2xl"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+        >
           <>
             {data?.data?.map((doc: any) => (
               <Card
@@ -36,7 +40,11 @@ async function Page({ searchParams }: { searchParams: any }) {
           </>
         </div>
       ) : (
-        <div className="w-full flex justify-center items-center">
+        <div
+          className="w-full flex justify-center items-center"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+        >
           <Image
             alt="Empty"
             className="w-[200px] h-[200px] object-contain"
