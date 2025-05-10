@@ -25,15 +25,19 @@ function Ngos({ data }: { data: any }) {
           {data?.map((ngo: any) => (
             <SwiperSlide
               key={ngo._id}
-              className="cursor-pointer"
+              className="cursor-pointer "
+              style={{ height: "300px" }}
               onClick={() => router.push(`/${locale}/ngo/${ngo._id}`)}
             >
               <div className="flex flex-col justify-center items-center">
                 <Avatar
-                  className="w-[150px] h-[150px]"
+                  className="w-[150px] h-[150px] hover:w-[200px] hover:h-[200px] transition-all duration-300"
+                  alt="logo"
                   src={ngo?.logo ? ngo?.logo : PlaceHolder}
                 />
-                <h2 className="text-center font-bold text-lg">{ngo?.name}</h2>
+                <h2 className="text-center font-bold text-lg mt-4">
+                  {ngo?.name}
+                </h2>
               </div>
             </SwiperSlide>
           ))}

@@ -5,9 +5,9 @@ import { useTranslations } from "next-intl";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 
-import ChildrenImage from "@/public/images/ngowebsplash.webp";
+import ImageBanner from "@/public/images/last-banner.jpeg";
 
-function GradientSection() {
+function LastBanner() {
   const t = useTranslations("homePage");
   const { locale } = useParams();
 
@@ -17,25 +17,19 @@ function GradientSection() {
       data-aos="fade-up"
       data-aos-duration="1000"
       style={{
-        backgroundImage: `url(${ChildrenImage.src})`,
+        backgroundImage: `url(${ImageBanner.src})`,
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
-        backgroundPosition: "left",
+        backgroundPosition: "center",
         // backdropFilter :
-        filter: "grayscale(50%)",
+        // filter: "grayscale(50%)",
       }}
     >
       <div
-        className={`w-full h-full flex items-center ${locale === "pe" ? "justify-start" : "justify-end"}  bg-gradient-to-l from-primary top-0 left-0 rounded-lg`}
-        style={{
-          background: `linear-gradient(270deg,rgba(33, 133, 213, 1) 29%, rgba(255, 255, 255, 0.06) 80%)`,
-        }}
+        className={`w-full h-full flex items-center justify-center bg-black bg-opacity-80 top-0 left-0 rounded-lg`}
       >
         <div className=" h-[50%] w-[35%] justify-center flex flex-col gap-5 items-center ml-10  text-white">
-          <h2 className="text-2xl text-start">{t("Smile Project")}</h2>
-          <p className="font-light w-2/3 text-center">
-            {t("Spreading Joy Building Futures One Smile at a Time")}
-          </p>
+          <h2 className="text-2xl text-start">{t("Evryone can help")}</h2>
 
           <Button className="w-1/2">
             <Link href={`${locale}/ngo/ngos-registration`}>
@@ -48,4 +42,4 @@ function GradientSection() {
   );
 }
 
-export default GradientSection;
+export default LastBanner;

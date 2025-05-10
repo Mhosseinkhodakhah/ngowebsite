@@ -1,12 +1,17 @@
+"use client";
+
 import Image from "next/image";
+import { Card, CardBody, CardFooter, CardHeader } from "@heroui/card";
 import { Chip } from "@heroui/chip";
 import { Icon } from "@iconify/react";
-import { Card, CardBody, CardFooter, CardHeader } from "@heroui/card";
+
+import { Avatar } from "@heroui/avatar";
+import { Divider } from "@heroui/divider";
+import { useParams } from "next/navigation";
 
 import CardButton from "./card-button";
 
 import PlaceHolder from "@/public/images/placeholder.png";
-import { Avatar } from "@heroui/avatar";
 
 interface Props {
   name: string;
@@ -27,51 +32,54 @@ function CardComponent({
   status,
   ngo,
 }: Props) {
+  const { locale } = useParams();
+
   return (
     <Card
       as="article"
-      className="max-h-[55vh] h-[55vh] border-1 border-secondary-100 dark:bg-slate-900 dark:shadow-slate-800 shadow-md"
+      className="max-h-[65vh] h-[60vh] md:h-[55vh] border-1 border-secondary-100 dark:bg-slate-900 dark:shadow-slate-800 shadow-md"
     >
       <CardHeader>
         {status && (
-          <Chip
-            className="absolute right-2 top-2 text-gray "
-            color="primary"
-            size="sm"
+          <div
+            className={`w-full flex flex-col ${locale === "pe" ? "items-start" : "items-end"} `}
           >
-            {status === "vodeo" && (
-              <Icon height="30" icon="lets-icons:video-fill" width="24" />
-            )}
-            {status === "image" && (
-              <Icon height="30" icon="mynaui:image-solid" width="24" />
-            )}
-            {status === "document" && (
-              <Icon height="30" icon="solar:document-bold" width="24" />
-            )}
-            {status !== "vodeo" &&
-              status !== "image" &&
-              status !== "document" &&
-              status}
-          </Chip>
+            <Chip className="text-gray " color="primary" size="sm">
+              {status === "vodeo" && (
+                <Icon height="30" icon="lets-icons:video-fill" width="24" />
+              )}
+              {status === "image" && (
+                <Icon height="30" icon="mynaui:image-solid" width="24" />
+              )}
+              {status === "document" && (
+                <Icon height="30" icon="solar:document-bold" width="24" />
+              )}
+              {status !== "vodeo" &&
+                status !== "image" &&
+                status !== "document" &&
+                status}
+            </Chip>
+            <Divider className="mt-2" />
+          </div>
         )}
       </CardHeader>
       <CardBody>
         <Image
-          alt="placeholder"
-          className="object-contain w-full h-1/3"
-          height={500}
+          alt="project"
+          className="w-full h-full max-h-[80px]"
+          height={700}
           src={!!imageUrl ? imageUrl : PlaceHolder}
-          width={500}
+          width={700}
         />
 
         <div className="py-6 px-2">
           {ngo && (
-            <Chip className="text-gray " color="primary" size="sm">
+            <Chip color="primary" size="sm" variant="bordered">
               {ngo}
             </Chip>
           )}
-          <h4 className="text-bold p-2 text-wrap text-center">{name}</h4>
-          <p className="text-sm font-light line-clamp-3 text-center">
+          <h4 className={`font-bold p-2 text-wrap text-start`}>{name}</h4>
+          <p className={`text-sm font-light line-clamp-3 text-start`}>
             {description}
           </p>
         </div>

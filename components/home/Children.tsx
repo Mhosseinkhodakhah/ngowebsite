@@ -7,7 +7,7 @@ function Children({ data }: { data: any }) {
   const { locale } = useParams();
 
   return (
-    <section className="flex justify-around w-full gap-10 md:gap-10 lg:gap-20 my-10 flex-wrap mx-auto bg-slate-200 dark:bg-slate-500 p-10 rounded-md">
+    <section className="flex justify-around w-full gap-10 md:gap-10 lg:gap-20 my-10 flex-wrap mx-auto bg-slate-200 dark:bg-slate-900 p-10 rounded-md">
       {data?.middleImages?.map((images: string, index: number) => (
         <div key={images} data-aos="fade-up" data-aos-duration="1000">
           {index !== 1 ? (
