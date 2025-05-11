@@ -33,7 +33,7 @@ function SearchInput({ page }: { page: string }) {
       data-aos-duration="1000"
     >
       <Input
-        className="w-full"
+        className="w-[90%] lg:w-full mx-auto"
         color="primary"
         placeholder={t("Search for images , videos and documents")}
         size="lg"

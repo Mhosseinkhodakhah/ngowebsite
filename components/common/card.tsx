@@ -1,11 +1,11 @@
 "use client";
 
 import Image from "next/image";
+import { Avatar } from "@heroui/avatar";
 import { Card, CardBody, CardFooter, CardHeader } from "@heroui/card";
 import { Chip } from "@heroui/chip";
 import { Icon } from "@iconify/react";
 
-import { Avatar } from "@heroui/avatar";
 import { Divider } from "@heroui/divider";
 import { useParams } from "next/navigation";
 
@@ -85,7 +85,9 @@ function CardComponent({
         </div>
       </CardBody>
       <CardFooter>
-        {route && <CardButton btnText={btnText} route={route} />}
+        <div className="flex justify-end w-full">
+          {route && <CardButton btnText={btnText} route={route} />}
+        </div>
       </CardFooter>
     </Card>
     // <article className="border border-slate-400 dark:border-secondary rounded-md flex flex-col  gap-2  shadow-md relative h-[60vh]">

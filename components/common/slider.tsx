@@ -65,6 +65,10 @@ function Slider({ single, children }: Props) {
             slidesPerView: single ? single : 3,
             spaceBetween: 30,
           },
+          1024: {
+            slidesPerView: single ? single : 4,
+            spaceBetween: 30,
+          },
           // when window width is >= 1024px
         }}
         className="w-full"

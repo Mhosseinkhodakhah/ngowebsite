@@ -15,7 +15,10 @@ function ProjectCard({ project }: { project: any }) {
   const { locale } = useParams();
 
   return (
-    <Card className="w-full dark:bg-slate-900">
+    <Card
+      as="article"
+      className="max-h-[65vh] h-[60vh] md:h-[55vh] border-1 border-secondary-100 dark:bg-slate-900 dark:shadow-slate-800 shadow-md"
+    >
       <CardHeader>
         <div
           className={`w-full flex flex-col ${locale === "pe" ? "items-start" : "items-end"}`}
@@ -35,8 +38,8 @@ function ProjectCard({ project }: { project: any }) {
       </CardHeader>
       <CardBody className="overflow-visible">
         <Image
-          alt="Project 1"
-          className="w-full h-full"
+          alt="Project"
+          className="w-full h-full max-h-[100px]"
           height={700}
           src={project?.visualDocuments[0]?.files[0] || PlaceHolderImage}
           width={700}
@@ -49,7 +52,9 @@ function ProjectCard({ project }: { project: any }) {
         </div>
       </CardBody>
       <CardFooter>
-        <CardBtn />
+        <div className="flex justify-end w-full">
+          <CardBtn />
+        </div>
       </CardFooter>
     </Card>
   );

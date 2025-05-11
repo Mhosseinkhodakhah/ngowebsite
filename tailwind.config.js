@@ -28,12 +28,19 @@ module.exports = {
       },
       animation: {
         "border-radius": "border-radius-animation 3s ease-in-out forwards",
+        "bottom-width": "bottom-width-animation 0.75s ease-in-out forwards",
       },
       keyframes: {
         "border-radius-animation": {
           "0%": { borderRadius: "0%" },
           "50%": { borderRadius: "40px" },
           "100%": { borderRadius: "140px" },
+        },
+      },
+      keyframes: {
+        "bottom-width-animation": {
+          "0%": { width: "50%" },
+          "100%": { width: "100%" },
         },
       },
     },

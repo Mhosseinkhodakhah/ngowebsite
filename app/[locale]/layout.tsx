@@ -50,11 +50,13 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale}>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
       <body
         className={clsx(
           "min-h-screen dark:bg-[#000000]  antialiased ",
           locale === "pe" ? vazir.variable : fontSans.variable,
-          locale === "pe" ? "font-vazir" : "font-sans ",
+          locale === "pe" ? "font-vazir" : "font-sans "
         )}
         dir={locale === "pe" ? "rtl" : "ltr"}
       >

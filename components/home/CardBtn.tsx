@@ -2,6 +2,7 @@
 
 import { Button } from "@heroui/button";
 import { useTranslations } from "next-intl";
+import { Icon } from "@iconify/react";
 
 import { useRouter } from "@/i18n/navigation";
 
@@ -15,13 +16,14 @@ function CardBtn() {
 
   return (
     <Button
-      className="text-gray w-full"
+      className="mt-2 w-[20px] h-[40px] rounded-full hover:w-full group hover:animate-bottom-width"
       color="primary"
       size="sm"
-      variant="shadow"
+      variant="bordered"
       onPress={handlePressed}
     >
-      {t("Read More")}
+      <Icon height="16" icon="formkit:arrowright" width="16" />
+      <span className="hidden group-hover:block">{t("Read More")}</span>
     </Button>
   );
 }

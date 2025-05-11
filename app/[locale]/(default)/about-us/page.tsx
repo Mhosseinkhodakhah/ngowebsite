@@ -4,6 +4,8 @@ import Title from "@/components/common/title";
 import AboutUsImage from "@/public/images/about-us-1.jpg";
 import MissionAndGoal from "@/public/images/mission-and-goal.png";
 import { getAboutUs } from "@/actions/about-us";
+import { useTranslations } from "next-intl";
+import AboutUsCards from "@/components/about-us/about-use-cards";
 
 export default async function AboutPage({ params }: { params: any }) {
   const { data } = await getAboutUs();
@@ -23,6 +25,8 @@ export default async function AboutPage({ params }: { params: any }) {
           page="navbar"
           titleText="About Us"
         />
+
+        <AboutUsCards />
         <div className="mt-20 flex flex-col md:flex-row justify-around max-w-screen-lg">
           <div className="flex-1" data-aos="fade-up" data-aos-duration="1000">
             <Image alt="about us" className="md:w-2/3" src={AboutUsImage} />

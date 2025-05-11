@@ -6,6 +6,8 @@ import ProjectCard from "./ProjectCard";
 
 import Title from "@/components/common/title";
 import { useTranslations } from "next-intl";
+import Slider from "../common/slider";
+import { SwiperSlide } from "swiper/react";
 
 function Projects({ data }: { data: any }) {
   const { locale } = useParams();
@@ -31,15 +33,21 @@ function Projects({ data }: { data: any }) {
             ? data?.home?.enProjectDescription
             : data?.home?.ruProjectDescription}
       </p>
-
+      {/* <div */}
+      {/* // className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 */}
+      {/* px-5 w-full md:max-w-screen-xl " */}
       <div
-        className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  gap-2 px-5 w-full  md:max-w-screen-xl "
+        className="flex flex-col w-full px-12 mt-20"
         data-aos="fade-up"
         data-aos-duration="1000"
       >
-        {data?.projects?.map((project: any) => (
-          <ProjectCard key={project._id} project={project} />
-        ))}
+        <Slider>
+          {data?.projects?.map((project: any) => (
+            <SwiperSlide key={project._id}>
+              <ProjectCard project={project} />
+            </SwiperSlide>
+          ))}
+        </Slider>
       </div>
     </section>
   );

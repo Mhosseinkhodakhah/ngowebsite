@@ -16,32 +16,35 @@ async function Page({ searchParams }: { searchParams: any }) {
     <section className="flex flex-col justify-center items-center">
       <Title page="projects" titleText="Digital Archive" />
 
-      <SearchInput page={page} />
-
       {data?.data.length > 0 ? (
-        <div
-          className="w-full max-w-screen-xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-20 p-5 rounded-2xl"
-          data-aos="fade-up"
-          data-aos-duration="1000"
-        >
-          <>
-            {data?.data?.map((doc: any) => (
-              <Card
-                key={doc?._id}
-                btnText="See More"
-                description={doc?.description}
-                imageUrl={doc?.file.length ? doc?.file[0] : ""}
-                name={doc?.title}
-                ngo={doc?.ngo?.name}
-                route={`/data-archive/${doc?._id}`}
-                status={doc?.type[0]}
-              />
-            ))}
-          </>
-        </div>
+        <>
+          <SearchInput page={page} />
+
+          <div
+            className="w-full max-w-screen-xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-20 p-5 rounded-2xl"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+          >
+            <>
+              {data?.data?.map((doc: any) => (
+                <Card
+                  key={doc?._id}
+                  btnText="See More"
+                  description={doc?.description}
+                  imageUrl={doc?.file.length ? doc?.file[0] : ""}
+                  name={doc?.title}
+                  ngo={doc?.ngo?.name}
+                  route={`/data-archive/${doc?._id}`}
+                  status={doc?.type[0]}
+                />
+              ))}
+            </>
+          </div>
+          <PaginationArchive page={page} search={search} />
+        </>
       ) : (
         <div
-          className="w-full flex justify-center items-center"
+          className="w-full flex flex-col justify-center items-center"
           data-aos="fade-up"
           data-aos-duration="1000"
         >
@@ -54,8 +57,6 @@ async function Page({ searchParams }: { searchParams: any }) {
           />
         </div>
       )}
-
-      <PaginationArchive page={page} search={search} />
     </section>
   );
 }
