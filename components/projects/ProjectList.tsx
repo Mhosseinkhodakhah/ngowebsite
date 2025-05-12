@@ -36,7 +36,7 @@ function ProjectList({
                   : PlaceHolder
               }
               name={project?.name}
-              ngo={project?.ngo?.name}
+              ngo={project?.ngo}
               route={`/projects/${route}/${project?._id}`}
               status={
                 project?.status[0] === "goodPractice"

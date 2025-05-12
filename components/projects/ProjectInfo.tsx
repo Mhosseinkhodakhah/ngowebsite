@@ -54,7 +54,7 @@ function ProjectInfo({ data, locale }: { data: any; locale: string }) {
         </div>
       )}
       <div className="m-4">
-        <Link href={`/ngo/${data?._id}`}>
+        <Link href={`/ngo/${data?.ngo?._id}`}>
           <Button className="text-white" color="primary">
             {t("Visit Ngo")}
           </Button>

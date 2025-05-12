@@ -14,7 +14,7 @@ function Projects({ data }: { data: any }) {
   const t = useTranslations("navbar");
 
   return (
-    <section className="my-20 flex flex-col justify-center items-center bg-primary p-5 rounded-lg bg-gradient-to-r from-primary to-secondary max-w-screen-2xl mx-auto">
+    <section className="my-20 flex flex-col justify-center items-center bg-primary p-5 rounded-lg bg-gradient-to-r from-primary to-secondary max-w-screen-xl mx-auto">
       <h1
         className="text-xl font-bold border-b-5 border-primary mt-20 text-white"
         data-aos="fade-up"

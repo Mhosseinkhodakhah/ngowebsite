@@ -28,7 +28,7 @@ module.exports = {
       },
       animation: {
         "border-radius": "border-radius-animation 3s ease-in-out forwards",
-        "bottom-width": "bottom-width-animation 0.75s ease-in-out forwards",
+        "bottom-width": "bottom-width-animation 0.75s ease-in-out both",
       },
       keyframes: {
         "border-radius-animation": {

@@ -20,7 +20,8 @@ interface Props {
   route?: string;
   btnText?: string;
   status?: string;
-  ngo?: string;
+  ngo?: any;
+  admin?: string;
 }
 
 function CardComponent({
@@ -31,18 +32,53 @@ function CardComponent({
   btnText,
   status,
   ngo,
+  admin,
 }: Props) {
   const { locale } = useParams();
 
   return (
     <Card
       as="article"
-      className="max-h-[65vh] h-[60vh] md:h-[55vh] border-1 border-secondary-100 dark:bg-slate-900 dark:shadow-slate-800 shadow-md"
+      className="max-h-[65vh] h-[65vh] md:h-[65vh] border-1 border-secondary-100 dark:bg-slate-900 dark:shadow-slate-800 shadow-md"
     >
       <CardHeader>
+        <div
+          className={`w-full flex  ${locale === "pe" ? "justify-end" : "justify-start"} items-center gap-2`}
+        >
+          {admin ? (
+            <>
+              <Avatar
+                alt={ngo?.username}
+                className={`${locale === "pe" ? "order-2" : "order-1"}`}
+                src={PlaceHolder.src}
+              />
+              <span className={`${locale === "pe" ? "order-1" : "order-2"}`}>
+                {admin}
+              </span>
+            </>
+          ) : (
+            <>
+              <Avatar
+                alt={ngo?.username}
+                className={`${locale === "pe" ? "order-2" : "order-1"}`}
+                src={ngo?.logo || PlaceHolder.src}
+              />
+            </>
+          )}
+        </div>
+      </CardHeader>
+      <Divider />
+      <CardBody className="overflow-hidden">
+        <Image
+          alt="project"
+          className="w-full h-full max-h-[80px] rounded-md"
+          height={700}
+          src={!!imageUrl ? imageUrl : PlaceHolder.src}
+          width={700}
+        />
         {status && (
           <div
-            className={`w-full flex flex-col ${locale === "pe" ? "items-start" : "items-end"} `}
+            className={`w-full flex flex-col ${locale === "pe" ? "items-start" : "items-end"} mt-2`}
           >
             <Chip className="text-gray " color="primary" size="sm">
               {status === "vodeo" && (
@@ -59,31 +95,18 @@ function CardComponent({
                 status !== "document" &&
                 status}
             </Chip>
-            <Divider className="mt-2" />
           </div>
         )}
-      </CardHeader>
-      <CardBody>
-        <Image
-          alt="project"
-          className="w-full h-full max-h-[80px]"
-          height={700}
-          src={!!imageUrl ? imageUrl : PlaceHolder}
-          width={700}
-        />
-
         <div className="py-6 px-2">
-          {ngo && (
-            <Chip color="primary" size="sm" variant="bordered">
-              {ngo}
-            </Chip>
-          )}
-          <h4 className={`font-bold p-2 text-wrap text-start`}>{name}</h4>
-          <p className={`text-sm font-light line-clamp-3 text-start`}>
-            {description}
+          <h4 className={`font-bold p-2 text-wrap text-start`}>
+            {name?.slice(0, 100)}...
+          </h4>
+          <p className={`text-sm font-light text-wrap text-start`}>
+            {description?.slice(0, 100)}...
           </p>
         </div>
       </CardBody>
+      <Divider className="mt-2" />
       <CardFooter>
         <div className="flex justify-end w-full">
           {route && <CardButton btnText={btnText} route={route} />}

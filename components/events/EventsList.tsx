@@ -38,6 +38,7 @@ function EventsList({
           <Card
             key={event?._id}
             btnText="See More"
+            admin={event?.admin?.userName}
             description={
               locale === "en"
                 ? event?.enDescription

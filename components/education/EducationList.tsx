@@ -38,6 +38,7 @@ function EducationList({
           <Card
             key={education?._id}
             btnText="See More"
+            admin={education?.admin?.userName}
             description={
               locale === "en"
                 ? education?.enDescription

@@ -7,7 +7,7 @@ async function Page({ params }: { params: { id: string } }) {
 
   const { data }: any = await getSingleDataArchive(id);
 
-  const { title, description, type, file, _id } = data?.data;
+  const { title, description, type, file, ngo } = data?.data;
 
   return (
     <section className="flex flex-col justify-center items-center">
@@ -18,7 +18,7 @@ async function Page({ params }: { params: { id: string } }) {
       {type[0] === "image" && <ArchiveSlider data={file} />}
 
       <div className="my-4 w-full max-w-screen-md">
-        <SeeNgo id={_id} />
+        <SeeNgo id={ngo?._id} />
       </div>
 
       <div className="mt-20 flex flex-col justify-center items-center max-w-screen-md">

@@ -9,6 +9,7 @@ import CardBtn from "./CardBtn";
 import PlaceHolderImage from "@/public/images/placeholder.png";
 import { Divider } from "@heroui/divider";
 import { useParams } from "next/navigation";
+import { Avatar } from "@heroui/avatar";
 
 function ProjectCard({ project }: { project: any }) {
   const t = useTranslations("projects");
@@ -17,40 +18,51 @@ function ProjectCard({ project }: { project: any }) {
   return (
     <Card
       as="article"
-      className="max-h-[65vh] h-[60vh] md:h-[55vh] border-1 border-secondary-100 dark:bg-slate-900 dark:shadow-slate-800 shadow-md"
+      className="max-h-[65vh] h-[65vh] md:h-[65vh] border-1 border-secondary-100 dark:bg-slate-900 dark:shadow-slate-800 shadow-md"
     >
       <CardHeader>
         <div
-          className={`w-full flex flex-col ${locale === "pe" ? "items-start" : "items-end"}`}
+          className={`w-full flex  ${locale === "pe" ? "justify-end" : "justify-start"} items-center gap-2`}
         >
-          <Chip
-            className="text-xs p-2  text-gray rounded-md w-max my-2"
-            color="primary"
-          >
-            {project?.status?.includes("ongoing")
-              ? t("Ongoing")
-              : project?.status.includes("completed")
-                ? t("Completed")
-                : ""}
-          </Chip>
-          <Divider />
+          <span className={`${locale === "pe" ? "order-1" : "order-2"}`}>
+            {project?.ngo?.username}
+          </span>
+          <Avatar
+            alt={project?.ngo?.name}
+            className={`${locale === "pe" ? "order-2" : "order-1"}`}
+            src={project?.ngo?.logo || PlaceHolderImage}
+          />
         </div>
       </CardHeader>
-      <CardBody className="overflow-visible">
+      <Divider />
+      <CardBody className="overflow-hidden">
         <Image
           alt="Project"
-          className="w-full h-full max-h-[100px]"
+          className="w-full h-full max-h-[100px] rounded-md"
           height={700}
           src={project?.visualDocuments[0]?.files[0] || PlaceHolderImage}
           width={700}
         />
+        <Chip
+          className="text-xs p-2  text-gray rounded-md w-max my-2"
+          color="primary"
+        >
+          {project?.status?.includes("ongoing")
+            ? t("Ongoing")
+            : project?.status.includes("completed")
+              ? t("Completed")
+              : ""}
+        </Chip>
         <div className="py-6 px-2">
-          <h4 className="font-bold p-2 text-wrap">{project?.name}</h4>
-          <p className="text-sm font-light p-2  overflow-hidden text-wrap line-clamp-4">
-            {project?.description}
+          <h4 className="font-bold p-2 text-wrap">
+            {project?.name?.slice(0, 100)}...
+          </h4>
+          <p className="text-sm font-light p-2 ">
+            {project?.description?.slice(0, 100)}...
           </p>
         </div>
       </CardBody>
+      <Divider />
       <CardFooter>
         <div className="flex justify-end w-full">
           <CardBtn />

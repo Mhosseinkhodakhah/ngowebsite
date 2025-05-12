@@ -29,7 +29,7 @@ function ProjectsSlider({ data }: { data: any }) {
                     : PlaceHolder
                 }
                 name={project?.name}
-                ngo={project?.ngo?.name}
+                ngo={project?.ngo}
                 route={`/projects/${project?._id}`}
                 status={
                   project?.status[0] === "goodPractice"

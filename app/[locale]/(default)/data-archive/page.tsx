@@ -33,7 +33,7 @@ async function Page({ searchParams }: { searchParams: any }) {
                   description={doc?.description}
                   imageUrl={doc?.file.length ? doc?.file[0] : ""}
                   name={doc?.title}
-                  ngo={doc?.ngo?.name}
+                  ngo={doc?.ngo}
                   route={`/data-archive/${doc?._id}`}
                   status={doc?.type[0]}
                 />
