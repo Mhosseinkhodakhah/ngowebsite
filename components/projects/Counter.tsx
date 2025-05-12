@@ -12,7 +12,7 @@ function Counter({ data }: { data: any }) {
       data-aos="fade-up"
       data-aos-duration="1000"
     >
-      <div className="flex flex-col justify-center items-center gap-4 m-10 ">
+      <div className="flex flex-col justify-center items-center gap-4 m-10">
         <CountUp
           className="text-2xl font-bold"
           decimal=","

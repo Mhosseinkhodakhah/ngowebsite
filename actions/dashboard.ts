@@ -1,8 +1,10 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
+import axios from "axios";
 
 import instance from "@/utils/instance";
+import { getCookie } from "@/utils/cookie";
 
 export const getProjects = async () => {
   try {
@@ -134,6 +136,7 @@ export const getDocuments = async () => {
     throw new Error(err);
   }
 };
+
 export const getSingleDocument = async (id: string) => {
   try {
     const { data } = await instance.get(`page/documents/${id}`);
@@ -141,5 +144,25 @@ export const getSingleDocument = async (id: string) => {
     return data;
   } catch (err: any) {
     throw new Error(err);
+  }
+};
+
+export const checkToken = async () => {
+  const token: any = await getCookie("miras-token");
+
+  console.log("cccc", token);
+
+  try {
+    const data = await axios.get(`ngo/token/check`, {
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "*/*",
+        Authorization: `Bearer ${token?.value}`,
+      },
+    });
+
+    return data;
+  } catch (err: any) {
+    return err.response;
   }
 };

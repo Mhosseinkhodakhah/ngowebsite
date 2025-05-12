@@ -15,7 +15,7 @@ function MostParticipation({ data }: { data: any }) {
 
   return (
     <div
-      className="flex flex-col w-full lg:w-2/3 p-20 rounded-2xl"
+      className="flex flex-col w-full p-20 rounded-2xl max-w-screen-xl"
       data-aos="fade-up"
       data-aos-duration="1000"
     >

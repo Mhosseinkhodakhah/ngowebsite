@@ -15,7 +15,7 @@ function LastProject({ data }: { data: any }) {
 
   return (
     <div
-      className="flex flex-col w-full lg:w-2/3 p-20  rounded-2xl"
+      className="flex flex-col w-full max-w-screen-xl p-20  rounded-2xl"
       data-aos="fade-up"
       data-aos-duration="1000"
     >

@@ -22,13 +22,15 @@ export default function Error({
   const logoutNGO = useStore((state) => state.logoutNgo);
   const router = useRouter();
 
-  useEffect(() => {
-    if (error.message === "Error: 401") {
-      deleteCookie("miras-token");
-      logoutNGO();
-      router.replace("/login");
-    }
-  }, [error]);
+  console.log("fffff", error);
+
+  // useEffect(() => {
+  if (error.message === "Error: 401") {
+    deleteCookie("miras-token");
+    logoutNGO();
+    router.replace("/login");
+  }
+  // }, [error]);
 
   return (
     <div className="w-full flex justify-center items-center flex-col mt-20 border-1 border-secondary max-w-md mx-auto rounded-md py-10 gap-4 bg-danger-100 shadow-md dark:bg-danger-300">

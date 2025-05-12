@@ -1,6 +1,7 @@
 import axios from "axios";
 
 import { getCookie } from "./cookie";
+import { handleRedirect } from "./handleRedirect";
 
 const token = async () => {
   const token: any = await getCookie("miras-token");
@@ -14,7 +15,7 @@ const instance = axios.create({
   baseURL: process.env.NEXT_PUBLIC_API_URL,
   headers: {
     "Content-Type": "application/json",
-    "Accept": "*/*",
+    Accept: "*/*",
   },
 
   timeout: 10000, // 10 seconds timeout
@@ -42,14 +43,22 @@ instance.interceptors.response.use(
   },
   (error) => {
     // Handle specific error cases
-    console.log("error", error);
     if (error.response) {
       // Server responded with a status code outside of 2xx
       switch (error.response.status) {
         case 401:
           const UnauthorizedError = new Error("401");
 
+          // console.log("iiiii", error.response);
           return Promise.reject(UnauthorizedError);
+
+        // handleRedirect();
+
+        // window.location.replace("/login");
+        // redirect("/login");
+
+        // return Promise.reject(error.response.status);
+        // return;
 
         case 404:
           const notFoundError = new Error("404");

@@ -1,6 +1,7 @@
 import { getDescriptionPage } from "@/actions/educations";
 import Title from "@/components/common/title";
 import CountriesChart from "@/components/statistics/CountriesChart";
+import MixChart from "@/components/statistics/MixChart";
 import ParticipationChart from "@/components/statistics/ParticipationChart";
 
 async function Page({ params }: { params: any }) {
@@ -32,7 +33,11 @@ async function Page({ params }: { params: any }) {
         page="statics"
         titleText="Countries"
       />
-      <CountriesChart />
+      <div className="w-full flex flex-col lg:flex-row items-center justify-around mt-32 max-w-screen-2xl">
+        <CountriesChart />
+        <MixChart />
+      </div>
+      {/* <MixChart /> */}
     </section>
   );
 }

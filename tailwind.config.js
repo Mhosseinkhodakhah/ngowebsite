@@ -36,8 +36,6 @@ module.exports = {
           "50%": { borderRadius: "40px" },
           "100%": { borderRadius: "140px" },
         },
-      },
-      keyframes: {
         "bottom-width-animation": {
           "0%": { width: "50%" },
           "100%": { width: "100%" },
