@@ -38,6 +38,10 @@ function LeftSection({ data }: { data: any }) {
         </span>
       </div>
       <div className="flex px-4 py-1 gap-2 items-center">
+        <WebIcon className="text-gray" />
+        <span className="font-light text-sm">115511963</span>
+      </div>
+      <div className="flex px-4 py-1 gap-2 items-center">
         <PhoneIcon className="text-gray" />
         <span className="font-light text-sm">{data?.phone}</span>
       </div>
@@ -47,11 +51,7 @@ function LeftSection({ data }: { data: any }) {
       </div>
       <div className="flex px-4 py-1 gap-2 items-center">
         <FaxIcon className="text-gray" />
-        <span className="font-light text-sm">+982166944866</span>
-      </div>
-      <div className="flex px-4 py-1 gap-2 items-center">
-        <WebIcon className="text-gray" />
-        <span className="font-light text-sm">http://www.inio.ac.ir</span>
+        <span className="font-light text-sm">(+98) 2166170160</span>
       </div>
     </section>
   );
