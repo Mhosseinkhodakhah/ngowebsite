@@ -38,8 +38,8 @@ function LeftSection({ data }: { data: any }) {
         </span>
       </div>
       <div className="flex px-4 py-1 gap-2 items-center">
-        <WebIcon className="text-gray" />
-        <span className="font-light text-sm">115511963</span>
+        {/* <WebIcon className="text-gray" /> */}
+        <span className="font-light text-sm">postal Code : 115511963</span>
       </div>
       <div className="flex px-4 py-1 gap-2 items-center">
         <PhoneIcon className="text-gray" />
