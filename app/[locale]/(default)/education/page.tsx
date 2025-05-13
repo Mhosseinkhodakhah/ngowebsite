@@ -24,7 +24,7 @@ async function Page(params: any) {
               : descriptions?.data?.ruDescription
         }
         page="navbar"
-        titleText="Education & Training"
+        titleText="Education"
       />
       {data ? (
         <div

@@ -16,7 +16,7 @@
     "Home": "Дом",
     "About Us": "нас",
     "NGO": "НПО",
-    "Education & Training": "Образование и обучение",
+    "Education": "Образование и обучение",
     "Events": "События",
     "Projects": "Проекты",
     "Data Archive": "Архив данных",
@@ -42,14 +42,17 @@
     "Spreading Joy Building Futures One Smile at a Time": "Дарим радость, создаём будущее — одна улыбка за раз",
     "Join the Movement": "Присоединиться",
     "Evryone can help": "Каждый может помочь",
-    "Children educations": "Образование детей",
-    "Clean mineral water": "Чистая минеральная вода",
-    "Surgery & treatment": "Хирургия и лечение",
+    "Children educations": "детей",
+    "Clean mineral water": "Молодость",
+    "Surgery & treatment": "Женщины",
     "Healthy & good food": "Здоровая и вкусная еда",
     "We Are Support NGO's to Help Them": "Мы поддерживаем НПО, чтобы помочь им"
   },
   "aboutUs": {
-    "Mission and goals": "Миссия и цели"
+    "Mission and goals": "Миссия и цели",
+    "Message from Director of Tehran ICH Centre": "Сообщение директора Центра НКНТ в Тегеране",
+    "Dr Azita Momeni": "С уважением, Доктор Азита Момени",
+    "Director of Tehran ICH Centre": "Директор Центра НКНТ в Тегеране"
   },
   "NGO": {
     "Logo": "Логотип",
@@ -574,7 +577,7 @@
     "Word File": "Word",
     "PDF": "PDF",
     "Video": "Видео",
-    "Similar Education & Training": "Подобное образование и обучение"
+    "Similar Education": "Подобное образование"
   },
 
   "events": {

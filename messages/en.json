@@ -17,7 +17,6 @@
     "Home": "Home",
     "About Us": "About Us",
     "NGO": "NGO",
-    "Education & Training": "Education & Training",
     "Education": "Education",
     "Events": "Events",
     "Projects": "Projects",
@@ -44,14 +43,17 @@
     "Spreading Joy Building Futures One Smile at a Time": "Spreading Joy, Building Futures – One Smile at a Time",
     "Join the Movement": "Join the Movement",
     "Evryone can help": "Evryone can help",
-    "Children educations": "Children educations",
-    "Clean mineral water": "Clean mineral water",
-    "Surgery & treatment": "Surgery & treatment",
+    "Children educations": "Education",
+    "Clean mineral water": "Youth",
+    "Surgery & treatment": "Women",
     "Healthy & good food": "Healthy & good food",
-    "We Are Support NGO's to Help Them": "We Are Support NGO's to Help Them"
+    "We Are Support NGO's to Help Them": "Focus Areas"
   },
   "aboutUs": {
-    "Mission and goals": "Mission and goals"
+    "Mission and goals": "Mission and goals",
+    "Message from Director of Tehran ICH Centre": "Message from Director of Tehran ICH Centre",
+    "Dr Azita Momeni": "Dr. Azita Momeni",
+    "Director of Tehran ICH Centre": "Director of Tehran ICH Centre"
   },
   "NGO": {
     "Logo": "Logo",
@@ -96,7 +98,7 @@
     "Please select the field of ngo activity": "Please select the field of ngo activity",
     "Environment": "Environment",
     "Language": "Language",
-    "Education and Culture": "Education and Culture",
+    "Education": "Education and Culture",
     "Training": "Training",
     "Health & Wellness": "Health & Wellness",
     "Sustainable development": "Sustainable development",
@@ -581,7 +583,7 @@
     "Word File": "Word File",
     "PDF": "PDF",
     "Video": "Video",
-    "Similar Education & Training": "Similar Education & Training"
+    "Similar Education": "Similar Education"
   },
 
   "events": {

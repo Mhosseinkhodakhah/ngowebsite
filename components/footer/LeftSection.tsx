@@ -4,6 +4,8 @@ import { useParams } from "next/navigation";
 import EmailIcon from "../common/icons/email";
 import Location from "../common/icons/location";
 import PhoneIcon from "../common/icons/phone";
+import FaxIcon from "../common/icons/fax";
+import WebIcon from "../common/icons/website";
 
 function LeftSection({ data }: { data: any }) {
   const { locale } = useParams();
@@ -42,6 +44,14 @@ function LeftSection({ data }: { data: any }) {
       <div className="flex px-4 py-1 gap-2 items-center">
         <EmailIcon className="text-gray" />
         <span className="font-light text-sm">{data?.gmail}</span>
+      </div>
+      <div className="flex px-4 py-1 gap-2 items-center">
+        <FaxIcon className="text-gray" />
+        <span className="font-light text-sm">+982166944866</span>
+      </div>
+      <div className="flex px-4 py-1 gap-2 items-center">
+        <WebIcon className="text-gray" />
+        <span className="font-light text-sm">http://www.inio.ac.ir</span>
       </div>
     </section>
   );

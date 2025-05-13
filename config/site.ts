@@ -41,7 +41,7 @@ export const siteConfig = {
       ],
     },
     {
-      label: "Education & Training",
+      label: "Education",
       href: "/education",
       static: true,
     },

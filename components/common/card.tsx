@@ -71,7 +71,7 @@ function CardComponent({
       <CardBody className="overflow-hidden">
         <Image
           alt="project"
-          className="w-full h-full max-h-[80px] rounded-md"
+          className="w-full h-full max-h-[140px] rounded-md"
           height={700}
           src={!!imageUrl ? imageUrl : PlaceHolder.src}
           width={700}

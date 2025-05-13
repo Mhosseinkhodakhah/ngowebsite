@@ -18,14 +18,14 @@ async function Page({ params }: { params: any }) {
           locale === "en"
             ? data?.educations.enDescription
             : locale === "pe"
-              ? data?.educations.enDescription
+              ? data?.educations.peDescription
               : data?.educations.ruDescription
         }
         titleText={
           locale === "en"
             ? data?.educations.enTitle
             : locale === "pe"
-              ? data?.educations.enTitle
+              ? data?.educations.peTitle
               : data?.educations.ruTitle
         }
       />
@@ -36,13 +36,13 @@ async function Page({ params }: { params: any }) {
           {locale === "en"
             ? data?.educations.enEducationBody
             : locale === "pe"
-              ? data?.educations.enEducationBody
+              ? data?.educations.peEducationBody
               : data?.educations.ruEducationBody}
         </p>
       </div>
-      <Title page="education" titleText="Similar Education & Training" />
+      <Title page="education" titleText="Similar Education" />
       {data?.similar.length > 0 && (
-        <div className="flex flex-col w-full lg:w-2/3 px-12 mt-20">
+        <div className="flex flex-col w-full max-w-screen-xl px-12 mt-20">
           <SimilarSlider data={data} />
         </div>
       )}

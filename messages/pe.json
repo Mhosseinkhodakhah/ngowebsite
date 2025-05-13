@@ -16,10 +16,9 @@
     "Home": "خانه",
     "About Us": "درباره ما",
     "NGO": "سمن",
-    "Education & Training": "آموزش و پرورش",
     "Education": "آموزش",
     "Events": "رویدادها",
-    "Projects": "پروژها",
+    "Projects": "پروژه ها",
     "Data Archive": "آرشیو",
     "En": "انگلیسی",
     "Fa": "فارسی",
@@ -43,14 +42,17 @@
     "Spreading Joy Building Futures One Smile at a Time": "پخش شادی، ساختن آینده‌— هر لبخند یک قدم نزدیک‌تر.",
     "Join the Movement": "به جنبش بپیوندید",
     "Evryone can help": "همه می توانند یاری دهند",
-    "Children educations": "آموزش کودکان",
-    "Clean mineral water": "آب آشامیدنی تمیز",
-    "Surgery & treatment": "جراحی و درمان",
+    "Children educations": "آموزش",
+    "Clean mineral water": "جوانان",
+    "Surgery & treatment": "زنان",
     "Healthy & good food": "غذای سالم و خوب",
     "We Are Support NGO's to Help Them": "ما از سمن ها در موارد زیر حمایت می کنیم"
   },
   "aboutUs": {
-    "Mission and goals": "ماموریت و اهداف"
+    "Mission and goals": "ماموریت و اهداف",
+    "Message from Director of Tehran ICH Centre": "پیام رئیس مرکز مطالعات و پاسداری از میراث فرهنگی ناملموس در آسیای غربی و مرکزی",
+    "Dr Azita Momeni": "دکتر آزیتا مومنی",
+    "Director of Tehran ICH Centre": "رئیس مرکز مطالعات و پاسداری از میراث فرهنگی ناملموس در آسیای غربی و مرکزی"
   },
   "NGO": {
     "Logo": "نشان",
@@ -63,7 +65,7 @@
     "Details": "جزئیات",
     "Search": "جستجو",
     "Area And Scope": "منطقه فعالیت",
-    "Projects": "پروژها",
+    "Projects": "پروژه ها",
     "Have Licensed": "دارای مجوز",
     "Not Have Licensed": "بدون مجوز",
     "Main country where the NGO works": "کشور اصلی فعالیت سمن",
@@ -78,7 +80,7 @@
     "Social": "شبکه اجتماعی",
     "Address": "آدرس",
     "Documents": "اسناد و مدارک",
-    "Projects": "پروژها",
+    "Projects": "پروژه ها",
     "Visit Website": "بازدید وب سایت"
   },
   "statics": {
@@ -455,7 +457,7 @@
   },
 
   "dashboard": {
-    "Projects": "پروژها",
+    "Projects": "پروژه ها",
     "Documents": "مدارک و مستندات",
     "Approved": "تایید شده",
     "Waiting": "در انتظار تایید",
@@ -579,7 +581,7 @@
     "Word File": "وورد",
     "PDF": "پی دی اف",
     "Video": "ویدیو",
-    "Similar Education & Training": "آموزش های مشابه"
+    "Similar Education": "آموزش های مشابه"
   },
 
   "events": {
@@ -597,7 +599,7 @@
     "Ongoing Projects": "پروژه های فعال",
     "Completed Projects": "پروژه های تکمیل شده",
     "Collaboration Opportunities": "فرصت های همکاری",
-    "Last Projects": "آخرین پروژها",
+    "Last Projects": "آخرین پروژه ها",
     "Completed": "تکمیل شده",
     "Ongoing": "فعال",
     "Most participation": "بیشترین مشارکت",
@@ -618,7 +620,7 @@
     "More Information": "اطلاعات بیشتر",
     "Documents and Reports": "مستندات و گزارش ها",
     "Goal And Achievements": "اهداف و دستاوردها",
-    "Projects": "پروژها"
+    "Projects": "پروژه ها"
   },
 
   "data-archive": {
