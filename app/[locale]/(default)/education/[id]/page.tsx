@@ -6,6 +6,7 @@ import Slider from "@/components/common/slider";
 import { getSingleEducation } from "@/actions/educations";
 import PictureSlider from "@/components/education/PictureSlider";
 import SimilarSlider from "@/components/education/SimilarSlider";
+import { Divider } from "@heroui/divider";
 
 async function Page({ params }: { params: any }) {
   const { locale, id } = await params;
@@ -32,13 +33,26 @@ async function Page({ params }: { params: any }) {
       <div className="max-w-screen-md w-full  flex flex-col mt-20">
         <PictureSlider data={data} />
 
-        <p className="p-4">
+        <Divider className="my-5" data-aos="fade-up" data-aos-duration="1000" />
+
+        <h2
+          className="text-xl font-bold border-b-5 border-primary mt-20 w-max mx-4"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+        >
+          {locale === "en"
+            ? "Education Content"
+            : locale === "pe"
+              ? "محتوای آموزش"
+              : "Образовательный контент"}
+        </h2>
+        <pre className="p-4" data-aos="fade-up" data-aos-duration="1000">
           {locale === "en"
             ? data?.educations.enEducationBody
             : locale === "pe"
               ? data?.educations.peEducationBody
               : data?.educations.ruEducationBody}
-        </p>
+        </pre>
       </div>
       <Title page="education" titleText="Similar Education" />
       {data?.similar.length > 0 && (

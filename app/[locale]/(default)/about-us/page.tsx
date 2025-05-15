@@ -49,7 +49,7 @@ export default async function AboutPage({ params }: { params: any }) {
             </p>
           </div>
         </div>
-        <div className="flex flex-col justify-center items-center my-10">
+        <div className="flex flex-col justify-center items-center my-10 max-w-screen-md">
           <Title page="aboutUs" titleText="Mission and goals" />
           <Image
             alt="mission and goal"
@@ -58,8 +58,8 @@ export default async function AboutPage({ params }: { params: any }) {
             data-aos-duration="1000"
             src={MissionAndGoal}
           />
-          <p
-            className="font-light text-center mt-4 max-w-screen-md px-2"
+          <pre
+            className="font-light text-start mt-4 px-2 max-w-md"
             data-aos="fade-up"
             data-aos-duration="1000"
           >
@@ -68,7 +68,7 @@ export default async function AboutPage({ params }: { params: any }) {
               : locale === "en"
                 ? data?.enMissionAndGoals
                 : data?.ruMissionAndGoals}
-          </p>
+          </pre>
         </div>
       </section>
     </>

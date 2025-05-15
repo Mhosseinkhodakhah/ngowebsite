@@ -30,7 +30,11 @@ function Slider({ single, children }: Props) {
   return (
     <>
       {!single && (
-        <div className="relative mb-3 flex gap-2">
+        <div
+          className="relative mb-3 flex gap-2"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+        >
           <div
             ref={nextRef}
             className="bg-primary p-3 rounded-full cursor-pointer"

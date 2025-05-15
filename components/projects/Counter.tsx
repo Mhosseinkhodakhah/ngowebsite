@@ -8,7 +8,7 @@ function Counter({ data }: { data: any }) {
 
   return (
     <section
-      className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  mt-10 w-[95%] lg:w-full max-w-screen-lg text-white bg-gradient-to-br from-secondary to-primary p-14 transition-all duration-500 ease-in-out animate-border-radius"
+      className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  mt-10 w-[95%] lg:w-full max-w-screen-xl text-white bg-gradient-to-br from-secondary to-primary p-14 transition-all duration-500 ease-in-out animate-border-radius"
       data-aos="fade-up"
       data-aos-duration="1000"
     >

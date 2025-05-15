@@ -40,6 +40,8 @@ function CardComponent({
     <Card
       as="article"
       className="max-h-[65vh] h-[65vh] md:h-[65vh] border-1 border-secondary-100 dark:bg-slate-900 dark:shadow-slate-800 shadow-md"
+      data-aos="fade-up"
+      data-aos-duration="1000"
     >
       <CardHeader>
         <div
@@ -63,6 +65,9 @@ function CardComponent({
                 className={`${locale === "pe" ? "order-2" : "order-1"}`}
                 src={ngo?.logo || PlaceHolder.src}
               />
+              <span className={`${locale === "pe" ? "order-1" : "order-2"}`}>
+                {ngo?.username}
+              </span>
             </>
           )}
         </div>

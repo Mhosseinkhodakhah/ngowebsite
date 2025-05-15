@@ -22,41 +22,46 @@ export const Navbar = () => {
   const isLogin = useStore((state: any) => state.isLogin);
 
   return (
-    <NavbarContainer>
-      <NavbarContent className="" justify="start">
-        <NavbarBrand as="li" className="gap-3">
-          <NextLink className="flex justify-start items-center gap-1" href="/">
-            <Image priority alt="Logo" height={100} src={Logo} width={100} />
-          </NextLink>
-        </NavbarBrand>
-      </NavbarContent>
-
-      <NavbarContent>
-        <Links />
-      </NavbarContent>
-
-      <NavbarContent
-        className="hidden sm:flex basis-1/5 sm:basis-full"
-        justify="end"
-      >
-        <NavbarItem className="hidden lg:flex gap-2">
-          <ThemeSwitch />
-          <LoginBtn />
-          {!isLogin && (
-            <Button
-              as={Link}
-              className="text-gray"
-              color="primary"
-              href="/ngo/ngos-registration"
-              size="sm"
-              variant="shadow"
+    <div className="hover:bg-background w-full flex items-center transition-all ease-linear duration-300 sticky top-0 z-50 shadow-md">
+      <NavbarContainer>
+        <NavbarContent className="" justify="start">
+          <NavbarBrand as="li" className="gap-3">
+            <NextLink
+              className="flex justify-start items-center gap-1"
+              href="/"
             >
-              {t("Join Us")}
-            </Button>
-          )}
-          <LanguageSwitch />
-        </NavbarItem>
-      </NavbarContent>
-    </NavbarContainer>
+              <Image priority alt="Logo" height={100} src={Logo} width={100} />
+            </NextLink>
+          </NavbarBrand>
+        </NavbarContent>
+
+        <NavbarContent>
+          <Links />
+        </NavbarContent>
+
+        <NavbarContent
+          className="hidden sm:flex basis-1/5 sm:basis-full"
+          justify="end"
+        >
+          <NavbarItem className="hidden lg:flex gap-2">
+            <ThemeSwitch />
+            <LoginBtn />
+            {!isLogin && (
+              <Button
+                as={Link}
+                className="text-gray"
+                color="primary"
+                href="/ngo/ngos-registration"
+                size="sm"
+                variant="shadow"
+              >
+                {t("Join Us")}
+              </Button>
+            )}
+            <LanguageSwitch />
+          </NavbarItem>
+        </NavbarContent>
+      </NavbarContainer>
+    </div>
   );
 };
