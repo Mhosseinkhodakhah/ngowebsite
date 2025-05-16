@@ -13,8 +13,6 @@ function MapChart({ data }: { data: any }) {
   //   ["Iran", 700],
   // ];
 
-  console.log("ddd", data);
-
   const options = {
     region: "142",
     colorAxis: { colors: ["#96B7E4", "#5C9EDC", "#2185D5"] },

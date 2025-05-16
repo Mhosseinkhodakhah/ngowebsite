@@ -570,7 +570,13 @@
     "Update Document": "Обновлять",
     "Update document and record": "Обновить документ и записать",
     "Please upload the documents file": "Пожалуйста, загрузите файл документов",
-    "Document updated successfully": "Документ успешно обновлен"
+    "Document updated successfully": "Документ успешно обновлен",
+    "Completed Reports": "Отчеты и документация",
+    "Completed Effects": "Влияние на защиту нематериального наследия",
+    "Completed Reports is required": "Требуются заполненные отчеты",
+    "Completed Reports must be at least 200 characters": "Заполненные отчеты должны содержать не менее 200 символов",
+    "Impact on the protection of intangible heritage is required": "Необходимо воздействие на защиту нематериального наследия",
+    "Impact on the protection of intangible heritage must be at least 200 characters": "Влияние на защиту нематериального наследия должно быть не менее 200 символов"
   },
   "education": {
     "Filter by file format": "Фильтровать по формату файла",

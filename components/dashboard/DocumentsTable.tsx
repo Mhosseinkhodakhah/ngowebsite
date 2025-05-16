@@ -25,6 +25,7 @@ import { SearchIcon } from "../common/icons";
 import "ag-grid-community/styles/ag-grid.css";
 import "ag-grid-community/styles/ag-theme-alpine.css"; // or any other theme you prefer
 import { deleteDocument } from "@/actions/dashboard";
+import AddButton from "./AddButton";
 
 const DocumentsTable = ({ data }: { data: any }) => {
   const [id, setId] = useState<string>("");
@@ -166,15 +167,18 @@ const DocumentsTable = ({ data }: { data: any }) => {
     <div
       className={`w-full h-[500px] ${theme === "dark" ? "ag-theme-alpine-dark" : "ag-theme-alpine"}  `}
     >
-      <Input
-        className="max-w-sm my-2"
-        placeholder={t("Search")}
-        startContent={<SearchIcon />}
-        type="text"
-        value={searchText}
-        variant="bordered"
-        onChange={onSearchChange}
-      />
+      <div className="flex gap-2 items-center justify-between p-4">
+        <Input
+          className="my-2"
+          placeholder={t("Search")}
+          startContent={<SearchIcon />}
+          type="text"
+          value={searchText}
+          variant="bordered"
+          onChange={onSearchChange}
+        />
+        <AddButton />
+      </div>
       <AgGridReact
         columnDefs={colDefs}
         defaultColDef={defaultColDef}

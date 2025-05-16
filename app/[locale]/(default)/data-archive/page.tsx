@@ -35,7 +35,7 @@ async function Page({ searchParams }: { searchParams: any }) {
                   name={doc?.title}
                   ngo={doc?.ngo}
                   route={`/data-archive/${doc?._id}`}
-                  status={doc?.type[0]}
+                  status={doc?.type}
                 />
               ))}
             </>

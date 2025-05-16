@@ -25,6 +25,7 @@ import "ag-grid-community/styles/ag-grid.css";
 import "ag-grid-community/styles/ag-theme-alpine.css"; // or any other theme you prefer
 import { Link } from "@/i18n/navigation";
 import { deleteProject, ongoingProject } from "@/actions/dashboard";
+import AddButton from "./AddButton";
 
 const ProjectTable = ({ data }: { data: any }) => {
   const [id, setId] = useState<string>("");
@@ -158,9 +159,8 @@ const ProjectTable = ({ data }: { data: any }) => {
       cellRenderer: (params: { data: { _id: string; status: string[] } }) => {
         const id: string = params?.data?._id;
         const completed: boolean = params?.data?.status.includes("completed");
-        const ongoing: boolean =
-          !params?.data?.status.includes("ongoing") &&
-          !params?.data?.status.includes("completed");
+        const ongoing: boolean = params?.data?.status.includes("ongoing");
+        console.log("stttt", data);
 
         return (
           <div className="flex gap-3">
@@ -183,19 +183,21 @@ const ProjectTable = ({ data }: { data: any }) => {
                 />
               </Button>
             </Tooltip>
-            <Tooltip color="warning" content={t("Update Project")}>
-              <Link href={`projects/update-project/${id}`}>
-                <Button isIconOnly color="warning" size="sm" variant="flat">
-                  <Icon
-                    className="text-warning"
-                    height="24"
-                    icon="material-symbols:update"
-                    width="24"
-                  />
-                </Button>
-              </Link>
-            </Tooltip>
             {!completed && (
+              <Tooltip color="warning" content={t("Update Project")}>
+                <Link href={`projects/update-project/${id}`}>
+                  <Button isIconOnly color="warning" size="sm" variant="flat">
+                    <Icon
+                      className="text-warning"
+                      height="24"
+                      icon="material-symbols:update"
+                      width="24"
+                    />
+                  </Button>
+                </Link>
+              </Tooltip>
+            )}
+            {!completed && ongoing && (
               <Tooltip color="success" content={t("Complete")}>
                 <Link href={`projects/complete-project/${id}`}>
                   <Button isIconOnly color="success" size="sm" variant="flat">
@@ -209,8 +211,12 @@ const ProjectTable = ({ data }: { data: any }) => {
                 </Link>
               </Tooltip>
             )}
-            {ongoing && (
-              <Tooltip color="primary" content={t("Ongoing")}>
+            {!ongoing && !completed && (
+              <Tooltip
+                className="text-white"
+                color="primary"
+                content={t("Ongoing")}
+              >
                 <Button
                   isIconOnly
                   color="primary"
@@ -260,15 +266,18 @@ const ProjectTable = ({ data }: { data: any }) => {
     <div
       className={`w-full h-[500px] ${theme === "dark" ? "ag-theme-alpine-dark" : "ag-theme-alpine"}  `}
     >
-      <Input
-        className="max-w-sm my-2"
-        placeholder={t("Search")}
-        startContent={<SearchIcon />}
-        type="text"
-        value={searchText}
-        variant="bordered"
-        onChange={onSearchChange}
-      />
+      <div className="flex gap-2 items-center justify-between p-4">
+        <Input
+          className="my-2"
+          placeholder={t("Search")}
+          startContent={<SearchIcon />}
+          type="text"
+          value={searchText}
+          variant="bordered"
+          onChange={onSearchChange}
+        />
+        <AddButton />
+      </div>
       <AgGridReact
         columnDefs={colDefs}
         defaultColDef={defaultColDef}

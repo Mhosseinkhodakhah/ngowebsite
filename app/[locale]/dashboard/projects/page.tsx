@@ -7,7 +7,7 @@ async function Page() {
   const data = await getProjects();
 
   return (
-    <section className="flex flex-col items-center w-full md:w-3/5 lg:w-10/12 px-10 overflow-y-auto">
+    <section className="flex flex-col items-center w-full lg:w-10/12 px-10 overflow-y-auto">
       <DashboardHead />
       <AddButton />
 

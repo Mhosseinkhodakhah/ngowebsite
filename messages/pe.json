@@ -574,7 +574,13 @@
     "Update Document": "به روزرسانی",
     "Update document and record": "به روز رسانی سند و مدرک",
     "Please upload the documents file": "لطفا فایل اسناد و مدارک را ارسال کنید",
-    "Document updated successfully": "به روز رسانی اسناد و مدارک با موفقیت انجام شد"
+    "Document updated successfully": "به روز رسانی اسناد و مدارک با موفقیت انجام شد",
+    "Completed Reports": "گزارش ها و مستندات",
+    "Completed Effects": "تاثیر بر حفاظت از میراث ناملموس",
+    "Completed Reports is required": "گزارش ها و مستندات الزامی است",
+    "Completed Reports must be at least 200 characters": "گزارش ها و مستندات حداقل باید شامل 200 کاراکتر باشد",
+    "Impact on the protection of intangible heritage is required": "تاثیر بر حفاظت از میراث ناملموس الزامی است",
+    "Impact on the protection of intangible heritage must be at least 200 characters":"تاثیر بر حفاظت از میراث ناملموس حداقل باید شامل 200 کاراکتر باشد"
   },
   "education": {
     "Filter by file format": "بر اساس نوع فایل",

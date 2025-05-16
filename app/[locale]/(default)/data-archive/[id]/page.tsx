@@ -1,5 +1,6 @@
 import { getSingleDataArchive } from "@/actions/data-archive";
 import ArchiveSlider from "@/components/data-archive/ArchiveSlider";
+import DataArchiveFiles from "@/components/data-archive/DataArchiveFiles";
 import SeeNgo from "@/components/data-archive/SeeNgo";
 
 async function Page({ params }: { params: { id: string } }) {
@@ -15,14 +16,14 @@ async function Page({ params }: { params: { id: string } }) {
         {title}
       </h1>
 
-      {type[0] === "image" && <ArchiveSlider data={file} />}
-
-      <div className="my-4 w-full max-w-screen-md">
-        <SeeNgo id={ngo?._id} />
-      </div>
+      {/* {type.includes("image") && <ArchiveSlider data={file} />} */}
 
       <div className="mt-20 flex flex-col justify-center items-center max-w-screen-md">
         <p className="px-4 font-light">{description}</p>
+      </div>
+      <DataArchiveFiles data={data?.data} />
+      <div className="my-4 w-full max-w-screen-md">
+        <SeeNgo id={ngo?._id} />
       </div>
     </section>
   );

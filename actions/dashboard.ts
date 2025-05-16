@@ -44,9 +44,10 @@ export const updateProject = async (values: any, id: string) => {
   }
 };
 
-export const completeProject = async (values: any) => {
+export const completeProject = async (values: any, id: string) => {
   try {
-    const { data } = await instance.post(`/ngo/project/complete`, values);
+    console.log("vvv", values);
+    const { data } = await instance.post(`/ngo/project/complete/${id}`, values);
 
     revalidatePath("/dashboard/projects");
 
@@ -60,7 +61,7 @@ export const completeProject = async (values: any) => {
 
 export const ongoingProject = async (id: any) => {
   try {
-    const { data } = await instance.post(`/ngo/project/delete/${id}`);
+    const { data } = await instance.post(`/ngo/project/ongoing/${id}`);
 
     revalidatePath("/dashboard/projects");
 

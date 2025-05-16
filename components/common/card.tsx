@@ -19,7 +19,7 @@ interface Props {
   description?: string;
   route?: string;
   btnText?: string;
-  status?: string;
+  status?: string[];
   ngo?: any;
   admin?: string;
 }
@@ -83,23 +83,30 @@ function CardComponent({
         />
         {status && (
           <div
-            className={`w-full flex flex-col ${locale === "pe" ? "items-start" : "items-end"} mt-2`}
+            className={`w-full flex gap-2 ${locale === "pe" ? "items-start" : "items-end"} mt-2 `}
           >
-            <Chip className="text-gray " color="primary" size="sm">
-              {status === "vodeo" && (
+            {status.includes("video") && (
+              <Chip className="text-gray " color="primary" size="sm">
                 <Icon height="30" icon="lets-icons:video-fill" width="24" />
-              )}
-              {status === "image" && (
+              </Chip>
+            )}
+
+            {status.includes("image") && (
+              <Chip className="text-gray " color="primary" size="sm">
                 <Icon height="30" icon="mynaui:image-solid" width="24" />
-              )}
-              {status === "document" && (
-                <Icon height="30" icon="solar:document-bold" width="24" />
-              )}
-              {status !== "vodeo" &&
-                status !== "image" &&
-                status !== "document" &&
-                status}
-            </Chip>
+              </Chip>
+            )}
+            {status.includes("pdf") && (
+              <Chip className="text-gray " color="primary" size="sm">
+                <Icon icon="teenyicons:pdf-solid" width="15" height="15" />
+              </Chip>
+            )}
+
+            {status.includes("word") && (
+              <Chip className="text-gray " color="primary" size="sm">
+                <Icon icon="flowbite:file-word-solid" width="24" height="24" />
+              </Chip>
+            )}
           </div>
         )}
         <div className="py-6 px-2">

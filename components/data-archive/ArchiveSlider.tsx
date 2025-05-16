@@ -2,10 +2,9 @@
 
 import { SwiperSlide } from "swiper/react";
 import Image from "next/image";
+import { useState } from "react";
 
 import Slider from "../common/slider";
-import { useState } from "react";
-import ConfirmModal from "../common/confirm";
 import ModalImage from "../common/modal";
 
 function ArchiveSlider({ data }: { data: string[] }) {
@@ -14,7 +13,7 @@ function ArchiveSlider({ data }: { data: string[] }) {
   const handleCloseModal = () => setSrc("");
 
   return (
-    <div className="mt-20 flex flex-col justify-center items-center max-w-screen-md">
+    <div className="mt-20 flex flex-col justify-center items-center max-w-screen-md mb-10">
       <Slider single={1}>
         {data?.map((image) => (
           <SwiperSlide
@@ -24,10 +23,10 @@ function ArchiveSlider({ data }: { data: string[] }) {
           >
             <Image
               alt="Archive"
-              className="w-full object-contain"
-              height={400}
+              className="w-full h-full object-contain"
+              height={800}
               src={image}
-              width={400}
+              width={800}
             />
           </SwiperSlide>
         ))}

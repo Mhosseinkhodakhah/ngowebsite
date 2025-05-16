@@ -1,5 +1,6 @@
 import { getNgoData } from "@/actions/ngo";
 import Title from "@/components/common/title";
+import DemographicCard from "@/components/ngo-page/WordMapCard";
 import MapChart from "@/components/ngos/MapChart";
 import NgosTable from "@/components/ngos/NgosTable";
 
@@ -23,6 +24,7 @@ async function Page({ params }: { params: any }) {
         titleText="NGO"
       />
       <MapChart data={mapNgo} />
+      {/* <DemographicCard /> */}
       <NgosTable data={ngoTabel} />
     </section>
   );

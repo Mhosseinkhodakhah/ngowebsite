@@ -1,6 +1,7 @@
 "use client";
 
 import { Button } from "@heroui/button";
+import { useMemo } from "react";
 import {
   Dropdown,
   DropdownItem,
@@ -28,6 +29,12 @@ function DashboardDropDownMenu() {
     router.replace("/");
   };
 
+  const path = useMemo(() => {
+    const getRotue = pathname.split("/");
+
+    return getRotue[getRotue.length - 1];
+  }, [pathname]);
+
   return (
     <Dropdown>
       <DropdownTrigger>
@@ -37,8 +44,18 @@ function DashboardDropDownMenu() {
       </DropdownTrigger>
       <DropdownMenu aria-label="Link Actions">
         <DropdownItem
+          key="dashboard"
+          className={`${path === "dashboard" ? "bg-primary text-gray" : "text-secondary"}  dark:text-gray `}
+          href={`/${locale}/dashboard`}
+          startContent={
+            <Icon height="24" icon="eos-icons:project" width="24" />
+          }
+        >
+          {t("Dashboard")}
+        </DropdownItem>
+        <DropdownItem
           key="projects"
-          className={`${pathname.includes("projects") && !pathname.includes("add-project") ? "bg-primary text-gray" : "text-secondary"}  dark:text-gray `}
+          className={`${path === "projects" ? "bg-primary text-gray" : "text-secondary"}  dark:text-gray `}
           href={`/${locale}/dashboard/projects`}
           startContent={
             <Icon height="24" icon="eos-icons:project" width="24" />
@@ -48,7 +65,7 @@ function DashboardDropDownMenu() {
         </DropdownItem>
         <DropdownItem
           key="add-project"
-          className={`${pathname.includes("/add-project") ? "bg-primary text-gray" : "text-secondary"}  dark:text-gray `}
+          className={`${path === "add-project" ? "bg-primary text-gray" : "text-secondary"}  dark:text-gray `}
           href={`/${locale}/dashboard/projects/add-project`}
           startContent={
             <Icon height="16" icon="qlementine-icons:plus-16" width="16" />
@@ -58,7 +75,7 @@ function DashboardDropDownMenu() {
         </DropdownItem>
         <DropdownItem
           key="documents"
-          className={`${pathname.includes("documents") && !pathname.includes("add-document") ? "bg-primary text-gray" : "text-secondary"}  dark:text-gray `}
+          className={`${path === "documents" ? "bg-primary text-gray" : "text-secondary"}  dark:text-gray `}
           href={`/${locale}/dashboard/documents`}
           startContent={
             <Icon height="24" icon="solar:document-bold" width="24" />
@@ -68,7 +85,7 @@ function DashboardDropDownMenu() {
         </DropdownItem>
         <DropdownItem
           key="add-document"
-          className={`${pathname.includes("/add-document") ? "bg-primary text-gray" : "text-secondary"}  dark:text-gray `}
+          className={`${path === "add-document" ? "bg-primary text-gray" : "text-secondary"}  dark:text-gray `}
           href={`/${locale}/dashboard/documents/add-document`}
           startContent={
             <Icon height="16" icon="qlementine-icons:plus-16" width="16" />

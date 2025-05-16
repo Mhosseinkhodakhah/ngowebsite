@@ -2,10 +2,10 @@
 
 import Image from "next/image";
 import { useTranslations } from "next-intl";
+import { useState } from "react";
 import { SwiperSlide } from "swiper/react";
 
 import Slider from "../common/slider";
-import { useState } from "react";
 import ModalImage from "../common/modal";
 
 function VisualDocuments({ data }: { data: any }) {

@@ -575,7 +575,13 @@
     "Update Document": "Update Document",
     "Update document and record": "Update document and record",
     "Please upload the documents file": "Please upload the documents file",
-    "Document updated successfully": "Document updated successfully"
+    "Document updated successfully": "Document updated successfully",
+    "Completed Reports": "Reports and documentation",
+    "Completed Effects": "Impact on the protection of intangible heritage",
+    "Completed Reports is required": "Completed Reports is required",
+    "Completed Reports must be at least 200 characters": "Completed Reports must be at least 200 characters",
+    "Impact on the protection of intangible heritage is required": "Impact on the protection of intangible heritage is required",
+    "Impact on the protection of intangible heritage must be at least 200 characters": "Impact on the protection of intangible heritage must be at least 200 characters"
   },
 
   "education": {

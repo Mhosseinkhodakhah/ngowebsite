@@ -75,7 +75,7 @@ const Links = () => {
           <Link
             className={clsx(
               linkStyles({ color: "foreground" }),
-              `data-[active=true]:text-primary data-[active=true]:font-medium hover:text-primary active:text-primary group relative gap-1 ${pathname === `/${locale}` && pathname.includes(item.href) ? "border-b-5 border-b-primary" : pathname.includes(item.href) && item.href.length > 1 ? "border-b-5 border-b-primary" : ""}`
+              `data-[active=true]:text-primary data-[active=true]:font-medium hover:text-primary active:text-primary group relative gap-1 ${pathname === `/${locale}` && pathname.includes(item.href) ? "border-b-5 border-b-primary" : pathname.includes(item.href) && item.href.length > 1 ? "border-b-5 border-b-primary" : ""} text-sm rounded-md`
             )}
             color="foreground"
             href={`${item.href}`}

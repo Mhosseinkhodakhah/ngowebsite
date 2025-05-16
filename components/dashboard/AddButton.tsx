@@ -4,12 +4,11 @@ import { Button } from "@heroui/button";
 import { Tooltip } from "@heroui/tooltip";
 import { Icon } from "@iconify/react";
 import { useTranslations } from "next-intl";
-import { useParams, usePathname } from "next/navigation";
+import { usePathname } from "next/navigation";
 
 import { useRouter } from "@/i18n/navigation";
 
 function AddButton() {
-  const { locale } = useParams();
   const pathname = usePathname();
   const t = useTranslations("dashboard");
   const router = useRouter();
@@ -34,12 +33,19 @@ function AddButton() {
     >
       <Button
         isIconOnly
-        className={`text-gray fixed ${locale === "pe" ? "left-14" : "right-14"} top-40 rounded-full z-10 hidden md:flex`}
+        className={`text-gray  rounded-full hidden lg:flex w-32 items-center gap-2`}
         color="primary"
+        endContent={
+          <Icon height="16" icon="qlementine-icons:plus-16" width="16" />
+        }
         variant="shadow"
         onPress={handlePress}
       >
-        <Icon height="16" icon="qlementine-icons:plus-16" width="16" />
+        {pathname.includes("projects")
+          ? t("Add Project")
+          : pathname.includes("documents")
+            ? t("Add Documents")
+            : ""}
       </Button>
     </Tooltip>
   );
