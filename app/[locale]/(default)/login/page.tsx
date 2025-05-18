@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import Logo from "@/public/images/logo.jpg";
+import Logo from "@/public/images/logo.png";
 import LoginForm from "@/components/login/LoginForm";
 import Background from "@/public/images/background.jpg";
 

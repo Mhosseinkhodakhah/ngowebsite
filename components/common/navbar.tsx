@@ -13,7 +13,7 @@ import NavbarContainer from "../navbar/NavbarContainer";
 import LanguageSwitch from "./language-switch";
 import { ThemeSwitch } from "./theme-switch";
 
-import Logo from "@/public/images/logo.jpg";
+import Logo from "@/public/images/logo.png";
 import { Link } from "@/i18n/navigation";
 import useStore from "@/store";
 
