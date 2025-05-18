@@ -69,7 +69,7 @@ const ruText = `Мы гордимся тем, что стали свидетел
 function BossMessage() {
   const t = useTranslations("aboutUs");
   const { locale } = useParams();
-
+  
   return (
     <div className="flex flex-col w-full max-w-screen-lg justify-center items-center mt-32">
       <h2 className="font-bold text-2xl my-4">
