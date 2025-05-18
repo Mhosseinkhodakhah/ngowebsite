@@ -32,7 +32,16 @@ export const ngoRegisterSchema = Yup.object().shape({
     otherwise: () => Yup.string(),
   }),
   specificCultureGroupValue: Yup.array().min(1, "Please select an option"),
-  specificCultureGroupDescription: Yup.string().required("Please specify"),
+  // specificCultureGroupDescription: Yup.string().required("Please specify"),
+  specificCultureGroupDescription: Yup.string().when(
+    "specificCultureGroupValue",
+    {
+      is: (value: string[]) => value?.includes("yes"),
+      then: () => Yup.string().required("Please specify"),
+      otherwise: () => Yup.string(),
+    }
+  ),
+
   specificActiveAreas: Yup.array().min(1, "Please select an option"),
   areaOfExpertise: Yup.array().min(1, "Please select an option"),
   areaOfExpertiseValue: Yup.string().when("areaOfExpertise", {
