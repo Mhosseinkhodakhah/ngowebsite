@@ -28,7 +28,7 @@
     "Contact Us": "ارتباط با ما",
     "NGOs Registration": "ثبت نام سمن ها",
     "Statistics": "آمار",
-    "Good Practice": "ابتکارات مشترک",
+    "Good Practice": "اقدامات احیاگرانه موفق",
     "Onegoing Projects": "پروژه های فعال",
     "Completed Projects": "پروژه های تکمیل شده",
     "Collaboration Opportunities": "فرصت های همکاری",
@@ -478,7 +478,7 @@
     "End Date": "تاریخ پایان",
     "Description": "توضیحات مختصر پروژه",
     "Project Status": "وضعیت پروژه",
-    "Good Practice": "ابتکارات مشترک",
+    "Good Practice": "اقدامات احیاگرانه موفق",
     "Ongoing": "فعال",
     "Completed": "تکمیل شده",
     "Collaboration Opportunities": "فرصت همکاری",
@@ -608,7 +608,7 @@
   },
 
   "projects": {
-    "Good Practice": "ابتکارات مشترک",
+    "Good Practice": "اقدامات احیاگرانه موفق",
     "Ongoing Projects": "پروژه های فعال",
     "Completed Projects": "پروژه های تکمیل شده",
     "Collaboration Opportunities": "فرصت های همکاری",
