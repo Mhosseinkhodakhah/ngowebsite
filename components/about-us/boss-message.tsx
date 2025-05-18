@@ -167,18 +167,18 @@ function BossMessage() {
   const { locale } = useParams();
 
   return (
-    <div className="flex flex-col w-full max-w-screen-lg justify-start items-center mt-32"
-      data-aos="fade-up"
-      data-aos-duration="1000"
-    >
+    <div className="flex flex-col w-full max-w-screen-lg justify-start items-center mt-32">
       <h2 className="font-bold text-2xl my-4">
         {t("Message from Director of Tehran ICH Centre")}
       </h2>
 
       <Divider className="my-4" />
       
-      <div className="flex flex-col gap-10 lg:flex-row lg:gap-2 justify-center items-center mt-8">
-        <div className="w-2/3">
+      <div className="flex flex-col gap-10 lg:flex-row lg:gap-2 justify-center items-center mt-8"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+      >
+        <div className="w-2/3" >
           <p className="text-justify leading-6">{locale === "pe" ? peText2 : locale === "en" ? enText2 : ruText2}</p>
           <Divider className="my-4" />
           <p className="font-bold text-lg">{t("hokamBoss")}</p>
@@ -195,7 +195,10 @@ function BossMessage() {
       <Divider className="my-4" />
 
 
-      <div className="flex flex-col gap-10 lg:flex-row lg:gap-2 justify-center items-center mt-32">
+      <div className="flex flex-col gap-10 lg:flex-row lg:gap-2 justify-center items-center mt-32"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+      >
         <div className="w-1/3">
           <Avatar src={BossImg.src} className="mr-3 w-[300px] h-[300px] " />
         </div>

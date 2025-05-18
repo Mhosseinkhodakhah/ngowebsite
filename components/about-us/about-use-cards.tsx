@@ -8,7 +8,10 @@ function AboutUsCards() {
   const tt = useTranslations("common");
 
   return (
-    <div className="flex flex-col w-full max-w-screen-lg justify-center items-center mt-32">
+    <div className="flex flex-col w-full max-w-screen-lg justify-center items-center mt-32"
+    data-aos="fade-up"
+      data-aos-duration="1000"
+    >
       <div>
         <h2 className="font-bold text-2xl">
           {t("We Are Support NGO's to Help Them")}
