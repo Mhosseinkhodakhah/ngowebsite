@@ -5,7 +5,7 @@ import { useTranslations } from "next-intl";
 import { useParams } from "next/navigation";
 import { Divider } from "@heroui/divider";
 
-import BossImg2 from "@/public/images/Dr Darabi.jpg";
+import BossImg2 from "@/public/images/Dr Darabi.JPG";
 import BossImg from "@/public/images/Dr Momeni.jpg";
 
 const enText = `In the name of God
