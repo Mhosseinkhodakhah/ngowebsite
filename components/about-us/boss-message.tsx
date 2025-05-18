@@ -165,14 +165,14 @@ const ruText2 = `Мы гордимся тем, что стали свидете�
 function BossMessage() {
   const t = useTranslations("aboutUs");
   const { locale } = useParams();
-  
+
   return (
     <div className="flex flex-col w-full max-w-screen-lg justify-center items-center mt-32">
       <h2 className="font-bold text-2xl my-4">
         {t("Message from Director of Tehran ICH Centre")}
       </h2>
 
-      <Divider className="my-8" />
+      <Divider className="my-4" />
       
       <div className="flex flex-col gap-10 lg:flex-row lg:gap-2 justify-center items-center mt-8">
         <div className="w-2/3">
@@ -189,7 +189,7 @@ function BossMessage() {
       </div>
 
 
-      <Divider className="my-4" />
+      <Divider className="my-4 mt-8" />
 
 
       <div className="flex flex-col gap-10 lg:flex-row lg:gap-2 justify-center items-center mt-8">
