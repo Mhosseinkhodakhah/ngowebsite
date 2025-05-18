@@ -37,7 +37,7 @@ export default async function AboutPage({ params }: { params: any }) {
             <Image alt="about us" className="md:w-2/3" src={AboutUsImage} />
           </div>
           <div className="flex-1" data-aos="fade-up" data-aos-duration="1000">
-            <h2 className="text-xl font-bold text-center md:text-start my-4 md:my-0">
+            <h2 className="text-xl font-bold text-center text-justify leading-6 md:text-start my-4 md:my-0">
               {locale === "pe"
                 ? data?.peTitle
                 : locale === "en"
@@ -63,7 +63,7 @@ export default async function AboutPage({ params }: { params: any }) {
             src={MissionAndGoal}
           />
           <p
-            className="font-light text-center text-justify leading-6 mt-4 px-2 max-w-md"
+            className="font-light text-center text-justify leading-6 mt-4 px-2 max-w-2xl"
             data-aos="fade-up"
             data-aos-duration="1000"
           >
