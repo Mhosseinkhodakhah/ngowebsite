@@ -167,7 +167,10 @@ function BossMessage() {
   const { locale } = useParams();
 
   return (
-    <div className="flex flex-col w-full max-w-screen-lg justify-start items-center mt-32">
+    <div className="flex flex-col w-full max-w-screen-lg justify-start items-center mt-32"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+    >
       <h2 className="font-bold text-2xl my-4">
         {t("Message from Director of Tehran ICH Centre")}
       </h2>
