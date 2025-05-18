@@ -44,7 +44,7 @@ export default async function AboutPage({ params }: { params: any }) {
                   ? data?.enTitle
                   : data?.ruTitle}
             </h2>
-            <p className="font-light text-center md:text-start mt-4">
+            <p className="font-light text-justify leading-6  text-center md:text-start mt-4">
               {locale === "pe"
                 ? data?.peMiddleImageDescription
                 : locale === "en"
@@ -62,8 +62,8 @@ export default async function AboutPage({ params }: { params: any }) {
             data-aos-duration="1000"
             src={MissionAndGoal}
           />
-          <pre
-            className="font-light text-start mt-4 px-2 max-w-md"
+          <p
+            className="font-light text-center text-justify leading-6 mt-4 px-2 max-w-md"
             data-aos="fade-up"
             data-aos-duration="1000"
           >
@@ -72,7 +72,7 @@ export default async function AboutPage({ params }: { params: any }) {
               : locale === "en"
                 ? data?.enMissionAndGoals
                 : data?.ruMissionAndGoals}
-          </pre>
+          </p>
         </div>
       </section>
     </>
