@@ -88,7 +88,7 @@ const ruText = `Мы гордимся тем, что стали свидетел
 всей Западной и Центральной Азии.`;
 
 
-function BossMessage() {
+function secondBossMessage() {
     const t = useTranslations("aboutUs");
     const { locale } = useParams();
 
@@ -114,4 +114,4 @@ function BossMessage() {
     );
 }
 
-export default BossMessage;
+export default secondBossMessage;
