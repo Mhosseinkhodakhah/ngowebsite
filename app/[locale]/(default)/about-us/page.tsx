@@ -44,7 +44,7 @@ export default async function AboutPage({ params }: { params: any }) {
                   ? data?.enTitle
                   : data?.ruTitle}
             </h2>
-            <p className="font-light text-justify leading-6  text-center md:text-start mt-4">
+            <p className="font-light text-justify leading-6 text-center md:text-start mt-4">
               {locale === "pe"
                 ? data?.peMiddleImageDescription
                 : locale === "en"
@@ -63,7 +63,7 @@ export default async function AboutPage({ params }: { params: any }) {
             src={MissionAndGoal}
           />
           <p
-            className="font-light text-center text-justify leading-6 mt-4 px-2 max-w-2xl"
+            className="font-light text-center text-justify leading-6 mt-4 px-2 max-w-3xl"
             data-aos="fade-up"
             data-aos-duration="1000"
           >

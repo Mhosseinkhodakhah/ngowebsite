@@ -9,7 +9,7 @@ function AboutUsCards() {
 
   return (
     <div className="flex flex-col w-full max-w-screen-lg justify-center items-center mt-32"
-    data-aos="fade-up"
+      data-aos="fade-up"
       data-aos-duration="1000"
     >
       <div>
