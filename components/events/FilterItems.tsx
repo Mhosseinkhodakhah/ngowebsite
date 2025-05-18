@@ -57,10 +57,10 @@ function FilterItems({
         value={filter}
         onChange={handleChange}
       >
-        <Checkbox value="1">{t("Type")}</Checkbox>
-        <Checkbox value="2">{t("Type")}</Checkbox>
-        <Checkbox value="3">{t("Type")}</Checkbox>
-        <Checkbox value="4">{t("Type")}</Checkbox>
+        <Checkbox value="1">{t("Type1")}</Checkbox>
+        <Checkbox value="2">{t("Type2")}</Checkbox>
+        <Checkbox value="3">{t("Type3")}</Checkbox>
+        <Checkbox value="4">{t("Type4")}</Checkbox>
       </CheckboxGroup>
       <div className="mt-8">
         <h4 className="my-4 text-slate-500">{t("Filter by Date")}</h4>

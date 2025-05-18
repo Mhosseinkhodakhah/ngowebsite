@@ -597,7 +597,10 @@
 
   "events": {
     "Events": "Events",
-    "Type": "Type",
+    "Type1": "Education",
+    "Type2": "Youth",
+    "Type3": "Women",
+    "Type4": "climate change",
     "Filter by Type": "Filter by Type",
     "From": "From",
     "To": "To",
