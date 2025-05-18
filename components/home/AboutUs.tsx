@@ -23,7 +23,7 @@ function AboutUs({ data }: { data: any }) {
         <h1 className="text-xl font-bold border-b-5 border-primary inline">
           {t("About Us")}
         </h1>
-        <p className="w-full mt-5   text-secondary dark:text-gray font-light px-4 md:px-0 text-center md:text-start text-sm">
+        <p className="w-full mt-5  text-secondary dark:text-gray font-light px-4 md:px-0 text-center md:text-start text-sm text-justify leading-6">
           {locale === "pe"
             ? data?.peAboutUsDescription
             : locale === "en"

@@ -14,7 +14,7 @@ function NgoAvatar({ data }: { data: any }) {
         <h1 className="text-center md:text-start w-full mt-10 md:mt-0 font-bold">
           {data?.name}
         </h1>
-        <p className="text-sm font-light mt-10 text-wrap max-w-md px-4 md:px-0 text-center md:text-start">
+        <p className="text-sm font-light mt-10 text-wrap max-w-md px-4 md:px-0 text-center md:text-start text-justify leading-6">
           {data?.additionalInformation}
         </p>
       </div>

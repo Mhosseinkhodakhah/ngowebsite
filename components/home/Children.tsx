@@ -34,7 +34,7 @@ function Children({ data }: { data: any }) {
                   src={item.ruPictures[0]}
                   width={800}
                 />
-                <div className="bg-primary text-gray absolute bottom-0 w-full bg-opacity-90 text-center text-xs pt-2 px-1  text-wrap overflow-hidden py-2">
+                {/* <div className="bg-primary text-gray absolute bottom-0 w-full bg-opacity-90 text-center text-xs pt-2 px-1  text-wrap overflow-hidden py-2">
                   <p className="line-clamp-3 text-xs font-light">
                     {locale === "pe"
                       ? data?.peMiddleImageDescription
@@ -42,7 +42,7 @@ function Children({ data }: { data: any }) {
                         ? data?.enMiddleImageDescription
                         : data?.ruMiddleImageDescription}
                   </p>
-                </div>
+                </div> */}
               </div>
             )}
           </div>

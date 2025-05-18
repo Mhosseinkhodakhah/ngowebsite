@@ -23,7 +23,7 @@ function Projects({ data }: { data: any }) {
         {t("Projects")}
       </h1>
       <p
-        className={`mt-5  w-full  rounded-md  md:px-0  text-sm p-4 text-white max-w-xl text-center`}
+        className={`mt-5  w-full  rounded-md  md:px-0  text-sm p-4 text-white max-w-xl text-center text-justify leading-6`}
         data-aos="fade-up"
         data-aos-duration="1000"
       >

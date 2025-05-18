@@ -46,13 +46,13 @@ async function Page({ params }: { params: any }) {
               ? "محتوای آموزش"
               : "Образовательный контент"}
         </h2>
-        <pre className="p-4" data-aos="fade-up" data-aos-duration="1000">
+        <p className="p-4 text-justify leading-6" data-aos="fade-up" data-aos-duration="1000">
           {locale === "en"
             ? data?.educations.enEducationBody
             : locale === "pe"
               ? data?.educations.peEducationBody
               : data?.educations.ruEducationBody}
-        </pre>
+        </p>
       </div>
       <Title page="education" titleText="Similar Education" />
       {data?.similar.length > 0 && (
