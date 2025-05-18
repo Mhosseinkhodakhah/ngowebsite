@@ -27,6 +27,7 @@ export default async function AboutPage({ params }: { params: any }) {
           titleText="About Us"
         />
         <BossMessage />
+        
         <secondBossMessage />
         
 
