@@ -205,6 +205,9 @@ function BossMessage() {
           </p>
         </div>
       </div>
+
+      <Divider className="my-4" />
+
     </div>
   );
 }
