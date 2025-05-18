@@ -26,11 +26,11 @@ function InfoAndContacts({ data }: { data: any }) {
             <span>{t("Website")}</span>
           </div>
           {data?.website ? (
-            <Link className="mt-4" href={data?.website} target="_blank">
+            // <Link className="mt-4" href={data?.website} target="_blank">
               <Button className="text-white" variant="flat">
                 {t("Visit Website")}
               </Button>
-            </Link>
+            // </Link>
           ) : (
             "-"
           )}
@@ -50,25 +50,25 @@ function InfoAndContacts({ data }: { data: any }) {
           {data?.socialMedia.instagram && (
             <div className="my-2 text-white flex gap-2 items-center">
               <Instagram />
-              <span className="text-sm font-light">
+              {/* <span className="text-sm font-light">
                 {data?.socialMedia.linkedIn}
-              </span>
+              </span> */}
             </div>
           )}
           {data?.socialMedia.linkedIn && (
             <div className="my-2 text-white flex gap-2 items-center">
               <Linkedin />
-              <span className="text-sm font-light">
+              {/* <span className="text-sm font-light">
                 {data?.socialMedia.linkedIn}
-              </span>
+              </span> */}
             </div>
           )}
           {data?.socialMedia.telegram && (
             <div className="my-2 text-white flex gap-2 items-center">
               <Telegram />
-              <span className="text-sm font-light">
+              {/* <span className="text-sm font-light">
                 {data?.socialMedia.telegram}
-              </span>
+              </span> */}
             </div>
           )}
         </div>
