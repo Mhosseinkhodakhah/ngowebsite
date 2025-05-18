@@ -189,10 +189,10 @@ function BossMessage() {
       </div>
 
 
-      <Divider className="my-4 mt-8" />
+      <Divider className="my-4" />
 
 
-      <div className="flex flex-col gap-10 lg:flex-row lg:gap-2 justify-center items-center mt-8">
+      <div className="flex flex-col gap-10 lg:flex-row lg:gap-2 justify-center items-center mt-32">
         <div className="w-1/3">
           <Avatar src={BossImg.src} className="mr-3 w-[300px] h-[300px] " />
         </div>
