@@ -8,7 +8,8 @@ function AboutUsCards() {
   const tt = useTranslations("common");
 
   return (
-    <div className="flex flex-col w-full max-w-screen-lg justify-center items-center mt-32"
+    <div
+      className="flex flex-col w-full max-w-screen-lg justify-center items-center mt-32"
       data-aos="fade-up"
       data-aos-duration="1000"
     >
@@ -57,9 +58,9 @@ function AboutUsCards() {
           <div className="py-20 mx-auto lg:py-10 w-full flex justify-center items-center flex-col">
             <h2>{t("Surgery & treatment")}</h2>
             <Button
-              variant="light"
-              size="sm"
               className="mt-4 text-[10px] mx-auto"
+              size="sm"
+              variant="light"
             >
               {tt("Read More")}
             </Button>
@@ -70,7 +71,7 @@ function AboutUsCards() {
             <Icon
               color="#CCCCCC"
               height="64"
-              icon="pepicons-pop:knive-fork-circle-filled"
+              icon="mdi:climate-change"
               width="64"
             />
           </div>

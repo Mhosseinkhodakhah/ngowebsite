@@ -1,5 +1,6 @@
 "use client";
 
+import { useMemo } from "react";
 import { NavbarItem } from "@heroui/navbar";
 import clsx from "clsx";
 import { useTranslations } from "use-intl";
@@ -67,6 +68,12 @@ const Links = () => {
   const handleRoute = (mainRoute: string, route: string) => {
     router.push(`/${locale}/${mainRoute}/${route}`);
   };
+
+  const path = useMemo(() => {
+    const getRoute = pathname.split("?");
+
+    return getRoute[0];
+  }, [pathname]);
 
   return (
     <ul className="hidden lg:flex gap-4 justify-start ml-2">

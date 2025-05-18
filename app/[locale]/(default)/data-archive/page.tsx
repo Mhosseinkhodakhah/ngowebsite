@@ -44,7 +44,7 @@ async function Page({ searchParams }: { searchParams: any }) {
         </>
       ) : (
         <div
-          className="w-full flex flex-col justify-center items-center"
+          className="w-full flex flex-col justify-center items-center py-20"
           data-aos="fade-up"
           data-aos-duration="1000"
         >
