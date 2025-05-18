@@ -35,8 +35,7 @@ this
 space into a global reference point for solidarity, innovation, and the celebration of humanity’s
 intangible cultural wealth.`;
 
-const peText = `
-به نام خداوند،
+const peText = ` به نام خداوند،
 که فرهنگ را در روح بشریت دمید،
 و حافظه جهان را به او سپرد
 در جهان امروز که به‌سرعت در حال دگرگونی است و در آن، پیوند میان فرهنگ‌ها بیش از هر زمان
