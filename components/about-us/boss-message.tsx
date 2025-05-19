@@ -185,6 +185,7 @@ function BossMessage() {
           </p>
           <Divider className="my-4" />
           <p className="font-bold text-lg">{t("hokamBoss")}</p>
+          <p className="font-bold text-lg">{t("DRDarabi")}</p>
           <p className="font-light text-lg">
             {t("Director of Tehran ICH Centre2")}
           </p>
@@ -196,9 +197,9 @@ function BossMessage() {
 
       <Divider className="my-4" />
 
-      <h2 className="font-bold text-2xl my-4 mt-4">
+      {/* <h2 className="font-bold text-2xl my-4 mt-4">
         {t("Message from Director of Tehran ICH Centre")}
-      </h2>
+      </h2> */}
       <div
         className="flex flex-col gap-10 lg:flex-row lg:gap-2 justify-center items-center mt-32"
         data-aos="fade-up"
