@@ -17,7 +17,7 @@
   "navbar": {
     "Home": "Home",
     "About Us": "About Us",
-    "NGO": "NGO's",
+    "NGO": "NGOs",
     "Education": "Education",
     "Events": "Events",
     "Projects": "Projects",
@@ -28,7 +28,7 @@
     "Ru": "Russian",
     "Login": "Login",
     "Contact Us": "Contact Us",
-    "NGOs Registration": "NGO's Registration",
+    "NGOs Registration": "NGOs Registration",
     "Statistics": "Statistics",
     "Good Practice": "Good Practice",
     "Onegoing Projects": "Onegoing Projects",
@@ -48,7 +48,7 @@
     "Clean mineral water": "Youth",
     "Surgery & treatment": "Women",
     "Healthy & good food": "climate change",
-    "We Are Support NGO's to Help Them": "Focus Areas"
+    "We Are Support NGOs to Help Them": "Focus Areas"
   },
   "aboutUs": {
     "Mission and goals": "Mission and goals",
@@ -73,12 +73,12 @@
     "Projects": "Projects",
     "Have Licensed": "Have Licensed",
     "Not Have Licensed": "Not Have Licensed",
-    "Main country where the NGO works": "Main country where the NGO's works",
+    "Main country where the NGO works": "Main country where the NGOs works",
     "Area and scope of activity": "Area and scope of activity"
   },
   "NGOPage": {
     "Image of NGO activities": "Image of NGO activities",
-    "Similar NGOs": "Similar NGO's",
+    "Similar NGOs": "Similar ",
     "INFO & CONTACTS": "INFO & CONTACTS",
     "Website": "Website",
     "Mail": "Mail",

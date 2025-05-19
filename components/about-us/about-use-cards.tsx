@@ -15,7 +15,7 @@ function AboutUsCards() {
     >
       <div>
         <h2 className="font-bold text-2xl">
-          {t("We Are Support NGO's to Help Them")}
+          {t("We Are Support NGOs to Help Them")}
         </h2>
       </div>
       <div className="flex flex-col lg:flex-row h-[120vh] md:h-auto w-full justify-between max-w-screen-lg my-32 gap-20 lg:gap-10 px-5">
