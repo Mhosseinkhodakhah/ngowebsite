@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 import Title from "@/components/common/title";
-import AboutUsImage from "@/public/images/about-us-1.jpg";
+import AboutUsImage from "@/public/images/about2.jpg";
 import MissionAndGoal from "@/public/images/mission-and-goal.png";
 import { getAboutUs } from "@/actions/about-us";
 import BossMessage from "@/components/about-us/boss-message";
@@ -55,13 +55,13 @@ export default async function AboutPage({ params }: { params: any }) {
         </div>
         <div className="flex flex-col justify-center items-center my-10 max-w-screen-md">
           <Title page="aboutUs" titleText="Mission and goals" />
-          <Image
+          {/* <Image
             alt="mission and goal"
             className="md:w-1/3 w-2/3"
             data-aos="fade-up"
             data-aos-duration="1000"
             src={MissionAndGoal}
-          />
+          /> */}
           <p
             className="font-light text-center text-justify leading-6 mt-4 px-2 max-w-3xl"
             data-aos="fade-up"

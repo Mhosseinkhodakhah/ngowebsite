@@ -171,9 +171,6 @@ function BossMessage() {
 
   return (
     <div className="flex flex-col w-full max-w-screen-lg justify-start items-center mt-32">
-      <h2 className="font-bold text-2xl my-4">
-        {t("Message from Director of Tehran ICH Centre")}
-      </h2>
 
       <Divider className="my-4" />
 
@@ -183,7 +180,7 @@ function BossMessage() {
         data-aos-duration="1000"
       >
         <div className="w-2/3">
-          <p className="text-justify leading-6">
+          <p className="text-justify leading-8">
             {locale === "pe" ? peText2 : locale === "en" ? enText2 : ruText2}
           </p>
           <Divider className="my-4" />
@@ -199,6 +196,9 @@ function BossMessage() {
 
       <Divider className="my-4" />
 
+      <h2 className="font-bold text-2xl my-4 mt-4">
+        {t("Message from Director of Tehran ICH Centre")}
+      </h2>
       <div
         className="flex flex-col gap-10 lg:flex-row lg:gap-2 justify-center items-center mt-32"
         data-aos="fade-up"
@@ -208,7 +208,7 @@ function BossMessage() {
           <Avatar src={BossImg.src} className="mr-3 w-[300px] h-[300px] " />
         </div>
         <div className="w-2/3">
-          <p className="text-justify leading-6">
+          <p className="text-justify leading-8">
             {locale === "pe" ? peText : locale === "en" ? enText : ruText}
           </p>
           <Divider className="my-4" />

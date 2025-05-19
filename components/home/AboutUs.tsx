@@ -6,8 +6,8 @@ import { useParams } from "next/navigation";
 
 import AboutUsBtn from "./AboutUsBtn";
 
-import AboutUs1 from "@/public/images/about-us-1.jpg";
-import AboutUs2 from "@/public/images/about-us-2.jpg";
+import AboutUs1 from "@/public/images/about2.jpg";
+import AboutUs2 from "@/public/images/about1.jpg";
 
 function AboutUs({ data }: { data: any }) {
   const t = useTranslations("navbar");
