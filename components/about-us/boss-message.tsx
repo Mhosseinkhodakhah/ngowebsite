@@ -201,7 +201,7 @@ function BossMessage() {
         {t("Message from Director of Tehran ICH Centre")}
       </h2> */}
       <div
-        className="flex flex-col gap-10 lg:flex-row lg:gap-2 justify-center items-center mt-32"
+        className="flex flex-col gap-10 lg:flex-row lg:gap-2 justify-start items-center mt-32"
         data-aos="fade-up"
         data-aos-duration="1000"
       >
