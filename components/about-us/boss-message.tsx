@@ -185,7 +185,7 @@ function BossMessage() {
           </p>
           <Divider className="my-4" />
           <p className="font-bold text-lg">{t("hokamBoss")}</p>
-          <p className="font-bold text-lg">{t("DRDarabi")}</p>
+          {/* <p className="font-bold text-lg">{t("DRDarabi")}</p> */}
           <p className="font-light text-lg">
             {t("Director of Tehran ICH Centre2")}
           </p>
