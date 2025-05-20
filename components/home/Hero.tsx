@@ -56,7 +56,7 @@ function Hero({ data }: HeroProps) {
                       ? data?.enDescription
                       : data?.ruDescription}
                 </p>
-                <Link href="/ngo/ngos-registeration">
+                <Link href="/ngo/ngos-registration">
                   <Button
                     className="mt-4 text-gray"
                     color="primary"
