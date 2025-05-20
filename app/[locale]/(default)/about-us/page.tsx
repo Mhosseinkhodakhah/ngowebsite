@@ -63,7 +63,10 @@ export default async function AboutPage({ params }: { params: any }) {
           <Title page="aboutUs" titleText="Mission and goals" />
 
           <ol class="space-y-6 list-decimal pr-5 mt-4">
-            <li class="text-gray-700">
+             {locale === "pe"
+              ? (
+                <>
+                   <li class="text-gray-700">
               <span class="font-semibold bg-yellow-100 px-1 rounded">تقویت و گسترش شبکه سمن‌های فعال:</span>
               ایجاد و تقویت شبکه‌ای گسترده از سازمان‌های مردم‌نهاد (NGOs) فعال در حوزه میراث فرهنگی ناملموس
               در آسیای غربی و مرکزی، به منظور تسهیل ارتباطات و اشتراک‌گذاری دانش و تجربیات.
@@ -109,7 +112,115 @@ export default async function AboutPage({ params }: { params: any }) {
               <span class="font-semibold bg-yellow-100 px-1 rounded">ترویج تحقیقات و مستندسازی:</span>
               تقویت فعالیت‌های پژوهشی و مستندسازی به منظور انتقال بهتر دانش فرهنگی به
               نسل‌های آینده.
-            </li>
+            </li>     
+                </>
+              )
+              : locale === "en"
+                ? (
+                  <>
+                    <li class="text-gray-700">
+                    <span class="font-semibold bg-yellow-100 px-1 rounded">Strengthening and expanding the network of active NGOs:</span> 
+                    Establishing and strengthening a broad network of non-governmental organizations (NGOs) 
+                    active in the field of intangible cultural heritage in Western and Central Asia, 
+                    to facilitate communication and sharing of knowledge and experiences.
+                </li>
+                
+                <li class="text-gray-700">
+                    <span class="font-semibold bg-yellow-100 px-1 rounded">Awareness-raising about the role of NGOs in the 2003 Convention:</span> 
+                    Increasing NGOs' awareness of their importance and role in implementing the 2003 UNESCO Convention,
+                    and promoting best practices for safeguarding intangible cultural heritage.
+                </li>
+                
+                <li class="text-gray-700">
+                    <span class="font-semibold bg-yellow-100 px-1 rounded">Creating a database of NGOs:</span> 
+                    Identifying, documenting, and mapping active NGOs in the region to
+                    facilitate communication, joint planning, and information exchange.
+                </li>
+                
+                <li class="text-gray-700">
+                    <span class="font-semibold bg-yellow-100 px-1 rounded">Expanding international cooperation:</span> 
+                    Strengthening cross-border cooperation among NGOs to share knowledge, resources
+                    and experiences, and building cultural bridges to strengthen indigenous identities.
+                </li>
+                
+                <li class="text-gray-700">
+                    <span class="font-semibold bg-yellow-100 px-1 rounded">Safeguarding intangible cultural heritage:</span> 
+                    Supporting regional efforts to preserve and promote intangible cultural heritage,
+                    emphasizing its importance in strengthening cultural identity.
+                </li>
+                
+                <li class="text-gray-700">
+                    <span class="font-semibold bg-yellow-100 px-1 rounded">Capacity building and training:</span> 
+                    Empowering NGOs through training courses, specialized workshops and enhancing
+                    local capacities for effective cultural heritage protection.
+                </li>
+
+                    <li class="text-gray-700">
+                      <span class="font-semibold bg-yellow-100 px-1 rounded">Public awareness raising:</span>
+                      Increasing public awareness about the importance of intangible cultural heritage and its role in sustainable
+                      development of local communities.
+                    </li>
+
+                    <li class="text-gray-700">
+                      <span class="font-semibold bg-yellow-100 px-1 rounded">Promoting research and documentation:</span>
+                      Strengthening research and documentation activities to better transmit cultural knowledge to
+                      future generations.
+                    </li>
+                  </>
+                )
+                : (
+                  <>
+                    <li class="mission-item text-gray-700">
+                      <span class="font-semibold bg-yellow-100 px-1 rounded">Укрепление и расширение сети активных НПО:</span>
+                      Создание и укрепление широкой сети неправительственных организаций (НПО),
+                      работающих в сфере нематериального культурного наследия в Западной и Центральной Азии,
+                      для облегчения коммуникации и обмена знаниями и опытом.
+                    </li>
+
+                    <li class="mission-item text-gray-700">
+                      <span class="font-semibold bg-yellow-100 px-1 rounded">Информирование о роли НПО в Конвенции 2003 года:</span>
+                      Повышение осведомленности НПО об их важности и роли в реализации Конвенции ЮНЕСКО 2003 года
+                      и продвижение передовых методов сохранения нематериального культурного наследия.
+                    </li>
+
+                    <li class="mission-item text-gray-700">
+                      <span class="font-semibold bg-yellow-100 px-1 rounded">Создание базы данных НПО:</span>
+                      Выявление, документирование и картирование активных НПО в регионе
+                      для облегчения коммуникации, совместного планирования и обмена информацией.
+                    </li>
+
+                    <li class="mission-item text-gray-700">
+                      <span class="font-semibold bg-yellow-100 px-1 rounded">Расширение международного сотрудничества:</span>
+                      Укрепление трансграничного сотрудничества между НПО для обмена знаниями, ресурсами
+                      и опытом, а также создание культурных мостов для укрепления местной идентичности.
+                    </li>
+
+                    <li class="mission-item text-gray-700">
+                      <span class="font-semibold bg-yellow-100 px-1 rounded">Сохранение нематериального культурного наследия:</span>
+                      Поддержка региональных усилий по сохранению и продвижению нематериального культурного наследия,
+                      с акцентом на его важность для укрепления культурной идентичности.
+                    </li>
+
+                    <li class="mission-item text-gray-700">
+                      <span class="font-semibold bg-yellow-100 px-1 rounded">Развитие потенциала и обучение:</span>
+                      Укрепление потенциала НПО через учебные курсы, специализированные семинары и развитие
+                      местных возможностей для эффективной защиты культурного наследия.
+                    </li>
+
+                    <li class="mission-item text-gray-700">
+                      <span class="font-semibold bg-yellow-100 px-1 rounded">Повышение общественной осведомленности:</span>
+                      Повышение осведомленности общественности о важности нематериального культурного наследия и его роли
+                      в устойчивом развитии местных сообществ.
+                    </li>
+
+                    <li class="mission-item text-gray-700">
+                      <span class="font-semibold bg-yellow-100 px-1 rounded">Содействие исследованиям и документированию:</span>
+                      Усиление исследовательской деятельности и документирования для лучшей передачи культурных знаний
+                      будущим поколениям.
+                    </li>
+                  </>
+                )
+            }
           </ol>
 
           {/* <Image
@@ -124,14 +235,40 @@ export default async function AboutPage({ params }: { params: any }) {
             data-aos="fade-up"
             data-aos-duration="1000"
           >
-            {locale === "pe"
-              ? data?.peMissionAndGoals
-              : locale === "en"
-                ? data?.enMissionAndGoals
-                : data?.ruMissionAndGoals}
+              {locale === "pe"
+                ? data?.peMissionAndGoals
+                : locale === "en"
+                  ? data?.enMissionAndGoals
+                  : data?.ruMissionAndGoals}
           </p> */}
         </div>
       </section>
     </>
   );
 }
+
+
+
+//  {locale === "en" ? (
+//             <>
+//               <p className="font-bold">{t("En")}</p>
+//               <ArrowDown />
+//             </>
+//           ) : locale === "pe" ? (
+//             <>
+//               <p className="font-bold">{t("Fa")}</p>
+//               <ArrowDown />
+//             </>
+//           ) : locale === "ru" ? (
+//             <>
+//               <p className="font-bold">{t("Ru")}</p>
+//               <ArrowDown />
+//             </>
+//           ) : null}
+
+
+
+
+// <ol class="space-y-6 list-decimal pl-5">
+                
+//             </ol>
