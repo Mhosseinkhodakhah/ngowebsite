@@ -57,12 +57,12 @@ export default async function AboutPage({ params }: { params: any }) {
           </div>
         </div>
 
-        <Divider className="my-4" />
+        {/* <Divider className="my-4" /> */}
 
         <div className="flex flex-col justify-center items-center my-10 max-w-screen-md">
           <Title page="aboutUs" titleText="Mission and goals" />
 
-          <ol class="space-y-6 list-decimal pr-5">
+          <ol class="space-y-6 list-decimal pr-5 mt-4">
             <li class="text-gray-700">
               <span class="font-semibold bg-yellow-100 px-1 rounded">تقویت و گسترش شبکه سمن‌های فعال:</span>
               ایجاد و تقویت شبکه‌ای گسترده از سازمان‌های مردم‌نهاد (NGOs) فعال در حوزه میراث فرهنگی ناملموس
