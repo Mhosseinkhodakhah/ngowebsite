@@ -48,14 +48,18 @@ function Title({
         {page ? t(titleText) : titleText}
       </h1>
       {description ? (
-        <p
+        <div
+          dangerouslySetInnerHTML={{ __html: description }}
           className={`mt-5  w-full  text-secondary dark:text-gray  rounded-md  md:px-0  text-sm p-4 ${className ? className : "text-center max-w-screen-md"}`}
           data-aos="fade-up"
           data-aos-duration="1000"
-        >
-          {description}
-        </p>
+        />
       ) : (
+        // <p
+
+        // >
+        //   {description}
+        // </p>
         false
       )}
     </>

@@ -40,14 +40,14 @@ const NgoTable = ({ data }: { data: any }) => {
       headerName: t("Name"),
       field: "name",
     },
-    {
-      headerName: t("Country"),
-      field: "country",
-      width: 200,
-      cellRenderer: (params: any) => {
-        return translate(params.value);
-      },
-    },
+    // {
+    //   headerName: t("Country"),
+    //   field: "country",
+    //   width: 200,
+    //   cellRenderer: (params: any) => {
+    //     return translate(params.value);
+    //   },
+    // },
     {
       headerName: t("Area And Scope"),
       field: "areaAndScope",
@@ -60,14 +60,14 @@ const NgoTable = ({ data }: { data: any }) => {
             : params.value[0];
       },
     },
-    {
-      headerName: t("Projects"),
-      field: "projects",
-      width: 150,
-      cellRenderer: (params: any) => {
-        return params.value.length;
-      },
-    },
+    // {
+    //   headerName: t("Projects"),
+    //   field: "projects",
+    //   width: 150,
+    //   cellRenderer: (params: any) => {
+    //     return params.value.length;
+    //   },
+    // },
     {
       headerName: t("Activity Field"),
       field: "activityField",

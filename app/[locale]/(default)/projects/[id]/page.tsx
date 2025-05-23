@@ -35,7 +35,7 @@ async function Page({ params }: { params: { id: string; locale: string } }) {
         description={goalAndAchievements[0]}
         titleText="Goal And Achievements"
       />
-      {status[0] === "completed" && <CompletedProject data={data} />}
+      {status?.includes("completed") && <CompletedProject data={data} />}
 
       <ProjectInfo data={data?.data} locale={locale} />
       {documentsAndReports && <DocumentsAndReports data={data?.data} />}

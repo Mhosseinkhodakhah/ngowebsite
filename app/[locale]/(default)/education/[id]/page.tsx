@@ -46,13 +46,26 @@ async function Page({ params }: { params: any }) {
               ? "محتوای آموزش"
               : "Образовательный контент"}
         </h2>
-        <p className="p-4 text-justify leading-6" data-aos="fade-up" data-aos-duration="1000">
+        <div
+          dangerouslySetInnerHTML={{
+            __html:
+              locale === "en"
+                ? data?.educations.enEducationBody
+                : locale === "pe"
+                  ? data?.educations.peEducationBody
+                  : data?.educations.ruEducationBody,
+          }}
+          className="p-4 text-justify leading-10"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+        />
+        {/* <pre>
           {locale === "en"
             ? data?.educations.enEducationBody
             : locale === "pe"
               ? data?.educations.peEducationBody
               : data?.educations.ruEducationBody}
-        </p>
+        </pre> */}
       </div>
       <Title page="education" titleText="Similar Education" />
       {data?.similar.length > 0 && (

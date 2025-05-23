@@ -34,7 +34,8 @@ async function Page({
       />
 
       <ProjectList
-        data={data}
+        all={data?.data?.all}
+        data={data?.data?.projects || []}
         page={page}
         route="completed-projects"
         status={status}

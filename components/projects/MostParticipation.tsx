@@ -34,18 +34,12 @@ function MostParticipation({ data }: { data: any }) {
                   }
                   name={project?.name}
                   ngo={project?.ngo}
-                  route={`/projects/${project?._id}`}
-                  status={
-                    project?.status[0] === "goodPractice"
-                      ? t("Good Practice")
-                      : project?.status[0] === "ongoing"
-                        ? t("Ongoing")
-                        : project?.status[0] === "completed"
-                          ? t("Completed")
-                          : project?.status[0] === "collaborationOpportunities"
-                            ? t("Collaboration Opportunities")
-                            : t("")
+                  route={
+                    project?.status?.includes("completed")
+                      ? `/projects/completed-projects/${project?._id}`
+                      : `/projects/${project?._id}`
                   }
+                  status={project?.status}
                 />
               </SwiperSlide>
             ))}

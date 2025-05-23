@@ -37,7 +37,8 @@ async function Page({
         <div className="flex gap-4 w-full m-4 px-2 lg:px-10 mt-20">
           <FilterEvents query={{ end, sort, start, type, page }} />
           <EventsList
-            data={data?.data}
+            all={data?.data?.all}
+            data={data?.data?.event}
             query={{ end, sort, start, type, page }}
           />
         </div>

@@ -9,11 +9,13 @@ import PlaceHolder from "@/public/images/placeholder.png";
 import Empty from "@/public/images/empty.webp";
 
 function ProjectList({
+  all,
   data,
   route,
   page,
   status,
 }: {
+  all: number;
   data: any;
   route: string;
   page: string;
@@ -23,9 +25,9 @@ function ProjectList({
 
   return (
     <>
-      {data?.data.length ? (
+      {data?.length ? (
         <div className="w-full max-w-screen-lg grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-20">
-          {data?.data?.map((project: any) => (
+          {data?.map((project: any) => (
             <Card
               key={project?._id}
               btnText="Read More"
@@ -38,17 +40,7 @@ function ProjectList({
               name={project?.name}
               ngo={project?.ngo}
               route={`/projects/${route}/${project?._id}`}
-              status={
-                project?.status[0] === "goodPractice"
-                  ? t("Good Practice")
-                  : project?.status[0] === "ongoing"
-                    ? t("Ongoing")
-                    : project?.status[0] === "completed"
-                      ? t("Completed")
-                      : project?.status[0] === "collaborationOpportunities"
-                        ? t("Collaboration Opportunities")
-                        : t("")
-              }
+              status={project?.status}
             />
           ))}
         </div>
@@ -57,16 +49,23 @@ function ProjectList({
           <Image
             alt="Empty"
             className="w-[200px] h-[200px] object-contain"
-            height={100}
+            height={500}
             src={Empty}
-            width={100}
+            width={500}
           />
         </div>
       )}
 
-      <div className="mt-10 w-full justify-center items-center flex">
-        <PaginationProjects page={page} route={route} status={status} />
-      </div>
+      {Math.floor(all / 10) > 0 && (
+        <div className="mt-10 w-full justify-center items-center flex">
+          <PaginationProjects
+            all={all}
+            page={page}
+            route={route}
+            status={status}
+          />
+        </div>
+      )}
     </>
   );
 }

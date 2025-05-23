@@ -11,9 +11,11 @@ import handleQuery from "@/utils/handleQuery";
 import { useRouter } from "@/i18n/navigation";
 
 function EventsList({
+  all,
   data,
   query,
 }: {
+  all: number;
   data: any;
   query: { end: any; start: any; sort: any; type: any; page: any };
 }) {
@@ -70,33 +72,35 @@ function EventsList({
           />
         ))}
       </div>
-      <div className="mt-10 w-full justify-center items-center flex my-10">
-        <Pagination
-          showControls
-          showShadow
-          classNames={{
-            cursor: "bg-primary text-white",
-          }}
-          color="primary"
-          initialPage={query.page ? +query.page : 1}
-          total={10}
-          variant="bordered"
-          onChange={(value) => {
-            const val = {
-              route: "events",
-              type: query.type,
-              end: query.end,
-              start: query.start,
-              sort: query.sort,
-              page: value.toString(),
-            };
+      {Math.floor(all / 10) > 0 && (
+        <div className="mt-10 w-full justify-center items-center flex my-10">
+          <Pagination
+            showControls
+            showShadow
+            classNames={{
+              cursor: "bg-primary text-white",
+            }}
+            color="primary"
+            initialPage={query.page ? +query.page : 1}
+            total={Math.floor(all / 10)}
+            variant="bordered"
+            onChange={(value) => {
+              const val = {
+                route: "events",
+                type: query.type,
+                end: query.end,
+                start: query.start,
+                sort: query.sort,
+                page: value.toString(),
+              };
 
-            const getRoute = handleQuery(val);
+              const getRoute = handleQuery(val);
 
-            router.push(getRoute);
-          }}
-        />
-      </div>
+              router.push(getRoute);
+            }}
+          />
+        </div>
+      )}
     </div>
   );
 }

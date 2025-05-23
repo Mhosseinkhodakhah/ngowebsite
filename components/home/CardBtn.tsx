@@ -6,12 +6,20 @@ import { Icon } from "@iconify/react";
 
 import { useRouter } from "@/i18n/navigation";
 
-function CardBtn() {
+function CardBtn({ status, id }: { status?: any[]; id: string }) {
   const t = useTranslations("common");
   const router = useRouter();
 
   const handlePressed = () => {
-    router.push("/projects");
+    if (status) {
+      if (status?.includes("completed")) {
+        router.push(`/projects/completed-projects/${id}`);
+      } else {
+        router.push(`/projects/${id}`);
+      }
+    } else {
+      router.push(`/projects/${id}`);
+    }
   };
 
   return (

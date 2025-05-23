@@ -12,7 +12,9 @@
     "Submit": "Submit",
     "Please Waiting": "Please Waiting",
     "The list is empty": "The list is empty",
-    "Download": "Download"
+    "Download": "Download",
+    "Count of NGOs": "Count of NGOs",
+    "Number of NGOs": "Number of NGOs"
   },
 
   "navbar": {
@@ -57,8 +59,8 @@
     "Dr Atousa Momeni": "Dr. Atousa Momeni",
     "Director of Tehran ICH Centre": "Cultural Heritage in West and Central Asia – under the auspices of UNESCO",
     "Director of Tehran ICH Centre2": "Regional Research Centre for Safeguarding Intangible Cultural Heritage in West and Central Asia under the auspices of UNESCO (Tehran ICH Centre)",
-    "hokamBoss" : "Dr Ali Darabi , Chair of the Governing Council",
-    "DRDarabi" : "Dr Ali Darabi"
+    "hokamBoss": "Dr Ali Darabi , Chair of the Governing Council",
+    "DRDarabi": "Dr Ali Darabi"
   },
   "NGO": {
     "Logo": "Logo",
@@ -585,7 +587,11 @@
     "Completed Reports is required": "Completed Reports is required",
     "Completed Reports must be at least 200 characters": "Completed Reports must be at least 200 characters",
     "Impact on the protection of intangible heritage is required": "Impact on the protection of intangible heritage is required",
-    "Impact on the protection of intangible heritage must be at least 200 characters": "Impact on the protection of intangible heritage must be at least 200 characters"
+    "Impact on the protection of intangible heritage must be at least 200 characters": "Impact on the protection of intangible heritage must be at least 200 characters",
+    "Establishment Year": "Establishment Year",
+    "Address": "Address",
+    "Completed Projects": "Completed Projects",
+    "Ongoing Projects": "Ongoing Projects"
   },
 
   "education": {

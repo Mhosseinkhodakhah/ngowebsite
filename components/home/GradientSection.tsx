@@ -6,10 +6,12 @@ import Link from "next/link";
 import { useParams } from "next/navigation";
 
 import ChildrenImage from "@/public/images/ngowebsplash.webp";
+import useStore from "@/store";
 
 function GradientSection() {
   const t = useTranslations("homePage");
   const { locale } = useParams();
+  const isLogin = useStore((state: any) => state.isLogin);
 
   return (
     <section
@@ -36,12 +38,13 @@ function GradientSection() {
           <p className="font-light w-2/3 text-center">
             {t("Spreading Joy Building Futures One Smile at a Time")}
           </p>
-
-          <Button className="w-1/2">
-            <Link href={`${locale}/ngo/ngos-registration`}>
-              {t("Join the Movement")}
-            </Link>
-          </Button>
+          {!isLogin && (
+            <Button className="w-1/2">
+              <Link href={`${locale}/ngo/ngos-registration`}>
+                {t("Join the Movement")}
+              </Link>
+            </Button>
+          )}
         </div>
       </div>
     </section>

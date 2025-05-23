@@ -6,10 +6,12 @@ import Link from "next/link";
 import { useParams } from "next/navigation";
 
 import ImageBanner from "@/public/images/last-banner.jpeg";
+import useStore from "@/store";
 
 function LastBanner() {
   const t = useTranslations("homePage");
   const { locale } = useParams();
+  const isLogin = useStore((state: any) => state.isLogin);
 
   return (
     <section
@@ -30,12 +32,13 @@ function LastBanner() {
       >
         <div className=" h-[50%] w-[35%] justify-center flex flex-col gap-5 items-center ml-10  text-white">
           <h2 className="text-2xl text-start">{t("Evryone can help")}</h2>
-
-          <Button className="w-1/2">
-            <Link href={`${locale}/ngo/ngos-registration`}>
-              {t("Join the Movement")}
-            </Link>
-          </Button>
+          {!isLogin && (
+            <Button className="w-1/2">
+              <Link href={`${locale}/ngo/ngos-registration`}>
+                {t("Join the Movement")}
+              </Link>
+            </Button>
+          )}
         </div>
       </div>
     </section>

@@ -33,7 +33,7 @@ function Footer() {
 
   return (
     <footer
-      className={`${pathname.includes("login") ? "hidden" : "block"} w-full bg-gradient-to-tr from-primary to-slate-800 p-4`}
+      className={`${pathname.includes("login") ? "hidden" : "block"} w-full bg-gradient-to-tr from-primary to-slate-800 p-4 mt-10`}
     >
       <section className="w-full grid md:grid-rows-1 md:grid-cols-3 justify-center items-center">
         <LeftSection data={data?.data} />

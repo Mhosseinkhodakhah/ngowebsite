@@ -13,10 +13,10 @@ import { useParams } from "next/navigation";
 import handleQuery from "@/utils/handleQuery";
 import CardButton from "./card-button";
 
-
-  // const router = useRouter();
+// const router = useRouter();
 
 import PlaceHolder from "@/public/images/placeholder.png";
+import { useTranslations } from "use-intl";
 
 interface Props {
   name: string;
@@ -41,6 +41,8 @@ function CardComponent({
 }: Props) {
   const { locale } = useParams();
 
+  const t = useTranslations("projects");
+
   return (
     <Card
       as="article"
@@ -55,7 +57,7 @@ function CardComponent({
           {admin ? (
             <>
               <Avatar
-              alt={ngo?.username}
+                alt={ngo?.username}
                 className={`${locale === "pe" ? "order-2" : "order-1"}`}
                 src={PlaceHolder.src}
               />
@@ -110,6 +112,26 @@ function CardComponent({
             {status.includes("word") && (
               <Chip className="text-gray " color="primary" size="sm">
                 <Icon icon="flowbite:file-word-solid" width="24" height="24" />
+              </Chip>
+            )}
+            {status.includes("goodPractice") && (
+              <Chip className="text-gray " color="primary" size="sm">
+                {t("Good Practice")}
+              </Chip>
+            )}
+            {status.includes("ongoing") && (
+              <Chip className="text-gray " color="warning" size="sm">
+                {t("Ongoing")}
+              </Chip>
+            )}
+            {status.includes("completed") && (
+              <Chip className="text-gray " color="success" size="sm">
+                {t("Completed")}
+              </Chip>
+            )}
+            {status.includes("collaborationOpportunities") && (
+              <Chip className="text-gray " color="primary" size="sm">
+                {t("Collaboration Opportunities")}
               </Chip>
             )}
           </div>

@@ -43,16 +43,41 @@ function ProjectCard({ project }: { project: any }) {
           src={project?.visualDocuments[0]?.files[0] || PlaceHolderImage}
           width={700}
         />
-        <Chip
-          className="text-xs p-2  text-gray rounded-md w-max my-2"
-          color="primary"
-        >
-          {project?.status?.includes("ongoing")
-            ? t("Ongoing")
-            : project?.status.includes("completed")
-              ? t("Completed")
-              : ""}
-        </Chip>
+        <div className="flex gap-2 flex-wrap items-center">
+          {project?.status?.includes("ongoing") && (
+            <Chip
+              className="text-xs p-2  text-gray rounded-md w-max my-2"
+              color="warning"
+            >
+              {t("Ongoing")}
+            </Chip>
+          )}
+          {project?.status?.includes("completed") && (
+            <Chip
+              className="text-xs p-2  text-gray rounded-md w-max my-2"
+              color="success"
+            >
+              {t("Completed")}
+            </Chip>
+          )}
+          {project?.status?.includes("collaborationOpportunities") && (
+            <Chip
+              className="text-xs p-2  text-gray rounded-md w-max my-2"
+              color="primary"
+            >
+              {t("Collaboration Opportunities")}
+            </Chip>
+          )}
+          {project?.status?.includes("goodPractice") && (
+            <Chip
+              className="text-xs p-2  text-gray rounded-md w-max my-2"
+              color="primary"
+            >
+              {t("Good Practice")}
+            </Chip>
+          )}
+        </div>
+
         <div className="py-6 px-2">
           <h4 className="font-bold p-2 text-wrap">
             {project?.name?.slice(0, 100)}...
@@ -65,7 +90,7 @@ function ProjectCard({ project }: { project: any }) {
       <Divider />
       <CardFooter>
         <div className="flex justify-end w-full">
-          <CardBtn />
+          <CardBtn status={project?.status} id={project?._id} />
         </div>
       </CardFooter>
     </Card>

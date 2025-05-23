@@ -12,7 +12,9 @@
     "Submit": "Представлять на рассмотрение",
     "Please Waiting": "Пожалуйста, подождите",
     "The list is empty": "Список пуст",
-    "Download": "Скачать"
+    "Download": "Скачать",
+    "Count of NGOs": "Количество НПО",
+    "Number of NGOs": "Количество НПО"
   },
   "navbar": {
     "Home": "Дом",
@@ -55,8 +57,8 @@
     "Message from Director of Tehran ICH Centre": "Сообщение директора Центра НКНТ в Тегеране",
     "Dr Atousa Momeni": "Доктор Атоуса Момени",
     "Director of Tehran ICH Centre": "Руководитель Регионального исследовательского центра по сохранению нематериального культурного наследия в Западной и Центральной Азии – под эгидой ЮНЕСКО",
-    "hokamBoss" : "Доктор Али Дараби , Председатель Совета управляющих",
-    "DRDarabi" : "Доктор Али Дараби",
+    "hokamBoss": "Доктор Али Дараби , Председатель Совета управляющих",
+    "DRDarabi": "Доктор Али Дараби",
     "Director of Tehran ICH Centre2": "Региональный научно-исследовательский центр по сохранению нематериального культурного наследия в Западной и Центральной Азии под эгидой ЮНЕСКО (Тегеранский центр НКН)"
   },
   "NGO": {
@@ -580,7 +582,11 @@
     "Completed Reports is required": "Требуются заполненные отчеты",
     "Completed Reports must be at least 200 characters": "Заполненные отчеты должны содержать не менее 200 символов",
     "Impact on the protection of intangible heritage is required": "Необходимо воздействие на защиту нематериального наследия",
-    "Impact on the protection of intangible heritage must be at least 200 characters": "Влияние на защиту нематериального наследия должно быть не менее 200 символов"
+    "Impact on the protection of intangible heritage must be at least 200 characters": "Влияние на защиту нематериального наследия должно быть не менее 200 символов",
+    "Establishment Year": "Год основания",
+    "Address": "Адрес",
+    "Completed Projects": "Завершенные проекты",
+    "Ongoing Projects": "Текущие проекты"
   },
   "education": {
     "Filter by file format": "Фильтровать по формату файла",
@@ -593,7 +599,7 @@
 
   "events": {
     "Events": "События",
-     "Type1": "детей",
+    "Type1": "детей",
     "Type2": "Молодость",
     "Type3": "Женщины",
     "Type4": "Здоровая и вкусная еда",

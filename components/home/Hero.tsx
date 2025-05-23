@@ -1,6 +1,5 @@
 "use client";
 
-import { useEffect } from "react";
 import { useParams } from "next/navigation";
 import Image from "next/image";
 import { Button } from "@heroui/button";
@@ -8,9 +7,9 @@ import { useTranslations } from "next-intl";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 
-import { Link } from "@/i18n/navigation";
-
 import "swiper/css";
+import useStore from "@/store";
+import { Link } from "@/i18n/navigation";
 
 interface HeroProps {
   data: any;
@@ -19,6 +18,7 @@ interface HeroProps {
 function Hero({ data }: HeroProps) {
   const t = useTranslations("homePage");
   const { locale } = useParams();
+  const isLogin = useStore((state: any) => state.isLogin);
 
   return (
     <section className="h-screen flex justify-center relative">
@@ -56,15 +56,17 @@ function Hero({ data }: HeroProps) {
                       ? data?.enDescription
                       : data?.ruDescription}
                 </p>
-                <Link href="/ngo/ngos-registration">
-                  <Button
-                    className="mt-4 text-gray"
-                    color="primary"
-                    variant="shadow"
-                  >
-                    {t("Join Us")}
-                  </Button>
-                </Link>
+                {!isLogin && (
+                  <Link href="/ngo/ngos-registration">
+                    <Button
+                      className="mt-4 text-gray"
+                      color="primary"
+                      variant="shadow"
+                    >
+                      {t("Join Us")}
+                    </Button>
+                  </Link>
+                )}
               </div>
             </div>
           </SwiperSlide>

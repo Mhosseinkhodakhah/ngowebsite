@@ -46,13 +46,27 @@ async function Page({ params }: { params: any }) {
               : "Содержание мероприятия"}
         </h2>
 
-        <p className="p-4 text-justify leading-6" data-aos="fade-up" data-aos-duration="1000">
+        <div
+          dangerouslySetInnerHTML={{
+            __html:
+              locale === "en"
+                ? data?.events?.enEventsBody
+                : locale === "pe"
+                  ? data?.events?.peEventsBody
+                  : data?.events?.ruEventsBody,
+          }}
+          className="p-4 text-justify leading-10"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+        />
+
+        {/* <pre className="p-4" data-aos="fade-up" data-aos-duration="1000">
           {locale === "en"
             ? data?.events?.enEventsBody
             : locale === "pe"
               ? data?.events?.peEventsBody
               : data?.events?.ruEventsBody}
-        </p>
+        </pre> */}
       </div>
       <Title page="events" titleText="Similar Events" />
 

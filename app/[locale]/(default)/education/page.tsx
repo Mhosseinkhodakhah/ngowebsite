@@ -9,7 +9,10 @@ import Empty from "@/components/common/empty";
 async function Page(params: any) {
   const { type, sort, start, end, page } = await params.searchParams;
   const { locale } = await params.params;
+  // const { all, educations } = await getEducations(type, sort, start, end, page);
   const data = await getEducations(type, sort, start, end, page);
+
+  console.log("dddd ", data?.data);
 
   const descriptions = await getDescriptionPage("educations");
 
@@ -26,7 +29,7 @@ async function Page(params: any) {
         page="navbar"
         titleText="Education"
       />
-      {data ? (
+      {data?.data?.educations ? (
         <div
           className="flex gap-4 w-full m-4 px-2 lg:px-10 mt-20"
           data-aos="fade-up"
@@ -34,7 +37,8 @@ async function Page(params: any) {
         >
           <FilterEducation query={{ end, sort, start, type, page }} />
           <EducationList
-            data={data?.data}
+            all={data?.data?.all}
+            data={data?.data?.educations}
             query={{ end, sort, start, type, page }}
           />
         </div>

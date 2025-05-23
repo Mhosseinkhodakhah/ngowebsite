@@ -22,6 +22,8 @@ async function Page({
 
   const { data: descriptionData } = await getCollaborationProjects();
 
+  console.log("vaasva", data);
+
   return (
     <section className="flex flex-col justify-center items-center">
       <Title
@@ -37,7 +39,8 @@ async function Page({
       />
 
       <ProjectList
-        data={data}
+        all={data?.data?.all}
+        data={data?.data?.projects || []}
         page={page}
         route="collaboration-opportunities"
         status={status}
