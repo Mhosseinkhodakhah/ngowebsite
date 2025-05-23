@@ -5,11 +5,16 @@ import { Avatar } from "@heroui/avatar";
 import { Card, CardBody, CardFooter, CardHeader } from "@heroui/card";
 import { Chip } from "@heroui/chip";
 import { Icon } from "@iconify/react";
+import { useRouter } from "@/i18n/navigation";
 
 import { Divider } from "@heroui/divider";
 import { useParams } from "next/navigation";
 
+import handleQuery from "@/utils/handleQuery";
 import CardButton from "./card-button";
+
+
+  // const router = useRouter();
 
 import PlaceHolder from "@/public/images/placeholder.png";
 
@@ -50,7 +55,7 @@ function CardComponent({
           {admin ? (
             <>
               <Avatar
-                alt={ngo?.username}
+              alt={ngo?.username}
                 className={`${locale === "pe" ? "order-2" : "order-1"}`}
                 src={PlaceHolder.src}
               />
