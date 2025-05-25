@@ -27,7 +27,7 @@ async function Page({ params }: { params: { id: string; locale: string } }) {
         {name}
       </h1>
       <p
-        className={`mt-5  w-full  text-secondary dark:text-gray font-light px-4 md:px-0 text-center max-w-screen-md`}
+        className={`mt-5  w-full  text-secondary dark:text-gray font-light px-4 md:px-0 text-justify max-w-screen-md`}
       >
         {description}
       </p>

@@ -55,11 +55,6 @@ function Title({
           data-aos-duration="1000"
         />
       ) : (
-        // <p
-
-        // >
-        //   {description}
-        // </p>
         false
       )}
     </>

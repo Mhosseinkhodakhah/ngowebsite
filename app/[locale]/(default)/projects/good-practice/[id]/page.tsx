@@ -21,11 +21,11 @@ async function Page({ params }: { params: any; locale: string }) {
 
   return (
     <section className="flex flex-col justify-center items-center">
-      <h1 className="text-xl font-bold border-b-5 border-primary mt-20">
+      <h1 className="text-xl font-bold border-b-5 border-primary mt-20 text-justify px-6 lg:px-0 w-[90%] lg:w-max">
         {name}
       </h1>
       <p
-        className={`mt-5  w-full  text-secondary dark:text-gray font-light px-4 md:px-0 text-center max-w-screen-md`}
+        className={`mt-5  w-full  text-secondary dark:text-gray font-light  md:px-0  max-w-screen-md text-justify px-6 lg:px-0`}
       >
         {description}
       </p>

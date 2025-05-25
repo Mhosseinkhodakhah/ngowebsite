@@ -37,7 +37,11 @@ export default async function AboutPage({ params }: { params: any }) {
         <AboutUsCards />
         <div className="mt-20 flex flex-col md:flex-row justify-around max-w-screen-lg">
           <div className="flex-1" data-aos="fade-up" data-aos-duration="1000">
-            <Image alt="about us" className="md:w-2/3" src={AboutUsImage} />
+            <Image
+              alt="about us"
+              className="w-full px-4 lg:px-0 lg:w-2/3"
+              src={AboutUsImage}
+            />
           </div>
           <div className="flex-1" data-aos="fade-up" data-aos-duration="1000">
             {/* <div dangerouslySetInnerHTML={}/> */}
@@ -50,7 +54,7 @@ export default async function AboutPage({ params }: { params: any }) {
                       ? data?.enTitle
                       : data?.ruTitle,
               }}
-              className="text-xl font-bold text-justify leading-6 md:text-start my-4 md:my-0"
+              className="px-6 lg:px-0 text-justify leading-6 md:text-start my-4 md:my-0"
             />
             {/* <h2 className="text-xl font-bold text-justify leading-6 md:text-start my-4 md:my-0">
               {locale === "pe"
@@ -68,7 +72,7 @@ export default async function AboutPage({ params }: { params: any }) {
                       ? data?.enMiddleImageDescription
                       : data?.ruMiddleImageDescription,
               }}
-              className="font-light text-justify leading-6 md:text-start mt-4"
+              className="font-light text-justify leading-6 md:text-start mt-4 px-6 lg:px-0"
             />
             {/* <p className="font-light text-justify leading-6 md:text-start mt-4">
               {locale === "pe"

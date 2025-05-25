@@ -34,7 +34,7 @@ function Page() {
       {/* <ParticipationChart />
       <CountriesChart /> */}
       <div className="grid grid-cols-1 justify-center items-center w-full gap-4 bg-white dark:bg-slate-900 p-4 rounded-md shadow-md">
-        <div className="w-full flex justify-between">
+        <div className="w-full flex flex-col lg:flex-row justify-between">
           <span className="p-2  rounded-md ">
             {t("Name")} : {ngo?.username}
           </span>
@@ -46,7 +46,7 @@ function Page() {
           </span>
         </div>
         <Divider />
-        <div className="w-full flex justify-between">
+        <div className="w-full flex flex-col lg:flex-row justify-between">
           {/* <Divider /> */}
           <span className="p-2  rounded-md ">
             {t("Establishment Year")} : {ngo?.establishmentYear}
@@ -142,7 +142,7 @@ function Page() {
           </div>
         </div>
       </div>
-      <div className="w-full flex justify-center items-center gap-4 mt-20">
+      <div className="w-full flex flex-col lg:flex-row justify-center items-center gap-4 mt-20 pb-32 lg:pb-0">
         <MixChart />
         <CountriesChart />
       </div>

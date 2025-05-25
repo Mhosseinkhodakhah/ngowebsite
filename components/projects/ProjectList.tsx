@@ -26,7 +26,7 @@ function ProjectList({
   return (
     <>
       {data?.length ? (
-        <div className="w-full max-w-screen-lg grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-20">
+        <div className="w-full max-w-screen-lg grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-20 px-6 lg:px-0">
           {data?.map((project: any) => (
             <Card
               key={project?._id}
@@ -39,7 +39,11 @@ function ProjectList({
               }
               name={project?.name}
               ngo={project?.ngo}
-              route={`/projects/${route}/${project?._id}`}
+              route={
+                project?.status.includes("completed")
+                  ? `/projects/completed-projects/${project?._id}`
+                  : `/projects/${route}/${project?._id}`
+              }
               status={project?.status}
             />
           ))}

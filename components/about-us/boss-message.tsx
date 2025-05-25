@@ -171,7 +171,6 @@ function BossMessage() {
 
   return (
     <div className="flex flex-col w-full max-w-screen-lg justify-start items-center mt-32">
-
       <Divider className="my-4" />
 
       <div
@@ -179,18 +178,18 @@ function BossMessage() {
         data-aos="fade-up"
         data-aos-duration="1000"
       >
-        <div className="w-2/3">
-          <p className="text-justify leading-8">
+        <div className="w-full lg:w-2/3 order-2 lg:order-2">
+          <p className="text-justify leading-8 px-6 lg:px-0">
             {locale === "pe" ? peText2 : locale === "en" ? enText2 : ruText2}
           </p>
           <Divider className="my-4" />
-          <p className="font-bold text-lg">{t("hokamBoss")}</p>
+          <p className="font-bold text-lg px-6 lg:px-0">{t("hokamBoss")}</p>
           {/* <p className="font-bold text-lg">{t("DRDarabi")}</p> */}
-          <p className="font-light text-lg">
+          <p className="font-light text-lg px-6 lg:px-0">
             {t("Director of Tehran ICH Centre2")}
           </p>
         </div>
-        <div className="w-1/3">
+        <div className="w-full lg:w-1/3 order-1 lg:order-2 flex justify-center items-center">
           <Avatar src={BossImg2.src} className="mr-3 w-[300px] h-[300px] " />
         </div>
       </div>
@@ -205,10 +204,10 @@ function BossMessage() {
         data-aos="fade-up"
         data-aos-duration="1000"
       >
-        <div className="w-1/3">
+        <div className="w-full flex justify-center items-center  lg:w-1/3">
           <Avatar src={BossImg.src} className="mr-3 w-[300px] h-[300px] " />
         </div>
-        <div className="w-2/3">
+        <div className="w-full px-6 lg:px-0 lg:w-2/3">
           <p className="text-justify leading-8">
             {locale === "pe" ? peText : locale === "en" ? enText : ruText}
           </p>

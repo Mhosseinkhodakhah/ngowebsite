@@ -30,7 +30,14 @@ export const Navbar = () => {
               className="flex justify-start items-center gap-1"
               href="/"
             >
-              <Image priority alt="Logo" height={100} src={Logo} width={100} />
+              <Image
+                priority
+                alt="Logo"
+                // className="lg:w-32 lg:h-14 w-full object-cover"
+                height={100}
+                src={Logo}
+                width={100}
+              />
             </NextLink>
           </NavbarBrand>
         </NavbarContent>

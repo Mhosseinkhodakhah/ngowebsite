@@ -16,11 +16,11 @@ function VisualDocuments({ data }: { data: any }) {
   const handleCloseModal = () => setSrc("");
 
   return (
-    <section className="flex flex-col justify-center items-center">
+    <section className="flex flex-col justify-center items-center w-full max-w-screen-lg">
       <h1 className="text-xl font-bold border-b-5 border-primary mt-20 mb-10">
         {t("Visual Documents")}
       </h1>
-      <div className="w-full px-8 h-[400px] max-w-screen-lg  flex flex-col justify-center items-start">
+      <div className="w-full px-8 h-[400px] flex flex-col justify-center items-center">
         <Slider single={1}>
           {data?.visualDocuments?.map((item: any, index: number) => (
             <SwiperSlide
@@ -30,7 +30,7 @@ function VisualDocuments({ data }: { data: any }) {
             >
               <Image
                 alt="Visual Document"
-                className="w-[50%] md:w-full object-contain mx-auto"
+                className="lg:w-full object-contain mx-auto"
                 height={800}
                 src={item.files[0]}
                 width={800}

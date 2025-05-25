@@ -54,7 +54,7 @@ const NavbarContainer = ({ children }: { children: ReactNode }) => {
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           icon={<HambergerMenu className="text-xl dark:text-gray" />}
         />
-        <NavbarMenu>
+        <NavbarMenu className="overflow-auto pb-32">
           <div className="flex justify-between items-center py-4">
             <LanguageSwitch />
             <ThemeSwitch />

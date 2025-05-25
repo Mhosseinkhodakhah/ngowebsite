@@ -9,7 +9,7 @@ function ProjectTabs({ data }: { data: any }) {
   const t = useTranslations("dashboard");
 
   return (
-    <div className="flex w-full flex-col ">
+    <div className="flex w-full flex-col">
       <Tabs
         aria-label="Status"
         className="text-slate-50 active:text-slate-50 bg-violet-100 dark:bg-slate-900 rounded-md p-3"

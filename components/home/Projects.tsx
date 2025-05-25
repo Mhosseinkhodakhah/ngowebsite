@@ -23,7 +23,7 @@ function Projects({ data }: { data: any }) {
         {t("Projects")}
       </h1>
       <p
-        className={`mt-5  w-full  rounded-md  md:px-0  text-sm p-4 text-white max-w-xl text-center text-justify leading-6`}
+        className={`mt-5  w-full  rounded-md  md:px-0  text-sm p-4 text-white max-w-xl  text-justify leading-6`}
         data-aos="fade-up"
         data-aos-duration="1000"
       >
@@ -37,7 +37,7 @@ function Projects({ data }: { data: any }) {
       {/* // className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 */}
       {/* px-5 w-full md:max-w-screen-xl " */}
       <div
-        className="flex flex-col w-full px-12 mt-20"
+        className="flex flex-col w-full lg:px-12 mt-20"
         data-aos="fade-up"
         data-aos-duration="1000"
       >

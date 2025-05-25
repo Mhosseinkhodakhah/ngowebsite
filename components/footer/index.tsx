@@ -35,9 +35,11 @@ function Footer() {
     <footer
       className={`${pathname.includes("login") ? "hidden" : "block"} w-full bg-gradient-to-tr from-primary to-slate-800 p-4 mt-10`}
     >
-      <section className="w-full grid md:grid-rows-1 md:grid-cols-3 justify-center items-center">
+      <section className="w-full grid lg:grid-rows-1 lg:grid-cols-3 justify-center items-center">
         <LeftSection data={data?.data} />
+        <Divider className="bg-white my-2 block lg:hidden" />
         <CenterSection />
+        <Divider className="bg-white my-2 block lg:hidden" />
         <RightSection />
       </section>
       <Divider className="bg-gray my-2" />

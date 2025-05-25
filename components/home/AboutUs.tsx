@@ -15,7 +15,7 @@ function AboutUs({ data }: { data: any }) {
 
   return (
     <div
-      className="flex flex-col justify-center items-center md:items-center md:flex-row gap-20 mt-32  p-20 max-w-screen-lg mx-auto rounded-md"
+      className="flex flex-col justify-center items-center md:items-center md:flex-row gap-20 mt-32  lg:p-20 max-w-screen-lg mx-auto rounded-md"
       data-aos="fade-up"
       data-aos-duration="1000"
     >
@@ -23,7 +23,7 @@ function AboutUs({ data }: { data: any }) {
         <h1 className="text-xl font-bold border-b-5 border-primary inline">
           {t("About Us")}
         </h1>
-        <p className="w-full mt-5  text-secondary dark:text-gray font-light px-4 md:px-0 text-center md:text-start text-sm text-justify leading-6">
+        <p className="w-full mt-5  text-secondary dark:text-gray font-light px-4 md:px-0 md:text-start text-sm text-justify leading-6">
           {locale === "pe"
             ? data?.peAboutUsDescription
             : locale === "en"

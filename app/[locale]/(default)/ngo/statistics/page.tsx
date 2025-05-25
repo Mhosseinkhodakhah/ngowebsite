@@ -33,7 +33,7 @@ async function Page({ params }: { params: any }) {
         page="statics"
         titleText="Countries"
       />
-      <div className="w-full flex flex-col lg:flex-row items-center justify-around mt-32 max-w-screen-2xl">
+      <div className="w-full flex flex-col lg:flex-row items-center justify-around lg:mt-32 max-w-screen-2xl">
         <CountriesChart />
         <MixChart />
       </div>

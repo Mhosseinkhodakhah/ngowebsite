@@ -14,7 +14,7 @@ function ProjectInfo({ data, locale }: { data: any; locale: string }) {
   const peStartDate = m(data.startDate).locale("fa").format("YYYY/MM/DD");
 
   return (
-    <section className="my-20 flex flex-col justify-center items-center  w-[90%] lg:mx-0 lg:w-2/3 text-gray bg-gradient-to-br from-secondary to-primary rounded-md gap-8">
+    <section className="my-20 flex flex-col justify-center items-center  w-full bg-blue-400 lg:mx-0 lg:w-2/3 text-gray bg-gradient-to-br from-secondary to-primary rounded-md gap-8">
       <div className="w-full text-center py-4">
         <h2 className="font-bold text-xl">{t("Project Information")}</h2>
       </div>

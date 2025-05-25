@@ -14,7 +14,7 @@ function AboutUsCards() {
       data-aos-duration="1000"
     >
       <div>
-        <h2 className="font-bold text-2xl">
+        <h2 className="font-bold text-lg lg:text-2xl px-4 lg:px-0">
           {t("We Are Support NGOs to Help Them")}
         </h2>
       </div>

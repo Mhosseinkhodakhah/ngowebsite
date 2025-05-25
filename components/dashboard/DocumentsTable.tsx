@@ -180,6 +180,7 @@ const DocumentsTable = ({ data }: { data: any }) => {
         <AddButton />
       </div>
       <AgGridReact
+        paginationAutoPageSize
         columnDefs={colDefs}
         defaultColDef={defaultColDef}
         enableRtl={locale === "pe" ? true : false}

@@ -145,7 +145,7 @@ const NgoTable = ({ data }: { data: any }) => {
 
   return (
     <div
-      className={`w-3/4 h-[500px] ${theme === "dark" ? "ag-theme-alpine-dark" : "ag-theme-alpine"}  mb-32`}
+      className={`w-full lg:w-3/4 px-6 lg:px-0 h-[500px] ${theme === "dark" ? "ag-theme-alpine-dark" : "ag-theme-alpine"}  mb-32`}
       data-aos="fade-up"
       data-aos-duration="1000"
     >
@@ -159,6 +159,7 @@ const NgoTable = ({ data }: { data: any }) => {
         onChange={onSearchChange}
       />
       <AgGridReact
+        paginationAutoPageSize
         columnDefs={colDefs}
         defaultColDef={defaultColDef}
         enableRtl={locale === "pe" ? true : false}
