@@ -21,13 +21,13 @@ function Hero({ data }: HeroProps) {
   const isLogin = useStore((state: any) => state.isLogin);
 
   return (
-    <section className="h-screen flex justify-center relative">
+    <section className="flex justify-center relative">
       <Swiper
         loop
         autoplay={{
           delay: 3000,
         }}
-        className="w-full h-screen absolute -top-12"
+        className="w-full absolute -top-12"
         modules={[Autoplay]}
       >
         {data?.mainImages?.map((image: string, index: number) => (
@@ -37,7 +37,7 @@ function Hero({ data }: HeroProps) {
           >
             <Image
               alt="hero image"
-              className="object-cover w-full h-full md:h-svh md:object-fill"
+              className="object-center w-full md:h-svh md:object-fill"
               height={1024}
               src={image}
               width={1024}

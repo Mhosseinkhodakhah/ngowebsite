@@ -13,7 +13,7 @@ async function Page({ searchParams }: { searchParams: any }) {
   const { data }: any = await dataArchive(page, search);
 
   return (
-    <section className="flex flex-col justify-center items-center">
+    <section className="flex flex-col justify-center items-center overflow-y-hidden">
       <Title page="projects" titleText="Digital Archive" />
 
       {data?.data.length > 0 ? (
