@@ -7,6 +7,7 @@ function ProjectTarget({ formik }: { formik: FormikProps<any> }) {
   const t = useTranslations("dashboard");
 
   const handleSetProjectTarget = (value: string[]) => {
+    console.log('value selected >>>> ' , value)
     const lastValue = value[value.length - 1];
 
     if (value.length) {
