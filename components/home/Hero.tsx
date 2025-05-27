@@ -48,7 +48,7 @@ function Hero({ data }: HeroProps) {
               data-aos="fade-up"
               data-aos-duration="1000"
             >
-              <div className="bg-gray dark:bg-secondary backdrop-blur-md p-4 rounded-md flex justify-center items-center flex-col opacity-80 max-w-lg lg:w-[90%] w-[50%] md:w-auto">
+              <div className="bg-gray dark:bg-secondary backdrop-blur-md p-4 rounded-md flex justify-center items-center flex-col opacity-80 max-w-lg lg:w-[90%] w-auto  md:w-auto">
                 <p className="text-dark dark:text-gray text-start font-light text-sm md:font-medium">
                   {locale === "pe"
                     ? data?.peDescription
