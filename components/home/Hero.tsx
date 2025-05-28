@@ -44,7 +44,7 @@ function Hero({ data }: HeroProps) {
             />
 
             <div
-              className="w-full bottom-10 md:bottom-24 bg-transparent backdrop-blur-none absolute flex justify-center sm:h-16 "
+              className="w-full bottom-10 md:bottom-24 bg-transparent backdrop-blur-none absolute flex justify-center"
               data-aos="fade-up"
               data-aos-duration="1000"
             >
