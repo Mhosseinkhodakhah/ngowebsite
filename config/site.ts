@@ -61,7 +61,7 @@ export const siteConfig = {
           static: true,
         },
         {
-          label: "Onegoing Projects",
+          label: "Ongoing Projects",
           href: "/ongoing-projects?status=ongoing&page=1",
           static: true,
         },
@@ -143,7 +143,7 @@ export const siteConfig = {
           static: true,
         },
         {
-          label: "Onegoing Projects",
+          label: "Ongoing Projects",
           href: "/ongoing-projects",
           static: true,
         },
