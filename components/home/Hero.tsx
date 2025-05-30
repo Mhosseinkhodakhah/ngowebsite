@@ -44,12 +44,12 @@ function Hero({ data }: HeroProps) {
             />
 
             <div
-              className="w-full bottom-10 md:bottom-24 bg-transparent backdrop-blur-none absolute flex justify-center"
+              className="w-full bottom-10 md:bottom-24 bg-transparent backdrop-blur-none absolute flex justify-center lg:h-auto h-16"
               data-aos="fade-up"
               data-aos-duration="1000"
             >
-              <div className="bg-gray dark:bg-secondary backdrop-blur-md p-4 rounded-md flex justify-center items-center flex-col opacity-80 max-w-lg w-[90%] md:w-auto">
-                <p className="text-dark dark:text-gray text-start font-light text-sm md:font-medium">
+              <div className="bg-gray dark:bg-secondary backdrop-blur-md p-4 rounded-md flex justify-center items-center flex-col opacity-80 max-w-lg  md:w-auto">
+                <p className="text-dark dark:text-gray text-center font-light text-[10px] lg:text-sm lg:font-medium">
                   {locale === "pe"
                     ? data?.peDescription
                     : locale === "en"
@@ -59,7 +59,7 @@ function Hero({ data }: HeroProps) {
                 {!isLogin && (
                   <Link href="/ngo/ngos-registration">
                     <Button
-                      className="mt-4 text-gray"
+                      className="lg:mt-4 mt-2 text-gray h-8"
                       color="primary"
                       variant="shadow"
                     >

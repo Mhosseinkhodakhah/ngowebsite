@@ -115,22 +115,22 @@ function CardComponent({
               </Chip>
             )}
             {status.includes("goodPractice") && (
-              <Chip className="text-gray " color="primary" size="sm">
+              <Chip className="text-gray text-[10px]" color="primary" size="sm">
                 {t("Good Practice")}
               </Chip>
             )}
             {status.includes("ongoing") && (
-              <Chip className="text-gray " color="warning" size="sm">
+              <Chip className="text-gray text-[10px]" color="warning" size="sm">
                 {t("Ongoing")}
               </Chip>
             )}
             {status.includes("completed") && (
-              <Chip className="text-gray " color="success" size="sm">
+              <Chip className="text-gray text-[10px]" color="success" size="sm">
                 {t("Completed")}
               </Chip>
             )}
             {status.includes("collaborationOpportunities") && (
-              <Chip className="text-gray " color="primary" size="sm">
+              <Chip className="text-gray text-[10px]" color="primary" size="sm">
                 {t("Collaboration Opportunities")}
               </Chip>
             )}
