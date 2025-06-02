@@ -13,7 +13,6 @@ const LoginBtn = () => {
   const t = useTranslations("navbar");
   const { locale } = useParams();
   const isLogin = useStore((state: any) => state.isLogin);
-
   return (
     <>
       {isLogin ? (
@@ -29,8 +28,8 @@ const LoginBtn = () => {
       ) : (
         <Button
           as={Link}
-          className="font-normal text-gray bg-primary"
-          endContent={<LoginIcon className="text-lg" />}
+          className="font-normal text-[10px] text-gray bg-primary"
+          endContent={<LoginIcon className="text-sm" />}
           href={`/${locale}/login`}
           size="sm"
           variant="shadow"

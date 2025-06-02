@@ -37,7 +37,7 @@ function Hero({ data }: HeroProps) {
           >
             <Image
               alt="hero image"
-              className="object-center w-full md:h-svh md:object-fill"
+              className="object-center w-full md:h-svh  md:object-fill"
               height={1024}
               src={image}
               width={1024}
@@ -59,7 +59,7 @@ function Hero({ data }: HeroProps) {
                 {!isLogin && (
                   <Link href="/ngo/ngos-registration">
                     <Button
-                      className="lg:mt-4 mt-2 text-gray h-8"
+                      className="lg:mt-4  mt-2 text-gray h-8"
                       color="primary"
                       variant="shadow"
                     >

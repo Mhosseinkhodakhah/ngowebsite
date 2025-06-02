@@ -38,7 +38,7 @@ function ProjectCard({ project }: { project: any }) {
       <CardBody className="overflow-hidden">
         <Image
           alt="Project"
-          className="w-full h-full max-h-[100px] rounded-md"
+          className="w-full max-h-[100px] rounded-md"
           height={700}
           src={project?.visualDocuments[0]?.files[0] || PlaceHolderImage}
           width={700}
@@ -46,7 +46,7 @@ function ProjectCard({ project }: { project: any }) {
         <div className="flex gap-2 flex-wrap items-center">
           {project?.status?.includes("ongoing") && (
             <Chip
-              className="text-[10px] text-gray rounded-md w-max my-2"
+              className="text-[10px] text-gray rounded-md w-max my-1"
               color="warning"
             >
               {t("Ongoing")}
@@ -54,7 +54,7 @@ function ProjectCard({ project }: { project: any }) {
           )}
           {project?.status?.includes("completed") && (
             <Chip
-              className="text-[10px] p-2  text-gray rounded-md w-max my-2"
+              className="text-[10px] p-2  text-gray rounded-md w-max my-1"
               color="success"
             >
               {t("Completed")}
@@ -62,7 +62,7 @@ function ProjectCard({ project }: { project: any }) {
           )}
           {project?.status?.includes("collaborationOpportunities") && (
             <Chip
-              className="text-[10px] p-2  text-gray rounded-md w-max my-2"
+              className="text-[8px] p-2 text-gray rounded-md w-max my-1"
               color="primary"
             >
               {t("Collaboration Opportunities")}
@@ -70,7 +70,7 @@ function ProjectCard({ project }: { project: any }) {
           )}
           {project?.status?.includes("goodPractice") && (
             <Chip
-              className="text-[10px] p-2 text-gray rounded-md w-max my-2"
+              className="text-[9px] p-2 text-gray rounded-md w-max my-1"
               color="primary"
             >
               {t("Good Practice")}

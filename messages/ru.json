@@ -94,7 +94,9 @@
     "Address": "Адрес",
     "Documents": "Документы",
     "Projects": "Проекты",
-    "Visit Website": "Посетите веб-сайт"
+    "Visit Website": "Посетите веб-сайт",
+    "Send Email": "Отправить электронное письмо"
+
   },
   "statics": {
     "Participation": "Участие",

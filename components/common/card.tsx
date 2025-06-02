@@ -83,10 +83,10 @@ function CardComponent({
       <CardBody className="overflow-hidden">
         <Image
           alt="project"
-          className="w-full h-full max-h-[140px] rounded-md"
-          height={700}
+          className="w-full max-h-[100px] rounded-md"
+          height={800}
           src={!!imageUrl ? imageUrl : PlaceHolder.src}
-          width={700}
+          width={800}
         />
         {status && (
           <div

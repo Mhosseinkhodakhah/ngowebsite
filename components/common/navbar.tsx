@@ -47,7 +47,7 @@ export const Navbar = () => {
         </NavbarContent>
 
         <NavbarContent
-          className="hidden sm:flex basis-1/5 sm:basis-full"
+          className=" sm:flex basis-1/5 sm:basis-full"
           justify="end"
         >
           <NavbarItem className="hidden lg:flex gap-2">
@@ -56,7 +56,7 @@ export const Navbar = () => {
             {!isLogin && (
               <Button
                 as={Link}
-                className="text-gray"
+                className="text-gray text-[10px]"
                 color="primary"
                 href="/ngo/ngos-registration"
                 size="sm"

@@ -14,6 +14,8 @@ import { Button } from "@heroui/button";
 import { ThemeSwitch } from "../common/theme-switch";
 import LanguageSwitch from "../common/language-switch";
 import HambergerMenu from "../common/icons/hamberger-menu";
+import { useParams } from "next/navigation";
+
 
 import LoginBtn from "./LoginBtn";
 
@@ -23,6 +25,7 @@ import { Link, useRouter } from "@/i18n/navigation";
 const NavbarContainer = ({ children }: { children: ReactNode }) => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const t = useTranslations("navbar");
+  const { locale } = useParams();
 
   const router = useRouter();
 
@@ -39,9 +42,9 @@ const NavbarContainer = ({ children }: { children: ReactNode }) => {
       onMenuOpenChange={setIsMenuOpen}
     >
       {children}
-      <NavbarContent className="lg:hidden basis-1 pl-4" justify="end">
+      <NavbarContent className="lg:hidden basis-1 pl-2" justify="end">
         <Button
-          className="text-gray"
+          className="text-gray text-[10px]"
           color="primary"
           size="sm"
           variant="solid"

@@ -26,21 +26,37 @@ function InfoAndContacts({ data }: { data: any }) {
             <span>{t("Website")}</span>
           </div>
           {data?.website ? (
-            // <Link className="mt-4" href={data?.website} target="_blank">
+            <Link
+              className="mt-4"
+              href={`https://${data?.website}`}
+              target="_blank"
+            >
               <Button className="text-white" variant="flat">
                 {t("Visit Website")}
               </Button>
-            // </Link>
+            </Link>
           ) : (
             "-"
           )}
         </div>
         <div className="flex flex-col items-center">
-          <div className="flex gap-2 mb-4">
+          <div className="flex gap-2">
             <EmailIcon />
             <span>{t("Mail")}</span>
           </div>
-          <span className="text-sm font-light">{data?.email}</span>
+          {data?.email ? (
+            <Link
+              className="mt-3"
+              href={`https://${data?.email}`}
+              target="_blank"
+            >
+              <Button className="text-white" variant="flat">
+                {t("Send Email")}
+              </Button>
+            </Link>
+          ) : (
+            "-"
+          )}
         </div>
         <div className="flex flex-col items-center ">
           <div className="flex gap-2 mb-4">
@@ -49,26 +65,35 @@ function InfoAndContacts({ data }: { data: any }) {
           </div>
           {data?.socialMedia.instagram && (
             <div className="my-2 text-white flex gap-2 items-center">
-              <Instagram />
-              {/* <span className="text-sm font-light">
-                {data?.socialMedia.linkedIn}
-              </span> */}
+              <Link
+                className="mt-3"
+                href={`https://${data?.socialMedia.instagram}`}
+                target="_blank"
+              >
+                <Instagram />
+              </Link>
             </div>
           )}
           {data?.socialMedia.linkedIn && (
             <div className="my-2 text-white flex gap-2 items-center">
-              <Linkedin />
-              {/* <span className="text-sm font-light">
-                {data?.socialMedia.linkedIn}
-              </span> */}
+              <Link
+                className="mt-3"
+                href={`https://${data?.socialMedia.linkedIn}`}
+                target="_blank"
+              >
+                <Linkedin />
+              </Link>
             </div>
           )}
           {data?.socialMedia.telegram && (
             <div className="my-2 text-white flex gap-2 items-center">
+               <Link
+                className="mt-3"
+                href={`https://${data?.socialMedia.linkedIn}`}
+                target="_blank"
+              >
               <Telegram />
-              {/* <span className="text-sm font-light">
-                {data?.socialMedia.telegram}
-              </span> */}
+              </Link>
             </div>
           )}
         </div>
