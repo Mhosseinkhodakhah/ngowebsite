@@ -4,7 +4,7 @@
     "Read More": "Read More",
     "Sort": "Sort",
     "Recently": "Recently",
-    "mostViewd": "most Viewd",
+    "mostViewd": "Most Viewed",
     "Last": "Last",
     "Total": "Total",
     "Filter": "Filter",
@@ -14,7 +14,8 @@
     "The list is empty": "The list is empty",
     "Download": "Download",
     "Count of NGOs": "Count of NGOs",
-    "Number of NGOs": "Number of NGOs"
+    "Number of NGOs": "Number of NGOs",
+    "All": "All"
   },
 
   "navbar": {

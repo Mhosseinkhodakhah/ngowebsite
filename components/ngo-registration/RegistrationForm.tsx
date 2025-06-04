@@ -153,10 +153,7 @@ function RegistrationForm() {
         return;
       }
 
-      if (
-        values?.publishSelect[0] === "yes" ||
-        values?.publishSelect[0] === "limited"
-      ) {
+      if (values?.publishSelect[0] !== "no") {
         if (publishFile.get("picture") === null) {
           addToast({
             title: t("Upload Files"),
@@ -173,7 +170,6 @@ function RegistrationForm() {
 
       const uploadLogo = await uploadDocs(logo);
       const uploadDocuments = await uploadDocs(documentsFile);
-      const uploadPublish = await uploadDocs(publishFile);
 
       if (uploadLogo.success) {
         values.logo = uploadLogo.data[0];
@@ -201,18 +197,23 @@ function RegistrationForm() {
 
         return;
       }
-      if (uploadPublish.success) {
-        values.publishImages = uploadPublish.data;
-      } else {
-        addToast({
-          title: t("Public images"),
-          description: t("Public images failed to load, please try again"),
-          promise: new Promise((resolve) => setTimeout(resolve, 3000)),
-          color: "danger",
-        });
-        setIsLoading(false);
 
-        return;
+      if (values?.publishSelect[0] !== "no") {
+        const uploadPublish = await uploadDocs(publishFile);
+
+        if (uploadPublish.success) {
+          values.publishImages = uploadPublish.data;
+        } else {
+          addToast({
+            title: t("Public images"),
+            description: t("Public images failed to load, please try again"),
+            promise: new Promise((resolve) => setTimeout(resolve, 3000)),
+            color: "danger",
+          });
+          setIsLoading(false);
+
+          return;
+        }
       }
 
       if (values.activityField[0] === "other") {
@@ -315,8 +316,7 @@ function RegistrationForm() {
       <UploadSection onDocumentsFile={setDocumentsFile} onLogo={setLogo} />
       <Divider className="my-5" />
       <NgoPublishDocument formik={formik} />
-      {formik?.values?.publishSelect[0] === "yes" ||
-      formik?.values?.publishSelect[0] === "limited" ? (
+      {formik?.values?.publishSelect[0] !== "no" ? (
         <NgoPublishDocumentFiles onPublishFile={setPublishFile} />
       ) : null}
       <Divider className="my-5" />

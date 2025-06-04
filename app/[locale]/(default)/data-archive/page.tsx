@@ -12,11 +12,13 @@ async function Page({ searchParams }: { searchParams: any }) {
 
   const { data }: any = await dataArchive(page, search);
 
+  console.log("ddd", data);
+
   return (
     <section className="flex flex-col justify-center items-center overflow-y-hidden">
       <Title page="projects" titleText="Digital Archive" />
 
-      {data?.data.length > 0 ? (
+      {data?.data?.documents.length > 0 ? (
         <>
           <SearchInput page={page} />
 
@@ -26,7 +28,7 @@ async function Page({ searchParams }: { searchParams: any }) {
             data-aos-duration="1000"
           >
             <>
-              {data?.data?.map((doc: any) => (
+              {data?.data?.documents?.map((doc: any) => (
                 <Card
                   key={doc?._id}
                   btnText="See More"
@@ -40,7 +42,13 @@ async function Page({ searchParams }: { searchParams: any }) {
               ))}
             </>
           </div>
-          <PaginationArchive page={page} search={search} />
+          {page > 1 && (
+            <PaginationArchive
+              all={data?.data?.all}
+              page={page}
+              search={search}
+            />
+          )}
         </>
       ) : (
         <div
@@ -51,9 +59,9 @@ async function Page({ searchParams }: { searchParams: any }) {
           <Image
             alt="Empty"
             className="w-[200px] h-[200px] object-contain"
-            height={100}
+            height={500}
             src={Empty}
-            width={100}
+            width={500}
           />
         </div>
       )}

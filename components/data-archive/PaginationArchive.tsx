@@ -5,7 +5,15 @@ import { Pagination } from "@heroui/pagination";
 import { useRouter } from "@/i18n/navigation";
 import handleQuery from "@/utils/handleQuery";
 
-function PaginationArchive({ page, search }: { page: string; search: string }) {
+function PaginationArchive({
+  all,
+  page,
+  search,
+}: {
+  all: number;
+  page: string;
+  search: string;
+}) {
   const router = useRouter();
 
   return (
@@ -19,7 +27,7 @@ function PaginationArchive({ page, search }: { page: string; search: string }) {
           }}
           color="primary"
           initialPage={page ? +page : 1}
-          total={10}
+          total={Math.floor(all / 10)}
           variant="bordered"
           onChange={(value) => {
             const val = {

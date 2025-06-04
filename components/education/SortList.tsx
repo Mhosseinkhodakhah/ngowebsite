@@ -110,6 +110,32 @@ function SortList({
         >
           {t("mostViewd")}
         </Chip>
+        <Chip
+          className="cursor-pointer"
+          color="primary"
+          startContent={
+            query.sort === "all" && (
+              <Icon height="24" icon="lets-icons:check-fill" width="24" />
+            )
+          }
+          variant="faded"
+          onClick={() => {
+            const val = {
+              route: "education",
+              start: query.start,
+              end: query.end,
+              type: query.type,
+              page: query.page,
+              sort: "all",
+            };
+
+            const getRouter = handleQuery(val);
+
+            router.push(getRouter);
+          }}
+        >
+          {t("All")}
+        </Chip>
       </div>
       <div className="flex gap-2">
         <SortDropDown

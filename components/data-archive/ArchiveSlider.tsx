@@ -18,12 +18,12 @@ function ArchiveSlider({ data }: { data: string[] }) {
         {data?.map((image) => (
           <SwiperSlide
             key={image}
-            className="w-full flex justify-center"
+            className="lg:w-full flex justify-center"
             onClick={() => setSrc(image)}
           >
             <Image
               alt="Archive"
-              className="w-full h-full object-contain"
+              className="object-contain  lg:w-full w-1/2 mx-auto"
               height={800}
               src={image}
               width={800}

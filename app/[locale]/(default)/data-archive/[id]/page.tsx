@@ -11,7 +11,7 @@ async function Page({ params }: { params: { id: string } }) {
   const { title, description, type, file, ngo } = data?.data;
 
   return (
-    <section className="flex flex-col justify-center items-center">
+    <section className="flex flex-col justify-center items-center w-full max-w-screen-lg mx-auto">
       <h1 className="text-xl font-bold border-b-5 border-primary mt-20">
         {title}
       </h1>
@@ -22,7 +22,7 @@ async function Page({ params }: { params: { id: string } }) {
         <p className="px-4 font-light">{description}</p>
       </div>
       <DataArchiveFiles data={data?.data} />
-      <div className="my-4 w-full max-w-screen-md">
+      <div className="my-4 w-full">
         <SeeNgo id={ngo?._id} />
       </div>
     </section>

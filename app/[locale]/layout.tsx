@@ -54,7 +54,7 @@ export default async function LocaleLayout({
 
       <body
         className={clsx(
-          "min-h-screen dark:bg-[#000000]  antialiased ",
+          "min-h-screen dark:bg-[#000000]  antialiased",
           locale === "pe" ? vazir.variable : fontSans.variable,
           locale === "pe" ? "font-vazir" : "font-sans"
         )}

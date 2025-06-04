@@ -54,8 +54,6 @@ function DataArchiveFiles({ data }: { data: any }) {
     return getImages;
   }, [data]);
 
-  console.log("pdf", pdfs);
-
   const document = useMemo(() => {
     const getImages = data?.file?.filter((file: string) => {
       const isArr = file.split(".");
@@ -70,15 +68,15 @@ function DataArchiveFiles({ data }: { data: any }) {
   }, [data]);
 
   return (
-    <div>
+    <div className="w-full flex flex-col justify-center items-center">
       {images?.length > 0 && (
-        <>
+        <div className="flex justify-center flex-col items-center">
           <ArchiveSlider data={images} />
           <Divider className="my-2" />
-        </>
+        </div>
       )}
       {videos?.length > 0 && (
-        <div className="mb-10">
+        <div className="mb-10 flex justify-center flex-col items-center">
           {videos?.map((video: string) => (
             <>
               <video controls key={video} src={video}>
@@ -91,8 +89,8 @@ function DataArchiveFiles({ data }: { data: any }) {
         </div>
       )}
       {pdfs?.length > 0 && (
-        <div className="my-10">
-          <div className="flex gap-2">
+        <div className="my-10 flex justify-center flex-col items-center w-full">
+          <div className="flex gap-2 w-full ">
             {pdfs?.map((pdf: string) => (
               <div
                 key={pdf}
@@ -111,12 +109,12 @@ function DataArchiveFiles({ data }: { data: any }) {
         </div>
       )}
       {document?.length > 0 && (
-        <div className="mb-10">
+        <div className="mb-10 flex justify-start flex-col items-start">
           <div className="flex gap-2">
             {document?.map((pdf: string) => (
               <div
                 key={pdf}
-                className="w-full flex flex-col justify-center items-start gap-2"
+                className="w-full flex flex-col justify-start items-start gap-2"
               >
                 <a href={pdf} target="_blank" rel="noreferrer" download>
                   <Button
