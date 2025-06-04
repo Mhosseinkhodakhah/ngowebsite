@@ -1,5 +1,5 @@
 import * as Yup from "yup";
-
+const passwordRules = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{5,}$/;
 export const ngoRegisterSchema = Yup.object().shape({
   name: Yup.string()
     .required("Name is required")
@@ -76,6 +76,8 @@ export const ngoRegisterSchema = Yup.object().shape({
   username: Yup.string().required("Username is required"),
   password: Yup.string()
     .required("Password is required")
+    .matches(/[a-zA-Z]/, 'Password should be english')
+    .matches(passwordRules , 'please use lowerCase and UpperCase and symbold in your password')
     .min(8, "The password must not be shorter than 8 characters"),
   confirmPassword: Yup.string()
     .required("Confirm password is required")

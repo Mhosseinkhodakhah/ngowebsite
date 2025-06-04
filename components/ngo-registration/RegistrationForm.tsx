@@ -31,6 +31,7 @@ import { INGO } from "@/types/ngo-types";
 import { NogsRegisteration, uploadDocs } from "@/actions/ngo";
 import { useRouter } from "@/i18n/navigation";
 import { Divider } from "@heroui/divider";
+import IsPermitedForPublish from "./PermitPage";
 
 function RegistrationForm() {
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -101,6 +102,8 @@ function RegistrationForm() {
       cooperation: false,
       licenseValue: [],
       licenseDescription: "",
+      callPermition: false,
+      locationPermition: false,
       license: {
         has: false,
         description: "",
@@ -253,6 +256,8 @@ function RegistrationForm() {
       <Divider className="my-5" />
       <ActivityField formik={formik} />
       <ContactFields formik={formik} />
+      <Divider className="my-5" />
+      <IsPermitedForPublish formik={formik} />   {/*  its created for geting permition of ngo for sharing their call and location data */}
       <Divider className="my-5" />
       <AreaActivity formik={formik} />
       <ActivityCommunity formik={formik} />

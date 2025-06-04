@@ -9,12 +9,15 @@ function ActivityField({ formik }: { formik: FormikProps<any> }) {
 
   const handleSetActivityField = (value: string[]) => {
     const lastValue = value[value.length - 1];
-
+    if (lastValue == 'other'){
+      value = ['other']
+      formik.setFieldValue("otherActivityField", "");
+    }
+    if (lastValue != 'other' && value.includes('other')){
+        value.splice(value.indexOf('other') , 1)
+    }
     if (value.length) {
-      if (lastValue !== "other") {
-        formik.setFieldValue("otherActivityField", "");
-      }
-      formik.setFieldValue("activityField", [lastValue]);
+      formik.setFieldValue("activityField", value);
     } else {
       formik.setFieldValue("activityField", []);
     }

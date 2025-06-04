@@ -68,7 +68,7 @@ function DocumentsAndRecordsForm() {
         if (upload.success) {
           values.file = upload.data;
           mutation.mutate(values);
-
+          
           return;
         } else {
           addToast({

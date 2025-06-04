@@ -14,6 +14,8 @@ export interface INGO {
   website: string;
   areaAndScope: string[];
   otherAreaAndScope: string;
+  callPermition: boolean;
+  locationPermition: boolean;
   specificCultureGroupValue: string[];
   specificCultureGroupDescription: string;
   specificCultureGroup: {

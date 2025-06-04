@@ -10,11 +10,20 @@ function ActivityAreaExpertise({ formik }: { formik: FormikProps<any> }) {
   const handleSetAreaExpertise = (value: string[]) => {
     const lastValue = value[value.length - 1];
 
+    if (lastValue == 'other'){
+      value = ['other']
+      formik.setFieldValue("areaOfExpertiseValue", "");
+    }
+
+    if (lastValue != 'other' && value.includes('other')){
+      value.splice(value.indexOf('other') , 1)
+    }
+
     if (value.length) {
-      if (lastValue !== "other") {
-        formik.setFieldValue("areaOfExpertiseValue", "");
-      }
-      formik.setFieldValue("areaOfExpertise", [lastValue]);
+      // if (lastValue !== "other") {
+      //   formik.setFieldValue("areaOfExpertiseValue", "");
+      // }
+      formik.setFieldValue("areaOfExpertise", value);
     } else {
       formik.setFieldValue("areaOfExpertise", []);
     }

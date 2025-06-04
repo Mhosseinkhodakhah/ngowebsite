@@ -2,13 +2,14 @@ import { Checkbox, CheckboxGroup } from "@heroui/checkbox";
 import { Input } from "@heroui/input";
 import { useTranslations } from "next-intl";
 import { FormikProps, FormikErrors } from "formik";
+import { isDragActive } from "framer-motion";
+import GalleryIcon from "../common/icons/gallery-icon";
 
 function NgoPublishDocument({ formik }: { formik: FormikProps<any> }) {
   const t = useTranslations("ngo-registration");
 
   const handleSetPublishDocument = (value: string[]) => {
     const lastValue = value[value.length - 1];
-
     if (value.length) {
       if (lastValue === "no" || lastValue === "yes") {
         formik.setFieldValue("publishValue", "");
