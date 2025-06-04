@@ -18,6 +18,7 @@ import { documentSchema } from "@/utils/validations";
 import { uploadDocs } from "@/actions/ngo";
 import { createDocument } from "@/actions/dashboard";
 import { useRouter } from "@/i18n/navigation";
+import useStore from "@/store";
 
 function DocumentsAndRecordsForm() {
   const t = useTranslations("dashboard");
@@ -25,50 +26,57 @@ function DocumentsAndRecordsForm() {
   const [documents, setDocuments] = useState<File[]>([]);
 
   const router = useRouter();
+  const ngo: any = useStore((state) => state.ngo);
 
   const mutation = useMutation({
     mutationKey: ["createDocument"],
     mutationFn: createDocument,
-    onSuccess: () => {
+    onSuccess: (response: any) => {
+      console.log("ffffffff", response);
+      if (response?.success) {
+        addToast({
+          title: t("Success"),
+          description: t("Document created successfully"),
+          promise: new Promise((resolve) => setTimeout(resolve, 3000)),
+          color: "success",
+        });
+        setDocuments([]);
+        formik.resetForm();
+        router.push("/dashboard/documents");
+      }
       setIsLoading(false);
-      addToast({
-        title: t("Success"),
-        description: t("Document created successfully"),
-        promise: new Promise((resolve) => setTimeout(resolve, 3000)),
-        color: "success",
-      });
-      setDocuments([]);
-      formik.resetForm();
-      router.push("/dashboard/documents");
     },
   });
 
   const formik = useFormik({
     initialValues: {
-      name: "",
-      email: "",
+      name: ngo?.name,
+      email: ngo?.email,
       interfaceName: "",
-      phone: "",
+      phone: ngo?.phone,
       type: [],
       file: [],
       title: "",
       description: "",
     },
+    enableReinitialize: true,
     validationSchema: documentSchema,
     onSubmit: async (values) => {
       if (documents.length) {
         setIsLoading(true);
         const formData = new FormData();
 
-        documents.forEach((file) => {
-          formData.append("picture", file);
-        });
+        for (let i = 0; i < documents.length; i++) {
+          formData.append("picture", documents[i]);
+        }
+
         const upload = await uploadDocs(formData);
 
         if (upload.success) {
           values.file = upload.data;
+
           mutation.mutate(values);
-          
+
           return;
         } else {
           addToast({
@@ -77,6 +85,8 @@ function DocumentsAndRecordsForm() {
             promise: new Promise((resolve) => setTimeout(resolve, 3000)),
             color: "danger",
           });
+
+          setIsLoading(false);
 
           return;
         }
@@ -87,6 +97,7 @@ function DocumentsAndRecordsForm() {
           promise: new Promise((resolve) => setTimeout(resolve, 3000)),
           color: "danger",
         });
+        setIsLoading(false);
 
         return;
       }

@@ -32,6 +32,7 @@ import { NogsRegisteration, uploadDocs } from "@/actions/ngo";
 import { useRouter } from "@/i18n/navigation";
 import { Divider } from "@heroui/divider";
 import IsPermitedForPublish from "./PermitPage";
+import NgoPublishDocumentFiles from "./NgoPublishDocumentFiles";
 
 function RegistrationForm() {
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -40,6 +41,7 @@ function RegistrationForm() {
 
   const [logo, setLogo] = useState<FormData>(new FormData());
   const [documentsFile, setDocumentsFile] = useState<FormData>(new FormData());
+  const [publishFile, setPublishFile] = useState<FormData>(new FormData());
 
   const mutation = useMutation({
     mutationKey: ["NogsRegisteration"],
@@ -116,6 +118,7 @@ function RegistrationForm() {
         status: 0,
         description: "",
       },
+      publishImages: [] as string[],
       conditonAndConfirm: [],
       logo: "",
       documentsFile: [],
@@ -150,10 +153,27 @@ function RegistrationForm() {
         return;
       }
 
+      if (
+        values?.publishSelect[0] === "yes" ||
+        values?.publishSelect[0] === "limited"
+      ) {
+        if (publishFile.get("picture") === null) {
+          addToast({
+            title: t("Upload Files"),
+            description: t("Please select your public images"),
+            promise: new Promise((resolve) => setTimeout(resolve, 3000)),
+            color: "danger",
+          });
+
+          return;
+        }
+      }
+
       setIsLoading(true);
 
       const uploadLogo = await uploadDocs(logo);
       const uploadDocuments = await uploadDocs(documentsFile);
+      const uploadPublish = await uploadDocs(publishFile);
 
       if (uploadLogo.success) {
         values.logo = uploadLogo.data[0];
@@ -164,6 +184,7 @@ function RegistrationForm() {
           promise: new Promise((resolve) => setTimeout(resolve, 3000)),
           color: "danger",
         });
+        setIsLoading(false);
 
         return;
       }
@@ -171,11 +192,25 @@ function RegistrationForm() {
         values.documentsFile = uploadDocuments.data;
       } else {
         addToast({
-          title: t("Logo"),
+          title: t("Documents"),
           description: t("Documents failed to load, please try again"),
           promise: new Promise((resolve) => setTimeout(resolve, 3000)),
           color: "danger",
         });
+        setIsLoading(false);
+
+        return;
+      }
+      if (uploadPublish.success) {
+        values.publishImages = uploadPublish.data;
+      } else {
+        addToast({
+          title: t("Public images"),
+          description: t("Public images failed to load, please try again"),
+          promise: new Promise((resolve) => setTimeout(resolve, 3000)),
+          color: "danger",
+        });
+        setIsLoading(false);
 
         return;
       }
@@ -257,7 +292,8 @@ function RegistrationForm() {
       <ActivityField formik={formik} />
       <ContactFields formik={formik} />
       <Divider className="my-5" />
-      <IsPermitedForPublish formik={formik} />   {/*  its created for geting permition of ngo for sharing their call and location data */}
+      <IsPermitedForPublish formik={formik} />{" "}
+      {/*  its created for geting permition of ngo for sharing their call and location data */}
       <Divider className="my-5" />
       <AreaActivity formik={formik} />
       <ActivityCommunity formik={formik} />
@@ -279,6 +315,10 @@ function RegistrationForm() {
       <UploadSection onDocumentsFile={setDocumentsFile} onLogo={setLogo} />
       <Divider className="my-5" />
       <NgoPublishDocument formik={formik} />
+      {formik?.values?.publishSelect[0] === "yes" ||
+      formik?.values?.publishSelect[0] === "limited" ? (
+        <NgoPublishDocumentFiles onPublishFile={setPublishFile} />
+      ) : null}
       <Divider className="my-5" />
       <LoginData formik={formik} />
       <Divider className="my-5" />

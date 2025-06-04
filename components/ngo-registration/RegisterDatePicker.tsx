@@ -38,7 +38,7 @@ function RegisterDatePicker({ formik }: { formik: FormikProps<any> }) {
           isDisabled={formik.values.licenseValue.includes("yes") ? false : true}
           isRequired={formik.values.licenseValue.includes("yes") ? true : false}
           label={t("Expiry date")}
-          maxValue={today(getLocalTimeZone())}
+          // maxValue={today(getLocalTimeZone())}
           value={date}
           variant="bordered"
           onChange={handleSetDate}

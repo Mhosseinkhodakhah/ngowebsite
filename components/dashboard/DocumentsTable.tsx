@@ -169,7 +169,7 @@ const DocumentsTable = ({ data }: { data: any }) => {
     >
       <div className="flex gap-2 items-center justify-between p-4">
         <Input
-          className="my-2"
+          className="my-2 flex-1"
           placeholder={t("Search")}
           startContent={<SearchIcon />}
           type="text"

@@ -1,5 +1,7 @@
 import { Button } from "@heroui/button";
 import { useTranslations } from "next-intl";
+import Link from "next/link";
+import { useParams } from "next/navigation";
 
 function FormButtons({
   isDisabled,
@@ -9,6 +11,7 @@ function FormButtons({
   isLoading: boolean;
 }) {
   const t = useTranslations("ngo-registration");
+  const { locale } = useParams();
 
   return (
     <div className="flex gap-4 my-4">
@@ -21,9 +24,11 @@ function FormButtons({
       >
         {isLoading ? t("Please Wait") : t("Submit")}
       </Button>
-      <Button className="text-gray" color="secondary">
-        {t("Cancel")}
-      </Button>
+      <Link href={`/${locale}/`}>
+        <Button className="text-gray" color="secondary">
+          {t("Cancel")}
+        </Button>
+      </Link>
     </div>
   );
 }

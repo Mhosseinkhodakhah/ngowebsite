@@ -15,8 +15,6 @@ function DataArchiveFiles({ data }: { data: any }) {
       const isArr = file.split(".");
       const last = isArr[isArr.length - 1];
 
-      console.log("lllll", last);
-
       if (
         last === "png" ||
         last === "jpg" ||
@@ -56,6 +54,8 @@ function DataArchiveFiles({ data }: { data: any }) {
     return getImages;
   }, [data]);
 
+  console.log("pdf", pdfs);
+
   const document = useMemo(() => {
     const getImages = data?.file?.filter((file: string) => {
       const isArr = file.split(".");
@@ -94,18 +94,17 @@ function DataArchiveFiles({ data }: { data: any }) {
         <div className="my-10">
           <div className="flex gap-2">
             {pdfs?.map((pdf: string) => (
-              <Button
+              <div
                 key={pdf}
-                //   className="flex border-1 rounded-md items-center p-2"
-                startContent={
-                  <Icon icon="material-icon-theme:pdf" width="24" height="24" />
-                }
-                variant="bordered"
+                className="w-full flex flex-col justify-center items-center gap-2"
               >
-                <a href={pdf} target="_blank" rel="noreferrer" download>
-                  {t("Download")}
-                </a>
-              </Button>
+                <object
+                  aria-label="Document preview"
+                  className="w-full h-[600px]"
+                  data={pdf}
+                  type="application/pdf"
+                />
+              </div>
             ))}
           </div>
           <Divider className="my-2" />
@@ -115,22 +114,27 @@ function DataArchiveFiles({ data }: { data: any }) {
         <div className="mb-10">
           <div className="flex gap-2">
             {document?.map((pdf: string) => (
-              <Button
+              <div
                 key={pdf}
-                //   className="flex border-1 rounded-md items-center p-2"
-                startContent={
-                  <Icon
-                    icon="vscode-icons:file-type-word"
-                    width="32"
-                    height="32"
-                  />
-                }
-                variant="bordered"
+                className="w-full flex flex-col justify-center items-start gap-2"
               >
                 <a href={pdf} target="_blank" rel="noreferrer" download>
-                  {t("Download")}
+                  <Button
+                    key={pdf}
+                    className="flex border-1 rounded-md items-center p-2"
+                    startContent={
+                      <Icon
+                        icon="vscode-icons:file-type-word"
+                        width="32"
+                        height="32"
+                      />
+                    }
+                    variant="bordered"
+                  >
+                    {t("Download")}
+                  </Button>
                 </a>
-              </Button>
+              </div>
             ))}
           </div>
         </div>

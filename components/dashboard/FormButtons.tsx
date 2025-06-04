@@ -2,7 +2,8 @@
 
 import { Button } from "@heroui/button";
 import { useTranslations } from "next-intl";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
+import { useParams, useRouter } from "next/navigation";
 
 function FormButtons({
   isLoading,
@@ -13,6 +14,7 @@ function FormButtons({
 }) {
   const t = useTranslations("ngo-registration");
   const router = useRouter();
+  const { locale } = useParams();
 
   return (
     <div className="flex gap-4">
@@ -25,13 +27,15 @@ function FormButtons({
       >
         {t("Submit")}
       </Button>
-      <Button
-        className="text-gray"
-        color="secondary"
-        onPress={() => router.back()}
-      >
-        {t("Cancel")}
-      </Button>
+      <Link href={`/${locale}/dashboard/documents`}>
+        <Button
+          className="text-gray"
+          color="secondary"
+          onPress={() => router.back()}
+        >
+          {t("Cancel")}
+        </Button>
+      </Link>
     </div>
   );
 }

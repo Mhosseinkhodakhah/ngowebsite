@@ -33,10 +33,10 @@ function AddButton() {
     >
       <Button
         isIconOnly
-        className={`text-gray  rounded-full hidden lg:flex w-32 items-center gap-2`}
+        className={`text-gray  rounded-full hidden lg:flex w-max items-center gap-2 px-10`}
         color="primary"
         endContent={
-          <Icon height="16" icon="qlementine-icons:plus-16" width="16" />
+          <Icon height="20" icon="qlementine-icons:plus-16" width="20" />
         }
         variant="shadow"
         onPress={handlePress}

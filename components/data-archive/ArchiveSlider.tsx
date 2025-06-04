@@ -18,7 +18,7 @@ function ArchiveSlider({ data }: { data: string[] }) {
         {data?.map((image) => (
           <SwiperSlide
             key={image}
-            className="w-full flex justify-center bg-orange-500"
+            className="w-full flex justify-center"
             onClick={() => setSrc(image)}
           >
             <Image

@@ -93,10 +93,8 @@ export const createDocument = async (values: any) => {
     revalidatePath("/dashboard/documents");
 
     return data;
-  } catch (err) {
-    console.log("eeerrrr", err);
-
-    return false;
+  } catch (err: any) {
+    return err?.response;
   }
 };
 

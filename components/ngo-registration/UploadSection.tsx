@@ -9,7 +9,8 @@ import { Button } from "@heroui/button";
 import { Icon } from "@iconify/react";
 import { Tooltip } from "@heroui/tooltip";
 
-import GalleryIcon from "../common/icons/gallery-icon";
+// import GalleryIcon from "../common/icons/gallery-icon";
+import PdfIcon from "../common/icons/pdf-icon";
 
 interface HandleSetLogoEvent extends React.ChangeEvent<HTMLInputElement> {}
 
@@ -41,8 +42,8 @@ function UploadSection({ onLogo, onDocumentsFile }: Props) {
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
     onDrop,
     accept: {
-      "image/jpeg": [".jpg", ".jpeg"],
-      "image/png": [".png"],
+      // "image/jpeg": [".jpg", ".jpeg"],
+      // "image/png": [".png"],
       "application/pdf": [".pdf"],
     },
   });
@@ -112,26 +113,20 @@ function UploadSection({ onLogo, onDocumentsFile }: Props) {
           <input {...getInputProps()} />
           {isDragActive ? (
             <div>
-              <GalleryIcon />
+              <PdfIcon />
               <p>{t("Drop the files here")}</p>
             </div>
           ) : (
             <div className="flex flex-col justify-center items-center gap-4">
-              <GalleryIcon />
+              <PdfIcon />
               <p>{t("Upload Document")}</p>
             </div>
           )}
         </div>
-        <ul className="my-4 px-4 text-start grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+        <ul className="my-4 px-4 text-start grid grid-cols-1 md:grid-cols-2">
           {docList.map((doc) => (
             <li key={doc.url} className="my-2 md:mx-auto relative py-4">
-              <Image
-                alt="document"
-                className="w-[150px] h-[150px] md:w-[200px] md:h-[200px] object-contain"
-                height={100}
-                src={doc.url}
-                width={100}
-              />
+              <PdfIcon />
               {doc.name}
               <Tooltip content={t("Delete")}>
                 <Button

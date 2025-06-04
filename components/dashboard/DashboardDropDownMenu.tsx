@@ -38,7 +38,7 @@ function DashboardDropDownMenu() {
   return (
     <Dropdown>
       <DropdownTrigger>
-        <Button className="md:hidden" variant="bordered">
+        <Button className="lg:hidden" variant="bordered">
           {t("Menu")}
         </Button>
       </DropdownTrigger>

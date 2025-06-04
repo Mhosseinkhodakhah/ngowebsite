@@ -53,6 +53,7 @@ export interface INGO {
     status: number;
     description: string;
   };
+  publishImages: string[];
   conditonAndConfirm: [];
   logo: string;
   documentsFile: [];
