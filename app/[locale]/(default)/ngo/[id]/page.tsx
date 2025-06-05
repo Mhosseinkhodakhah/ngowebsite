@@ -9,9 +9,8 @@ import ProjectsSlider from "@/components/ngo-page/ProjectsSlider";
 import SimilarNgosSlider from "@/components/ngo-page/SimilarNgosSlider";
 import OtherNgoDetail from "@/components/ngo-page/otherNgoDetail";
 
-
 async function Page({ params }: { params: { id: string } }) {
-  const id = await params.id;
+  const id = params.id;
 
   const data = await getSingleNgo(id);
 
@@ -21,9 +20,9 @@ async function Page({ params }: { params: { id: string } }) {
     <section className="my-20 flex flex-col justify-center items-center">
       <NgoAvatar data={ngo} />
       <Divider className="max-w-screen-lg mx-auto my-4" />
-      <NgoStatusCards data={ngo} />
+      {ngo?.locationPermition && <NgoStatusCards data={ngo} />}
       <OtherNgoDetail data={ngo} />
-      <InfoAndContacts data={ngo} />
+      {ngo?.callPermition && <InfoAndContacts data={ngo} />}
       <NgoActivitiesSlider data={ngo} />
       <ProjectsSlider data={ngo} />
       <SimilarNgosSlider data={similarNgo} />

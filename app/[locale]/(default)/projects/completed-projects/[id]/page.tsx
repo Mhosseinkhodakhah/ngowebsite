@@ -10,10 +10,9 @@ async function Page({ params }: { params: { id: string; locale: string } }) {
 
   const data = await getSingleProject(id);
 
-  console.log("ddddddd", data);
-
   const { name, description, goalAndAchievements, moreInformation } =
     data?.data;
+
 
   return (
     <section className="flex flex-col justify-center items-center">

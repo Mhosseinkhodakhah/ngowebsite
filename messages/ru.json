@@ -475,7 +475,9 @@
     "Please Wait": "Пожалуйста, подождите",
     "Login": "Авторизоваться",
     "Error": "Ошибка",
-    "The username or password is incorrect": "Неверное имя пользователя или пароль"
+    "The username or password is incorrect": "Неверное имя пользователя или пароль",
+    "Click the button to download the registration guide file": "Нажмите кнопку, чтобы загрузить файл руководства по регистрации",
+    "Download": "Скачать"
   },
 
   "dashboard": {

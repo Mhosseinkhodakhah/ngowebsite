@@ -7,20 +7,18 @@ function ActivityAgeRange({ formik }: { formik: FormikProps<any> }) {
 
   const handleSetAgeRange = (value: string[]) => {
     const lastValue = value[value.length - 1];
-    console.log('vvvvv' , value)
 
-    
     // if (value.includes('all'))
 
     // if(!value.includes('all') &&JSON.stringify(value) == JSON.stringify(['youth', 'under 18' ,'adults', 'elderly'])){
     //   value = ['youth', 'under 18', 'all' ,'adults', 'elderly']
     // }
-    
-    if(lastValue == 'all'){
-      value = ['youth', 'under 18', 'all' ,'adults', 'elderly']
+
+    if (lastValue == "all") {
+      value = ["youth", "under 18", "all", "adults", "elderly"];
     }
-    if (lastValue != 'all' && value.includes('all')){
-      value.splice(value.indexOf('all') , 1)
+    if (lastValue != "all" && value.includes("all")) {
+      value.splice(value.indexOf("all"), 1);
     }
 
     if (value.length) {
@@ -28,7 +26,7 @@ function ActivityAgeRange({ formik }: { formik: FormikProps<any> }) {
     } else {
       formik.setFieldValue("group", []);
     }
-  }
+  };
 
   return (
     <CheckboxGroup
@@ -40,7 +38,7 @@ function ActivityAgeRange({ formik }: { formik: FormikProps<any> }) {
         t(formik.errors.group as unknown as FormikErrors<any>)
       }
       label={t(
-        "What age groups does your organization mainly work with? (Select all relevant options)",
+        "What age groups does your organization mainly work with? (Select all relevant options)"
       )}
       {...formik.getFieldProps("group")}
       onChange={handleSetAgeRange}

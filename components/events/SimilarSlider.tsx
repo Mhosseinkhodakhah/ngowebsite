@@ -14,6 +14,7 @@ function SimilarSlider({ data }: { data: any }) {
       {data?.similar.map((item: any) => (
         <SwiperSlide key={item._id}>
           <Card
+            admin={item?.admin?.userName}
             btnText="See More"
             description={
               locale === "en"

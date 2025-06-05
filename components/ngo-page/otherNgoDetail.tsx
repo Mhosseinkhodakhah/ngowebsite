@@ -14,7 +14,6 @@ import { Divider } from "@heroui/divider";
 
 function otherNgoDetail({ data }: { data: any }) {
   const t = useTranslations("NGOPage");
-  console.log('dddd' , data)
   return (
     <section className="my-10 flex flex-col justify-center items-center mx-4 w-[90%] lg:mx-0 lg:w-2/3 text-gray bg-gradient-to-br from-primary to-secondary rounded-md gap-4">
       <div className="w-full text-center py-4">

@@ -27,8 +27,6 @@ function Slider({ single, children }: Props) {
   const nextRef = useRef(null);
   const { locale } = useParams();
 
-  console.log("ssssssss", single);
-
   return (
     <>
       {!single && (

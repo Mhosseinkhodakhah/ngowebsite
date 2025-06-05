@@ -1,10 +1,13 @@
 import { getDescriptionPage } from "@/actions/educations";
 import Title from "@/components/common/title";
+import HelperFile from "@/components/ngo-page/HelperFile";
 import RegistrationForm from "@/components/ngo-registration/RegistrationForm";
 
 async function Page({ params }: { params: any }) {
   const descriptions = await getDescriptionPage("ngoRegister");
   const { locale } = await params;
+
+  console.log("dfdf", descriptions?.data?.pdf);
 
   return (
     <section className="flex flex-col justify-center items-center">
@@ -19,6 +22,9 @@ async function Page({ params }: { params: any }) {
         page="ngo-registration"
         titleText="NGO Registration"
       />
+      {descriptions?.data?.pdf && (
+        <HelperFile link={descriptions?.data?.pdf[0]} />
+      )}
       <RegistrationForm />
     </section>
   );

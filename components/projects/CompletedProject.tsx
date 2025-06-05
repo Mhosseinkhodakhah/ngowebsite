@@ -17,28 +17,28 @@ function CompletedProject({ data }: { data: any }) {
 
   const handleCloseModal = () => setSrc("");
 
+  console.log("vvv", data?.visualDocuments);
+
   return (
     <div className="flex flex-col items-center justify-center max-w-screen-xl w-full px-6">
       <div className="w-full px-8 h-[400px] max-w-screen-lg  flex flex-col justify-center items-start">
         <h2 className="text-center my-4">{data?.documentsAndReport?.title}</h2>
         <Slider single={data?.documentsAndReport?.files?.length}>
-          {data?.documentsAndReport?.files?.map(
-            (item: string, index: number) => (
-              <SwiperSlide
-                key={index}
-                className="p-4"
-                onClick={() => setSrc(item)}
-              >
-                <Image
-                  alt="Visual Document"
-                  className="w-full mx-auto h-full object-contain"
-                  height={800}
-                  src={item || Placeholder}
-                  width={800}
-                />
-              </SwiperSlide>
-            )
-          )}
+          {data?.documentsAndReport?.files?.map((item: string) => (
+            <SwiperSlide
+              key={item}
+              className="p-4"
+              onClick={() => setSrc(item)}
+            >
+              <Image
+                alt="Visual Document"
+                className="w-full mx-auto h-full object-contain"
+                height={800}
+                src={item || Placeholder}
+                width={800}
+              />
+            </SwiperSlide>
+          ))}
         </Slider>
       </div>
       <h1 className="text-xl font-bold border-b-5 border-primary mt-20 text-center break-words">
@@ -64,7 +64,7 @@ function CompletedProject({ data }: { data: any }) {
 
       {/* اینجا باید اسلایدر بزاری */}
       <div className="w-full px-8 h-[400px] max-w-screen-lg  flex flex-col justify-center items-start">
-        <Slider single={1}>
+        <Slider single={data?.visualDocuments?.length}>
           {data?.visualDocuments?.map((item: any, index: number) => (
             <SwiperSlide
               key={index}
@@ -87,9 +87,7 @@ function CompletedProject({ data }: { data: any }) {
       <h1 className="text-xl font-bold border-b-5 border-primary my-20 text-center">
         {t("impact on the protection of intangible heritage")}
       </h1>
-      <p className="max-w-2xl text-center text-justify">
-        {data?.completedEffects}
-      </p>
+      <p className="max-w-2xl text-justify">{data?.completedEffects}</p>
       <ModalImage isOpen={!!src} src={src} onClose={handleCloseModal} />
     </div>
   );

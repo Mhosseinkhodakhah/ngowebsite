@@ -12,7 +12,6 @@ async function Page(params: any) {
   // const { all, educations } = await getEducations(type, sort, start, end, page);
   const data = await getEducations(type, sort, start, end, page);
 
-  console.log("dddd ", data?.data);
 
   const descriptions = await getDescriptionPage("educations");
 

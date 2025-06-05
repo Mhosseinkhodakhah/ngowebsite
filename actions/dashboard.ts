@@ -46,7 +46,6 @@ export const updateProject = async (values: any, id: string) => {
 
 export const completeProject = async (values: any, id: string) => {
   try {
-    console.log("vvv", values);
     const { data } = await instance.post(`/ngo/project/complete/${id}`, values);
 
     revalidatePath("/dashboard/projects");
@@ -149,7 +148,6 @@ export const getSingleDocument = async (id: string) => {
 export const checkToken = async () => {
   const token: any = await getCookie("miras-token");
 
-  console.log("cccc", token);
 
   try {
     const data = await axios.get(`ngo/token/check`, {

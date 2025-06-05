@@ -7,6 +7,8 @@ import Slider from "../common/slider";
 import Title from "../common/title";
 import ModalImage from "../common/modal";
 
+import PlaceholderImg from "@/public/images/placeholder.png";
+
 function NgoActivitiesSlider({ data }: { data: any }) {
   const [src, setSrc] = useState<string>("");
   const handleCloseModal = () => setSrc("");
@@ -15,14 +17,14 @@ function NgoActivitiesSlider({ data }: { data: any }) {
     <section className="w-full flex flex-col justify-center items-center my-14">
       <Title page="NGOPage" titleText="Documents" />
       <div className="flex flex-col w-full lg:w-2/3 px-12 mt-20 h-[400px] items-center">
-        <Slider single={3}>
-          {data?.documentsFile?.map((image: string, index: number) => (
+        <Slider>
+          {data?.publishImages?.map((image: string, index: number) => (
             <SwiperSlide key={index} onClick={() => setSrc(image)}>
               <Image
                 alt="ngo activities"
                 className="w-full object-contain"
                 height={500}
-                src={image}
+                src={image || PlaceholderImg}
                 width={500}
               />
             </SwiperSlide>

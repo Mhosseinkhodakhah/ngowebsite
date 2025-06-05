@@ -479,7 +479,9 @@
     "Please Wait": "لطفا صبر کنید",
     "Login": "ورود",
     "Error": "خطا",
-    "The username or password is incorrect": "نام کاربری یا رمز عبور اشتباه است"
+    "The username or password is incorrect": "نام کاربری یا رمز عبور اشتباه است",
+    "Click the button to download the registration guide file": "برای دریافت فایل راهنمای ثبت نام رو دکمه کلیک کنید",
+    "Download": "دانلود"
   },
 
   "dashboard": {

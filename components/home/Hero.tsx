@@ -25,7 +25,7 @@ function Hero({ data }: HeroProps) {
       <Swiper
         loop
         autoplay={{
-          delay: 3000,
+          delay: 5000,
         }}
         className="w-full absolute -top-12"
         modules={[Autoplay]}

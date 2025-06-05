@@ -9,7 +9,6 @@ import Card from "../common/card";
 function SimilarSlider({ data }: { data: any }) {
   const { locale } = useParams();
 
-  console.log("vvvv", data);
 
   return (
     <Slider>

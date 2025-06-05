@@ -480,7 +480,9 @@
     "Please Wait": "Please Wait",
     "Login": "Login",
     "Error": "Error",
-    "The username or password is incorrect": "The username or password is incorrect"
+    "The username or password is incorrect": "The username or password is incorrect",
+    "Click the button to download the registration guide file": "Click the button to download the registration guide file",
+    "Download": "Download"
   },
 
   "dashboard": {

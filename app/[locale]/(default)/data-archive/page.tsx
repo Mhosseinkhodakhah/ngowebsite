@@ -12,7 +12,6 @@ async function Page({ searchParams }: { searchParams: any }) {
 
   const { data }: any = await dataArchive(page, search);
 
-  console.log("ddd", data);
 
   return (
     <section className="flex flex-col justify-center items-center overflow-y-hidden">
