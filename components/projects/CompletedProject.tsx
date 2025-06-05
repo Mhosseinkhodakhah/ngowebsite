@@ -21,7 +21,7 @@ function CompletedProject({ data }: { data: any }) {
     <div className="flex flex-col items-center justify-center max-w-screen-xl w-full px-6">
       <div className="w-full px-8 h-[400px] max-w-screen-lg  flex flex-col justify-center items-start">
         <h2 className="text-center my-4">{data?.documentsAndReport?.title}</h2>
-        <Slider single={1}>
+        <Slider single={data?.documentsAndReport?.files?.length}>
           {data?.documentsAndReport?.files?.map(
             (item: string, index: number) => (
               <SwiperSlide

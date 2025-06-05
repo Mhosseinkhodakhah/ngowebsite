@@ -7,8 +7,8 @@ import ProjectInfo from "@/components/projects/ProjectInfo";
 import VisualDocuments from "@/components/projects/VisualDocuments";
 
 async function Page({ params }: { params: { id: string; locale: string } }) {
-  const id = await params.id;
-  const locale = await params.locale;
+  const id = params.id;
+  const locale = params.locale;
 
   const data = await getSingleProject(id);
 

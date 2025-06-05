@@ -9,7 +9,7 @@ function CountriesChart() {
 
   const data = useMemo(() => {
     return {
-      series: [44, 55, 41, 17, 15],
+      series: [44, 55, 41, 17, 25],
       options: {
         chart: {
           type: "donut",

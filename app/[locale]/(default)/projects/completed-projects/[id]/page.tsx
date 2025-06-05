@@ -5,8 +5,8 @@ import MoreInformation from "@/components/projects/MoreInformation";
 import ProjectInfo from "@/components/projects/ProjectInfo";
 
 async function Page({ params }: { params: { id: string; locale: string } }) {
-  const id = await params.id;
-  const locale = await params.locale;
+  const id = params.id;
+  const locale = params.locale;
 
   const data = await getSingleProject(id);
 
@@ -21,15 +21,22 @@ async function Page({ params }: { params: { id: string; locale: string } }) {
         {name}
       </h1>
       <p
-        className={`mt-5  w-full  text-secondary dark:text-gray font-light px-4 md:px-0 text-justify max-w-screen-md`}
+        className={`mt-5 w-full text-secondary dark:text-gray font-light px-4 md:px-0 text-justify max-w-screen-md`}
       >
         {description}
       </p>
-      <Title
-        description={goalAndAchievements[0]}
-        page="projects"
-        titleText="Goal And Achievements"
-      />
+      <Title page="projects" titleText="Goal And Achievements" />
+
+      {goalAndAchievements?.length ? (
+        <ul className="my-10">
+          {goalAndAchievements?.map((item: string) => (
+            <li key={item} className="text-justify list-disc">
+              {item}
+            </li>
+          ))}
+        </ul>
+      ) : null}
+
       <CompletedProject data={data?.data} />
 
       {/* <ProjectInfo data={data?.data} locale={locale} /> */}

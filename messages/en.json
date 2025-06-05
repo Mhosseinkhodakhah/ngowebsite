@@ -669,7 +669,13 @@
 
   "footer": {
     "Get Updates": "Get Updates",
+    "Email is required": "Email is required",
+    "Email is not valid": "Email is not valid",
     "Enter your email": "Enter your email",
+    "Email registered": "Email registered",
+    "Your email has been successfully registered": "Your email has been successfully registered",
+    "The email was not registered": "The email was not registered",
+    "Your email was not registered, please try again": "Your email was not registered, please try again",
     "Submit": "Submit",
     "All rights of this site are reserved": "All rights of this site are reserved",
     "Copyright": "Copyright"

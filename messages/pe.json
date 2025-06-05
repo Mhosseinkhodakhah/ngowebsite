@@ -668,7 +668,13 @@
 
   "footer": {
     "Get Updates": "دریافت آخرین اخبار",
+    "Email is required": "ایمیل الزامی است",
+    "Email is not valid": "ایمیل معتبر نیست",
     "Enter your email": "ایمیل خود را وارد کنید",
+    "Email registered": "ایمیل ثبت شد",
+    "Your email has been successfully registered": "ایمیل شما با موفقیت ثبت شد",
+    "The email was not registered": "ایمیل ثبت نشد",
+    "Your email was not registered, please try again": "ایمیل شما ثبت نشد ، لطفا مجددا تلاش کنید",
     "Submit": "تایید",
     "All rights of this site are reserved": "کلیه حقوق این سایت محفوظ میباشد",
     "Copyright": "کپی رایت"

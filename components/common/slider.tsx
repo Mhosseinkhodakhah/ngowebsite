@@ -27,6 +27,8 @@ function Slider({ single, children }: Props) {
   const nextRef = useRef(null);
   const { locale } = useParams();
 
+  console.log("ssssssss", single);
+
   return (
     <>
       {!single && (
@@ -61,16 +63,16 @@ function Slider({ single, children }: Props) {
         breakpoints={{
           // when window width is >= 640px
           640: {
-            slidesPerView: single ? single : 2,
+            slidesPerView: !!single ? single : 2,
             spaceBetween: 20,
           },
           // when window width is >= 768px
           768: {
-            slidesPerView: single ? single : 3,
+            slidesPerView: !!single ? single : 3,
             spaceBetween: 30,
           },
           1024: {
-            slidesPerView: single ? single : 4,
+            slidesPerView: !!single ? single : 4,
             spaceBetween: 30,
           },
           // when window width is >= 1024px

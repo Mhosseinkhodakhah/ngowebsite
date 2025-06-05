@@ -9,11 +9,14 @@ import Card from "../common/card";
 function SimilarSlider({ data }: { data: any }) {
   const { locale } = useParams();
 
+  console.log("vvvv", data);
+
   return (
     <Slider>
       {data?.similar.map((item: any) => (
         <SwiperSlide key={item._id}>
           <Card
+            admin={item?.admin?.userName}
             btnText="See More"
             description={
               locale === "en"

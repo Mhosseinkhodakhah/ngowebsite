@@ -76,8 +76,11 @@ export const ngoRegisterSchema = Yup.object().shape({
   username: Yup.string().required("Username is required"),
   password: Yup.string()
     .required("Password is required")
-    .matches(/[a-zA-Z]/, 'Password should be english')
-    .matches(passwordRules , 'please use lowerCase and UpperCase and symbold in your password')
+    .matches(/[a-zA-Z]/, "Password should be english")
+    .matches(
+      passwordRules,
+      "please use lowerCase and UpperCase and symbold in your password"
+    )
     .min(8, "The password must not be shorter than 8 characters"),
   confirmPassword: Yup.string()
     .required("Confirm password is required")
@@ -131,4 +134,8 @@ export const loginSchema = Yup.object().shape({
   password: Yup.string()
     .required("Password is required")
     .min(8, "The password must not be shorter than 8 characters"),
+});
+
+export const emailSchema = Yup.object().shape({
+  email: Yup.string().required("Email is required").email("Email is not valid"),
 });

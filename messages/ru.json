@@ -664,8 +664,14 @@
 
   "footer": {
     "Get Updates": "Получайте обновления",
+    "Email is required": "Требуется электронная почта",
+    "Email is not valid": "Недействительный адрес электронной почты",
     "Enter your email": "Введите адрес электронной почты",
     "Submit": "Представлять на рассмотрение",
+    "Email registered": "Электронная почта зарегистрирована",
+    "Your email has been successfully registered": "Ваш адрес электронной почты успешно зарегистрирован",
+    "The email was not registered": "Электронная почта не была зарегистрирована",
+    "Your email was not registered, please try again": "Ваш адрес электронной почты не зарегистрирован, попробуйте еще раз.",
     "All rights of this site are reserved": "Все права этого сайта защищены",
     "Copyright": "Авторское право",
     "Upload documents (one of the mandatory items)": "Загрузить документы (один из обязательных пунктов)",

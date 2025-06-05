@@ -21,7 +21,7 @@ function VisualDocuments({ data }: { data: any }) {
         {t("Visual Documents")}
       </h1>
       <div className="w-full px-8 h-[400px] flex flex-col justify-center items-center">
-        <Slider single={1}>
+        <Slider single={data?.visualDocuments?.length}>
           {data?.visualDocuments?.map((item: any, index: number) => (
             <SwiperSlide
               key={index}

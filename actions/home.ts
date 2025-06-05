@@ -23,3 +23,15 @@ export const getFooter = async () => {
     return false;
   }
 };
+
+export const getUpdateEmail = async (email: string) => {
+  try {
+    const { data } = await instance.post(`/users/gmail/${email}`);
+
+    return data;
+  } catch (err) {
+    console.error("Error fetching events:", err);
+
+    return false;
+  }
+};
