@@ -17,15 +17,18 @@ function IsPermitedForPublish({ formik }: { formik: FormikProps<any> }) {
 
   const handleSetActivityLicense = (value: string[]) => {
     const lastValue = value[value.length - 1];
-    console.log(value);
+    console.log('testtesttesttesttest',value);
     if (value.length) {
       if (value.includes("callInfo")) {
-        formik.setFieldValue("locationPermition", true); // set location permision true that means the ngo permits for sharing their location data
+        formik.setFieldValue("callPermition", true); // set location permision true that means the ngo permits for sharing their location data
       }
       if (value.includes("locations")) {
-        formik.setFieldValue("callPermition", true); // set call permition
+        formik.setFieldValue("locationPermition", true); // set call permition
       }
-    }
+    }else{
+        formik.setFieldValue("callPermition", false); // set location permision true that means the ngo permits for sharing their location data
+        formik.setFieldValue("locationPermition", false); // set call permition
+      }
   };
 
   return (

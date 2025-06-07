@@ -23,7 +23,7 @@ async function Page({ params }: { params: { id: string } }) {
       {ngo?.locationPermition && <NgoStatusCards data={ngo} />}
       <OtherNgoDetail data={ngo} />
       {ngo?.callPermition && <InfoAndContacts data={ngo} />}
-      <NgoActivitiesSlider data={ngo} />
+      {ngo?.publishImages.length>0 && <NgoActivitiesSlider data={ngo} />}
       <ProjectsSlider data={ngo} />
       <SimilarNgosSlider data={similarNgo} />
     </section>
