@@ -104,6 +104,9 @@
     "Countries": "Countries"
   },
   "ngo-registration": {
+    "Maximum selected files: 5" : "Maximum selected files: 5.",
+    "Acceptable formats PDF" : "Acceptable formats PDF.",
+    "The size of the selected files must be less than 20 MB" : "The size of the selected files must be less than 20 MB.",
     "Click here to" : "to",
     "download" : "Download",
     "the registration guide file" : "the registration guide file",

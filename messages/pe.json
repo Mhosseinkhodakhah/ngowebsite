@@ -103,6 +103,9 @@
     "Countries": "کشور ها"
   },
   "ngo-registration": {
+    "Maximum selected files: 5" : "حداکثر تعداد فایل‌های انتخاب شده: ۵",
+    "Acceptable formats PDF" : "فرمت‌های قابل قبول PDF",
+    "The size of the selected files must be less than 20 MB" : "حجم فایل‌های انتخاب شده باید کمتر از ۲۰ مگابایت باشد",
     "Click here to" : "برای",
     "download" : "دانلود",
     "the registration guide file" : "فایل راهنمای ثبت نام",
