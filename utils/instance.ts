@@ -18,7 +18,7 @@ const instance = axios.create({
     Accept: "*/*",
   },
 
-  timeout: 10000, // 10 seconds timeout
+  // timeout: 10000, // 10 seconds timeout
 });
 
 // Request interceptor

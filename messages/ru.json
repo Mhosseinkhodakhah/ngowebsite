@@ -106,6 +106,7 @@
     "Maximum selected files: 5" : "Максимальное количество выбранных файлов: 3",
     "Acceptable formats PDF" : "Допустимые форматы: PDF",
     "Acceptable formats PIC" : "Допустимые форматы: JPG , JPEG , PNG",
+    "Acceptable formats DOCS" : "Допустимые форматы: JPG , JPEG , PNG , MKV , MP4 , PDF , DOCX.",
     "The size of the selected files must be less than 20 MB" : "Размер выбранных файлов должен быть меньше 20 МБ",
     "Click here to" : "Нажмите , чтобы",
     "download" : "Загрузить",

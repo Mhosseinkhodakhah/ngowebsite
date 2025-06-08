@@ -28,6 +28,13 @@ function UploadSection({ onLogo, onDocumentsFile }: Props) {
   const onDrop = useCallback((acceptedFiles: File[]) => {
     // Do something with the files
     let files: { name: string; url: string }[] = [];
+    
+    const totalSize = acceptedFiles.reduce((sum, file) => sum + file.size, 0);
+    if (totalSize > 10 * 1024 * 1024) {
+      alert('Total size of all files exceeds 10MB');
+      return;
+    }
+    
     const formData = new FormData();
 
     acceptedFiles.forEach((file: File) => {
@@ -46,6 +53,9 @@ function UploadSection({ onLogo, onDocumentsFile }: Props) {
       // "image/png": [".png"],
       "application/pdf": [".pdf"],
     },
+    maxSize: 20 * 1024 * 1024, // 20MB in bytes
+    // multiple: true,
+    maxFiles: 3, // If you want to limit number of files
   });
 
   const logoRef = useRef<HTMLInputElement>(null);

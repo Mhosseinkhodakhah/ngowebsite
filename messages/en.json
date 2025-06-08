@@ -107,6 +107,7 @@
     "Maximum selected files: 5" : "Maximum selected files: 3.",
     "Acceptable formats PDF" : "Acceptable formats PDF.",
     "Acceptable formats JPG" : "Acceptable formats JPG , JPEG , PNG.",
+    "Acceptable formats DOCS" : "Acceptable formats JPG , JPEG , PNG , MKV , MP4 , PDF , DOCX.",
     "The size of the selected files must be less than 20 MB" : "The size of the selected files must be less than 20 MB.",
     "Click here to" : "to",
     "download" : "Download",

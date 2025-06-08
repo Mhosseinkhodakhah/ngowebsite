@@ -25,7 +25,11 @@ function UploadDocumentsSection({
 
   const onDrop = useCallback((acceptedFiles: File[]) => {
     let files: { name: string; url: string; type: string }[] = [];
-
+    const totalSize = acceptedFiles.reduce((sum, file) => sum + file.size, 0);
+    if (totalSize > 10 * 1024 * 1024) {
+      alert('Total size of all files exceeds 20MB');
+      return;
+    }
     acceptedFiles.forEach((file: File) => {
       if (
         file.type.includes("pdf") ||
@@ -93,6 +97,9 @@ function UploadDocumentsSection({
       "application/vnd.openxmlformats-officedocument.wordprocessingml.document":
         [".docx"],
     },
+    maxSize: 10 * 1024 * 1024, // 20MB in bytes
+    // multiple: true,
+    maxFiles: 5, // If you want to limit number of files
   });
 
   return (
@@ -115,6 +122,19 @@ function UploadDocumentsSection({
             </div>
           )}
         </div>
+
+        <ul className="list-disc p-4">
+            <li className="text-[10px] text-danger text-light">
+              {t("Maximum selected files: 5")}
+            </li>
+            <li className="text-[10px] text-danger text-light">
+              {t("Acceptable formats DOCS")}
+            </li>
+            <li className="text-[10px] text-danger text-light">
+              {t("The size of the selected files must be less than 20 MB")}
+            </li>
+        </ul>
+
         <ul className="my-4 px-4 text-start grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 j">
           {docList.map((doc, index) => (
             <li key={index} className="my-2 md:mx-auto relative py-4">
