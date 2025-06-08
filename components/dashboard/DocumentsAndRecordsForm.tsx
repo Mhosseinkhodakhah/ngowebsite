@@ -32,7 +32,6 @@ function DocumentsAndRecordsForm() {
     mutationKey: ["createDocument"],
     mutationFn: createDocument,
     onSuccess: (response: any) => {
-      console.log("ffffffff", response);
       if (response?.success) {
         addToast({
           title: t("Success"),

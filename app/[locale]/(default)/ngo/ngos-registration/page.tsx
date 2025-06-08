@@ -7,8 +7,6 @@ async function Page({ params }: { params: any }) {
   const descriptions = await getDescriptionPage("ngoRegister");
   const { locale } = await params;
 
-  console.log("dfdf", descriptions?.data?.pdf);
-
   return (
     <section className="flex flex-col justify-center items-center">
       <Title

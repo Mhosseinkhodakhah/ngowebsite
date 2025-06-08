@@ -1,10 +1,10 @@
 /* eslint-disable jsx-a11y/media-has-caption */
+import { Divider } from "@heroui/divider";
 
 import Title from "@/components/common/title";
 import { getSingleEvent } from "@/actions/events";
 import PictureSlider from "@/components/events/PictureSlider";
 import SimilarSlider from "@/components/events/SimilarSlider";
-import { Divider } from "@heroui/divider";
 
 async function Page({ params }: { params: any }) {
   const { locale, id } = await params;

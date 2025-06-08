@@ -17,7 +17,7 @@ function IsPermitedForPublish({ formik }: { formik: FormikProps<any> }) {
 
   const handleSetActivityLicense = (value: string[]) => {
     const lastValue = value[value.length - 1];
-    console.log('testtesttesttesttest',value);
+
     if (value.length) {
       if (value.includes("callInfo")) {
         formik.setFieldValue("callPermition", true); // set location permision true that means the ngo permits for sharing their location data
@@ -25,16 +25,14 @@ function IsPermitedForPublish({ formik }: { formik: FormikProps<any> }) {
       if (value.includes("locations")) {
         formik.setFieldValue("locationPermition", true); // set call permition
       }
-    }else{
-        formik.setFieldValue("callPermition", false); // set location permision true that means the ngo permits for sharing their location data
-        formik.setFieldValue("locationPermition", false); // set call permition
-      }
+    } else {
+      formik.setFieldValue("callPermition", false); // set location permision true that means the ngo permits for sharing their location data
+      formik.setFieldValue("locationPermition", false); // set call permition
+    }
   };
 
   return (
     <>
-      <h5 className="py-4 px-4 md:px-0">{t("Share additional information")}</h5>
-
       <CheckboxGroup
         className=" md:px-0 my-10"
         label={t("Which sections Do You Want Share With Other Users")}

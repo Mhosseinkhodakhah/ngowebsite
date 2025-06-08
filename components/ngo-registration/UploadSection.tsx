@@ -106,22 +106,32 @@ function UploadSection({ onLogo, onDocumentsFile }: Props) {
       </div>
 
       <div className="flex-col w-full md:w-2/3 ">
-        <div
-          className="bg-gray dark:bg-secondary flex justify-center items-center p-10 rounded-md border border-dashed "
-          {...getRootProps()}
-        >
-          <input {...getInputProps()} />
-          {isDragActive ? (
-            <div>
-              <PdfIcon />
-              <p>{t("Drop the files here")}</p>
-            </div>
-          ) : (
-            <div className="flex flex-col justify-center items-center gap-4">
-              <PdfIcon />
-              <p>{t("Upload Document")}</p>
-            </div>
-          )}
+        <div>
+          <div
+            className="bg-gray dark:bg-secondary flex justify-center items-center p-10 rounded-md border border-dashed "
+            {...getRootProps()}
+          >
+            <input {...getInputProps()} />
+            {isDragActive ? (
+              <div>
+                <PdfIcon />
+                <p>{t("Drop the files here")}</p>
+              </div>
+            ) : (
+              <div className="flex flex-col justify-center items-center gap-4">
+                <PdfIcon />
+                <p>{t("Upload Document")}</p>
+              </div>
+            )}
+          </div>
+          <ul className="list-disc p-4">
+            <li className="text-[10px] text-danger text-light">
+              {t("Maximum selected files: 5")}
+            </li>
+            <li className="text-[10px] text-danger text-light">
+              {t("Acceptable formats PDF")}
+            </li>
+          </ul>
         </div>
         <ul className="my-4 px-4 text-start grid grid-cols-1 md:grid-cols-2">
           {docList.map((doc) => (

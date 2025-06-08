@@ -39,17 +39,17 @@ function LanguageSwitch() {
         <Button className="border-primary" size="sm" variant="bordered">
           {locale === "en" ? (
             <>
-              <p className="font-bold">{t("En")}</p>
+              <p className="font-bold">English</p>
               <ArrowDown />
             </>
           ) : locale === "pe" ? (
             <>
-              <p className="font-bold">{t("Fa")}</p>
+              <p className="font-bold">فارسی</p>
               <ArrowDown />
             </>
           ) : locale === "ru" ? (
             <>
-              <p className="font-bold">{t("Ru")}</p>
+              <p className="font-bold">Русский</p>
               <ArrowDown />
             </>
           ) : null}
@@ -63,7 +63,7 @@ function LanguageSwitch() {
           }
           onPress={() => handleChangeLanguage("en")}
         >
-          <p className="font-bold">{t("En")}</p>
+          <p className="font-bold">English</p>
         </DropdownItem>
         <DropdownItem
           key="fa"
@@ -72,7 +72,7 @@ function LanguageSwitch() {
           }
           onPress={() => handleChangeLanguage("pe")}
         >
-          <p className="font-bold">{t("Fa")}</p>
+          <p className="font-bold">فارسی</p>
         </DropdownItem>
         <DropdownItem
           key="ru"
@@ -81,7 +81,7 @@ function LanguageSwitch() {
           }
           onPress={() => handleChangeLanguage("ru")}
         >
-          <p className="font-bold">{t("Ru")}</p>
+          <p className="font-bold">Русский</p>
         </DropdownItem>
       </DropdownMenu>
     </Dropdown>

@@ -3,6 +3,7 @@ import { Input } from "@heroui/input";
 import { useTranslations } from "next-intl";
 import { FormikProps, FormikErrors } from "formik";
 import { isDragActive } from "framer-motion";
+
 import GalleryIcon from "../common/icons/gallery-icon";
 
 function NgoPublishDocument({ formik }: { formik: FormikProps<any> }) {
@@ -11,9 +12,16 @@ function NgoPublishDocument({ formik }: { formik: FormikProps<any> }) {
   const handleSetPublishDocument = (value: string[]) => {
     const lastValue = value[value.length - 1];
     if (value.length) {
-      if (lastValue === "no" || lastValue === "yes") {
-        formik.setFieldValue("publishValue", "");
+      if (lastValue === "no") {
+        formik.setFieldValue("callPermition", false);
+        formik.setFieldValue("locationPermition", false);
       }
+
+      if (lastValue === "yes") {
+        formik.setFieldValue("callPermition", true);
+        formik.setFieldValue("locationPermition", true);
+      }
+
       formik.setFieldValue("publishSelect", [lastValue]);
     } else {
       formik.setFieldValue("publishSelect", []);
@@ -44,7 +52,7 @@ function NgoPublishDocument({ formik }: { formik: FormikProps<any> }) {
           {t("Limited")}
         </Checkbox>
       </CheckboxGroup>
-      <div className="flex items-center gap-4 flex-1 mx-4 md:mx-0 mt-2">
+      {/* <div className="flex items-center gap-4 flex-1 mx-4 md:mx-0 mt-2">
         <Input
           disabled={
             formik.values.publishSelect.includes("limited") ? false : true
@@ -66,7 +74,7 @@ function NgoPublishDocument({ formik }: { formik: FormikProps<any> }) {
           label={t("Information authorized for publication")}
           {...formik.getFieldProps("publishValue")}
         />
-      </div>
+      </div> */}
     </>
   );
 }

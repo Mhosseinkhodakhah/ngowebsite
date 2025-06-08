@@ -37,22 +37,22 @@ function ModalImage({ isOpen, onClose, src }: Props) {
                 src={src}
                 width={800}
               />
+              <div className="flex justify-center gap-2 w-full mx-auto mb-10">
+                <Button
+                  className="text-white"
+                  color="primary"
+                  variant="shadow"
+                  onPress={onClose}
+                >
+                  {t("Close")}
+                </Button>
+                <Button className="text-white" color="success" variant="shadow">
+                  <a href={src} download>
+                    {t("Download")}
+                  </a>
+                </Button>
+              </div>
             </ModalBody>
-            <ModalFooter>
-              <Button
-                className="text-white"
-                color="primary"
-                variant="shadow"
-                onPress={onClose}
-              >
-                {t("Close")}
-              </Button>
-              <Button className="text-white" color="success" variant="shadow">
-                <a href={src} download>
-                  {t("Download")}
-                </a>
-              </Button>
-            </ModalFooter>
           </>
         )}
       </ModalContent>

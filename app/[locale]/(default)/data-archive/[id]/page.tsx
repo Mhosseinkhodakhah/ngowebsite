@@ -8,10 +8,13 @@ async function Page({ params }: { params: { id: string } }) {
 
   const { data }: any = await getSingleDataArchive(id);
 
-  const { title, description, type, file, ngo } = data?.data;
+  const { title, description, language, ngo } = data?.data;
 
   return (
-    <section className="flex flex-col justify-center items-center w-full max-w-screen-lg mx-auto">
+    <section
+      className="flex flex-col justify-center items-center w-full max-w-screen-lg mx-auto"
+      dir={language === "en" || language === "ru" ? "ltr" : "rtl"}
+    >
       <h1 className="text-xl font-bold border-b-5 border-primary mt-20">
         {title}
       </h1>

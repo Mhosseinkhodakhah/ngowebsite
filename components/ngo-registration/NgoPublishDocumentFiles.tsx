@@ -11,10 +11,11 @@ import { Tooltip } from "@heroui/tooltip";
 import GalleryIcon from "../common/icons/gallery-icon";
 
 interface Props {
+  publishFile: FormData;
   onPublishFile: (formData: FormData) => void;
 }
 
-function NgoPublishDocumentFiles({ onPublishFile }: Props) {
+function NgoPublishDocumentFiles({ publishFile, onPublishFile }: Props) {
   const [publishList, setPublishList] = useState<
     { name: string; url: string }[]
   >([]);
@@ -24,15 +25,16 @@ function NgoPublishDocumentFiles({ onPublishFile }: Props) {
   const onDrop = useCallback((acceptedFiles: File[]) => {
     // Do something with the files
     let files: { name: string; url: string }[] = [];
-    const formData = new FormData();
 
     acceptedFiles.forEach((file: File) => {
       files.push({ name: file.name, url: URL.createObjectURL(file as Blob) });
-      formData.append("picture", file);
+      publishFile.append("picture", file);
     });
 
-    onPublishFile(formData);
-    setPublishList(files);
+    console.log("ccccccc", publishFile.getAll("picture"));
+
+    onPublishFile(publishFile);
+    setPublishList((prev) => [...prev, ...files]);
   }, []);
 
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
@@ -64,7 +66,7 @@ function NgoPublishDocumentFiles({ onPublishFile }: Props) {
           )}
         </div>
         <ul className="my-4 px-4 text-start grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
-          {publishList.map((doc) => (
+          {publishList.map((doc, index: number) => (
             <li key={doc.url} className="my-2 md:mx-auto relative py-4">
               <Image
                 alt="document"
@@ -83,6 +85,16 @@ function NgoPublishDocumentFiles({ onPublishFile }: Props) {
                     const cpDocList = [...publishList];
                     const filter = cpDocList.filter((f) => f.url !== doc.url);
 
+                    const getformData = publishFile.getAll("picture");
+                    const filtered = getformData.filter((f, i) => i !== index);
+
+                    publishFile.delete("picture");
+
+                    for (let i = 0; i < filtered.length; i++) {
+                      publishFile.append("picture", filtered[i]);
+                    }
+
+                    console.log("vvvvvvv", publishFile.getAll("picture"));
                     setPublishList(filter);
                   }}
                 >

@@ -97,7 +97,7 @@ function UploadDocumentsSection({
 
   return (
     <section className="flex gap-4 flex-col md:flex-row md:justify-around justify-center items-center h-full px-4 md:px-0 mt-10">
-      <div className="flex-col w-full lg:w-2/3 ">
+      <div className="flex-col w-full">
         <div
           className="bg-gray dark:bg-secondary flex justify-center items-center p-10 rounded-md border border-dashed "
           {...getRootProps()}

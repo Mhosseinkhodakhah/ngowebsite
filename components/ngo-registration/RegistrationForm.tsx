@@ -5,7 +5,9 @@ import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { useFormik } from "formik";
 import { useMutation } from "@tanstack/react-query";
+import { Divider } from "@heroui/divider";
 
+import NgoPublishDocumentFiles from "./NgoPublishDocumentFiles";
 import UploadSection from "./UploadSection";
 import GlobalInfo from "./GlobalInfo";
 import ActivityField from "./ActivityField";
@@ -25,14 +27,12 @@ import ConditionAndConfirm from "./ConditionAndConfirm";
 import LoginData from "./LoginData";
 import FormButtons from "./FormButtons";
 import ContactFields from "./ContactFields";
+import IsPermitedForPublish from "./PermitPage";
 
 import { ngoRegisterSchema } from "@/utils/validations";
 import { INGO } from "@/types/ngo-types";
 import { NogsRegisteration, uploadDocs } from "@/actions/ngo";
 import { useRouter } from "@/i18n/navigation";
-import { Divider } from "@heroui/divider";
-import IsPermitedForPublish from "./PermitPage";
-import NgoPublishDocumentFiles from "./NgoPublishDocumentFiles";
 
 function RegistrationForm() {
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -293,7 +293,6 @@ function RegistrationForm() {
       <ActivityField formik={formik} />
       <ContactFields formik={formik} />
       <Divider className="my-5" />
-      <IsPermitedForPublish formik={formik} />{" "}
       {/*  its created for geting permition of ngo for sharing their call and location data */}
       <Divider className="my-5" />
       <AreaActivity formik={formik} />
@@ -316,8 +315,12 @@ function RegistrationForm() {
       <UploadSection onDocumentsFile={setDocumentsFile} onLogo={setLogo} />
       <Divider className="my-5" />
       <NgoPublishDocument formik={formik} />
+      {formik?.values?.publishSelect[0] === "limited" && (
+        <IsPermitedForPublish formik={formik} />
+      )}
+
       {formik?.values?.publishSelect[0] !== "no" ? (
-        <NgoPublishDocumentFiles onPublishFile={setPublishFile} />
+        <NgoPublishDocumentFiles publishFile={publishFile} onPublishFile={setPublishFile} />
       ) : null}
       <Divider className="my-5" />
       <LoginData formik={formik} />

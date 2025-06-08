@@ -7,8 +7,8 @@ import ProjectInfo from "@/components/projects/ProjectInfo";
 import VisualDocuments from "@/components/projects/VisualDocuments";
 
 async function Page({ params }: { params: { id: string; locale: string } }) {
-  const id = params.id;
-  const locale = params.locale;
+  const id = await params?.id;
+  const locale = await params?.locale;
 
   const data = await getSingleProject(id);
 
@@ -19,10 +19,14 @@ async function Page({ params }: { params: { id: string; locale: string } }) {
     status,
     moreInformation,
     documentsAndReports,
+    language,
   } = data?.data;
 
   return (
-    <section className="flex flex-col justify-center items-center">
+    <section
+      className={`flex flex-col justify-center items-center`}
+      dir={language === "en" || language === "ru" ? "ltr" : "rtl"}
+    >
       <h1 className="text-xl font-bold border-b-5 border-primary mt-20">
         {name}
       </h1>

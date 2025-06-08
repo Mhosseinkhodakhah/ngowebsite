@@ -17,10 +17,14 @@ async function Page({ params }: { params: any }) {
     goalAndAchievements,
     moreInformation,
     documentsAndReports,
+    language,
   } = data?.data;
 
   return (
-    <section className="flex flex-col justify-center items-center">
+    <section
+      className="flex flex-col justify-center items-center"
+      dir={language === "en" || language === "ru" ? "ltr" : "rtl"}
+    >
       <h1 className="text-xl font-bold border-b-5 border-primary mt-20 w-[90%] lg:w-max px-6 lg:px-0 text-justify">
         {name}
       </h1>

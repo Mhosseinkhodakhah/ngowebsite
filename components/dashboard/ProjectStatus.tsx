@@ -33,6 +33,9 @@ function ProjectStatus({ formik }: { formik: FormikProps<any> }) {
       <Checkbox className="my-1" value="collaborationOpportunities">
         {t("Collaboration Opportunities")}
       </Checkbox>
+      <Checkbox className="my-1" value="completed">
+        {t("Completed")}
+      </Checkbox>
     </CheckboxGroup>
   );
 }
