@@ -65,6 +65,17 @@ function NgoPublishDocumentFiles({ publishFile, onPublishFile }: Props) {
             </div>
           )}
         </div>
+        <ul className="list-disc p-4">
+            <li className="text-[10px] text-danger text-light">
+              {t("Maximum selected files: 5")}
+            </li>
+            <li className="text-[10px] text-danger text-light">
+              {t("Acceptable formats JPG")}
+            </li>
+            <li className="text-[10px] text-danger text-light">
+              {t("The size of the selected files must be less than 20 MB")}
+            </li>
+          </ul>
         <ul className="my-4 px-4 text-start grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
           {publishList.map((doc, index: number) => (
             <li key={doc.url} className="my-2 md:mx-auto relative py-4">

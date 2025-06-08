@@ -131,6 +131,9 @@ function UploadSection({ onLogo, onDocumentsFile }: Props) {
             <li className="text-[10px] text-danger text-light">
               {t("Acceptable formats PDF")}
             </li>
+            <li className="text-[10px] text-danger text-light">
+              {t("The size of the selected files must be less than 20 MB")}
+            </li>
           </ul>
         </div>
         <ul className="my-4 px-4 text-start grid grid-cols-1 md:grid-cols-2">
