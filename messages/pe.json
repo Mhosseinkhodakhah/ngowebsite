@@ -103,6 +103,9 @@
     "Countries": "کشور ها"
   },
   "ngo-registration": {
+    "Click here to" : "برای",
+    "download" : "دانلود",
+    "the registration guide file" : "فایل راهنمای ثبت نام",
     "Upload Files": "بارگذاری تصاویر",
     "Documents": "مدارک و مستندات",
     "Public images": "تصاویر عمومی",

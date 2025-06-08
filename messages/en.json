@@ -104,6 +104,9 @@
     "Countries": "Countries"
   },
   "ngo-registration": {
+    "Click here to" : "Click here to",
+    "download" : "Download",
+    "the registration guide file" : "the registration guide file",
     "Upload Files": "Upload Files",
     "Documents": "Documents",
     "Public images": "Public images",

@@ -21,7 +21,7 @@ function NgoPublishDocument({ formik }: { formik: FormikProps<any> }) {
         formik.setFieldValue("callPermition", true);
         formik.setFieldValue("locationPermition", true);
       }
-
+      
       formik.setFieldValue("publishSelect", [lastValue]);
     } else {
       formik.setFieldValue("publishSelect", []);

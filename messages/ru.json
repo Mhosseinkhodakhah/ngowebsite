@@ -103,6 +103,9 @@
     "Countries": "Страны"
   },
   "ngo-registration": {
+    "Click here to" : "Нажмите здесь, чтобы",
+    "download" : "Загрузить",
+    "the registration guide file" : "файл руководства по регистрации",
     "Upload Files": "Загрузить файлы",
     "Documents": "Документы",
     "Public images": "Публичные изображения",

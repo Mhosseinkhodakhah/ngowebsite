@@ -14,7 +14,7 @@ function HelperFile({ link }: { link: string }) {
           href={link}
           target="_blank"
         >
-          {t("Download")}
+          {t("download")}
         </Link>
         {t("the registration guide file")}
       </p>
