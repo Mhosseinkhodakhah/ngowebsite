@@ -7,10 +7,10 @@ function HelperFile({ link }: { link: string }) {
   return (
     <div className="w-full flex justify-between items-start rounded-md max-w-screen-md p-4 ">
       <p className="flex-1">
-        {t("Click here to")}
+        {/* {t("Click here to")} */}
         <Link
           download
-          className="underline text-primary px-2"
+          className="text-primary px-2"
           href={link}
           target="_blank"
         >
