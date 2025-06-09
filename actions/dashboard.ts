@@ -26,7 +26,7 @@ export const createProject = async (values: any) => {
   } catch (err: any) {
     console.log("eeerrrr", err);
 
-    return false;
+    return "";
   }
 };
 
@@ -40,7 +40,7 @@ export const updateProject = async (values: any, id: string) => {
   } catch (err: any) {
     console.log("eeerrrr", err);
 
-    return false;
+    return "";
   }
 };
 
@@ -54,7 +54,7 @@ export const completeProject = async (values: any, id: string) => {
   } catch (err: any) {
     console.log("eeerrrr", err);
 
-    return false;
+    return "";
   }
 };
 
@@ -68,7 +68,7 @@ export const ongoingProject = async (id: any) => {
   } catch (err: any) {
     console.log("eeerrrr", err);
 
-    return false;
+    return "";
   }
 };
 export const deleteProject = async (id: any) => {
@@ -81,7 +81,7 @@ export const deleteProject = async (id: any) => {
   } catch (err: any) {
     console.log("eeerrrr", err);
 
-    return false;
+    return "";
   }
 };
 
@@ -93,7 +93,7 @@ export const createDocument = async (values: any) => {
 
     return data;
   } catch (err: any) {
-    return err?.response;
+    return "";
   }
 };
 
@@ -107,7 +107,7 @@ export const updateDocument = async (values: any, id: string) => {
   } catch (err) {
     console.log("eeerrrr", err);
 
-    return false;
+    return "";
   }
 };
 
@@ -121,7 +121,7 @@ export const deleteDocument = async (id: string) => {
   } catch (err) {
     console.log("eeerrrr", err);
 
-    return false;
+    return "";
   }
 };
 
@@ -147,7 +147,6 @@ export const getSingleDocument = async (id: string) => {
 
 export const checkToken = async () => {
   const token: any = await getCookie("miras-token");
-
 
   try {
     const data = await axios.get(`ngo/token/check`, {

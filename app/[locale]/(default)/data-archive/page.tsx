@@ -12,6 +12,23 @@ async function Page({ searchParams }: { searchParams: any }) {
 
   const { data }: any = await dataArchive(page, search);
 
+  console.log("ddd", data);
+
+  const cardImg = (files: string[]): string => {
+    let findImg = "";
+
+    files.forEach((f) => {
+      if (
+        f.slice(f.length - 3) === "png" ||
+        f.slice(f.length - 3) === "jpg" ||
+        f.slice(f.length - 3) === "jpeg"
+      ) {
+        findImg = f;
+      }
+    });
+
+    return findImg;
+  };
 
   return (
     <section className="flex flex-col justify-center items-center overflow-y-hidden">
@@ -32,7 +49,7 @@ async function Page({ searchParams }: { searchParams: any }) {
                   key={doc?._id}
                   btnText="See More"
                   description={doc?.description}
-                  imageUrl={doc?.file.length ? doc?.file[0] : ""}
+                  imageUrl={doc?.file.length ? cardImg(doc?.file) : ""}
                   name={doc?.title}
                   ngo={doc?.ngo}
                   route={`/data-archive/${doc?._id}`}
@@ -41,7 +58,7 @@ async function Page({ searchParams }: { searchParams: any }) {
               ))}
             </>
           </div>
-          {page > 1 && (
+          {Math.ceil(data?.data?.all / 10) > 1 && (
             <PaginationArchive
               all={data?.data?.all}
               page={page}

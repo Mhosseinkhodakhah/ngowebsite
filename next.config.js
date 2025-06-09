@@ -17,6 +17,18 @@ const nextConfig = {
         port: "",
         search: "",
       },
+      {
+        protocol: "https",
+        hostname: "cdn.finatic.ir",
+        port: "",
+        search: "",
+      },
+      {
+        protocol: "https",
+        hostname: "ngoupload.fiantic.ir",
+        port: "",
+        search: "",
+      },
     ],
   },
 

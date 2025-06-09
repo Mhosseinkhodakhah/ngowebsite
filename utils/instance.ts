@@ -50,7 +50,7 @@ instance.interceptors.response.use(
           const UnauthorizedError = new Error("401");
 
           // console.log("iiiii", error.response);
-          return Promise.reject(UnauthorizedError);
+          Promise.reject(UnauthorizedError);
 
         // handleRedirect();
 
@@ -63,18 +63,22 @@ instance.interceptors.response.use(
         case 404:
           const notFoundError = new Error("404");
 
-          return Promise.reject(notFoundError);
+          Promise.reject(notFoundError);
+
+          return error?.response;
           break;
         case 400:
           const errorSource = new Error("400");
-          console.log("error", error.response);
 
-          return Promise.reject(errorSource);
-          break;
+          Promise.reject(errorSource);
+
+          return error?.response;
         case 500:
           const serverError = new Error("500");
 
-          return Promise.reject(serverError);
+          Promise.reject(serverError);
+
+          return error?.response;
           break;
         default:
           const defaultError = new Error(

@@ -42,6 +42,13 @@ function DocumentsAndRecordsForm() {
         setDocuments([]);
         formik.resetForm();
         router.push("/dashboard/documents");
+      } else {
+        addToast({
+          title: t("Error"),
+          description: response?.error,
+          promise: new Promise((resolve) => setTimeout(resolve, 3000)),
+          color: "danger",
+        });
       }
       setIsLoading(false);
     },
@@ -80,7 +87,7 @@ function DocumentsAndRecordsForm() {
         } else {
           addToast({
             title: t("Error"),
-            description: t("Documents failed to load, please try again"),
+            description: upload.error,
             promise: new Promise((resolve) => setTimeout(resolve, 3000)),
             color: "danger",
           });

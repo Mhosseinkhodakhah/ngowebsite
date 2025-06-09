@@ -54,7 +54,7 @@ function ProjectForm() {
       } else {
         addToast({
           title: t("Error"),
-          description: t("Failed to create project"),
+          description: data?.error,
           timeout: 3000,
           color: "danger",
         });

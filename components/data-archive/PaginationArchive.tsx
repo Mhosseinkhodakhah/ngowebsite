@@ -27,7 +27,7 @@ function PaginationArchive({
           }}
           color="primary"
           initialPage={page ? +page : 1}
-          total={Math.floor(all / 10)}
+          total={Math.ceil(all / 10)}
           variant="bordered"
           onChange={(value) => {
             const val = {
