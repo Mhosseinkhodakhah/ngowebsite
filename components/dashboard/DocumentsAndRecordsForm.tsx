@@ -36,6 +36,8 @@ function DocumentsAndRecordsForm() {
         addToast({
           title: t("Success"),
           description: t("Document created successfully"),
+          shouldShowTimeoutProgress : true,
+          variant : 'flat',
           promise: new Promise((resolve) => setTimeout(resolve, 3000)),
           color: "success",
         });

@@ -54,7 +54,9 @@ function RegistrationForm() {
         addToast({
           title: t("Registration"),
           description: data?.error,
-          promise: new Promise((resolve) => setTimeout(resolve, 3000)),
+          timeout : 3000,
+          shouldShowTimeoutProgress : true,
+          variant : 'flat',
           color: "danger",
         });
       }
