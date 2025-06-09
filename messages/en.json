@@ -104,6 +104,9 @@
     "Countries": "Countries"
   },
   "ngo-registration": {
+    "The number of selected files cannot exceed 4" : "The number of selected files cannot exceed 4.",
+    "The number of selected files cannot exceed 3" : "The number of selected files cannot exceed 3.",
+    "File Size is Too Much" : "File Size is Too Much",
     "Maximum selected files: 5" : "Maximum selected files: 3.",
     "Acceptable formats PDF" : "Acceptable formats PDF.",
     "Acceptable formats JPG" : "Acceptable formats JPG , JPEG , PNG.",

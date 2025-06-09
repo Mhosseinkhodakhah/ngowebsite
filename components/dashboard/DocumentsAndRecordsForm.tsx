@@ -46,7 +46,9 @@ function DocumentsAndRecordsForm() {
         addToast({
           title: t("Error"),
           description: response?.error,
-          promise: new Promise((resolve) => setTimeout(resolve, 3000)),
+          timeout : 3000,
+          shouldShowTimeoutProgress : true,
+          variant : 'flat',
           color: "danger",
         });
       }

@@ -46,6 +46,8 @@ function UpdateProjectForm({ data }: { data: any }) {
         addToast({
           title: t("Success"),
           description: t("Project updated successfully"),
+          shouldShowTimeoutProgress : true,
+          variant : 'flat',
           timeout: 3000,
           color: "success",
         });
@@ -55,7 +57,9 @@ function UpdateProjectForm({ data }: { data: any }) {
       } else {
         addToast({
           title: t("Error"),
-          description: t("Failed to update project"),
+          shouldShowTimeoutProgress : true,
+          variant : 'flat',
+          description: data?.error,
           timeout: 3000,
           color: "danger",
         });

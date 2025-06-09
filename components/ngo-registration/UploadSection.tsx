@@ -11,6 +11,7 @@ import { Tooltip } from "@heroui/tooltip";
 
 // import GalleryIcon from "../common/icons/gallery-icon";
 import PdfIcon from "../common/icons/pdf-icon";
+import { addToast } from "@heroui/toast";
 
 interface HandleSetLogoEvent extends React.ChangeEvent<HTMLInputElement> {}
 
@@ -28,10 +29,30 @@ function UploadSection({ onLogo, onDocumentsFile }: Props) {
   const onDrop = useCallback((acceptedFiles: File[]) => {
     // Do something with the files
     let files: { name: string; url: string }[] = [];
-    
+    console.log('its come herer')
+    if (acceptedFiles.length > 3){
+      console.log('its from hereeee')
+      addToast({
+        title: "File Limitation",
+        description: t("The number of selected files cannot exceed 4"),
+        timeout: 3000,
+        shouldShowTimeoutProgress: true,
+        color: "danger",
+        variant: "flat"
+      })
+      return;
+    }
+
     const totalSize = acceptedFiles.reduce((sum, file) => sum + file.size, 0);
     if (totalSize > 10 * 1024 * 1024) {
-      alert('Total size of all files exceeds 10MB');
+      addToast({
+        title: "File Limitation",
+        description: t("File Size is Too Much"),
+        timeout: 3000,
+        color: "danger",
+        variant: "flat",
+        shouldShowTimeoutProgress: true,
+      })
       return;
     }
     
@@ -55,7 +76,7 @@ function UploadSection({ onLogo, onDocumentsFile }: Props) {
     },
     maxSize: 20 * 1024 * 1024, // 20MB in bytes
     // multiple: true,
-    maxFiles: 3, // If you want to limit number of files
+    // maxFile s: 3, // If you want to limit number of files
   });
 
   const logoRef = useRef<HTMLInputElement>(null);

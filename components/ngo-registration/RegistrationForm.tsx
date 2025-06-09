@@ -53,7 +53,7 @@ function RegistrationForm() {
       } else {
         addToast({
           title: t("Registration"),
-          description: t("Registration failed, please try again"),
+          description: data?.error,
           promise: new Promise((resolve) => setTimeout(resolve, 3000)),
           color: "danger",
         });

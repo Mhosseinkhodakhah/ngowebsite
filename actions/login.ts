@@ -9,6 +9,6 @@ export const loginRequest = async (values: {
 
     return data;
   } catch (err) {
-    return err;
+    return "";
   }
 };

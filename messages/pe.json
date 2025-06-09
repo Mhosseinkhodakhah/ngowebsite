@@ -103,6 +103,9 @@
     "Countries": "کشور ها"
   },
   "ngo-registration": {
+    "The number of selected files cannot exceed 4" : "تعداد فایل انتخابی نمی تواند بیش از 4 عدد باشد",
+    "The number of selected files cannot exceed 3" : "تعداد فایل انتخابی نمی تواند بیش از 3 عدد باشد",
+    "File Size is Too Much" : "حجم فایل بیش از حد مجاز",
     "Maximum selected files: 5" : "حداکثر تعداد فایل‌های انتخاب شده: ۳",
     "Acceptable formats PDF" : "فرمت‌های قابل قبول PDF",
     "Acceptable formats JPG" : "فرمت‌های قابل قبول JPG , JPEG , PNG",

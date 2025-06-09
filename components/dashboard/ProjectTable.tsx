@@ -55,8 +55,10 @@ const ProjectTable = ({ data }: { data: any }) => {
       } else {
         addToast({
           title: t("Error"),
-          description: t("Failed to change project status"),
+          description: data?.error,
           timeout: 3000,
+          shouldShowTimeoutProgress : true,
+          variant : 'flat',
           color: "danger",
         });
       }
@@ -78,7 +80,9 @@ const ProjectTable = ({ data }: { data: any }) => {
       } else {
         addToast({
           title: t("Error"),
-          description: t("Failed to delete project"),
+          description: data?.error,
+          shouldShowTimeoutProgress : true,
+          variant : 'flat',
           timeout: 3000,
           color: "danger",
         });

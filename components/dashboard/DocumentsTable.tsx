@@ -50,8 +50,10 @@ const DocumentsTable = ({ data }: { data: any }) => {
       } else {
         addToast({
           title: t("Error"),
-          description: t("Failed to delete document"),
+          description: data?.error,
           timeout: 3000,
+          shouldShowTimeoutProgress : true,
+          variant : 'flat',
           color: "danger",
         });
       }

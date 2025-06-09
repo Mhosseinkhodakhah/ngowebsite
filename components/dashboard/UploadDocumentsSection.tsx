@@ -9,6 +9,7 @@ import { Button } from "@heroui/button";
 import { Icon } from "@iconify/react";
 
 import GalleryIcon from "../common/icons/gallery-icon";
+import { addToast } from "@heroui/toast";
 
 function UploadDocumentsSection({
   formik,
@@ -25,9 +26,27 @@ function UploadDocumentsSection({
 
   const onDrop = useCallback((acceptedFiles: File[]) => {
     let files: { name: string; url: string; type: string }[] = [];
+    if (acceptedFiles.length > 4){
+      addToast({
+        title: "File Limitation",
+        description: t("The number of selected files cannot exceed 4"),
+        timeout: 3000,
+        shouldShowTimeoutProgress: true,
+        color: "danger",
+        variant: "flat"
+      })
+      return;
+    }
     const totalSize = acceptedFiles.reduce((sum, file) => sum + file.size, 0);
-    if (totalSize > 10 * 1024 * 1024) {
-      alert("Total size of all files exceeds 20MB");
+    if (totalSize > 1 * 1024 * 1024) {
+      addToast({
+        title: "File Limitation",
+        description: t("File Size is Too Much"),
+        timeout: 3000,
+        shouldShowTimeoutProgress: true,
+        color: "danger",
+        variant: "flat"
+      })
       return;
     }
     acceptedFiles.forEach((file: File) => {

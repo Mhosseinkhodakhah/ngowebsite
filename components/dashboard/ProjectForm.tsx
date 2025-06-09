@@ -46,6 +46,8 @@ function ProjectForm() {
           title: t("Success"),
           description: t("Project created successfully"),
           timeout: 3000,
+          shouldShowTimeoutProgress : true,
+          variant : 'flat',
           color: "success",
         });
         setDocumentsAndReportFormData([]);
@@ -55,6 +57,8 @@ function ProjectForm() {
         addToast({
           title: t("Error"),
           description: data?.error,
+          shouldShowTimeoutProgress : true,
+          variant : 'flat',
           timeout: 3000,
           color: "danger",
         });

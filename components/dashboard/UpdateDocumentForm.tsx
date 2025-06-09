@@ -30,17 +30,30 @@ function UpdateDocumentForm({ data }: { data: any }) {
     mutationKey: ["updateDocument"],
     mutationFn: ({ values, id }: { values: any; id: string }) =>
       updateDocument(values, id),
-    onSuccess: () => {
-      setIsLoading(false);
-      addToast({
-        title: t("Success"),
-        description: t("Document updated successfully"),
-        promise: new Promise((resolve) => setTimeout(resolve, 3000)),
-        color: "success",
-      });
-      setDocuments([]);
-      formik.resetForm();
-      router.push("/dashboard/documents");
+    onSuccess: (data: any) => {
+      if (data?.success){
+        setIsLoading(false);
+        addToast({
+          title: t("Success"),
+          description: t("Document updated successfully"),
+          shouldShowTimeoutProgress : true,
+          variant : 'flat',
+          promise: new Promise((resolve) => setTimeout(resolve, 3000)),
+          color: "success",
+        });
+        setDocuments([]);
+        formik.resetForm();
+        router.push("/dashboard/documents");
+      }else{
+        addToast({
+          title: t("Failed"),
+          description: data?.error,
+          timeout : 3000,
+          shouldShowTimeoutProgress : true,
+          variant : 'flat',
+          color: "danger",
+        });
+      }
     },
   });
 

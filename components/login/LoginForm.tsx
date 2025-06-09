@@ -33,7 +33,9 @@ function LoginForm() {
       } else {
         addToast({
           title: t("Error"),
-          description: t("The username or password is incorrect"),
+          description: data?.error,
+          shouldShowTimeoutProgress : true,
+          variant : 'flat',
           timeout: 3000,
           color: "danger",
         });

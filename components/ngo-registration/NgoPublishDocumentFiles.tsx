@@ -9,6 +9,7 @@ import { Icon } from "@iconify/react";
 import { Tooltip } from "@heroui/tooltip";
 
 import GalleryIcon from "../common/icons/gallery-icon";
+import { addToast } from "@heroui/toast";
 
 interface Props {
   publishFile: FormData;
@@ -26,18 +27,36 @@ function NgoPublishDocumentFiles({ publishFile, onPublishFile }: Props) {
     // Do something with the files
     let files: { name: string; url: string }[] = [];
 
-    const totalSize = acceptedFiles.reduce((sum, file) => sum + file.size, 0);
-    if (totalSize > 10 * 1024 * 1024) {
-      alert('Total size of all files exceeds 10MB');
+   const totalSize = acceptedFiles.reduce((sum, file) => sum + file.size, 0);
+    if (totalSize > 5 * 1024 * 1024) {
+      addToast({
+        title: "File Limitation",
+        description: t("File Size is Too Much"),
+        timeout: 3000,
+        shouldShowTimeoutProgress: true,
+        color: "danger",
+         variant: "flat"
+      })
       return;
     }
 
     acceptedFiles.forEach((file: File) => {
       files.push({ name: file.name, url: URL.createObjectURL(file as Blob) });
+      if (publishFile.getAll("picture").length + 1 > 3){
+        addToast({
+        title: "File Limitation",
+        description: t("The number of selected files cannot exceed 3"),
+        timeout: 3000,
+        shouldShowTimeoutProgress: true,
+        color: "danger",
+        variant: "flat"
+      })
+      return;
+      }
       publishFile.append("picture", file);
     });
 
-    console.log("ccccccc", publishFile.getAll("picture"));
+    console.log("ccccccc", publishFile.getAll("picture").length);
 
     onPublishFile(publishFile);
     setPublishList((prev) => [...prev, ...files]);
@@ -107,8 +126,8 @@ function NgoPublishDocumentFiles({ publishFile, onPublishFile }: Props) {
 
                     const getformData = publishFile.getAll("picture");
                     const filtered = getformData.filter((f, i) => i !== index);
-
-                    publishFile.delete("picture");
+                    console.log('filterrrrr' , filtered)
+                    publishFile.delete("picture");  
 
                     for (let i = 0; i < filtered.length; i++) {
                       publishFile.append("picture", filtered[i]);

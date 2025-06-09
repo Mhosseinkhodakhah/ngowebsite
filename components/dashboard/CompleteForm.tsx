@@ -64,6 +64,8 @@ function CompleteForm({ id, data }: { id: string; data: any }) {
         addToast({
           title: t("Success"),
           description: t("Project completed successfully"),
+          shouldShowTimeoutProgress: true,
+          variant: 'flat',
           timeout: 3000,
           color: "success",
         });
@@ -71,7 +73,9 @@ function CompleteForm({ id, data }: { id: string; data: any }) {
       } else {
         addToast({
           title: t("Error"),
-          description: t("Failed to complete project"),
+          description: data?.error,
+          shouldShowTimeoutProgress : true,
+          variant : 'flat',
           timeout: 3000,
           color: "danger",
         });

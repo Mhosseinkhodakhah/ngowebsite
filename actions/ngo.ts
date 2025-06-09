@@ -28,7 +28,7 @@ export const NogsRegisteration = async (values: any) => {
   } catch (error) {
     console.error(error);
 
-    return false;
+    return "";
   }
 };
 

@@ -11,8 +11,9 @@ function NgoPublishDocument({ formik }: { formik: FormikProps<any> }) {
 
   const handleSetPublishDocument = (value: string[]) => {
     const lastValue = value[value.length - 1];
+    console.log('lastValue >>>> ' , lastValue)
     if (value.length) {
-      if (lastValue === "no") {
+      if (lastValue === "no" || lastValue === "limited") {
         formik.setFieldValue("callPermition", false);
         formik.setFieldValue("locationPermition", false);
       }
@@ -21,7 +22,7 @@ function NgoPublishDocument({ formik }: { formik: FormikProps<any> }) {
         formik.setFieldValue("callPermition", true);
         formik.setFieldValue("locationPermition", true);
       }
-      
+
       formik.setFieldValue("publishSelect", [lastValue]);
     } else {
       formik.setFieldValue("publishSelect", []);
