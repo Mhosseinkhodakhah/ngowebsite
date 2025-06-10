@@ -5,10 +5,10 @@ const Twitter = (props: IconSvgProps) => (
     aria-hidden="true"
     fill="none"
     focusable="false"
-    height="15"
+    height="13"
     role="presentation"
     viewBox="0 0 20 20"
-    width="15"
+    width="13"
     {...props}
   >
     <mask height="20" id="a" maskUnits="userSpaceOnUse" width="20" x="0" y="0">

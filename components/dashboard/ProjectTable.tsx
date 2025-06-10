@@ -103,29 +103,45 @@ const ProjectTable = ({ data }: { data: any }) => {
 
   const [colDefs] = useState<ColDef[]>([
     {
-      headerName: t("Project Name"),
-      field: "name",
-    },
-    {
       headerName: t("Project Status"),
-      field: "status",
-      width: 200,
+      field: "state",
       cellRenderer: (params: any) => {
         return (
           <>
-            {params?.value[0] === "goodPractice"
-              ? t("Good Practice")
-              : params?.value[0] === "ongoing"
-                ? t("Ongoing")
-                : params?.value[0] === "completed"
-                  ? t("Completed")
-                  : params?.value[0] === "collaborationOpportunities"
-                    ? t("Collaboration Opportunities")
-                    : t("")}
+            {params?.value === 0
+              ? t("pending")
+              : params?.value === 1
+                ? t("accepted")
+                : t("rejected")
+                }
           </>
         );
       },
     },
+    {
+      headerName: t("Project Name"),
+      field: "name",
+    },
+    // {
+    //   headerName: t("Project Status"),
+    //   field: "status",
+    //   width: 200,
+    //   cellRenderer: (params: any) => {
+    //     return (
+    //       <>
+    //         {params?.value[0] === "goodPractice"
+    //           ? t("Good Practice")
+    //           : params?.value[0] === "ongoing"
+    //             ? t("Ongoing")
+    //             : params?.value[0] === "completed"
+    //               ? t("Completed")
+    //               : params?.value[0] === "collaborationOpportunities"
+    //                 ? t("Collaboration Opportunities")
+    //                 : t("")}
+    //       </>
+    //     );
+    //   },
+    // },
     {
       headerName: t("Country"),
       field: "location.country",

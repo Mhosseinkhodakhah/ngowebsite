@@ -88,49 +88,50 @@ function CardComponent({
           src={!!imageUrl ? imageUrl : PlaceHolder.src}
           width={800}
         />
+        <Divider className="my-2"/>
         {status && (
           <div
-            className={`w-full flex gap-2 ${locale === "pe" ? "items-start" : "items-end"} mt-2 `}
+            className={`w-full flex gap-2 ${locale === "pe" ? "items-start" : "items-end"}  `}
           >
             {status.includes("video") && (
-              <Chip className="text-gray " color="primary" size="sm">
-                <Icon height="30" icon="lets-icons:video-fill" width="24" />
-              </Chip>
+              // <Chip size="sm">
+                <Icon icon="vscode-icons:file-type-video" width="24" height="24" />
+              // </Chip>
             )}
 
             {status.includes("image") && (
-              <Chip className="text-gray " color="primary" size="sm">
-                <Icon height="30" icon="mynaui:image-solid" width="24" />
-              </Chip>
+              // <Chip  size="sm">
+                <Icon icon="fluent-color:image-28" width="26" height="26" />
+              // </Chip>
             )}
             {status.includes("pdf") && (
-              <Chip className="text-gray " color="primary" size="sm">
-                <Icon icon="teenyicons:pdf-solid" width="15" height="15" />
-              </Chip>
+              // <Chip size="sm">
+                <Icon icon="material-icon-theme:pdf" width="24" height="24" />
+              // </Chip>
             )}
 
             {status.includes("word") && (
-              <Chip className="text-gray " color="primary" size="sm">
-                <Icon icon="flowbite:file-word-solid" width="24" height="24" />
-              </Chip>
-            )}
-            {status.includes("goodPractice") && (
-              <Chip className="text-gray text-[10px]" color="primary" size="sm">
-                {t("Good Practice")}
-              </Chip>
+              // <Chip size="sm">
+                <Icon icon="vscode-icons:file-type-word" width="24" height="24" />
+              // </Chip>
             )}
             {status.includes("ongoing") && (
-              <Chip className="text-gray text-[10px]" color="warning" size="sm">
+              <Chip className=" text-[10px]" size="sm">
                 {t("Ongoing")}
               </Chip>
             )}
             {status.includes("completed") && (
-              <Chip className="text-gray text-[10px]" color="success" size="sm">
+              <Chip className=" text-[10px]"  size="sm">
                 {t("Completed")}
               </Chip>
             )}
+            {status.includes("goodPractice") && (
+              <Chip className=" text-[10px]" size="sm">
+                {t("Good Practice")}
+              </Chip>
+            )}
             {status.includes("collaborationOpportunities") && (
-              <Chip className="text-gray text-[10px]" color="primary" size="sm">
+              <Chip className=" text-[10px]" size="sm">
                 {t("Collaboration Opportunities")}
               </Chip>
             )}
@@ -145,7 +146,7 @@ function CardComponent({
           </p>
         </div>
       </CardBody>
-      <Divider className="mt-2" />
+      <Divider />
       <CardFooter>
         <div className="flex justify-end w-full">
           {route && <CardButton btnText={btnText} route={route} />}

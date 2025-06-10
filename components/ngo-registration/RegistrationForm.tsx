@@ -48,6 +48,14 @@ function RegistrationForm() {
     mutationFn: NogsRegisteration,
     onSuccess: (data: any) => {
       if (data.success) {
+        addToast({
+          title : t("Success"),
+          description : t("create ngo successfully done"),
+          timeout : 3000,
+          shouldShowTimeoutProgress : true,
+          variant : 'flat',
+          color : 'success'
+        })
         router.push("/login");
         formik.resetForm();
       } else {

@@ -103,6 +103,8 @@
     "Countries": "کشور ها"
   },
   "ngo-registration": {
+    "create ngo successfully done" : "ساخت سمن با موفقیت انجام شد لطفا ایمیل خود را تایید کنید",
+    "Success" : "موفق",
     "The number of selected files cannot exceed 4" : "تعداد فایل انتخابی نمی تواند بیش از 4 عدد باشد",
     "The number of selected files cannot exceed 3" : "تعداد فایل انتخابی نمی تواند بیش از 3 عدد باشد",
     "File Size is Too Much" : "حجم فایل بیش از حد مجاز",
@@ -496,6 +498,9 @@
   },
 
   "dashboard": {
+    "rejected": "رد شده",
+    "accepted": "پذیرفته شده",
+    "pending": "در انتظار تایید ادمین",
     "Projects": "پروژه ها",
     "Documents": "مدارک و مستندات",
     "Approved": "تایید شده",

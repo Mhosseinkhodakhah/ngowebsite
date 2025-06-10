@@ -103,6 +103,8 @@
     "Countries": "Страны"
   },
   "ngo-registration": {
+    "create ngo successfully done" : "создать нго успешно выполнено",
+    "Success" : "Успех",
     "The number of selected files cannot exceed 4" : "Количество выбранных файлов не может превышать 4.",
     "The number of selected files cannot exceed 3" : "Количество выбранных файлов не может превышать 3.",
     "File Size is Too Much" : "Размер файла слишком большой",
@@ -492,6 +494,9 @@
   },
 
   "dashboard": {
+    "rejected": "Отклонено",
+    "accepted": "принято",
+    "pending": "Ожидание",
     "Projects": "Проекты",
     "Documents": "Документы",
     "Logout": "Выход из системы",

@@ -5,10 +5,10 @@ const Instagram = (props: IconSvgProps) => (
     aria-hidden="true"
     fill="none"
     focusable="false"
-    height="24"
+    height="20"
     role="presentation"
     viewBox="0 0 24 24"
-    width="24"
+    width="20"
     {...props}
   >
     <path

@@ -104,6 +104,8 @@
     "Countries": "Countries"
   },
   "ngo-registration": {
+    "create ngo successfully done" : "create ngo successfully done , please verify your gmail.",
+    "Success" : "Success",
     "The number of selected files cannot exceed 4" : "The number of selected files cannot exceed 4.",
     "The number of selected files cannot exceed 3" : "The number of selected files cannot exceed 3.",
     "File Size is Too Much" : "File Size is Too Much",
@@ -497,6 +499,9 @@
   },
 
   "dashboard": {
+    "rejected": "Rejected",
+    "accepted": "accepted",
+    "pending": "Pending",
     "Projects": "Projects",
     "Approved": "Approved",
     "Waiting": "Waiting",

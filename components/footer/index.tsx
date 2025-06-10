@@ -44,14 +44,14 @@ function Footer() {
       </section>
       <Divider className="bg-gray my-2" />
       <section className="text-gray flex flex-col justify-center items-center md:flex-row md:justify-between">
-        <p className="text-xs">
+        <p className="text-[9px]">
           {t("Copyright")}
           <CopyrightIcon />
           {new Date().getFullYear()}.{t("All rights of this site are reserved")}
         </p>
-        <ul className="flex gap-1 items-center my-2">
+        <ul className="flex gap-1 items-center gap-8">
           <li>
-            <Link href={data ? data?.data?.faceBookLink : ""}>
+            <Link  href={data ? data?.data?.faceBookLink : ""}>
               <Facebook />
             </Link>
           </li>

@@ -34,7 +34,7 @@ async function Page({ params }: { params: any }) {
         <PictureSlider data={data} />
         <Divider className="my-5" data-aos="fade-up" data-aos-duration="1000" />
 
-        <h2
+        {/* <h2
           className="text-xl font-bold border-b-5 border-primary mt-20 w-max mx-4"
           data-aos="fade-up"
           data-aos-duration="1000"
@@ -44,7 +44,7 @@ async function Page({ params }: { params: any }) {
             : locale === "pe"
               ? "محتوای رویداد"
               : "Содержание мероприятия"}
-        </h2>
+        </h2> */}
 
         <div
           dangerouslySetInnerHTML={{

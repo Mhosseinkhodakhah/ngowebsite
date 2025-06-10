@@ -46,32 +46,37 @@ function ProjectCard({ project }: { project: any }) {
         <div className="flex gap-2 flex-wrap items-center">
           {project?.status?.includes("ongoing") && (
             <Chip
-              className="text-[10px] text-gray rounded-md w-max my-1"
-              color="warning"
+            
+              className="text-[10px] rounded-xl w-max my-1"
+              size = "sm"
+              // color="warning"
             >
               {t("Ongoing")}
             </Chip>
           )}
           {project?.status?.includes("completed") && (
             <Chip
-              className="text-[10px] p-2  text-gray rounded-md w-max my-1"
-              color="success"
+              className="text-[10px] p-2  rounded-xl w-max my-1"
+              size = "sm"
+              // color="success"
             >
               {t("Completed")}
             </Chip>
           )}
           {project?.status?.includes("collaborationOpportunities") && (
             <Chip
-              className="text-[8px] p-2 text-gray rounded-md w-max my-1"
-              color="primary"
+              className="text-[8px] p-2 rounded-xl w-max my-1"
+              size = "sm"
+              // color="primary"
             >
               {t("Collaboration Opportunities")}
             </Chip>
           )}
           {project?.status?.includes("goodPractice") && (
             <Chip
-              className="text-[9px] p-2 text-gray rounded-md w-max my-1"
-              color="primary"
+              className="text-[9px] p-2 rounded-xl w-max my-1"
+              size = "sm"
+              // color="primary"
             >
               {t("Good Practice")}
             </Chip>

@@ -5,10 +5,10 @@ const Facebook = (props: IconSvgProps) => (
     aria-hidden="true"
     fill="none"
     focusable="false"
-    height="20"
+    height="18"
     role="presentation"
     viewBox="0 0 30 30"
-    width="20"
+    width="18"
     {...props}
   >
     <path
