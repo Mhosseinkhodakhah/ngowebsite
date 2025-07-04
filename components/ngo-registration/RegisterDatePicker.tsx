@@ -16,7 +16,7 @@ function RegisterDatePicker({ formik }: { formik: FormikProps<any> }) {
   const { locale } = useParams();
   const t = useTranslations("ngo-registration");
   const [date, setDate] = useState(
-    parseAbsoluteToLocal(new Date().toISOString()),
+    parseAbsoluteToLocal(new Date().toISOString())
   );
 
   let formatter = useDateFormatter({ dateStyle: "full" });
@@ -42,6 +42,7 @@ function RegisterDatePicker({ formik }: { formik: FormikProps<any> }) {
           value={date}
           variant="bordered"
           onChange={handleSetDate}
+          granularity="day"
         />
       </I18nProvider>
     </div>

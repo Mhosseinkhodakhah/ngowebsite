@@ -1,6 +1,7 @@
 import { getDescriptionPage } from "@/actions/educations";
 import { getEvents } from "@/actions/events";
 import Empty from "@/components/common/empty";
+import SearchInput from "@/components/common/search-input";
 import Title from "@/components/common/title";
 import EventsList from "@/components/events/EventsList";
 import FilterEvents from "@/components/events/FilterEvents";
@@ -32,6 +33,8 @@ async function Page({
         page="navbar"
         titleText="Events"
       />
+
+      <SearchInput page={page} route="events" />
 
       {data?.data ? (
         <div className="flex gap-4 w-full m-4 px-2 lg:px-10 mt-20">

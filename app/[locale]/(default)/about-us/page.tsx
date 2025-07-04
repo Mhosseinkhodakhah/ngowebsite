@@ -1,15 +1,12 @@
 import Image from "next/image";
 
 import Title from "@/components/common/title";
-import AboutUsImage from "@/public/images/about2.jpg";
-import MissionAndGoal from "@/public/images/mission-and-goal.png";
 import { getAboutUs } from "@/actions/about-us";
-import BossMessage from "@/components/about-us/boss-message";
 import { Divider } from "@heroui/divider";
 
-// import secondBossMessage from "@/components/about-us/secondBoss";
 import AboutUsCards from "@/components/about-us/about-use-cards";
-import ClientDiv from "@/components/about-us/client-div";
+import BossMessage from "@/components/about-us/boss-message";
+import AboutUsImage from "@/public/images/about2.jpg";
 
 export default async function AboutPage({ params }: { params: any }) {
   const { data } = await getAboutUs();
@@ -29,10 +26,7 @@ export default async function AboutPage({ params }: { params: any }) {
           page="navbar"
           titleText="About Us"
         />
-        {/* <ClientDiv data={data} /> */}
-        <BossMessage />
-
-        {/* <secondBossMessage /> */}
+        <BossMessage data={data} />
 
         <AboutUsCards />
         <div className="mt-20 flex flex-col md:flex-row justify-around max-w-screen-lg">
@@ -56,13 +50,7 @@ export default async function AboutPage({ params }: { params: any }) {
               }}
               className="px-6 lg:px-0 text-justify leading-6 md:text-start my-4 md:my-0"
             />
-            {/* <h2 className="text-xl font-bold text-justify leading-6 md:text-start my-4 md:my-0">
-              {locale === "pe"
-                ? data?.peTitle
-                : locale === "en"
-                  ? data?.enTitle
-                  : data?.ruTitle}
-            </h2> */}
+
             <div
               dangerouslySetInnerHTML={{
                 __html:
@@ -74,13 +62,6 @@ export default async function AboutPage({ params }: { params: any }) {
               }}
               className="font-light text-justify leading-6 md:text-start mt-4 px-6 lg:px-0"
             />
-            {/* <p className="font-light text-justify leading-6 md:text-start mt-4">
-              {locale === "pe"
-                ? data?.peMiddleImageDescription
-                : locale === "en"
-                  ? data?.enMiddleImageDescription
-                  : data?.ruMiddleImageDescription}
-            </p> */}
           </div>
         </div>
 

@@ -5,13 +5,13 @@ import EducationList from "@/components/education/EducationList";
 import FilterEducation from "@/components/education/FilterEducation";
 import { getEducations } from "@/actions/educations";
 import Empty from "@/components/common/empty";
+import SearchInput from "@/components/common/search-input";
 
 async function Page(params: any) {
   const { type, sort, start, end, page } = await params.searchParams;
   const { locale } = await params.params;
   // const { all, educations } = await getEducations(type, sort, start, end, page);
   const data = await getEducations(type, sort, start, end, page);
-
 
   const descriptions = await getDescriptionPage("educations");
 
@@ -28,6 +28,9 @@ async function Page(params: any) {
         page="navbar"
         titleText="Education"
       />
+
+      <SearchInput page={page} route="education" type={type} sort={sort} />
+
       {data?.data?.educations ? (
         <div
           className="flex gap-4 w-full m-4 px-2 lg:px-10 mt-20"

@@ -58,12 +58,13 @@ function FilterItems({
         value={filter}
         onChange={handleChange}
       >
+        <Checkbox value="all">{t("All")}</Checkbox>
         <Checkbox value="image">{t("Image")}</Checkbox>
         <Checkbox value="video">{t("Video")}</Checkbox>
         <Checkbox value="pdf">{t("PDF")}</Checkbox>
         <Checkbox value="word">{t("Word File")}</Checkbox>
       </CheckboxGroup>
-      <div className="mt-8">
+      {/* <div className="mt-8">
         <DateFilter
           query={{
             type: query.type || "",
@@ -73,7 +74,7 @@ function FilterItems({
             page: query.page || "",
           }}
         />
-      </div>
+      </div> */}
     </div>
   );
 }

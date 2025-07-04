@@ -12,8 +12,6 @@ async function Page({ searchParams }: { searchParams: any }) {
 
   const { data }: any = await dataArchive(page, search);
 
-  console.log("ddd", data);
-
   const cardImg = (files: string[]): string => {
     let findImg = "";
 

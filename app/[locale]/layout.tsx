@@ -5,7 +5,7 @@ import { notFound } from "next/navigation";
 import clsx from "clsx";
 
 import { siteConfig } from "@/config/site";
-import { fontSans, vazir } from "@/config/fonts";
+import { inter, vazir } from "@/config/fonts";
 import { routing } from "@/i18n/routing";
 import { Providers } from "@/app/providers";
 import { Navbar } from "@/components/common/navbar";
@@ -55,8 +55,8 @@ export default async function LocaleLayout({
       <body
         className={clsx(
           "min-h-screen dark:bg-[#000000]  antialiased",
-          locale === "pe" ? vazir.variable : fontSans.variable,
-          locale === "pe" ? "font-vazir" : "font-sans"
+          locale === "pe" ? vazir.variable : inter.variable,
+          locale === "pe" ? "font-vazir" : "font-inter"
         )}
         dir={locale === "pe" ? "rtl" : "ltr"}
       >

@@ -8,7 +8,7 @@ import { useParams } from "next/navigation";
 import ChildrenImage from "@/public/images/ngowebsplash.webp";
 import useStore from "@/store";
 
-function GradientSection() {
+function GradientSection({ data }: { data: any }) {
   const t = useTranslations("homePage");
   const { locale } = useParams();
   const isLogin = useStore((state: any) => state.isLogin);
@@ -19,7 +19,7 @@ function GradientSection() {
       data-aos="fade-up"
       data-aos-duration="1000"
       style={{
-        backgroundImage: `url(${ChildrenImage.src})`,
+        backgroundImage: `url(${data?.firstBannerImage[0]})`,
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
         backgroundPosition: "left",
@@ -34,9 +34,12 @@ function GradientSection() {
         }}
       >
         <div className=" h-[50%] w-[35%] justify-center flex flex-col gap-5 items-center ml-10  text-white">
-          <h2 className="text-2xl text-start">{t("Smile Project")}</h2>
           <p className="font-light w-2/3 text-center">
-            {t("Spreading Joy Building Futures One Smile at a Time")}
+            {locale === "fa"
+              ? data?.peFirstBannerDescription
+              : locale === "en"
+                ? data?.enFirstBannerDescription
+                : data?.ruFirstBannerDescription}
           </p>
           {!isLogin && (
             <Button className="w-1/2">

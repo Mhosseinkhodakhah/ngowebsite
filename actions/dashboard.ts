@@ -119,9 +119,7 @@ export const deleteDocument = async (id: string) => {
 
     return data;
   } catch (err) {
-    console.log("eeerrrr", err);
-
-    return "";
+    return err;
   }
 };
 

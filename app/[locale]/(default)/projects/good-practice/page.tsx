@@ -2,6 +2,7 @@ import {
   getCategoryProjects,
   getGoodPracticeProjects,
 } from "@/actions/projects";
+import SearchInput from "@/components/common/search-input";
 import Title from "@/components/common/title";
 import ProjectList from "@/components/projects/ProjectList";
 
@@ -34,6 +35,12 @@ async function Page({
         }
         page="projects"
         titleText="Good Practice"
+      />
+
+      <SearchInput
+        page={page}
+        route="projects/good-practice"
+        status="goodPractice"
       />
 
       <ProjectList

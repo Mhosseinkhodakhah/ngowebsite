@@ -1,4 +1,5 @@
 import { getCategoryProjects, getCompletedProjects } from "@/actions/projects";
+import SearchInput from "@/components/common/search-input";
 import Title from "@/components/common/title";
 import ProjectList from "@/components/projects/ProjectList";
 
@@ -31,6 +32,12 @@ async function Page({
         }
         page="projects"
         titleText="Completed Projects"
+      />
+
+      <SearchInput
+        page={page}
+        route="projects/completed-projects"
+        status="completedProjects"
       />
 
       <ProjectList

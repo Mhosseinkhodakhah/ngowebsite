@@ -22,7 +22,7 @@ module.exports = {
         gray: "#F3F3F3",
       },
       fontFamily: {
-        sans: ["var(--font-sans)"],
+        inter: ["var(--font-inter)"],
         vazir: ["var(--font-vazir)"],
         mono: ["var(--font-mono)"],
       },

@@ -15,7 +15,8 @@
     "Download": "Download",
     "Count of NGOs": "Count of NGOs",
     "Number of NGOs": "Number of NGOs",
-    "All": "All"
+    "All": "All",
+    "Search": "Search"
   },
 
   "navbar": {
@@ -104,19 +105,19 @@
     "Countries": "Countries"
   },
   "ngo-registration": {
-    "create ngo successfully done" : "create ngo successfully done , please verify your gmail.",
-    "Success" : "Success",
-    "The number of selected files cannot exceed 4" : "The number of selected files cannot exceed 4.",
-    "The number of selected files cannot exceed 3" : "The number of selected files cannot exceed 3.",
-    "File Size is Too Much" : "File Size is Too Much",
-    "Maximum selected files: 5" : "Maximum selected files: 3.",
-    "Acceptable formats PDF" : "Acceptable formats PDF.",
-    "Acceptable formats JPG" : "Acceptable formats JPG , JPEG , PNG.",
-    "Acceptable formats DOCS" : "Acceptable formats JPG , JPEG , PNG , MKV , MP4 , PDF , DOCX.",
-    "The size of the selected files must be less than 20 MB" : "The size of the selected files must be less than 20 MB.",
-    "Click here to" : "to",
-    "download" : "Download",
-    "the registration guide file" : "the registration guide file",
+    "create ngo successfully done": "create ngo successfully done , please verify your gmail.",
+    "Success": "Success",
+    "The number of selected files cannot exceed 4": "The number of selected files cannot exceed 4.",
+    "The number of selected files cannot exceed 3": "The number of selected files cannot exceed 3.",
+    "File Size is Too Much": "File Size is Too Much",
+    "Maximum selected files: 5": "Maximum selected files: 3.",
+    "Acceptable formats PDF": "Acceptable formats PDF.",
+    "Acceptable formats JPG": "Acceptable formats JPG , JPEG , PNG.",
+    "Acceptable formats DOCS": "Acceptable formats JPG , JPEG , PNG , MKV , MP4 , PDF , DOCX.",
+    "The size of the selected files must be less than 20 MB": "The size of the selected files must be less than 20 MB.",
+    "Click here to": "to",
+    "download": "Download",
+    "the registration guide file": "the registration guide file",
     "Upload Files": "Upload Files",
     "Documents": "Documents",
     "Public images": "Public images",
@@ -637,7 +638,8 @@
     "Word File": "Word File",
     "PDF": "PDF",
     "Video": "Video",
-    "Similar Education": "Similar Education"
+    "Similar Education": "Similar Education",
+    "All": "All"
   },
 
   "events": {

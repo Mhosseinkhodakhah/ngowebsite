@@ -15,7 +15,9 @@
     "Download": "دانلود",
     "Count of NGOs": "تعداد سمن ها",
     "Number of NGOs": "از تعداد سمن ها",
-    "All": "همه"
+    "All": "همه",
+    "Search": "جستجو"
+
   },
   "navbar": {
     "Home": "خانه",
@@ -103,19 +105,19 @@
     "Countries": "کشور ها"
   },
   "ngo-registration": {
-    "create ngo successfully done" : "ساخت سمن با موفقیت انجام شد لطفا ایمیل خود را تایید کنید",
-    "Success" : "موفق",
-    "The number of selected files cannot exceed 4" : "تعداد فایل انتخابی نمی تواند بیش از 4 عدد باشد",
-    "The number of selected files cannot exceed 3" : "تعداد فایل انتخابی نمی تواند بیش از 3 عدد باشد",
-    "File Size is Too Much" : "حجم فایل بیش از حد مجاز",
-    "Maximum selected files: 5" : "حداکثر تعداد فایل‌های انتخاب شده: ۳",
-    "Acceptable formats PDF" : "فرمت‌های قابل قبول PDF",
-    "Acceptable formats JPG" : "فرمت‌های قابل قبول JPG , JPEG , PNG",
-    "Acceptable formats DOCS" : "فرمت ها قابل قبول JPG , JPEG , PNG , MKV , MP4 , PDF , DOCX.",
-    "The size of the selected files must be less than 20 MB" : "حجم فایل‌های انتخاب شده باید کمتر از ۲۰ مگابایت باشد",
-    "Click here to" : "برای",
-    "download" : "دانلود",
-    "the registration guide file" : "فایل راهنمای ثبت نام",
+    "create ngo successfully done": "ساخت سمن با موفقیت انجام شد لطفا ایمیل خود را تایید کنید",
+    "Success": "موفق",
+    "The number of selected files cannot exceed 4": "تعداد فایل انتخابی نمی تواند بیش از 4 عدد باشد",
+    "The number of selected files cannot exceed 3": "تعداد فایل انتخابی نمی تواند بیش از 3 عدد باشد",
+    "File Size is Too Much": "حجم فایل بیش از حد مجاز",
+    "Maximum selected files: 5": "حداکثر تعداد فایل‌های انتخاب شده: ۳",
+    "Acceptable formats PDF": "فرمت‌های قابل قبول PDF",
+    "Acceptable formats JPG": "فرمت‌های قابل قبول JPG , JPEG , PNG",
+    "Acceptable formats DOCS": "فرمت ها قابل قبول JPG , JPEG , PNG , MKV , MP4 , PDF , DOCX.",
+    "The size of the selected files must be less than 20 MB": "حجم فایل‌های انتخاب شده باید کمتر از ۲۰ مگابایت باشد",
+    "Click here to": "برای",
+    "download": "دانلود",
+    "the registration guide file": "فایل راهنمای ثبت نام",
     "Upload Files": "بارگذاری تصاویر",
     "Documents": "مدارک و مستندات",
     "Public images": "تصاویر عمومی",
@@ -635,7 +637,8 @@
     "Word File": "وورد",
     "PDF": "پی دی اف",
     "Video": "ویدیو",
-    "Similar Education": "آموزش های مشابه"
+    "Similar Education": "آموزش های مشابه",
+    "All": "همه"
   },
 
   "events": {

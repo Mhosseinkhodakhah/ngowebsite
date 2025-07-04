@@ -4,7 +4,11 @@ import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { useParams } from "next/navigation";
 import { DatePicker } from "@heroui/date-picker";
-import { parseAbsoluteToLocal } from "@internationalized/date";
+import {
+  getLocalTimeZone,
+  now,
+  parseAbsoluteToLocal,
+} from "@internationalized/date";
 import { I18nProvider } from "@react-aria/i18n";
 
 import { useRouter } from "@/i18n/navigation";
@@ -30,6 +34,8 @@ function DateFilter({
     parseAbsoluteToLocal(new Date().toISOString())
   );
 
+  console.log("dfasifn", parseAbsoluteToLocal(new Date().toISOString()));
+
   const router = useRouter();
 
   return (
@@ -37,13 +43,13 @@ function DateFilter({
       <I18nProvider locale={locale === "pe" ? "fa" : "en"}>
         <DatePicker
           hideTimeZone
-          showMonthAndYearPickers
           className="max-w-xs"
           classNames={{
             selectorButton: "bg-primary text-white",
           }}
+          defaultValue={now(getLocalTimeZone())}
           label={t("From")}
-          value={startDate}
+          // value={startDate}
           variant="flat"
           onChange={(value: any) => {
             setStartDate(value as any);
@@ -62,6 +68,7 @@ function DateFilter({
 
             router.push(getRoute);
           }}
+          granularity="day"
         />
       </I18nProvider>
       <I18nProvider locale={locale === "pe" ? "fa" : "en"}>
@@ -92,6 +99,7 @@ function DateFilter({
 
             router.push(getRoute);
           }}
+          granularity="day"
         />
       </I18nProvider>
     </div>

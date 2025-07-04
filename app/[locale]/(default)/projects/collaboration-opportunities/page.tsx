@@ -2,6 +2,7 @@ import {
   getCategoryProjects,
   getCollaborationProjects,
 } from "@/actions/projects";
+import SearchInput from "@/components/common/search-input";
 import Title from "@/components/common/title";
 import ProjectList from "@/components/projects/ProjectList";
 
@@ -22,8 +23,6 @@ async function Page({
 
   const { data: descriptionData } = await getCollaborationProjects();
 
-  console.log("vaasva", data);
-
   return (
     <section className="flex flex-col justify-center items-center">
       <Title
@@ -36,6 +35,12 @@ async function Page({
         }
         page="projects"
         titleText="Collaboration Opportunities"
+      />
+
+      <SearchInput
+        page={page}
+        route="projects/collaboration-opportunities"
+        status="collaborationOpportunities"
       />
 
       <ProjectList
