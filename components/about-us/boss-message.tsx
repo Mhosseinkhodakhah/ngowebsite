@@ -34,14 +34,14 @@ function BossMessage({ data }: { data: any }) {
               </p>
               <Divider className="my-4" />
 
-              <p className="font-bold text-lg">
+              <p className="font-bold text-lg px-6">
                 {locale === "pe"
                   ? data?.peFirstManagerFooterTitle
                   : locale === "en"
                     ? data?.enFirstManagerFooterTitle
                     : data?.ruFirstManagerFooterTitle}
               </p>
-              <p className="font-light text-lg px-6 lg:px-0">
+              <p className="font-light text-lg px-8 lg:px-0">
                 {locale === "pe"
                   ? data?.peFirstManagerFooterDescription
                   : locale === "en"
@@ -87,14 +87,14 @@ function BossMessage({ data }: { data: any }) {
                 className="font-bold text-lg px-6 lg:px-0"
               />
               <Divider className="my-4" />
-              <p className="font-bold text-lg">
+              <p className="font-bold text-lg px-2">
                 {locale === "pe"
                   ? data?.peSecondManagerFooterTitle
                   : locale === "en"
                     ? data?.enSecondManagerFooterTitle
                     : data?.ruSecondManagerFooterTitle}
               </p>
-              <p className="font-light text-lg">
+              <p className="font-light text-lg px-4">
                 {locale === "pe"
                   ? data?.peSecondManagerFooterDescription
                   : locale === "en"

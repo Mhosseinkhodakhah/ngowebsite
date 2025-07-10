@@ -70,11 +70,11 @@ export default async function AboutPage({ params }: { params: any }) {
         <div className="flex flex-col justify-center items-center my-10 max-w-screen-md">
           <Title page="aboutUs" titleText="Mission and goals" />
 
-          <ol className="space-y-6 list-decimal pr-5 mt-4">
+          <ol className="space-y-6 list-decimal pr-5 mt-5">
             {locale === "pe" ? (
               <>
                 <li className="text-gray-700">
-                  <span className="font-semibold bg-yellow-100 px-1 rounded">
+                  <span className="font-semibold  dark:text-black bg-yellow-100 px-1 rounded">
                     تقویت و گسترش شبکه سمن‌های فعال:
                   </span>
                   ایجاد و تقویت شبکه‌ای گسترده از سازمان‌های مردم‌نهاد (NGOs)
@@ -83,7 +83,7 @@ export default async function AboutPage({ params }: { params: any }) {
                 </li>
 
                 <li className="text-gray-700">
-                  <span className="font-semibold bg-yellow-100 px-1 rounded">
+                  <span className="font-semibold  dark:text-black bg-yellow-100 px-1 rounded">
                     اطلاع‌رسانی در خصوص نقش سمن‌ها در کنوانسیون 2003:
                   </span>
                   افزایش آگاهی سمن‌ها در مورد اهمیت و نقش آن‌ها در اجرای
@@ -92,7 +92,7 @@ export default async function AboutPage({ params }: { params: any }) {
                 </li>
 
                 <li className="text-gray-700">
-                  <span className="font-semibold bg-yellow-100 px-1 rounded">
+                  <span className="font-semibold  dark:text-black bg-yellow-100 px-1 rounded">
                     ایجاد پایگاه داده از سمن‌ها:
                   </span>
                   شناسایی، مستندسازی و نقشه‌برداری از سازمان‌های مردم‌نهاد فعال
@@ -101,7 +101,7 @@ export default async function AboutPage({ params }: { params: any }) {
                 </li>
 
                 <li className="text-gray-700">
-                  <span className="font-semibold bg-yellow-100 px-1 rounded">
+                  <span className="font-semibold  dark:text-black bg-yellow-100 px-1 rounded">
                     گسترش همکاری‌های بین‌المللی:
                   </span>
                   تقویت همکاری‌های فرامرزی میان سمن‌ها برای به اشتراک‌گذاری
@@ -110,7 +110,7 @@ export default async function AboutPage({ params }: { params: any }) {
                 </li>
 
                 <li className="text-gray-700">
-                  <span className="font-semibold bg-yellow-100 px-1 rounded">
+                  <span className="font-semibold  dark:text-black bg-yellow-100 px-1 rounded">
                     پاسداری از میراث فرهنگی ناملموس:
                   </span>
                   حمایت از تلاش‌های منطقه‌ای برای حفظ و ترویج میراث فرهنگی
@@ -118,7 +118,7 @@ export default async function AboutPage({ params }: { params: any }) {
                 </li>
 
                 <li className="text-gray-700">
-                  <span className="font-semibold bg-yellow-100 px-1 rounded">
+                  <span className="font-semibold  dark:text-black bg-yellow-100 px-1 rounded">
                     ظرفیت‌سازی و آموزش:
                   </span>
                   توانمندسازی سمن‌ها از طریق ارائه دوره‌های آموزشی، کارگاه‌های
@@ -126,7 +126,7 @@ export default async function AboutPage({ params }: { params: any }) {
                 </li>
 
                 <li className="text-gray-700">
-                  <span className="font-semibold bg-yellow-100 px-1 rounded">
+                  <span className="font-semibold  dark:text-black bg-yellow-100 px-1 rounded">
                     ارتقاء آگاهی عمومی:
                   </span>
                   افزایش آگاهی عمومی در مورد اهمیت میراث فرهنگی ناملموس و نقش آن
@@ -134,7 +134,7 @@ export default async function AboutPage({ params }: { params: any }) {
                 </li>
 
                 <li className="text-gray-700">
-                  <span className="font-semibold bg-yellow-100 px-1 rounded">
+                  <span className="font-semibold  dark:text-black bg-yellow-100 px-1 rounded">
                     ترویج تحقیقات و مستندسازی:
                   </span>
                   تقویت فعالیت‌های پژوهشی و مستندسازی به منظور انتقال بهتر دانش
@@ -143,8 +143,8 @@ export default async function AboutPage({ params }: { params: any }) {
               </>
             ) : locale === "en" ? (
               <>
-                <li className="text-gray-700">
-                  <span className="font-semibold bg-yellow-100 px-1 rounded">
+                <li className="text-gray-700 ">
+                  <span className="font-semibold  dark:text-black bg-yellow-100 px-1 rounded">
                     Strengthening and expanding the network of active NGOs:
                   </span>
                   Establishing and strengthening a broad network of
@@ -154,8 +154,8 @@ export default async function AboutPage({ params }: { params: any }) {
                   experiences.
                 </li>
 
-                <li className="text-gray-700">
-                  <span className="font-semibold bg-yellow-100 px-1 rounded">
+                <li className="text-gray-700 ">
+                  <span className="font-semibold  dark:text-black bg-yellow-100 px-1 rounded">
                     Awareness-raising about the role of NGOs in the 2003
                     Convention:
                   </span>
@@ -164,8 +164,8 @@ export default async function AboutPage({ params }: { params: any }) {
                   practices for safeguarding intangible cultural heritage.
                 </li>
 
-                <li className="text-gray-700">
-                  <span className="font-semibold bg-yellow-100 px-1 rounded">
+                <li className="text-gray-700 ">
+                  <span className="font-semibold  dark:text-black bg-yellow-100 px-1 rounded">
                     Creating a database of NGOs:
                   </span>
                   Identifying, documenting, and mapping active NGOs in the
@@ -173,8 +173,8 @@ export default async function AboutPage({ params }: { params: any }) {
                   information exchange.
                 </li>
 
-                <li className="text-gray-700">
-                  <span className="font-semibold bg-yellow-100 px-1 rounded">
+                <li className="text-gray-700 ">
+                  <span className="font-semibold  dark:text-black bg-yellow-100 px-1 rounded">
                     Expanding international cooperation:
                   </span>
                   Strengthening cross-border cooperation among NGOs to share
@@ -182,8 +182,8 @@ export default async function AboutPage({ params }: { params: any }) {
                   bridges to strengthen indigenous identities.
                 </li>
 
-                <li className="text-gray-700">
-                  <span className="font-semibold bg-yellow-100 px-1 rounded">
+                <li className="text-gray-700 ">
+                  <span className="font-semibold  dark:text-black bg-yellow-100 px-1 rounded">
                     Safeguarding intangible cultural heritage:
                   </span>
                   Supporting regional efforts to preserve and promote intangible
@@ -191,8 +191,8 @@ export default async function AboutPage({ params }: { params: any }) {
                   cultural identity.
                 </li>
 
-                <li className="text-gray-700">
-                  <span className="font-semibold bg-yellow-100 px-1 rounded">
+                <li className="text-gray-700 ">
+                  <span className="font-semibold  dark:text-black bg-yellow-100 px-1 rounded">
                     Capacity building and training:
                   </span>
                   Empowering NGOs through training courses, specialized
@@ -200,8 +200,8 @@ export default async function AboutPage({ params }: { params: any }) {
                   cultural heritage protection.
                 </li>
 
-                <li className="text-gray-700">
-                  <span className="font-semibold bg-yellow-100 px-1 rounded">
+                <li className="text-gray-700 ">
+                  <span className="font-semibold  dark:text-black bg-yellow-100 px-1 rounded">
                     Public awareness raising:
                   </span>
                   Increasing public awareness about the importance of intangible
@@ -209,8 +209,8 @@ export default async function AboutPage({ params }: { params: any }) {
                   local communities.
                 </li>
 
-                <li className="text-gray-700">
-                  <span className="font-semibold bg-yellow-100 px-1 rounded">
+                <li className="text-gray-700 ">
+                  <span className="font-semibold  dark:text-black bg-yellow-100 px-1 rounded">
                     Promoting research and documentation:
                   </span>
                   Strengthening research and documentation activities to better
@@ -219,8 +219,8 @@ export default async function AboutPage({ params }: { params: any }) {
               </>
             ) : (
               <>
-                <li className="mission-item text-gray-700">
-                  <span className="font-semibold bg-yellow-100 px-1 rounded">
+                <li className="mission-item text-gray-700 ">
+                  <span className="font-semibold bg-yellow-100 dark:text-black  px-1 rounded">
                     Укрепление и расширение сети активных НПО:
                   </span>
                   Создание и укрепление широкой сети неправительственных
@@ -229,8 +229,8 @@ export default async function AboutPage({ params }: { params: any }) {
                   облегчения коммуникации и обмена знаниями и опытом.
                 </li>
 
-                <li className="mission-item text-gray-700">
-                  <span className="font-semibold bg-yellow-100 px-1 rounded">
+                <li className="mission-item text-gray-700 ">
+                  <span className="font-semibold bg-yellow-100 dark:text-black  px-1 rounded">
                     Информирование о роли НПО в Конвенции 2003 года:
                   </span>
                   Повышение осведомленности НПО об их важности и роли в
@@ -238,8 +238,8 @@ export default async function AboutPage({ params }: { params: any }) {
                   методов сохранения нематериального культурного наследия.
                 </li>
 
-                <li className="mission-item text-gray-700">
-                  <span className="font-semibold bg-yellow-100 px-1 rounded">
+                <li className="mission-item text-gray-700 ">
+                  <span className="font-semibold bg-yellow-100 dark:text-black  px-1 rounded">
                     Создание базы данных НПО:
                   </span>
                   Выявление, документирование и картирование активных НПО в
@@ -247,8 +247,8 @@ export default async function AboutPage({ params }: { params: any }) {
                   и обмена информацией.
                 </li>
 
-                <li className="mission-item text-gray-700">
-                  <span className="font-semibold bg-yellow-100 px-1 rounded">
+                <li className="mission-item text-gray-700 ">
+                  <span className="font-semibold bg-yellow-100 dark:text-black  px-1 rounded">
                     Расширение международного сотрудничества:
                   </span>
                   Укрепление трансграничного сотрудничества между НПО для обмена
@@ -256,8 +256,8 @@ export default async function AboutPage({ params }: { params: any }) {
                   мостов для укрепления местной идентичности.
                 </li>
 
-                <li className="mission-item text-gray-700">
-                  <span className="font-semibold bg-yellow-100 px-1 rounded">
+                <li className="mission-item text-gray-700 ">
+                  <span className="font-semibold bg-yellow-100 dark:text-black  px-1 rounded">
                     Сохранение нематериального культурного наследия:
                   </span>
                   Поддержка региональных усилий по сохранению и продвижению
@@ -265,8 +265,8 @@ export default async function AboutPage({ params }: { params: any }) {
                   важность для укрепления культурной идентичности.
                 </li>
 
-                <li className="mission-item text-gray-700">
-                  <span className="font-semibold bg-yellow-100 px-1 rounded">
+                <li className="mission-item text-gray-700 ">
+                  <span className="font-semibold bg-yellow-100 dark:text-black  px-1 rounded">
                     Развитие потенциала и обучение:
                   </span>
                   Укрепление потенциала НПО через учебные курсы,
@@ -274,8 +274,8 @@ export default async function AboutPage({ params }: { params: any }) {
                   для эффективной защиты культурного наследия.
                 </li>
 
-                <li className="mission-item text-gray-700">
-                  <span className="font-semibold bg-yellow-100 px-1 rounded">
+                <li className="mission-item text-gray-700 ">
+                  <span className="font-semibold bg-yellow-100 dark:text-black  px-1 rounded">
                     Повышение общественной осведомленности:
                   </span>
                   Повышение осведомленности общественности о важности
@@ -283,8 +283,8 @@ export default async function AboutPage({ params }: { params: any }) {
                   развитии местных сообществ.
                 </li>
 
-                <li className="mission-item text-gray-700">
-                  <span className="font-semibold bg-yellow-100 px-1 rounded">
+                <li className="mission-item text-gray-700 ">
+                  <span className="font-semibold bg-yellow-100 dark:text-black  px-1 rounded">
                     Содействие исследованиям и документированию:
                   </span>
                   Усиление исследовательской деятельности и документирования для

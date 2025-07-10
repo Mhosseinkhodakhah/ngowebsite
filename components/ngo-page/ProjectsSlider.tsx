@@ -11,7 +11,7 @@ function ProjectsSlider({ data }: { data: any }) {
   const t = useTranslations("projects");
 
   return (
-    <section className="w-full flex flex-col justify-center items-center max-w-screen-lg gap-4">
+    <section className="w-full flex flex-col justify-center items-center max-w-screen-lg gap-4 px-5 lg:px-0">
       <h1 className="text-xl font-bold border-b-5 border-primary mb-10">
         {t("Projects")}
       </h1>

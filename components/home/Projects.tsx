@@ -1,13 +1,12 @@
 "use client";
 
 import { useParams } from "next/navigation";
+import { SwiperSlide } from "swiper/react";
+import { useTranslations } from "next-intl";
+
+import Slider from "../common/slider";
 
 import ProjectCard from "./ProjectCard";
-
-import Title from "@/components/common/title";
-import { useTranslations } from "next-intl";
-import Slider from "../common/slider";
-import { SwiperSlide } from "swiper/react";
 
 function Projects({ data }: { data: any }) {
   const { locale } = useParams();

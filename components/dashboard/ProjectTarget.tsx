@@ -7,9 +7,8 @@ function ProjectTarget({ formik }: { formik: FormikProps<any> }) {
   const t = useTranslations("dashboard");
 
   const handleSetProjectTarget = (value: string[]) => {
-    console.log('value selected >>>> ' , value)    
     const lastValue = value[value.length - 1];
-    
+
     if (value.length) {
       if (lastValue !== "other") {
         formik.setFieldValue("otherGoalAndAchievements", "");
@@ -24,7 +23,7 @@ function ProjectTarget({ formik }: { formik: FormikProps<any> }) {
     <>
       <CheckboxGroup
         isRequired
-        className="px-4 md:px-0 mt-8"
+        className="mt-8"
         defaultValue={formik.values.goalAndAchievements}
         errorMessage={
           formik.errors.goalAndAchievements &&
@@ -46,7 +45,7 @@ function ProjectTarget({ formik }: { formik: FormikProps<any> }) {
           value="Educating and Passing on Knowledge to the Future Hype Generation"
         >
           {t(
-            "Educating and Passing on Knowledge to the Future Hype Generation",
+            "Educating and Passing on Knowledge to the Future Hype Generation"
           )}
         </Checkbox>
         <Checkbox
@@ -60,7 +59,7 @@ function ProjectTarget({ formik }: { formik: FormikProps<any> }) {
           value="Increasing public awareness and participation of local communities"
         >
           {t(
-            "Increasing public awareness and participation of local communities",
+            "Increasing public awareness and participation of local communities"
           )}
         </Checkbox>
         <Checkbox
@@ -68,7 +67,7 @@ function ProjectTarget({ formik }: { formik: FormikProps<any> }) {
           value="Creating economic opportunities for heritage bearers (eg, supporting local artists"
         >
           {t(
-            "Creating economic opportunities for heritage bearers (eg, supporting local artists)",
+            "Creating economic opportunities for heritage bearers (eg, supporting local artists)"
           )}
         </Checkbox>
         <Checkbox className="my-1" value="other">

@@ -36,60 +36,61 @@ function ProjectCard({ project }: { project: any }) {
       </CardHeader>
       <Divider />
       <CardBody className="overflow-hidden">
-        <Image
-          alt="Project"
-          className="w-full max-h-[100px] rounded-md"
-          height={700}
-          src={project?.visualDocuments[0]?.files[0] || PlaceHolderImage}
-          width={700}
-        />
-        <div className="flex gap-2 flex-wrap items-center">
-          {project?.status?.includes("ongoing") && (
-            <Chip
-            
-              className="text-[10px] rounded-xl w-max my-1"
-              size = "sm"
-              // color="warning"
-            >
-              {t("Ongoing")}
-            </Chip>
-          )}
-          {project?.status?.includes("completed") && (
-            <Chip
-              className="text-[10px] p-2  rounded-xl w-max my-1"
-              size = "sm"
-              // color="success"
-            >
-              {t("Completed")}
-            </Chip>
-          )}
-          {project?.status?.includes("collaborationOpportunities") && (
-            <Chip
-              className="text-[8px] p-2 rounded-xl w-max my-1"
-              size = "sm"
-              // color="primary"
-            >
-              {t("Collaboration Opportunities")}
-            </Chip>
-          )}
-          {project?.status?.includes("goodPractice") && (
-            <Chip
-              className="text-[9px] p-2 rounded-xl w-max my-1"
-              size = "sm"
-              // color="primary"
-            >
-              {t("Good Practice")}
-            </Chip>
-          )}
-        </div>
+        <div className="flex flex-col justify-between">
+          <Image
+            alt="Project"
+            className="w-full h-[150px] max-h-[150px] rounded-md"
+            height={700}
+            src={project?.visualDocuments[0]?.files[0] || PlaceHolderImage}
+            width={700}
+          />
+          <div className="flex gap-2 flex-wrap items-center">
+            {project?.status?.includes("ongoing") && (
+              <Chip
+                className="text-[10px] rounded-xl w-max my-1"
+                size="sm"
+                // color="warning"
+              >
+                {t("Ongoing")}
+              </Chip>
+            )}
+            {project?.status?.includes("completed") && (
+              <Chip
+                className="text-[10px] p-2  rounded-xl w-max my-1"
+                size="sm"
+                // color="success"
+              >
+                {t("Completed")}
+              </Chip>
+            )}
+            {project?.status?.includes("collaborationOpportunities") && (
+              <Chip
+                className="text-[8px] p-2 rounded-xl w-max my-1"
+                size="sm"
+                // color="primary"
+              >
+                {t("Collaboration Opportunities")}
+              </Chip>
+            )}
+            {project?.status?.includes("goodPractice") && (
+              <Chip
+                className="text-[9px] p-2 rounded-xl w-max my-1"
+                size="sm"
+                // color="primary"
+              >
+                {t("Good Practice")}
+              </Chip>
+            )}
+          </div>
 
-        <div className="py-6 px-2">
-          <h4 className="font-bold p-2 text-wrap">
-            {project?.name?.slice(0, 100)}...
-          </h4>
-          <p className="text-sm font-light p-2 ">
-            {project?.description?.slice(0, 100)}...
-          </p>
+          <div className="py-6 px-2">
+            <h4 className="font-bold p-2 text-wrap">
+              {project?.name?.slice(0, 100)}...
+            </h4>
+            <p className="text-sm font-light p-2 ">
+              {project?.description?.slice(0, 100)}...
+            </p>
+          </div>
         </div>
       </CardBody>
       <Divider />

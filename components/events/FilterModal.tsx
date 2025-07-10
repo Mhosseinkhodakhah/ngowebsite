@@ -14,7 +14,7 @@ import { useTranslations } from "next-intl";
 
 import FilterItems from "./FilterItems";
 
-function FilterModal() {
+function FilterModal({ query }: { query: any }) {
   const t = useTranslations("common");
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
@@ -37,7 +37,7 @@ function FilterModal() {
                 {t("Filter")}
               </ModalHeader>
               <ModalBody>
-                <FilterItems />
+                <FilterItems query={query} />
               </ModalBody>
               <ModalFooter>
                 <Button color="danger" variant="light" onPress={onClose}>

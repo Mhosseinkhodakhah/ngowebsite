@@ -9,7 +9,7 @@ async function Page({ params }: { params: any }) {
   const { locale } = await params;
 
   return (
-    <section className="flex flex-col justify-center items-center">
+    <section className="flex flex-col justify-center items-center max-w-7xl mx-auto px-6 lg:px-0">
       <Title
         description={
           locale === "pe"

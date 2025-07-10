@@ -81,69 +81,79 @@ function CardComponent({
       </CardHeader>
       <Divider />
       <CardBody className="overflow-hidden">
-        <Image
-          alt="project"
-          className="w-full max-h-[100px] rounded-md"
-          height={800}
-          src={!!imageUrl ? imageUrl : PlaceHolder.src}
-          width={800}
-        />
-        <Divider className="my-2"/>
-        {status && (
-          <div
-            className={`w-full flex gap-2 ${locale === "pe" ? "items-start" : "items-end"}  `}
-          >
-            {status.includes("video") && (
-              // <Chip size="sm">
-                <Icon icon="vscode-icons:file-type-video" width="24" height="24" />
-              // </Chip>
-            )}
+        <div className="flex flex-col justify-between">
+          <Image
+            alt="project"
+            className="w-full  h-[200px] lg:[150px] lg:max-h-[150px] rounded-md"
+            height={800}
+            src={!!imageUrl ? imageUrl : PlaceHolder.src}
+            width={800}
+          />
+          <Divider className="my-2" />
+          {status && (
+            <div
+              className={`w-full flex gap-2 ${locale === "pe" ? "items-start" : "items-end"}  `}
+            >
+              {status.includes("video") && (
+                // <Chip size="sm">
+                <Icon
+                  icon="vscode-icons:file-type-video"
+                  width="24"
+                  height="24"
+                />
+                // </Chip>
+              )}
 
-            {status.includes("image") && (
-              // <Chip  size="sm">
+              {status.includes("image") && (
+                // <Chip  size="sm">
                 <Icon icon="fluent-color:image-28" width="26" height="26" />
-              // </Chip>
-            )}
-            {status.includes("pdf") && (
-              // <Chip size="sm">
+                // </Chip>
+              )}
+              {status.includes("pdf") && (
+                // <Chip size="sm">
                 <Icon icon="material-icon-theme:pdf" width="24" height="24" />
-              // </Chip>
-            )}
+                // </Chip>
+              )}
 
-            {status.includes("word") && (
-              // <Chip size="sm">
-                <Icon icon="vscode-icons:file-type-word" width="24" height="24" />
-              // </Chip>
-            )}
-            {status.includes("ongoing") && (
-              <Chip className=" text-[10px]" size="sm">
-                {t("Ongoing")}
-              </Chip>
-            )}
-            {status.includes("completed") && (
-              <Chip className=" text-[10px]"  size="sm">
-                {t("Completed")}
-              </Chip>
-            )}
-            {status.includes("goodPractice") && (
-              <Chip className=" text-[10px]" size="sm">
-                {t("Good Practice")}
-              </Chip>
-            )}
-            {status.includes("collaborationOpportunities") && (
-              <Chip className=" text-[10px]" size="sm">
-                {t("Collaboration Opportunities")}
-              </Chip>
-            )}
+              {status.includes("word") && (
+                // <Chip size="sm">
+                <Icon
+                  icon="vscode-icons:file-type-word"
+                  width="24"
+                  height="24"
+                />
+                // </Chip>
+              )}
+              {status.includes("ongoing") && (
+                <Chip className=" text-[10px]" size="sm">
+                  {t("Ongoing")}
+                </Chip>
+              )}
+              {status.includes("completed") && (
+                <Chip className=" text-[10px]" size="sm">
+                  {t("Completed")}
+                </Chip>
+              )}
+              {status.includes("goodPractice") && (
+                <Chip className=" text-[10px]" size="sm">
+                  {t("Good Practice")}
+                </Chip>
+              )}
+              {status.includes("collaborationOpportunities") && (
+                <Chip className=" text-[10px]" size="sm">
+                  {t("Collaboration Opportunities")}
+                </Chip>
+              )}
+            </div>
+          )}
+          <div className="py-6 px-2">
+            <h4 className={`font-bold p-2 text-wrap text-start`}>
+              {name?.slice(0, 100)}...
+            </h4>
+            <p className={`text-sm font-light text-wrap text-start`}>
+              {description?.slice(0, 100)}...
+            </p>
           </div>
-        )}
-        <div className="py-6 px-2">
-          <h4 className={`font-bold p-2 text-wrap text-start`}>
-            {name?.slice(0, 100)}...
-          </h4>
-          <p className={`text-sm font-light text-wrap text-start`}>
-            {description?.slice(0, 100)}...
-          </p>
         </div>
       </CardBody>
       <Divider />

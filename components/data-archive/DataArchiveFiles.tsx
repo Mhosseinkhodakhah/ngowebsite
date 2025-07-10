@@ -68,9 +68,9 @@ function DataArchiveFiles({ data }: { data: any }) {
   }, [data]);
 
   return (
-    <div className="w-full flex flex-col justify-center items-center">
+    <div className="w-full flex flex-col justify-center items-center max-w-screen-lg mx-auto">
       {images?.length > 0 && (
-        <div className="flex justify-center flex-col items-center">
+        <div className="flex justify-center flex-col items-center w-full">
           <ArchiveSlider data={images} />
           <Divider className="my-2" />
         </div>

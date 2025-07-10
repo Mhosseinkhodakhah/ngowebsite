@@ -11,8 +11,8 @@ function ProjectGeneralInfo({ formik }: { formik: FormikProps<any> }) {
 
   return (
     <>
-      <h5 className="py-4 px-4 md:px-0">{t("Project General Information")}</h5>
-      <div className="flex flex-col lg:flex-row w-full justify-between gap-4 px-4 md:px-0">
+      <h5 className="py-4">{t("Project General Information")}</h5>
+      <div className="flex flex-col lg:flex-row w-full justify-between gap-4">
         <CInput
           isRequired
           formik={formik}

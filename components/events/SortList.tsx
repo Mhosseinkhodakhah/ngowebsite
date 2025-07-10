@@ -135,7 +135,7 @@ function SortList({
       </div>
       <div className="flex gap-2">
         <SortDropDown />
-        <FilterModal />
+        <FilterModal query={query} />
       </div>
       <div className="flex items-center gap-4">
         <h5>{t("Total")}</h5>

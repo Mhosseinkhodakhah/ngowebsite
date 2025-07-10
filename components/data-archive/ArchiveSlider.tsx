@@ -13,7 +13,7 @@ function ArchiveSlider({ data }: { data: string[] }) {
   const handleCloseModal = () => setSrc("");
 
   return (
-    <div className="mt-20 flex flex-col justify-center items-center max-w-screen-md mb-10">
+    <div className="mt-20 flex flex-col justify-center items-center max-w-screen-md mb-10 mx-auto w-full">
       <Slider single={1}>
         {data?.map((image) => (
           <SwiperSlide

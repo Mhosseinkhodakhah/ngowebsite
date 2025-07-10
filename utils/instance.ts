@@ -1,7 +1,6 @@
 import axios from "axios";
 
 import { getCookie } from "./cookie";
-import { handleRedirect } from "./handleRedirect";
 
 const token = async () => {
   const token: any = await getCookie("miras-token");

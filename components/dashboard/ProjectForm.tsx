@@ -194,11 +194,11 @@ function ProjectForm() {
   });
 
   return (
-    <form onSubmit={formik.handleSubmit}>
+    <form className="px-5 lg:px-0" onSubmit={formik.handleSubmit}>
       <ProjectGeneralInfo formik={formik} />
       <ProjectStatus formik={formik} />
 
-      <h5 className="py-4 px-4 md:px-0 mt-4">{t("Geographical location")}</h5>
+      <h5 className="py-4 mt-4">{t("Geographical location")}</h5>
       <div className="flex gap-4">
         <ProjectCountry formik={formik} />
         <CInput isRequired formik={formik} label="City" name="city" />

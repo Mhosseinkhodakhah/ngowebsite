@@ -28,7 +28,7 @@ function GoUp() {
     isVisible && (
       <div
         aria-label="Scroll to top"
-        className="p-3 rounded-full w-10 h-10 bg-primary sticky left-[80%] md:left-[90%]  bottom-10 mb-2 cursor-pointer z-10"
+        className="p-3 rounded-full w-10 h-10 bg-primary sticky right-[10%] md:left-[90%]  bottom-10 mb-2 cursor-pointer z-10"
         role="button"
         tabIndex={0}
         onClick={handleClick}

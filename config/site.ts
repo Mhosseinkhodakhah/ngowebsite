@@ -14,13 +14,6 @@ export const siteConfig = {
       label: "About Us",
       href: "/about-us",
       static: true,
-      children: [
-        {
-          label: "Contact Us",
-          href: "/contact-us",
-          static: true,
-        },
-      ],
     },
     {
       label: "NGO",
@@ -94,14 +87,6 @@ export const siteConfig = {
       label: "About Us",
       href: "/about-us",
       static: true,
-
-      children: [
-        {
-          label: "Contact Us",
-          href: "/contact-us",
-          static: true,
-        },
-      ],
     },
     {
       label: "NGO",

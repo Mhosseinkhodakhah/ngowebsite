@@ -12,7 +12,6 @@ function ProjectStatus({ formik }: { formik: FormikProps<any> }) {
   return (
     <CheckboxGroup
       isRequired
-      className="px-4 md:px-0"
       defaultValue={formik.values.status}
       errorMessage={() => {
         if (formik.errors.status && formik.touched.status) {
