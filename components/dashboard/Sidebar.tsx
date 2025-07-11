@@ -16,7 +16,7 @@ function SideBar() {
 
   return (
     <section
-      className={`hidden lg:flex md:w-2/5 lg:w-2/12 ${locale === "pe" ? "border" : "border-r"} border-dot flex-col justify-start light:bg-violet-100 rounded-e-2xl border-slate-300 dark:border-gray shadow-lg h-[98%]`}
+      className={`hidden lg:flex md:w-4/12 lg:w-2/12 ${locale === "pe" ? "border" : "border-r"} border-dot flex-col justify-start light:bg-violet-100 rounded-e-2xl border-slate-300 dark:border-gray shadow-lg h-[98%]`}
     >
       <div className="w-full flex justify-center items-center p-4">
         <Avatar className="md:w-32 md:h-32" name="Logo" src={ngoData.logo} />

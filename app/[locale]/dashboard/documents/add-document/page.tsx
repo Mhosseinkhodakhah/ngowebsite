@@ -1,8 +1,9 @@
+import Link from "next/link";
+
 import { getDescriptionPage } from "@/actions/educations";
 import Title from "@/components/common/title";
 import DashboardHead from "@/components/dashboard/DashboardHead";
 import DocumentsAndRecordsForm from "@/components/dashboard/DocumentsAndRecordsForm";
-import Link from "next/link";
 
 async function AddDocument({ params }: { params: any }) {
   const { locale } = await params;

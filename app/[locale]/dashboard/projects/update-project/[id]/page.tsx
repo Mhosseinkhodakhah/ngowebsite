@@ -9,7 +9,7 @@ async function UpdateProject({ params }: { params: any }) {
   const data = await getSingleProject(id);
 
   return (
-    <section className="flex flex-col items-center w-full md:w-3/5 lg:w-3/4 md:p-10 overflow-y-auto">
+    <section className="flex flex-col items-center w-full md:w-3/5 lg:w-3/4 md:p-10 overflow-y-auto px-5 lg:px-0">
       <div className="px-6 w-full mt-4">
         <DashboardHead />
       </div>

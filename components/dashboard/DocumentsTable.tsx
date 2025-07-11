@@ -6,7 +6,7 @@ import { AgGridReact } from "ag-grid-react";
 import { ClientSideRowModelModule, ColDef } from "ag-grid-community";
 import { Input } from "@heroui/input";
 import { useTheme } from "next-themes";
-import { useParams } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import { useTranslations } from "next-intl";
 import {
   AG_GRID_LOCALE_EN,
@@ -22,10 +22,11 @@ import { Button } from "@heroui/button";
 import ConfirmModal from "../common/confirm";
 import { SearchIcon } from "../common/icons";
 
+import AddButton from "./AddButton";
+
 import "ag-grid-community/styles/ag-grid.css";
 import "ag-grid-community/styles/ag-theme-alpine.css"; // or any other theme you prefer
 import { deleteDocument } from "@/actions/dashboard";
-import AddButton from "./AddButton";
 
 const DocumentsTable = ({ data }: { data: any }) => {
   const [id, setId] = useState<string>("");
@@ -33,6 +34,7 @@ const DocumentsTable = ({ data }: { data: any }) => {
   const { theme } = useTheme();
   const { locale } = useParams();
   const t = useTranslations("dashboard");
+  const router = useRouter();
 
   const { isOpen, onOpen, onClose } = useDisclosure();
 
@@ -52,8 +54,8 @@ const DocumentsTable = ({ data }: { data: any }) => {
           title: t("Error"),
           description: data?.error,
           timeout: 3000,
-          shouldShowTimeoutProgress : true,
-          variant : 'flat',
+          shouldShowTimeoutProgress: true,
+          variant: "flat",
           color: "danger",
         });
       }
@@ -126,16 +128,22 @@ const DocumentsTable = ({ data }: { data: any }) => {
               </Button>
             </Tooltip>
             <Tooltip color="warning" content={t("Update Document")}>
-              <Link href={`documents/update-document/${id}`}>
-                <Button isIconOnly color="warning" size="sm" variant="flat">
-                  <Icon
-                    className="text-warning"
-                    height="24"
-                    icon="material-symbols:update"
-                    width="24"
-                  />
-                </Button>
-              </Link>
+              <Button
+                isIconOnly
+                color="warning"
+                size="sm"
+                variant="flat"
+                onPress={() => {
+                  router.push("documents/update-document/${id}");
+                }}
+              >
+                <Icon
+                  className="text-warning"
+                  height="24"
+                  icon="material-symbols:update"
+                  width="24"
+                />
+              </Button>
             </Tooltip>
           </div>
         );

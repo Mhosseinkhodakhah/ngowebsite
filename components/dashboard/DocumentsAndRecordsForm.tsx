@@ -36,8 +36,8 @@ function DocumentsAndRecordsForm() {
         addToast({
           title: t("Success"),
           description: t("Document created successfully"),
-          shouldShowTimeoutProgress : true,
-          variant : 'flat',
+          shouldShowTimeoutProgress: true,
+          variant: "flat",
           promise: new Promise((resolve) => setTimeout(resolve, 3000)),
           color: "success",
         });
@@ -48,9 +48,9 @@ function DocumentsAndRecordsForm() {
         addToast({
           title: t("Error"),
           description: response?.error,
-          timeout : 3000,
-          shouldShowTimeoutProgress : true,
-          variant : 'flat',
+          timeout: 3000,
+          shouldShowTimeoutProgress: true,
+          variant: "flat",
           color: "danger",
         });
       }
@@ -72,7 +72,7 @@ function DocumentsAndRecordsForm() {
     enableReinitialize: true,
     validationSchema: documentSchema,
     onSubmit: async (values) => {
-      if (documents.length) {
+      if (documents.length > 0) {
         setIsLoading(true);
         const formData = new FormData();
 
@@ -83,9 +83,10 @@ function DocumentsAndRecordsForm() {
         const upload = await uploadDocs(formData);
 
         if (upload.success) {
-          values.file = upload.data;
+          console.log("upload", console.log(upload));
+          console.log("formData", console.log(formData.getAll("picture")));
 
-          mutation.mutate(values);
+          mutation.mutate({ ...values, file: upload.data });
 
           return;
         } else {

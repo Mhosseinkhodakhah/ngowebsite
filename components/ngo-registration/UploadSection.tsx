@@ -12,60 +12,77 @@ import { Tooltip } from "@heroui/tooltip";
 // import GalleryIcon from "../common/icons/gallery-icon";
 import PdfIcon from "../common/icons/pdf-icon";
 import { addToast } from "@heroui/toast";
+import convertBlobToFile from "@/utils/convertBlobToFile";
+import { get } from "http";
 
 interface HandleSetLogoEvent extends React.ChangeEvent<HTMLInputElement> {}
 
 interface Props {
+  documents: [];
   onLogo: (formData: FormData) => void;
-  onDocumentsFile: (formData: FormData) => void;
+  onDocumentsFile: (value: []) => void;
 }
 
-function UploadSection({ onLogo, onDocumentsFile }: Props) {
+function UploadSection({ documents, onLogo, onDocumentsFile }: Props) {
   const [logo, setLogo] = useState<string>("");
-  const [docList, setDocList] = useState<{ name: string; url: string }[]>([]);
 
   const t = useTranslations("ngo-registration");
 
-  const onDrop = useCallback((acceptedFiles: File[]) => {
-    // Do something with the files
-    let files: { name: string; url: string }[] = [];
-    console.log('its come herer')
-    if (acceptedFiles.length > 3){
-      console.log('its from hereeee')
-      addToast({
-        title: "File Limitation",
-        description: t("The number of selected files cannot exceed 4"),
-        timeout: 3000,
-        shouldShowTimeoutProgress: true,
-        color: "danger",
-        variant: "flat"
-      })
-      return;
-    }
+  const onDrop = useCallback(
+    (acceptedFiles: File[]) => {
+      // Do something with the files
 
-    const totalSize = acceptedFiles.reduce((sum, file) => sum + file.size, 0);
-    if (totalSize > 10 * 1024 * 1024) {
-      addToast({
-        title: "File Limitation",
-        description: t("File Size is Too Much"),
-        timeout: 3000,
-        color: "danger",
-        variant: "flat",
-        shouldShowTimeoutProgress: true,
-      })
-      return;
-    }
-    
-    const formData = new FormData();
+      if (
+        acceptedFiles.length > 3 ||
+        documents.length + 1 > 3 ||
+        documents.length + acceptedFiles.length > 3
+      ) {
+        addToast({
+          title: "File Limitation",
+          description: t("The number of selected files cannot exceed 4"),
+          timeout: 3000,
+          shouldShowTimeoutProgress: true,
+          color: "danger",
+          variant: "flat",
+        });
 
-    acceptedFiles.forEach((file: File) => {
-      files.push({ name: file.name, url: URL.createObjectURL(file as Blob) });
-      formData.append("picture", file);
-    });
+        return;
+      }
 
-    onDocumentsFile(formData);
-    setDocList(files);
-  }, []);
+      const totalSize = acceptedFiles.reduce((sum, file) => sum + file.size, 0);
+
+      if (totalSize > 10 * 1024 * 1024) {
+        addToast({
+          title: "File Limitation",
+          description: t("File Size is Too Much"),
+          timeout: 3000,
+          color: "danger",
+          variant: "flat",
+          shouldShowTimeoutProgress: true,
+        });
+
+        return;
+      }
+
+      acceptedFiles.forEach((file: File) => {
+        if (documents.length > 3) {
+          addToast({
+            title: t("File Limitation"),
+            description: t("The number of selected files cannot exceed 3"),
+            timeout: 3000,
+            shouldShowTimeoutProgress: true,
+            color: "danger",
+            variant: "flat",
+          });
+
+          return;
+        } else {
+          onDocumentsFile((prev) => [...prev, file]);
+        }
+      });
+    },
+    [documents]
+  );
 
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
     onDrop,
@@ -168,8 +185,8 @@ function UploadSection({ onLogo, onDocumentsFile }: Props) {
           </ul>
         </div>
         <ul className="my-4 px-4 text-start grid grid-cols-1 md:grid-cols-2">
-          {docList.map((doc) => (
-            <li key={doc.url} className="my-2 md:mx-auto relative py-4">
+          {documents?.map((doc: any) => (
+            <li key={doc.name} className="my-2 md:mx-auto relative py-4">
               <PdfIcon />
               {doc.name}
               <Tooltip content={t("Delete")}>
@@ -178,10 +195,14 @@ function UploadSection({ onLogo, onDocumentsFile }: Props) {
                   className="absolute -top-2 right-1 cursor-pointer "
                   color="danger"
                   onPress={() => {
-                    const cpDocList = [...docList];
-                    const filter = cpDocList.filter((f) => f.url !== doc.url);
+                    if (documents.length > 0) {
+                      const getFiles: any = [...documents];
+                      const filtered = getFiles.filter(
+                        (f: any) => f.name !== doc.name
+                      );
 
-                    setDocList(filter);
+                      onDocumentsFile(filtered);
+                    }
                   }}
                 >
                   <Icon height="24" icon="uim:times-circle" width="24" />

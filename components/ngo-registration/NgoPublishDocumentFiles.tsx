@@ -27,7 +27,7 @@ function NgoPublishDocumentFiles({ publishFile, onPublishFile }: Props) {
     // Do something with the files
     let files: { name: string; url: string }[] = [];
 
-   const totalSize = acceptedFiles.reduce((sum, file) => sum + file.size, 0);
+    const totalSize = acceptedFiles.reduce((sum, file) => sum + file.size, 0);
     if (totalSize > 5 * 1024 * 1024) {
       addToast({
         title: "File Limitation",
@@ -35,28 +35,26 @@ function NgoPublishDocumentFiles({ publishFile, onPublishFile }: Props) {
         timeout: 3000,
         shouldShowTimeoutProgress: true,
         color: "danger",
-         variant: "flat"
-      })
+        variant: "flat",
+      });
       return;
     }
 
     acceptedFiles.forEach((file: File) => {
       files.push({ name: file.name, url: URL.createObjectURL(file as Blob) });
-      if (publishFile.getAll("picture").length + 1 > 3){
+      if (publishFile.getAll("picture").length + 1 > 3) {
         addToast({
-        title: "File Limitation",
-        description: t("The number of selected files cannot exceed 3"),
-        timeout: 3000,
-        shouldShowTimeoutProgress: true,
-        color: "danger",
-        variant: "flat"
-      })
-      return;
+          title: "File Limitation",
+          description: t("The number of selected files cannot exceed 3"),
+          timeout: 3000,
+          shouldShowTimeoutProgress: true,
+          color: "danger",
+          variant: "flat",
+        });
+        return;
       }
       publishFile.append("picture", file);
     });
-
-    console.log("ccccccc", publishFile.getAll("picture").length);
 
     onPublishFile(publishFile);
     setPublishList((prev) => [...prev, ...files]);
@@ -94,16 +92,16 @@ function NgoPublishDocumentFiles({ publishFile, onPublishFile }: Props) {
           )}
         </div>
         <ul className="list-disc p-4">
-            <li className="text-[10px] text-danger text-light">
-              {t("Maximum selected files: 5")}
-            </li>
-            <li className="text-[10px] text-danger text-light">
-              {t("Acceptable formats JPG")}
-            </li>
-            <li className="text-[10px] text-danger text-light">
-              {t("The size of the selected files must be less than 20 MB")}
-            </li>
-          </ul>
+          <li className="text-[10px] text-danger text-light">
+            {t("Maximum selected files: 5")}
+          </li>
+          <li className="text-[10px] text-danger text-light">
+            {t("Acceptable formats JPG")}
+          </li>
+          <li className="text-[10px] text-danger text-light">
+            {t("The size of the selected files must be less than 20 MB")}
+          </li>
+        </ul>
         <ul className="my-4 px-4 text-start grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
           {publishList.map((doc, index: number) => (
             <li key={doc.url} className="my-2 md:mx-auto relative py-4">
@@ -126,14 +124,13 @@ function NgoPublishDocumentFiles({ publishFile, onPublishFile }: Props) {
 
                     const getformData = publishFile.getAll("picture");
                     const filtered = getformData.filter((f, i) => i !== index);
-                    console.log('filterrrrr' , filtered)
-                    publishFile.delete("picture");  
+                    console.log("filterrrrr", filtered);
+                    publishFile.delete("picture");
 
                     for (let i = 0; i < filtered.length; i++) {
                       publishFile.append("picture", filtered[i]);
                     }
 
-                    console.log("vvvvvvv", publishFile.getAll("picture"));
                     setPublishList(filter);
                   }}
                 >

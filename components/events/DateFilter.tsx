@@ -34,8 +34,6 @@ function DateFilter({
     parseAbsoluteToLocal(new Date().toISOString())
   );
 
-  console.log("dfasifn", parseAbsoluteToLocal(new Date().toISOString()));
-
   const router = useRouter();
 
   return (
@@ -43,6 +41,7 @@ function DateFilter({
       <I18nProvider locale={locale === "pe" ? "fa" : "en"}>
         <DatePicker
           hideTimeZone
+          showMonthAndYearPickers
           className="max-w-xs"
           classNames={{
             selectorButton: "bg-primary text-white",

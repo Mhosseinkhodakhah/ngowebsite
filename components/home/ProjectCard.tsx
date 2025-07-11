@@ -1,19 +1,20 @@
 import Image from "next/image";
 import { useTranslations } from "next-intl";
-
+import { Divider } from "@heroui/divider";
+import { Avatar } from "@heroui/avatar";
+import { useParams } from "next/navigation";
 import { Chip } from "@heroui/chip";
 import { Card, CardBody, CardFooter, CardHeader } from "@heroui/card";
 
 import CardBtn from "./CardBtn";
 
 import PlaceHolderImage from "@/public/images/placeholder.png";
-import { Divider } from "@heroui/divider";
-import { useParams } from "next/navigation";
-import { Avatar } from "@heroui/avatar";
 
 function ProjectCard({ project }: { project: any }) {
   const t = useTranslations("projects");
   const { locale } = useParams();
+
+  console.log("asdfaf", project);
 
   return (
     <Card
@@ -83,18 +84,25 @@ function ProjectCard({ project }: { project: any }) {
             )}
           </div>
 
-          <div className="py-6 px-2">
-            <h4 className="font-bold p-2 text-wrap">
+          <div
+            className={`py-6 px-2`}
+            dir={project.language === "en" ? "ltr" : "rtl"}
+          >
+            <h4
+              className={`font-bold p-2 text-wrap ${project.language === "en" ? "text-left" : "text-right"}`}
+            >
               {project?.name?.slice(0, 100)}...
             </h4>
-            <p className="text-sm font-light p-2 ">
+            <p
+              className={`text-sm font-light p-2 ${project.language === "en" ? "text-left" : "text-right"}`}
+            >
               {project?.description?.slice(0, 100)}...
             </p>
           </div>
         </div>
       </CardBody>
       <Divider />
-      <CardFooter>
+      <CardFooter className="p-1">
         <div className="flex justify-end w-full">
           <CardBtn status={project?.status} id={project?._id} />
         </div>

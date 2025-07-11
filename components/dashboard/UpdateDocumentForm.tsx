@@ -24,6 +24,8 @@ function UpdateDocumentForm({ data }: { data: any }) {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [documents, setDocuments] = useState<File[]>([]);
 
+  console.log("dsfadf", data);
+
   const router = useRouter();
 
   const mutation = useMutation({
@@ -31,26 +33,26 @@ function UpdateDocumentForm({ data }: { data: any }) {
     mutationFn: ({ values, id }: { values: any; id: string }) =>
       updateDocument(values, id),
     onSuccess: (data: any) => {
-      if (data?.success){
+      if (data?.success) {
         setIsLoading(false);
         addToast({
           title: t("Success"),
           description: t("Document updated successfully"),
-          shouldShowTimeoutProgress : true,
-          variant : 'flat',
+          shouldShowTimeoutProgress: true,
+          variant: "flat",
           promise: new Promise((resolve) => setTimeout(resolve, 3000)),
           color: "success",
         });
         setDocuments([]);
         formik.resetForm();
         router.push("/dashboard/documents");
-      }else{
+      } else {
         addToast({
           title: t("Failed"),
           description: data?.error,
-          timeout : 3000,
-          shouldShowTimeoutProgress : true,
-          variant : 'flat',
+          timeout: 3000,
+          shouldShowTimeoutProgress: true,
+          variant: "flat",
           color: "danger",
         });
       }

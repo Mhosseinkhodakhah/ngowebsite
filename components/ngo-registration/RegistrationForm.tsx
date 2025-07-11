@@ -40,7 +40,7 @@ function RegistrationForm() {
   const router = useRouter();
 
   const [logo, setLogo] = useState<FormData>(new FormData());
-  const [documentsFile, setDocumentsFile] = useState<FormData>(new FormData());
+  const [documentsFile, setDocumentsFile] = useState<[]>([]);
   const [publishFile, setPublishFile] = useState<FormData>(new FormData());
 
   const mutation = useMutation({
@@ -49,22 +49,22 @@ function RegistrationForm() {
     onSuccess: (data: any) => {
       if (data.success) {
         addToast({
-          title : t("Success"),
-          description : t("create ngo successfully done"),
-          timeout : 3000,
-          shouldShowTimeoutProgress : true,
-          variant : 'flat',
-          color : 'success'
-        })
+          title: t("Success"),
+          description: t("create ngo successfully done"),
+          timeout: 3000,
+          shouldShowTimeoutProgress: true,
+          variant: "flat",
+          color: "success",
+        });
         router.push("/login");
         formik.resetForm();
       } else {
         addToast({
           title: t("Registration"),
           description: data?.error,
-          timeout : 3000,
-          shouldShowTimeoutProgress : true,
-          variant : 'flat',
+          timeout: 3000,
+          shouldShowTimeoutProgress: true,
+          variant: "flat",
           color: "danger",
         });
       }
@@ -150,7 +150,7 @@ function RegistrationForm() {
 
         return;
       }
-      if (documentsFile.get("picture") === null) {
+      if (documentsFile.length === 0) {
         addToast({
           title: t("Upload Documentation"),
           description: t(
@@ -179,7 +179,6 @@ function RegistrationForm() {
       setIsLoading(true);
 
       const uploadLogo = await uploadDocs(logo);
-      const uploadDocuments = await uploadDocs(documentsFile);
 
       if (uploadLogo.success) {
         values.logo = uploadLogo.data[0];
@@ -194,18 +193,29 @@ function RegistrationForm() {
 
         return;
       }
-      if (uploadDocuments.success) {
-        values.documentsFile = uploadDocuments.data;
-      } else {
-        addToast({
-          title: t("Documents"),
-          description: t("Documents failed to load, please try again"),
-          promise: new Promise((resolve) => setTimeout(resolve, 3000)),
-          color: "danger",
-        });
-        setIsLoading(false);
 
-        return;
+      if (documentsFile.length > 0) {
+        const formData = new FormData();
+
+        for (let i = 0; i < documentsFile.length; i++) {
+          formData.append("picture", documentsFile[i]);
+        }
+
+        const uploadDocuments = await uploadDocs(formData);
+
+        if (uploadDocuments.success) {
+          values.documentsFile = uploadDocuments.data;
+        } else {
+          addToast({
+            title: t("Documents"),
+            description: t("Documents failed to load, please try again"),
+            promise: new Promise((resolve) => setTimeout(resolve, 3000)),
+            color: "danger",
+          });
+          setIsLoading(false);
+
+          return;
+        }
       }
 
       if (values?.publishSelect[0] !== "no") {
@@ -322,7 +332,11 @@ function RegistrationForm() {
       <ActivityLicense formik={formik} />
       <Divider className="my-5" />
       <NgoDocuments formik={formik} />
-      <UploadSection onDocumentsFile={setDocumentsFile} onLogo={setLogo} />
+      <UploadSection
+        documents={documentsFile}
+        onDocumentsFile={setDocumentsFile}
+        onLogo={setLogo}
+      />
       <Divider className="my-5" />
       <NgoPublishDocument formik={formik} />
       {formik?.values?.publishSelect[0] === "limited" && (
@@ -330,7 +344,10 @@ function RegistrationForm() {
       )}
 
       {formik?.values?.publishSelect[0] !== "no" ? (
-        <NgoPublishDocumentFiles publishFile={publishFile} onPublishFile={setPublishFile} />
+        <NgoPublishDocumentFiles
+          publishFile={publishFile}
+          onPublishFile={setPublishFile}
+        />
       ) : null}
       <Divider className="my-5" />
       <LoginData formik={formik} />

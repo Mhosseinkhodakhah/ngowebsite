@@ -128,7 +128,7 @@ function ProjectDocumentFiles({
             src={formik.values?.visualDocuments[index]?.files[0]}
             width={200}
           />
-          <div className="absolute -top-5 -right-5">
+          <div className="absolute -top-5 right-4">
             <Tooltip content={t("Delete")}>
               <Button
                 isIconOnly

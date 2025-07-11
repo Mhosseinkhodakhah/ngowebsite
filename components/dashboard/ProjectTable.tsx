@@ -5,7 +5,7 @@ import { AgGridReact } from "ag-grid-react";
 import { ClientSideRowModelModule, ColDef } from "ag-grid-community";
 import { Input } from "@heroui/input";
 import { useTheme } from "next-themes";
-import { useParams } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import { useTranslations } from "next-intl";
 import {
   AG_GRID_LOCALE_EN,
@@ -21,11 +21,12 @@ import { addToast } from "@heroui/toast";
 import { SearchIcon } from "../common/icons";
 import ConfirmModal from "../common/confirm";
 
+import AddButton from "./AddButton";
+
 import "ag-grid-community/styles/ag-grid.css";
 import "ag-grid-community/styles/ag-theme-alpine.css"; // or any other theme you prefer
 import { Link } from "@/i18n/navigation";
 import { deleteProject, ongoingProject } from "@/actions/dashboard";
-import AddButton from "./AddButton";
 
 const ProjectTable = ({ data }: { data: any }) => {
   const [id, setId] = useState<string>("");
@@ -33,6 +34,7 @@ const ProjectTable = ({ data }: { data: any }) => {
   const { theme } = useTheme();
   const { locale } = useParams();
   const t = useTranslations("dashboard");
+  const router = useRouter();
 
   const { isOpen, onOpen, onClose } = useDisclosure();
   const {
@@ -57,8 +59,8 @@ const ProjectTable = ({ data }: { data: any }) => {
           title: t("Error"),
           description: data?.error,
           timeout: 3000,
-          shouldShowTimeoutProgress : true,
-          variant : 'flat',
+          shouldShowTimeoutProgress: true,
+          variant: "flat",
           color: "danger",
         });
       }
@@ -81,8 +83,8 @@ const ProjectTable = ({ data }: { data: any }) => {
         addToast({
           title: t("Error"),
           description: data?.error,
-          shouldShowTimeoutProgress : true,
-          variant : 'flat',
+          shouldShowTimeoutProgress: true,
+          variant: "flat",
           timeout: 3000,
           color: "danger",
         });
@@ -112,8 +114,7 @@ const ProjectTable = ({ data }: { data: any }) => {
               ? t("pending")
               : params?.value === 1
                 ? t("accepted")
-                : t("rejected")
-                }
+                : t("rejected")}
           </>
         );
       },
@@ -183,7 +184,7 @@ const ProjectTable = ({ data }: { data: any }) => {
         console.log("stttt", data);
 
         return (
-          <div className="flex gap-3">
+          <div className="flex gap-3 justify-center items-start">
             <Tooltip color="danger" content={t("Delete Project")}>
               <Button
                 isIconOnly
@@ -205,30 +206,42 @@ const ProjectTable = ({ data }: { data: any }) => {
             </Tooltip>
             {!completed && (
               <Tooltip color="warning" content={t("Update Project")}>
-                <Link href={`projects/update-project/${id}`}>
-                  <Button isIconOnly color="warning" size="sm" variant="flat">
-                    <Icon
-                      className="text-warning"
-                      height="24"
-                      icon="material-symbols:update"
-                      width="24"
-                    />
-                  </Button>
-                </Link>
+                <Button
+                  isIconOnly
+                  color="warning"
+                  size="sm"
+                  variant="flat"
+                  onPress={() => {
+                    router.push(`projects/update-project/${id}`);
+                  }}
+                >
+                  <Icon
+                    className="text-warning"
+                    height="24"
+                    icon="material-symbols:update"
+                    width="24"
+                  />
+                </Button>
               </Tooltip>
             )}
             {!completed && ongoing && (
               <Tooltip color="success" content={t("Complete")}>
-                <Link href={`projects/complete-project/${id}`}>
-                  <Button isIconOnly color="success" size="sm" variant="flat">
-                    <Icon
-                      className="text-green-500"
-                      height="24"
-                      icon="lets-icons:done-ring-round-fill"
-                      width="24"
-                    />
-                  </Button>
-                </Link>
+                <Button
+                  isIconOnly
+                  color="success"
+                  size="sm"
+                  variant="flat"
+                  onPress={() => {
+                    router.push(`projects/complete-project/${id}`);
+                  }}
+                >
+                  <Icon
+                    className="text-green-500"
+                    height="24"
+                    icon="lets-icons:done-ring-round-fill"
+                    width="24"
+                  />
+                </Button>
               </Tooltip>
             )}
             {!ongoing && !completed && (
