@@ -18,8 +18,8 @@ async function Page({
 
   const data = await getCategoryProjects(
     status ? status : "goodPractice",
-    search,
-    page ? page : "1"
+    page ? page : "1",
+    search
   );
 
   const { data: descriptionData } = await getGoodPracticeProjects();

@@ -17,8 +17,8 @@ async function Page({
 
   const data = await getCategoryProjects(
     status ? status : "ongoing",
-    search,
-    page ? page : "1"
+    page ? page : "1",
+    search
   );
 
   return (

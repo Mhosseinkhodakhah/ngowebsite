@@ -13,7 +13,7 @@ export const getProjects = async () => {
 export const getCategoryProjects = async (
   status: string,
   page: string,
-  search?: string
+  search?: string,
 ) => {
   try {
     const { data } = await instance.get(

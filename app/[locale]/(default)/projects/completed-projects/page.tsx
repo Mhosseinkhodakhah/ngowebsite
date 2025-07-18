@@ -14,8 +14,8 @@ async function Page({
 
   const data = await getCategoryProjects(
     status ? status : "completed",
-    search,
-    page ? page : "1"
+    page ? page : "1",
+    search
   );
 
   const { data: descriptionData } = await getCompletedProjects();
