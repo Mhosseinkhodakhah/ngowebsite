@@ -35,7 +35,7 @@ async function Page({
               : descriptionData?.ruDescription
         }
         page="projects"
-        titleText="Good Practice"
+        titleText="Good Practices"
       />
 
       <SearchInput
