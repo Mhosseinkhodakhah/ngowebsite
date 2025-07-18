@@ -11,13 +11,14 @@ async function Page({
   searchParams,
 }: {
   params: { locale: string };
-  searchParams: { status: string; page: string };
+  searchParams: { status: string; search?: string; page: string };
 }) {
-  const { status, page } = await searchParams;
+  const { status, search, page } = await searchParams;
   const { locale } = await params;
 
   const data = await getCategoryProjects(
     status ? status : "goodPractice",
+    search,
     page ? page : "1"
   );
 

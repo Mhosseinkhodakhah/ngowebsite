@@ -13,10 +13,10 @@ async function Page({
   params: any;
   searchParams: any;
 }) {
-  const { type, sort, start, end, page } = await searchParams;
+  const { type, sort, start, end,search, page } = await searchParams;
   const { locale } = await params;
 
-  const data = await getEvents(type, sort, start, end, page);
+  const data = await getEvents(type, sort, start, end,search, page);
 
   const descriptions = await getDescriptionPage("events");
 

@@ -5,17 +5,17 @@ export const getEvents = async (
   sort?: string,
   start?: string,
   end?: string,
+  search?: string,
   page?: string
 ) => {
   try {
     const { data } = await instance.get(
-      `events-educations/event/all?type=${type}&sort=${sort}&start=${start}&end=${end}&page=${page}`
+      `events-educations/event/all?type=${type}&sort=${sort}&start=${start}&end=${end}&search=${search}&page=${page}`
     );
 
     return data;
   } catch (err) {
-    console.error("Error fetching events:", err);
-    return false;
+    return err;
   }
 };
 
@@ -25,7 +25,6 @@ export const getSingleEvent = async (id: string) => {
 
     return data;
   } catch (err) {
-    console.error("Error fetching events:", err);
-    return false;
+    return err;
   }
 };

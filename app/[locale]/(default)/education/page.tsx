@@ -8,10 +8,10 @@ import Empty from "@/components/common/empty";
 import SearchInput from "@/components/common/search-input";
 
 async function Page(params: any) {
-  const { type, sort, start, end, page } = await params.searchParams;
+  const { type, sort, start, end, page , search } = await params.searchParams;
   const { locale } = await params.params;
   // const { all, educations } = await getEducations(type, sort, start, end, page);
-  const data = await getEducations(type, sort, start, end, page);
+  const data = await getEducations(type, sort, start, end,search, page);
 
   const descriptions = await getDescriptionPage("educations");
 

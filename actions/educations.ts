@@ -5,16 +5,17 @@ export const getEducations = async (
   sort?: string,
   start?: string,
   end?: string,
+  search?: string,
   page?: string
 ) => {
   try {
     const { data } = await instance.get(
-      `events-educations/education/all/?type=${type}&sort=${sort}&start=${start}&end=${end}&page=${page}`
+      `events-educations/education/all/?type=${type}&sort=${sort}&start=${start}&end=${end}&search=${search}&page=${page}`
     );
 
     return data;
   } catch (err) {
-    console.error(err);
+    return err;
   }
 };
 
@@ -24,8 +25,7 @@ export const getSingleEducation = async (id: string) => {
 
     return data;
   } catch (err) {
-    console.error("Error fetching events:", err);
-    return false;
+    return err;
   }
 };
 
@@ -35,8 +35,6 @@ export const getDescriptionPage = async (page: string) => {
 
     return data;
   } catch (err) {
-    console.log(err);
-
-    return false;
+    return err;
   }
 };

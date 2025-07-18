@@ -8,15 +8,16 @@ async function Page({
   searchParams,
 }: {
   params: { locale: string };
-  searchParams: { status: string; page: string };
+  searchParams: { status: string; search?: string; page: string };
 }) {
-  const { status, page } = await searchParams;
+  const { status, search, page } = await searchParams;
   const { locale } = await params;
 
   const { data: descriptionData } = await getOngoingProjects();
 
   const data = await getCategoryProjects(
     status ? status : "ongoing",
+    search,
     page ? page : "1"
   );
 
